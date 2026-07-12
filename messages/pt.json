@@ -58,5 +58,24 @@
     "title": "Configurações",
     "language": "Idioma",
     "moreSoon": "Mais opções (12/24h, tema) em breve"
+  },
+  "TimeQuestion": {
+    "placeholder": "Pergunte sobre um horário... ex: \"que horas são em Tóquio?\"",
+    "ariaLabel": "Fazer uma pergunta sobre fusos horários",
+    "submit": "Perguntar",
+    "answerCurrent": "São {time} em {city}.",
+    "answerConvert": "Quando for {sourceTime} em {sourceCity}, serão {targetTime} em {targetCity}.",
+    "answerDifferenceAhead": "{cityA} está {hours}h à frente de {cityB}.",
+    "answerDifferenceBehind": "{cityA} está {hours}h atrás de {cityB}.",
+    "answerDifferenceSame": "{cityA} e {cityB} têm o mesmo horário.",
+    "addToComparator": "Adicionar ao comparador",
+    "added": "Adicionado ao comparador",
+    "unmatchedTitle": "Não entendi bem essa pergunta.",
+    "unmatchedHint": "Tente uma destas:",
+    "examples": [
+      "Que horas são em Tóquio?",
+      "Que horas são em Tóquio quando for 15h em São Paulo?",
+      "Diferença entre Londres e Nova York"
+    ]
   }
 }

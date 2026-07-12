@@ -58,5 +58,24 @@
     "title": "सेटिंग्स",
     "language": "भाषा",
     "moreSoon": "अधिक विकल्प (12/24 घंटे, थीम) जल्द आ रहे हैं"
+  },
+  "TimeQuestion": {
+    "placeholder": "समय के बारे में पूछें... जैसे \"टोक्यो में क्या समय है?\"",
+    "ariaLabel": "समय क्षेत्र के बारे में सवाल पूछें",
+    "submit": "पूछें",
+    "answerCurrent": "{city} में अभी {time} बज रहे हैं।",
+    "answerConvert": "जब {sourceCity} में {sourceTime} होंगे, तब {targetCity} में {targetTime} होंगे।",
+    "answerDifferenceAhead": "{cityA}, {cityB} से {hours} घंटे आगे है।",
+    "answerDifferenceBehind": "{cityA}, {cityB} से {hours} घंटे पीछे है।",
+    "answerDifferenceSame": "{cityA} और {cityB} का समय एक जैसा है।",
+    "addToComparator": "तुलनाकर्ता में जोड़ें",
+    "added": "तुलनाकर्ता में जोड़ा गया",
+    "unmatchedTitle": "मुझे यह सवाल ठीक से समझ नहीं आया।",
+    "unmatchedHint": "इनमें से कोई एक आज़माएं:",
+    "examples": [
+      "टोक्यो में क्या समय है?",
+      "टोक्यो में क्या समय होगा जब साओ पाउलो में 15 बजे हों?",
+      "लंदन और न्यूयॉर्क के बीच समय का अंतर"
+    ]
   }
 }

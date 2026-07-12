@@ -4,7 +4,7 @@ import citiesData from "@/data/cities.json";
 const cities = citiesData as City[];
 
 /** Lowercase + strip diacritics, e.g. "São Paulo" -> "sao paulo". */
-function normalize(s: string): string {
+export function normalize(s: string): string {
   return s
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")

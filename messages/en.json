@@ -58,5 +58,24 @@
     "title": "Settings",
     "language": "Language",
     "moreSoon": "More options (12/24h, theme) coming soon"
+  },
+  "TimeQuestion": {
+    "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",
+    "ariaLabel": "Ask a time zone question",
+    "submit": "Ask",
+    "answerCurrent": "It's {time} in {city}.",
+    "answerConvert": "When it's {sourceTime} in {sourceCity}, it's {targetTime} in {targetCity}.",
+    "answerDifferenceAhead": "{cityA} is {hours}h ahead of {cityB}.",
+    "answerDifferenceBehind": "{cityA} is {hours}h behind {cityB}.",
+    "answerDifferenceSame": "{cityA} and {cityB} share the same time.",
+    "addToComparator": "Add to comparator",
+    "added": "Added to comparator",
+    "unmatchedTitle": "I didn't quite catch that.",
+    "unmatchedHint": "Try one of these:",
+    "examples": [
+      "What time is it in Tokyo?",
+      "What time is it in Tokyo when it's 3pm in São Paulo?",
+      "Time difference between London and New York"
+    ]
   }
 }

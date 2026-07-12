@@ -58,5 +58,24 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "moreSoon": "Weitere Optionen (12/24 Std., Design) folgen bald"
+  },
+  "TimeQuestion": {
+    "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
+    "ariaLabel": "Eine Frage zu Zeitzonen stellen",
+    "submit": "Fragen",
+    "answerCurrent": "Es ist {time} in {city}.",
+    "answerConvert": "Wenn es {sourceTime} in {sourceCity} ist, ist es {targetTime} in {targetCity}.",
+    "answerDifferenceAhead": "{cityA} ist {hours} Std. voraus gegenüber {cityB}.",
+    "answerDifferenceBehind": "{cityA} ist {hours} Std. zurück gegenüber {cityB}.",
+    "answerDifferenceSame": "{cityA} und {cityB} haben dieselbe Uhrzeit.",
+    "addToComparator": "Zum Vergleich hinzufügen",
+    "added": "Zum Vergleich hinzugefügt",
+    "unmatchedTitle": "Das habe ich nicht ganz verstanden.",
+    "unmatchedHint": "Probier eines davon:",
+    "examples": [
+      "Wie spät ist es in Tokio?",
+      "Wie spät ist es in Tokio, wenn es in São Paulo 15 Uhr ist?",
+      "Zeitunterschied zwischen London und New York"
+    ]
   }
 }

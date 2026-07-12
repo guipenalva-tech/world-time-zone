@@ -58,5 +58,24 @@
     "title": "Configuración",
     "language": "Idioma",
     "moreSoon": "Más opciones (12/24h, tema) próximamente"
+  },
+  "TimeQuestion": {
+    "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",
+    "ariaLabel": "Hacer una pregunta sobre husos horarios",
+    "submit": "Preguntar",
+    "answerCurrent": "Son las {time} en {city}.",
+    "answerConvert": "Cuando sean las {sourceTime} en {sourceCity}, serán las {targetTime} en {targetCity}.",
+    "answerDifferenceAhead": "{cityA} está {hours}h por delante de {cityB}.",
+    "answerDifferenceBehind": "{cityA} está {hours}h por detrás de {cityB}.",
+    "answerDifferenceSame": "{cityA} y {cityB} tienen el mismo horario.",
+    "addToComparator": "Agregar al comparador",
+    "added": "Agregado al comparador",
+    "unmatchedTitle": "No entendí bien esa pregunta.",
+    "unmatchedHint": "Prueba una de estas:",
+    "examples": [
+      "¿Qué hora es en Tokio?",
+      "Cuando son las 15 en Madrid, ¿qué hora es en Lima?",
+      "Diferencia entre Londres y Nueva York"
+    ]
   }
 }

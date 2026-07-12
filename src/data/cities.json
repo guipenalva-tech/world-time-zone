@@ -7,7 +7,11 @@
     "timezone": "America/New_York",
     "population": 8400000,
     "aliases": [
-      "nyc"
+      "nyc",
+      "Nova York",
+      "Nueva York",
+      "न्यूयॉर्क",
+      "न्यू यॉर्क"
     ]
   },
   {
@@ -914,7 +918,8 @@
     "population": 22400000,
     "aliases": [
       "sampa",
-      "sp"
+      "sp",
+      "साओ पाउलो"
     ]
   },
   {
@@ -1041,7 +1046,10 @@
     "country": "Peru",
     "countryCode": "PE",
     "timezone": "America/Lima",
-    "population": 10700000
+    "population": 10700000,
+    "aliases": [
+      "लीमा"
+    ]
   },
   {
     "id": "bogota",
@@ -1139,7 +1147,9 @@
     "timezone": "Europe/London",
     "population": 9500000,
     "aliases": [
-      "ldn"
+      "ldn",
+      "Londres",
+      "लंदन"
     ]
   },
   {
@@ -1164,7 +1174,10 @@
     "country": "Spain",
     "countryCode": "ES",
     "timezone": "Europe/Madrid",
-    "population": 6600000
+    "population": 6600000,
+    "aliases": [
+      "मैड्रिड"
+    ]
   },
   {
     "id": "rome",
@@ -1172,7 +1185,11 @@
     "country": "Italy",
     "countryCode": "IT",
     "timezone": "Europe/Rome",
-    "population": 4300000
+    "population": 4300000,
+    "aliases": [
+      "Roma",
+      "Rom"
+    ]
   },
   {
     "id": "amsterdam",
@@ -1188,7 +1205,13 @@
     "country": "Belgium",
     "countryCode": "BE",
     "timezone": "Europe/Brussels",
-    "population": 2100000
+    "population": 2100000,
+    "aliases": [
+      "Bruxelas",
+      "Bruselas",
+      "Bruxelles",
+      "Brüssel"
+    ]
   },
   {
     "id": "vienna",
@@ -1196,7 +1219,12 @@
     "country": "Austria",
     "countryCode": "AT",
     "timezone": "Europe/Vienna",
-    "population": 1900000
+    "population": 1900000,
+    "aliases": [
+      "Viena",
+      "Vienne",
+      "Wien"
+    ]
   },
   {
     "id": "zurich",
@@ -1212,7 +1240,13 @@
     "country": "Switzerland",
     "countryCode": "CH",
     "timezone": "Europe/Zurich",
-    "population": 200000
+    "population": 200000,
+    "aliases": [
+      "Genebra",
+      "Ginebra",
+      "Genève",
+      "Genf"
+    ]
   },
   {
     "id": "bern",
@@ -1292,7 +1326,13 @@
     "country": "Poland",
     "countryCode": "PL",
     "timezone": "Europe/Warsaw",
-    "population": 1800000
+    "population": 1800000,
+    "aliases": [
+      "Varsóvia",
+      "Varsovia",
+      "Varsovie",
+      "Warschau"
+    ]
   },
   {
     "id": "krakow",
@@ -1324,7 +1364,11 @@
     "country": "Czechia",
     "countryCode": "CZ",
     "timezone": "Europe/Prague",
-    "population": 1300000
+    "population": 1300000,
+    "aliases": [
+      "Praga",
+      "Prag"
+    ]
   },
   {
     "id": "budapest",
@@ -1364,7 +1408,12 @@
     "country": "Greece",
     "countryCode": "GR",
     "timezone": "Europe/Athens",
-    "population": 3150000
+    "population": 3150000,
+    "aliases": [
+      "Atenas",
+      "Athènes",
+      "Athen"
+    ]
   },
   {
     "id": "thessaloniki",
@@ -1380,7 +1429,12 @@
     "country": "Portugal",
     "countryCode": "PT",
     "timezone": "Europe/Lisbon",
-    "population": 2900000
+    "population": 2900000,
+    "aliases": [
+      "Lisboa",
+      "Lisbonne",
+      "Lissabon"
+    ]
   },
   {
     "id": "porto",
@@ -1468,7 +1522,12 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Europe/Moscow",
-    "population": 12600000
+    "population": 12600000,
+    "aliases": [
+      "Moscou",
+      "Moscú",
+      "Moskau"
+    ]
   },
   {
     "id": "st-petersburg",
@@ -1711,7 +1770,11 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
-    "population": 1500000
+    "population": 1500000,
+    "aliases": [
+      "Munique",
+      "München"
+    ]
   },
   {
     "id": "hamburg",
@@ -1847,7 +1910,12 @@
     "country": "Egypt",
     "countryCode": "EG",
     "timezone": "Africa/Cairo",
-    "population": 20900000
+    "population": 20900000,
+    "aliases": [
+      "El Cairo",
+      "Le Caire",
+      "Kairo"
+    ]
   },
   {
     "id": "alexandria",
@@ -2838,7 +2906,13 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
-    "population": 21500000
+    "population": 21500000,
+    "aliases": [
+      "Pequim",
+      "Pekín",
+      "Pékin",
+      "Peking"
+    ]
   },
   {
     "id": "shanghai",
@@ -3014,7 +3088,12 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
-    "population": 37400000
+    "population": 37400000,
+    "aliases": [
+      "Tóquio",
+      "Tokio",
+      "टोक्यो"
+    ]
   },
   {
     "id": "osaka",
@@ -3078,7 +3157,11 @@
     "country": "South Korea",
     "countryCode": "KR",
     "timezone": "Asia/Seoul",
-    "population": 9700000
+    "population": 9700000,
+    "aliases": [
+      "Seul",
+      "Seúl"
+    ]
   },
   {
     "id": "busan",

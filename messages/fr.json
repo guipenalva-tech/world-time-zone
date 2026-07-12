@@ -58,5 +58,24 @@
     "title": "Paramètres",
     "language": "Langue",
     "moreSoon": "D'autres options (12/24h, thème) arrivent bientôt"
+  },
+  "TimeQuestion": {
+    "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",
+    "ariaLabel": "Poser une question sur les fuseaux horaires",
+    "submit": "Demander",
+    "answerCurrent": "Il est {time} à {city}.",
+    "answerConvert": "Quand il est {sourceTime} à {sourceCity}, il est {targetTime} à {targetCity}.",
+    "answerDifferenceAhead": "{cityA} est en avance de {hours}h sur {cityB}.",
+    "answerDifferenceBehind": "{cityA} est en retard de {hours}h sur {cityB}.",
+    "answerDifferenceSame": "{cityA} et {cityB} sont sur le même horaire.",
+    "addToComparator": "Ajouter au comparateur",
+    "added": "Ajouté au comparateur",
+    "unmatchedTitle": "Je n'ai pas bien compris cette question.",
+    "unmatchedHint": "Essayez l'une de celles-ci :",
+    "examples": [
+      "Quelle heure est-il à Tokyo ?",
+      "Quelle heure est-il à Tokyo quand il est 15h à São Paulo ?",
+      "Décalage horaire entre Londres et New York"
+    ]
   }
 }

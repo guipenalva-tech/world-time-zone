@@ -16,6 +16,7 @@ import { buildShareUrl, readShareLinkParams } from "@/lib/shareLink";
 import AddCityButton from "@/components/Search/AddCityButton";
 import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
 import SettingsFab from "@/components/Settings/SettingsFab";
+import TimeQuestionInput from "@/components/Question/TimeQuestionInput";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -282,7 +283,7 @@ export default function Comparator() {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-4 px-4 py-6 sm:px-6">
+    <div className="flex flex-1 flex-col gap-4 px-4 pb-24 pt-6 sm:px-6 sm:pb-24">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold sm:text-3xl">{t("title")}</h1>
@@ -390,6 +391,8 @@ export default function Comparator() {
           )}
         </div>
       </div>
+
+      <TimeQuestionInput />
 
       <AddCityButton
         onSelect={addCity}
