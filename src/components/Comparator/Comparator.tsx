@@ -276,10 +276,12 @@ export default function Comparator() {
     <div className="flex flex-1 flex-col gap-4 px-4 py-6 sm:px-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-semibold">Time zone comparator</h1>
+          <h1 className="text-2xl font-semibold sm:text-3xl">
+            Fusos Horários do Mundo
+          </h1>
           <p className="text-sm text-foreground/60">
-            Hover a column to compare the same hour everywhere. Click two
-            tiles to select a time range.
+            Compare fusos horários do mundo inteiro e encontre o melhor
+            horário para se reunir, onde quer que seu time esteja.
           </p>
         </div>
 

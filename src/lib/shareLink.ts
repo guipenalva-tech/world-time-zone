@@ -1,8 +1,10 @@
 import type { ComparedCity } from "@/types/city";
 
 /**
- * Builds a shareable `/compare` URL encoding the current comparator state:
- * ordered city ids, plus the selected time range if one is active.
+ * Builds a shareable URL (comparator home, `/`) encoding the current
+ * comparator state: ordered city ids, plus the selected time range if one
+ * is active. Legacy `/compare?...` links still work via a next.config
+ * redirect that preserves query params.
  */
 export function buildShareUrl(
   cities: ComparedCity[],
@@ -23,7 +25,7 @@ export function buildShareUrl(
   const query = params.toString();
   const origin =
     typeof window !== "undefined" ? window.location.origin : "";
-  return `${origin}/compare${query ? `?${query}` : ""}`;
+  return `${origin}/${query ? `?${query}` : ""}`;
 }
 
 /** Parsed share-link params read from `window.location.search`. */
