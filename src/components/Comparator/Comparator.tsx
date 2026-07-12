@@ -20,6 +20,7 @@ export default function Comparator() {
 
   const [now, setNow] = useState(() => DateTime.now());
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [addPanelOpen, setAddPanelOpen] = useState(false);
 
   // ---- Drag-to-reorder state (native pointer events, no external lib) ----
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -192,6 +193,7 @@ export default function Comparator() {
                 hoveredIndex={hoveredIndex}
                 onHoverIndex={setHoveredIndex}
                 onRemove={removeCity}
+                onRequestAdd={() => setAddPanelOpen(true)}
                 rowRef={(el) => {
                   rowRefs.current[index] = el;
                 }}
@@ -213,7 +215,12 @@ export default function Comparator() {
         </div>
       </div>
 
-      <AddCityButton onSelect={addCity} excludeIds={existingIds} />
+      <AddCityButton
+        onSelect={addCity}
+        excludeIds={existingIds}
+        open={addPanelOpen}
+        onOpenChange={setAddPanelOpen}
+      />
     </div>
   );
 }

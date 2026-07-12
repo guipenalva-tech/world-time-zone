@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { searchCities } from "@/lib/cities";
+import { getFlagEmoji } from "@/lib/flags";
 import type { City } from "@/types/city";
 
 interface CitySearchProps {
@@ -124,8 +125,13 @@ export default function CitySearch({
                   index === activeIndex ? "bg-surface" : ""
                 }`}
               >
-                <span className="font-medium">{city.name}</span>
-                <span className="text-xs text-foreground/50">
+                <span className="min-w-0 truncate font-medium">
+                  <span aria-hidden="true" className="mr-1.5">
+                    {getFlagEmoji(city.countryCode)}
+                  </span>
+                  {city.name}
+                </span>
+                <span className="shrink-0 text-xs text-foreground/50">
                   {city.country}
                 </span>
               </button>

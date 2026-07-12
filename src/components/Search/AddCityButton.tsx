@@ -1,35 +1,39 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import type { City } from "@/types/city";
 import CitySearch from "./CitySearch";
 
 interface AddCityButtonProps {
   onSelect: (city: City) => void;
   excludeIds: string[];
+  /** Controlled open state — the panel is shared by the FAB and per-row "+" buttons. */
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 /**
- * Floating action button that opens a small panel (bottom sheet on mobile,
- * popover on desktop) containing the city search, so the header can stay
- * uncluttered.
+ * Floating action button + shared "add a city" panel (bottom sheet on
+ * mobile, popover on desktop). Open state is controlled by the parent so
+ * other triggers (e.g. the per-row "+" button) can reuse the same flow.
  */
 export default function AddCityButton({
   onSelect,
   excludeIds,
+  open,
+  onOpenChange,
 }: AddCityButtonProps) {
-  const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
 
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") onOpenChange(false);
     }
     function onPointerDownOutside(e: PointerEvent) {
       if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
-        setOpen(false);
+        onOpenChange(false);
       }
     }
 
@@ -39,18 +43,18 @@ export default function AddCityButton({
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("pointerdown", onPointerDownOutside);
     };
-  }, [open]);
+  }, [open, onOpenChange]);
 
   function handleSelect(city: City) {
     onSelect(city);
-    setOpen(false);
+    onOpenChange(false);
   }
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => onOpenChange(true)}
         aria-label="Add a city"
         aria-haspopup="dialog"
         aria-expanded={open}

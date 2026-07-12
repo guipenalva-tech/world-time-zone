@@ -3,6 +3,7 @@
 import type { DateTime } from "luxon";
 import type { ComparedCity } from "@/types/city";
 import { getZoneInfo, getHourRow } from "@/lib/timezone";
+import { getFlagEmoji } from "@/lib/flags";
 import HourTiles from "./HourTiles";
 
 interface TimezoneRowProps {
@@ -12,6 +13,7 @@ interface TimezoneRowProps {
   hoveredIndex: number | null;
   onHoverIndex: (index: number | null) => void;
   onRemove: (cityId: string) => void;
+  onRequestAdd: () => void;
   rowRef: (el: HTMLDivElement | null) => void;
   onHandlePointerDown: (e: React.PointerEvent<HTMLButtonElement>) => void;
   isDragging: boolean;
@@ -26,6 +28,7 @@ export default function TimezoneRow({
   hoveredIndex,
   onHoverIndex,
   onRemove,
+  onRequestAdd,
   rowRef,
   onHandlePointerDown,
   isDragging,
@@ -70,19 +73,36 @@ export default function TimezoneRow({
         <div className="flex min-w-0 flex-1 flex-col justify-center gap-1 px-1">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">{city.name}</p>
+              <p className="truncate text-sm font-semibold">
+                <span aria-hidden="true" className="mr-1">
+                  {getFlagEmoji(city.countryCode)}
+                </span>
+                {city.name}
+              </p>
               <p className="truncate text-xs text-foreground/50">
                 {city.country}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => onRemove(city.id)}
-              aria-label={`Remove ${city.name}`}
-              className="shrink-0 rounded p-1 text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
-            >
-              ×
-            </button>
+            <div className="flex shrink-0 flex-col">
+              <button
+                type="button"
+                onClick={() => onRemove(city.id)}
+                aria-label={`Remove ${city.name}`}
+                title={`Remove ${city.name}`}
+                className="rounded p-1 leading-none text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
+              >
+                ×
+              </button>
+              <button
+                type="button"
+                onClick={onRequestAdd}
+                aria-label="Add time zone"
+                title="Add time zone"
+                className="rounded p-1 leading-none text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
+              >
+                +
+              </button>
+            </div>
           </div>
 
           <div>
