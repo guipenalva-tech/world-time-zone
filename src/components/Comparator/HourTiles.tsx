@@ -74,10 +74,10 @@ export default function HourTiles({
               </>
             ) : (
               <>
-                <span className="leading-tight text-foreground/80">
+                <span className="font-medium leading-tight text-foreground/80">
                   {label}
                 </span>
-                <span className="text-[9px] font-medium uppercase leading-tight tracking-wide text-foreground/45">
+                <span className="text-[10px] font-medium uppercase leading-tight tracking-wide text-foreground/65">
                   {meridiem}
                 </span>
               </>
