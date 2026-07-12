@@ -4,8 +4,34 @@ import type { DateTime } from "luxon";
 import type { ComparedCity } from "@/types/city";
 import { getZoneInfo, getHourRow } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
-import { formatLocalRange, isSlotSelected } from "@/lib/timeSelection";
+import {
+  formatLocalRange,
+  getRangeBusinessStatus,
+  isSlotSelected,
+  type BusinessStatus,
+} from "@/lib/timeSelection";
 import HourTiles from "./HourTiles";
+
+const BUSINESS_STATUS_META: Record<
+  BusinessStatus,
+  { emoji: string; label: string; className: string }
+> = {
+  business: {
+    emoji: "✅",
+    label: "Business hours",
+    className: "border-success/40 bg-success/10 text-success",
+  },
+  partial: {
+    emoji: "⚠️",
+    label: "Partially outside",
+    className: "border-warning/40 bg-warning/10 text-warning",
+  },
+  outside: {
+    emoji: "🔴",
+    label: "Outside business hours",
+    className: "border-danger/40 bg-danger/10 text-danger",
+  },
+};
 
 interface TimezoneRowProps {
   comparedCity: ComparedCity;
@@ -53,6 +79,11 @@ export default function TimezoneRow({
     selectionStart && selectionEnd
       ? formatLocalRange(city.timezone, selectionStart, selectionEnd)
       : null;
+  const businessStatus =
+    selectionStart && selectionEnd
+      ? getRangeBusinessStatus(city.timezone, selectionStart, selectionEnd)
+      : null;
+  const statusMeta = businessStatus ? BUSINESS_STATUS_META[businessStatus] : null;
 
   return (
     <div
@@ -133,6 +164,14 @@ export default function TimezoneRow({
             {rangeLabel && (
               <p className="mt-1 truncate text-xs font-semibold text-primary">
                 {rangeLabel}
+              </p>
+            )}
+            {statusMeta && (
+              <p
+                className={`mt-1 inline-flex w-fit items-center gap-1 rounded border px-1.5 py-0.5 text-[10px] font-semibold leading-tight ${statusMeta.className}`}
+              >
+                <span aria-hidden="true">{statusMeta.emoji}</span>
+                {statusMeta.label}
               </p>
             )}
           </div>

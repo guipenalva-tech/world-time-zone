@@ -38,6 +38,7 @@ export default function HourTiles({
       {slots.map((slot, index) => {
         const isHovered = hoveredIndex === index;
         const isSelected = selectedIndices?.[index] ?? false;
+        const isConflict = isSelected && !slot.isBusinessHour;
 
         let bg = "bg-surface";
         if (slot.isNight) bg = "bg-foreground/15";
@@ -53,16 +54,30 @@ export default function HourTiles({
             onMouseEnter={() => onHoverIndex(index)}
             onClick={() => onSlotClick?.(slot.isoString)}
             aria-pressed={isSelected}
-            aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem}`}
-            className={`flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
+            aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem}${
+              isConflict ? ", outside business hours" : ""
+            }`}
+            className={`relative flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
               weekendNight ? "ring-1 ring-inset ring-primary/20" : ""
             } ${isHovered ? "outline outline-2 -outline-offset-2 outline-primary/50" : ""} ${
               isSelected ? "bg-primary/20 outline outline-2 -outline-offset-2 outline-primary" : ""
             } ${
               slot.isNow ? "border-2 border-primary font-semibold" : ""
             } ${slot.isNewDay ? "border-l-2 border-l-foreground/30" : ""}`}
-            title={`${slot.weekday} ${slot.day} ${slot.month}`}
+            title={`${slot.weekday} ${slot.day} ${slot.month}${
+              isConflict ? " · outside business hours" : ""
+            }`}
           >
+            {isConflict && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-warning/25"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(45deg, color-mix(in srgb, var(--warning) 35%, transparent) 0, color-mix(in srgb, var(--warning) 35%, transparent) 1px, transparent 1px, transparent 6px)",
+                }}
+              />
+            )}
             {slot.isNewDay ? (
               <>
                 <span className="text-[10px] font-semibold uppercase leading-tight text-foreground/70">

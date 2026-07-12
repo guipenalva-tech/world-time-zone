@@ -47,6 +47,42 @@ export function selectionDurationHours(
   return Math.round(end.diff(start, "hours").hours) + 1;
 }
 
+/** Local business-hours coverage of a selected range, for a given timezone. */
+export type BusinessStatus = "business" | "partial" | "outside";
+
+/**
+ * Classifies how much of a selected `[startIso, endIso]` range (inclusive,
+ * hour-aligned) falls within local business hours (09:00–18:00, mirroring
+ * `HourSlot.isBusinessHour`) once converted to `tz`.
+ *
+ * Handles ranges that cross local midnight naturally, since each hour is
+ * evaluated independently in the target zone. Half-hour-offset zones (e.g.
+ * UTC+5:30) are handled the same way `HourSlot` does: only the local hour
+ * component is checked, minutes are ignored.
+ */
+export function getRangeBusinessStatus(
+  tz: string,
+  startIso: string,
+  endIso: string,
+): BusinessStatus {
+  const start = DateTime.fromISO(startIso);
+  const end = DateTime.fromISO(endIso);
+  if (!start.isValid || !end.isValid) return "outside";
+
+  const hours = Math.max(0, Math.round(end.diff(start, "hours").hours));
+  let businessCount = 0;
+  const total = hours + 1;
+
+  for (let h = 0; h < total; h++) {
+    const local = start.plus({ hours: h }).setZone(tz);
+    if (local.hour >= 9 && local.hour < 18) businessCount += 1;
+  }
+
+  if (businessCount === total) return "business";
+  if (businessCount === 0) return "outside";
+  return "partial";
+}
+
 /**
  * Formats the local start → end time for a given timezone, e.g.
  * "2:00 PM → 5:00 PM" or "11:00 PM → 2:00 AM +1" when the range crosses
