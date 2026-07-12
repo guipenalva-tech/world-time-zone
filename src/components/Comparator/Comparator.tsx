@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { DateTime } from "luxon";
 import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
+import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getRowAnchor, toLuxonLocale } from "@/lib/timezone";
 import { selectionDurationHours } from "@/lib/timeSelection";
 import {
@@ -40,6 +41,8 @@ export default function Comparator() {
   const hydrateFromShareLink = useComparatorStore(
     (s) => s.hydrateFromShareLink,
   );
+  const storedHourFormat = useSettingsStore((s) => s.hourFormat);
+  const hourFormat = resolveHourFormat(storedHourFormat, locale);
 
   const [now, setNow] = useState(() => DateTime.now());
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -74,6 +77,7 @@ export default function Comparator() {
   useEffect(() => {
     async function init() {
       await useComparatorStore.persist.rehydrate();
+      await useSettingsStore.persist.rehydrate();
 
       const shareParams = readShareLinkParams();
       if (shareParams) {
@@ -378,6 +382,7 @@ export default function Comparator() {
                 onSlotClick={selectSlot}
                 selectionStart={selectionStart}
                 selectionEnd={selectionEnd}
+                hourFormat={hourFormat}
                 dropIndicator={
                   dragIndex !== null &&
                   dragOverIndex === index &&

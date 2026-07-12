@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import type { HourFormat } from "@/stores/settingsStore";
 
 /**
  * Helpers for the two-click hour-range selection. A selection is stored as
@@ -86,12 +87,14 @@ export function getRangeBusinessStatus(
 /**
  * Formats the local start → end time for a given timezone, e.g.
  * "2:00 PM → 5:00 PM" or "11:00 PM → 2:00 AM +1" when the range crosses
- * into a later local calendar day.
+ * into a later local calendar day. Respects the given hour format
+ * ("12" -> "h:mm a", "24" -> "HH:mm").
  */
 export function formatLocalRange(
   tz: string,
   startIso: string,
   endIso: string,
+  hourFormat: HourFormat = "12",
 ): string {
   const localStart = DateTime.fromISO(startIso).setZone(tz);
   // The range is inclusive of the end slot's whole hour, so the human-readable
@@ -102,8 +105,9 @@ export function formatLocalRange(
     localEnd.startOf("day").diff(localStart.startOf("day"), "days").days,
   );
 
-  const startLabel = localStart.toFormat("h:mm a");
-  const endLabel = localEnd.toFormat("h:mm a");
+  const timeFormat = hourFormat === "24" ? "HH:mm" : "h:mm a";
+  const startLabel = localStart.toFormat(timeFormat);
+  const endLabel = localEnd.toFormat(timeFormat);
   const suffix = dayDiff > 0 ? ` +${dayDiff}` : "";
 
   return `${startLabel} → ${endLabel}${suffix}`;

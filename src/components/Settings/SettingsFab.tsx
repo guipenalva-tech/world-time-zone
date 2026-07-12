@@ -1,25 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { locales, localeNames, type AppLocale } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
+import HourFormatToggle from "./HourFormatToggle";
 
 /**
  * Bottom-right settings FAB (replaces the old actions FAB, which moved to
- * the top "Action" button). Currently only exposes the language switcher,
- * but the panel is structured so future options (12/24h, theme) can be
- * added as additional sections without restructuring.
+ * the top "Action" button). The language switcher moved to the header, so
+ * this panel now covers the 12/24h format toggle, with a note that theme
+ * options are coming soon.
  */
 export default function SettingsFab() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const locale = useLocale();
   const t = useTranslations("Settings");
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const router = useRouter();
 
   useEffect(() => {
     if (!open) return;
@@ -44,16 +38,6 @@ export default function SettingsFab() {
     };
   }, [open]);
 
-  function changeLocale(next: AppLocale) {
-    if (next === locale) {
-      setOpen(false);
-      return;
-    }
-    const query = Object.fromEntries(searchParams.entries());
-    router.replace({ pathname, query }, { locale: next });
-    setOpen(false);
-  }
-
   return (
     <div ref={containerRef} className="fixed bottom-6 right-6 z-40">
       {open && (
@@ -67,26 +51,9 @@ export default function SettingsFab() {
           </p>
 
           <p className="mb-1 px-1 text-xs font-medium uppercase tracking-wide text-foreground/50">
-            {t("language")}
+            {t("hourFormat")}
           </p>
-          <ul className="flex flex-col gap-0.5">
-            {locales.map((l) => (
-              <li key={l}>
-                <button
-                  type="button"
-                  onClick={() => changeLocale(l)}
-                  aria-current={l === locale}
-                  className={`w-full rounded px-2 py-1.5 text-left text-sm transition-colors hover:bg-surface ${
-                    l === locale
-                      ? "font-semibold text-primary"
-                      : "text-foreground/80"
-                  }`}
-                >
-                  {localeNames[l]}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <HourFormatToggle />
 
           <p className="mt-3 border-t border-border pt-2 text-[11px] text-foreground/40">
             {t("moreSoon")}

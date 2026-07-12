@@ -11,6 +11,7 @@ import {
   isSlotSelected,
   type BusinessStatus,
 } from "@/lib/timeSelection";
+import type { HourFormat } from "@/stores/settingsStore";
 import HourTiles from "./HourTiles";
 
 const BUSINESS_STATUS_META: Record<
@@ -47,6 +48,7 @@ interface TimezoneRowProps {
   onSlotClick: (isoString: string) => void;
   selectionStart: string | null;
   selectionEnd: string | null;
+  hourFormat?: HourFormat;
 }
 
 export default function TimezoneRow({
@@ -65,6 +67,7 @@ export default function TimezoneRow({
   onSlotClick,
   selectionStart,
   selectionEnd,
+  hourFormat = "12",
 }: TimezoneRowProps) {
   const locale = useLocale();
   const t = useTranslations("Comparator");
@@ -78,7 +81,7 @@ export default function TimezoneRow({
   );
   const rangeLabel =
     selectionStart && selectionEnd
-      ? formatLocalRange(city.timezone, selectionStart, selectionEnd)
+      ? formatLocalRange(city.timezone, selectionStart, selectionEnd, hourFormat)
       : null;
   const businessStatus =
     selectionStart && selectionEnd
@@ -153,10 +156,12 @@ export default function TimezoneRow({
 
           <div>
             <p className="text-xl font-bold leading-none tabular-nums">
-              {localNow.toFormat("h:mm")}
-              <span className="ml-1 text-xs font-semibold uppercase text-foreground/60">
-                {localNow.toFormat("a")}
-              </span>
+              {localNow.toFormat(hourFormat === "24" ? "HH:mm" : "h:mm")}
+              {hourFormat !== "24" && (
+                <span className="ml-1 text-xs font-semibold uppercase text-foreground/60">
+                  {localNow.toFormat("a")}
+                </span>
+              )}
             </p>
             <p className="mt-0.5 text-[11px] text-foreground/50">
               {zoneInfo.offsetFormatted} · {zoneInfo.abbreviation}
@@ -185,6 +190,7 @@ export default function TimezoneRow({
         onHoverIndex={onHoverIndex}
         onSlotClick={onSlotClick}
         selectedIndices={selectedIndices}
+        hourFormat={hourFormat}
       />
     </div>
   );

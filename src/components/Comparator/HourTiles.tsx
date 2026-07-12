@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import type { HourSlot } from "@/types/timezone";
+import type { HourFormat } from "@/stores/settingsStore";
 
 interface HourTilesProps {
   slots: HourSlot[];
@@ -11,17 +12,28 @@ interface HourTilesProps {
   onSlotClick?: (isoString: string) => void;
   /** Whether each slot (by index, matching `slots`) is inside the selected range. */
   selectedIndices?: boolean[];
+  /** "12" shows hour + am/pm, "24" shows zero-padded 0-23 with no meridiem. */
+  hourFormat?: HourFormat;
 }
 
 /** 12-hour parts for a tile: hour number on top, am/pm below. */
-function hourParts(
+function hourParts12(
   hour: number,
   minute: number,
-): { label: string; meridiem: "am" | "pm" } {
+): { label: string; meridiem: "am" | "pm" | null } {
   const mm = minute > 0 ? `:${String(minute).padStart(2, "0")}` : "";
   const meridiem: "am" | "pm" = hour < 12 ? "am" : "pm";
   const h12 = hour % 12 === 0 ? 12 : hour % 12;
   return { label: `${h12}${mm}`, meridiem };
+}
+
+/** 24-hour parts for a tile: zero-padded hour, no meridiem. */
+function hourParts24(
+  hour: number,
+  minute: number,
+): { label: string; meridiem: "am" | "pm" | null } {
+  const mm = minute > 0 ? `:${String(minute).padStart(2, "0")}` : "";
+  return { label: `${String(hour).padStart(2, "0")}${mm}`, meridiem: null };
 }
 
 export default function HourTiles({
@@ -30,6 +42,7 @@ export default function HourTiles({
   onHoverIndex,
   onSlotClick,
   selectedIndices,
+  hourFormat = "12",
 }: HourTilesProps) {
   const tStatus = useTranslations("BusinessStatus");
 
@@ -48,7 +61,10 @@ export default function HourTiles({
         else if (slot.isWeekend) bg = "bg-primary/10";
 
         const weekendNight = slot.isNight && slot.isWeekend;
-        const { label, meridiem } = hourParts(slot.hour, slot.minute);
+        const { label, meridiem } =
+          hourFormat === "24"
+            ? hourParts24(slot.hour, slot.minute)
+            : hourParts12(slot.hour, slot.minute);
 
         return (
           <button
@@ -57,7 +73,7 @@ export default function HourTiles({
             onMouseEnter={() => onHoverIndex(index)}
             onClick={() => onSlotClick?.(slot.isoString)}
             aria-pressed={isSelected}
-            aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem}${
+            aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem ?? ""}${
               isConflict ? `, ${tStatus("conflictSuffix")}` : ""
             }`}
             className={`relative flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
@@ -95,9 +111,11 @@ export default function HourTiles({
                 <span className="font-medium leading-tight text-foreground/80">
                   {label}
                 </span>
-                <span className="text-[10px] font-medium uppercase leading-tight tracking-wide text-foreground/65">
-                  {meridiem}
-                </span>
+                {meridiem && (
+                  <span className="text-[10px] font-medium uppercase leading-tight tracking-wide text-foreground/65">
+                    {meridiem}
+                  </span>
+                )}
               </>
             )}
           </button>

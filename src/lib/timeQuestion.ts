@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import type { City } from "@/types/city";
 import { cities, normalize } from "@/lib/cities";
 import { toLuxonLocale } from "@/lib/timezone";
+import type { HourFormat } from "@/stores/settingsStore";
 
 /**
  * Rule-based (no AI, no network) parser + calculator for natural-language
@@ -288,11 +289,11 @@ function containsAny(text: string, phrases: string[]): boolean {
   return phrases.some((p) => text.includes(p));
 }
 
-function toZoneTime(dt: DateTime): ZoneTime {
+function toZoneTime(dt: DateTime, hourFormat: HourFormat): ZoneTime {
   return {
     hour: dt.hour,
     minute: dt.minute,
-    formatted: dt.toFormat("h:mm a"),
+    formatted: dt.toFormat(hourFormat === "24" ? "HH:mm" : "h:mm a"),
   };
 }
 
@@ -307,9 +308,13 @@ function pickSourceAndTarget(
   return distA <= distB ? [a, b] : [b, a];
 }
 
-function buildCurrent(city: City, locale: string): TimeQuestionAnswer {
+function buildCurrent(
+  city: City,
+  locale: string,
+  hourFormat: HourFormat,
+): TimeQuestionAnswer {
   const now = DateTime.now().setZone(city.timezone).setLocale(toLuxonLocale(locale));
-  return { intent: "current", city, time: toZoneTime(now) };
+  return { intent: "current", city, time: toZoneTime(now, hourFormat) };
 }
 
 function buildConversion(
@@ -318,6 +323,7 @@ function buildConversion(
   hour: number,
   minute: number,
   locale: string,
+  hourFormat: HourFormat,
 ): TimeQuestionAnswer {
   const luxonLocale = toLuxonLocale(locale);
   const sourceDt = DateTime.now()
@@ -334,8 +340,8 @@ function buildConversion(
     intent: "convert",
     sourceCity,
     targetCity,
-    sourceTime: toZoneTime(sourceDt),
-    targetTime: toZoneTime(targetDt),
+    sourceTime: toZoneTime(sourceDt, hourFormat),
+    targetTime: toZoneTime(targetDt, hourFormat),
     dayOffset,
   };
 }
@@ -354,6 +360,7 @@ function buildDifference(cityA: City, cityB: City): TimeQuestionAnswer {
 export function answerTimeQuestion(
   question: string,
   locale: string,
+  hourFormat: HourFormat = "12",
 ): TimeQuestionAnswer | null {
   const normalized = normalize(question);
   if (!normalized.trim()) return null;
@@ -380,11 +387,12 @@ export function answerTimeQuestion(
       timeMatch.hour,
       timeMatch.minute,
       locale,
+      hourFormat,
     );
   }
 
   if (matches.length >= 1 && !timeMatch) {
-    return buildCurrent(matches[0].city, locale);
+    return buildCurrent(matches[0].city, locale, hourFormat);
   }
 
   return null;

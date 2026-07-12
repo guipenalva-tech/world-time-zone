@@ -9,6 +9,10 @@ import {
   type TimeQuestionAnswer,
 } from "@/lib/timeQuestion";
 import { useComparatorStore } from "@/stores/comparatorStore";
+import {
+  useSettingsStore,
+  resolveHourFormat,
+} from "@/stores/settingsStore";
 
 type Translator = ReturnType<typeof useTranslations>;
 
@@ -63,6 +67,8 @@ export default function TimeQuestionInput() {
   const t = useTranslations("TimeQuestion");
   const comparedCities = useComparatorStore((s) => s.cities);
   const addCity = useComparatorStore((s) => s.addCity);
+  const storedHourFormat = useSettingsStore((s) => s.hourFormat);
+  const hourFormat = resolveHourFormat(storedHourFormat, locale);
 
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<TimeQuestionAnswer | "unmatched" | null>(
@@ -77,7 +83,7 @@ export default function TimeQuestionInput() {
       setResult(null);
       return;
     }
-    setResult(answerTimeQuestion(trimmed, locale) ?? "unmatched");
+    setResult(answerTimeQuestion(trimmed, locale, hourFormat) ?? "unmatched");
   }
 
   function handleSubmit(e: React.FormEvent) {
