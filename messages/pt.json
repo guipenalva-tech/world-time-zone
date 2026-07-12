@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Fusos Horários do Mundo — Compare horários e planeje reuniões",
+    "description": "Compare fusos horários do mundo inteiro e encontre o melhor horário para se reunir, onde quer que seu time esteja."
+  },
+  "Comparator": {
+    "title": "Fusos Horários do Mundo",
+    "subtitle": "Compare fusos horários do mundo inteiro e encontre o melhor horário para se reunir, onde quer que seu time esteja.",
+    "selectedBadge": "{hours}h selecionadas",
+    "clearSelection": "Limpar seleção",
+    "referenceDateTime": "Data e hora de referência",
+    "now": "Agora",
+    "emptyState": "Adicione uma cidade com o botão + para começar a comparar fusos horários.",
+    "reorder": "Reordenar {city}",
+    "remove": "Remover {city}",
+    "addTimeZone": "Adicionar fuso horário",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "Ações",
+    "addCity": "Adicionar cidade",
+    "copyPng": "Copiar PNG",
+    "downloadPng": "Baixar PNG",
+    "downloadPdf": "Baixar PDF",
+    "shareLink": "Compartilhar link",
+    "toastCopied": "Copiado para a área de transferência",
+    "toastCopyFallback": "Baixado (área de transferência indisponível)",
+    "toastPngDownloaded": "PNG baixado",
+    "toastPdfDownloaded": "PDF baixado",
+    "toastLinkCopied": "Link copiado",
+    "toastExportError": "Não foi possível exportar a imagem",
+    "toastExportPdfError": "Não foi possível exportar o PDF",
+    "toastShareError": "Não foi possível copiar o link"
+  },
+  "BusinessStatus": {
+    "business": "Horário comercial",
+    "partial": "Parcialmente fora",
+    "outside": "Fora do horário comercial",
+    "conflictSuffix": "fora do horário comercial"
+  },
+  "AddCity": {
+    "dialogLabel": "Adicionar uma cidade",
+    "heading": "Adicionar uma cidade",
+    "searchPlaceholder": "Adicionar uma cidade..."
+  },
+  "NotFound": {
+    "title": "404 — Página não encontrada",
+    "description": "A página que você está procurando não existe.",
+    "backHome": "Voltar ao início"
+  },
+  "ErrorPage": {
+    "title": "Algo deu errado",
+    "description": "Ocorreu um erro inesperado. Você pode tentar novamente.",
+    "retry": "Tentar novamente"
+  },
+  "Settings": {
+    "openLabel": "Configurações",
+    "title": "Configurações",
+    "language": "Idioma",
+    "moreSoon": "Mais opções (12/24h, tema) em breve"
+  }
+}

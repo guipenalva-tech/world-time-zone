@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import type { City } from "@/types/city";
 import CitySearch from "./CitySearch";
 
@@ -25,6 +26,7 @@ export default function AddCityButton({
   onOpenChange,
 }: AddCityButtonProps) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("AddCity");
 
   useEffect(() => {
     if (!open) return;
@@ -57,7 +59,7 @@ export default function AddCityButton({
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Add a city"
+          aria-label={t("dialogLabel")}
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 sm:items-end sm:justify-end sm:bg-transparent"
         >
           <div
@@ -65,7 +67,7 @@ export default function AddCityButton({
             className="w-full max-w-md rounded-t-2xl border border-border bg-background p-4 pb-6 shadow-2xl sm:mb-24 sm:mr-6 sm:w-80 sm:rounded-2xl sm:pb-4"
           >
             <p className="mb-2 text-sm font-medium text-foreground/70">
-              Add a city
+              {t("heading")}
             </p>
             <CitySearch
               onSelect={handleSelect}

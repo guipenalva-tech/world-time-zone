@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Husos Horarios del Mundo — Compara horarios y planifica reuniones",
+    "description": "Compara husos horarios de todo el mundo y encuentra el mejor horario para reunirte, dondequiera que esté tu equipo."
+  },
+  "Comparator": {
+    "title": "Husos Horarios del Mundo",
+    "subtitle": "Compara husos horarios de todo el mundo y encuentra el mejor horario para reunirte, dondequiera que esté tu equipo.",
+    "selectedBadge": "{hours}h seleccionadas",
+    "clearSelection": "Borrar selección",
+    "referenceDateTime": "Fecha y hora de referencia",
+    "now": "Ahora",
+    "emptyState": "Agrega una ciudad con el botón + para empezar a comparar husos horarios.",
+    "reorder": "Reordenar {city}",
+    "remove": "Eliminar {city}",
+    "addTimeZone": "Agregar huso horario",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "Acciones",
+    "addCity": "Agregar ciudad",
+    "copyPng": "Copiar PNG",
+    "downloadPng": "Descargar PNG",
+    "downloadPdf": "Descargar PDF",
+    "shareLink": "Compartir enlace",
+    "toastCopied": "Copiado al portapapeles",
+    "toastCopyFallback": "Descargado (portapapeles no disponible)",
+    "toastPngDownloaded": "PNG descargado",
+    "toastPdfDownloaded": "PDF descargado",
+    "toastLinkCopied": "Enlace copiado",
+    "toastExportError": "No se pudo exportar la imagen",
+    "toastExportPdfError": "No se pudo exportar el PDF",
+    "toastShareError": "No se pudo copiar el enlace"
+  },
+  "BusinessStatus": {
+    "business": "Horario laboral",
+    "partial": "Parcialmente fuera",
+    "outside": "Fuera del horario laboral",
+    "conflictSuffix": "fuera del horario laboral"
+  },
+  "AddCity": {
+    "dialogLabel": "Agregar una ciudad",
+    "heading": "Agregar una ciudad",
+    "searchPlaceholder": "Agregar una ciudad..."
+  },
+  "NotFound": {
+    "title": "404 — Página no encontrada",
+    "description": "La página que buscas no existe.",
+    "backHome": "Volver al inicio"
+  },
+  "ErrorPage": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Puedes intentarlo de nuevo.",
+    "retry": "Intentar de nuevo"
+  },
+  "Settings": {
+    "openLabel": "Configuración",
+    "title": "Configuración",
+    "language": "Idioma",
+    "moreSoon": "Más opciones (12/24h, tema) próximamente"
+  }
+}

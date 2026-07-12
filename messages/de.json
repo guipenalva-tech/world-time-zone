@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Weltzeitzonen — Zeiten vergleichen und Meetings planen",
+    "description": "Vergleiche Zeitzonen weltweit und finde die beste Zeit für ein Treffen, egal wo dein Team sich befindet."
+  },
+  "Comparator": {
+    "title": "Weltzeitzonen",
+    "subtitle": "Vergleiche Zeitzonen weltweit und finde die beste Zeit für ein Treffen, egal wo dein Team sich befindet.",
+    "selectedBadge": "{hours} Std. ausgewählt",
+    "clearSelection": "Auswahl löschen",
+    "referenceDateTime": "Referenzdatum und -uhrzeit",
+    "now": "Jetzt",
+    "emptyState": "Füge mit dem +-Button eine Stadt hinzu, um Zeitzonen zu vergleichen.",
+    "reorder": "{city} neu anordnen",
+    "remove": "{city} entfernen",
+    "addTimeZone": "Zeitzone hinzufügen",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "Aktionen",
+    "addCity": "Stadt hinzufügen",
+    "copyPng": "PNG kopieren",
+    "downloadPng": "PNG herunterladen",
+    "downloadPdf": "PDF herunterladen",
+    "shareLink": "Link teilen",
+    "toastCopied": "In die Zwischenablage kopiert",
+    "toastCopyFallback": "Heruntergeladen (Zwischenablage nicht verfügbar)",
+    "toastPngDownloaded": "PNG heruntergeladen",
+    "toastPdfDownloaded": "PDF heruntergeladen",
+    "toastLinkCopied": "Link kopiert",
+    "toastExportError": "Bild konnte nicht exportiert werden",
+    "toastExportPdfError": "PDF konnte nicht exportiert werden",
+    "toastShareError": "Link konnte nicht kopiert werden"
+  },
+  "BusinessStatus": {
+    "business": "Geschäftszeiten",
+    "partial": "Teilweise außerhalb",
+    "outside": "Außerhalb der Geschäftszeiten",
+    "conflictSuffix": "außerhalb der Geschäftszeiten"
+  },
+  "AddCity": {
+    "dialogLabel": "Stadt hinzufügen",
+    "heading": "Stadt hinzufügen",
+    "searchPlaceholder": "Stadt hinzufügen..."
+  },
+  "NotFound": {
+    "title": "404 — Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "ErrorPage": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Ein unerwarteter Fehler ist aufgetreten. Du kannst es erneut versuchen.",
+    "retry": "Erneut versuchen"
+  },
+  "Settings": {
+    "openLabel": "Einstellungen",
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "moreSoon": "Weitere Optionen (12/24 Std., Design) folgen bald"
+  }
+}

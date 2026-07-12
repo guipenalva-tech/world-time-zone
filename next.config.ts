@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -6,6 +7,7 @@ const nextConfig: NextConfig = {
       {
         // Legacy share links used /compare?cities=...&start=...&end=... —
         // query params are passed through to the destination by default.
+        // The i18n proxy then redirects "/" to the visitor's "/<locale>".
         source: "/compare",
         destination: "/",
         permanent: false,
@@ -14,4 +16,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+export default withNextIntl(nextConfig);

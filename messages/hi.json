@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "विश्व समय क्षेत्र — समय की तुलना करें और मीटिंग्स प्लान करें",
+    "description": "दुनिया भर के समय क्षेत्रों की तुलना करें और मिलने का सबसे अच्छा समय खोजें, चाहे आपकी टीम कहीं भी हो।"
+  },
+  "Comparator": {
+    "title": "विश्व समय क्षेत्र",
+    "subtitle": "दुनिया भर के समय क्षेत्रों की तुलना करें और मिलने का सबसे अच्छा समय खोजें, चाहे आपकी टीम कहीं भी हो।",
+    "selectedBadge": "{hours} घंटे चयनित",
+    "clearSelection": "चयन हटाएं",
+    "referenceDateTime": "संदर्भ तिथि और समय",
+    "now": "अभी",
+    "emptyState": "समय क्षेत्रों की तुलना शुरू करने के लिए + बटन से एक शहर जोड़ें।",
+    "reorder": "{city} पुनः क्रमबद्ध करें",
+    "remove": "{city} हटाएं",
+    "addTimeZone": "समय क्षेत्र जोड़ें",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "कार्रवाई",
+    "addCity": "शहर जोड़ें",
+    "copyPng": "PNG कॉपी करें",
+    "downloadPng": "PNG डाउनलोड करें",
+    "downloadPdf": "PDF डाउनलोड करें",
+    "shareLink": "लिंक साझा करें",
+    "toastCopied": "क्लिपबोर्ड पर कॉपी किया गया",
+    "toastCopyFallback": "डाउनलोड किया गया (क्लिपबोर्ड उपलब्ध नहीं)",
+    "toastPngDownloaded": "PNG डाउनलोड हो गया",
+    "toastPdfDownloaded": "PDF डाउनलोड हो गया",
+    "toastLinkCopied": "लिंक कॉपी किया गया",
+    "toastExportError": "छवि निर्यात नहीं हो सकी",
+    "toastExportPdfError": "PDF निर्यात नहीं हो सका",
+    "toastShareError": "लिंक कॉपी नहीं हो सका"
+  },
+  "BusinessStatus": {
+    "business": "कार्यालय समय",
+    "partial": "आंशिक रूप से बाहर",
+    "outside": "कार्यालय समय से बाहर",
+    "conflictSuffix": "कार्यालय समय से बाहर"
+  },
+  "AddCity": {
+    "dialogLabel": "एक शहर जोड़ें",
+    "heading": "एक शहर जोड़ें",
+    "searchPlaceholder": "शहर जोड़ें..."
+  },
+  "NotFound": {
+    "title": "404 — पृष्ठ नहीं मिला",
+    "description": "आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है।",
+    "backHome": "होम पर वापस जाएं"
+  },
+  "ErrorPage": {
+    "title": "कुछ गलत हो गया",
+    "description": "एक अप्रत्याशित त्रुटि हुई। आप पुनः प्रयास कर सकते हैं।",
+    "retry": "पुनः प्रयास करें"
+  },
+  "Settings": {
+    "openLabel": "सेटिंग्स",
+    "title": "सेटिंग्स",
+    "language": "भाषा",
+    "moreSoon": "अधिक विकल्प (12/24 घंटे, थीम) जल्द आ रहे हैं"
+  }
+}

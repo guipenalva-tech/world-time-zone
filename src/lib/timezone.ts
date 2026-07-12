@@ -3,6 +3,19 @@ import type { ZoneInfo } from "@/types/timezone";
 import type { HourSlot } from "@/types/timezone";
 
 /**
+ * Maps an app locale (path segment, e.g. "pt") to the BCP-47 tag Luxon
+ * should use for weekday/month names, so Brazilian Portuguese reads
+ * naturally rather than European Portuguese.
+ */
+const LUXON_LOCALE_OVERRIDES: Record<string, string> = {
+  pt: "pt-BR",
+};
+
+export function toLuxonLocale(locale: string): string {
+  return LUXON_LOCALE_OVERRIDES[locale] ?? locale;
+}
+
+/**
  * Format a UTC offset in minutes as "UTC+5:30", "UTC-3", "UTC+0".
  */
 export function formatOffsetMinutes(offsetMinutes: number): string {
@@ -62,13 +75,15 @@ export function getHourRow(
   tz: string,
   baseDate: DateTime,
   hours = 24,
+  locale = "en",
 ): HourSlot[] {
   const now = DateTime.now();
   const slots: HourSlot[] = [];
+  const luxonLocale = toLuxonLocale(locale);
 
   for (let h = 0; h < hours; h++) {
     const instant = baseDate.plus({ hours: h });
-    const zoned = instant.setZone(tz);
+    const zoned = instant.setZone(tz).setLocale(luxonLocale);
     const nextInstant = instant.plus({ hours: 1 });
 
     const hour = zoned.hour;

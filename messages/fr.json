@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Fuseaux horaires du monde — Comparez les horaires et planifiez vos réunions",
+    "description": "Comparez les fuseaux horaires du monde entier et trouvez le meilleur moment pour vous réunir, où que soit votre équipe."
+  },
+  "Comparator": {
+    "title": "Fuseaux horaires du monde",
+    "subtitle": "Comparez les fuseaux horaires du monde entier et trouvez le meilleur moment pour vous réunir, où que soit votre équipe.",
+    "selectedBadge": "{hours}h sélectionnées",
+    "clearSelection": "Effacer la sélection",
+    "referenceDateTime": "Date et heure de référence",
+    "now": "Maintenant",
+    "emptyState": "Ajoutez une ville avec le bouton + pour commencer à comparer les fuseaux horaires.",
+    "reorder": "Réordonner {city}",
+    "remove": "Supprimer {city}",
+    "addTimeZone": "Ajouter un fuseau horaire",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "Actions",
+    "addCity": "Ajouter une ville",
+    "copyPng": "Copier en PNG",
+    "downloadPng": "Télécharger en PNG",
+    "downloadPdf": "Télécharger en PDF",
+    "shareLink": "Partager le lien",
+    "toastCopied": "Copié dans le presse-papiers",
+    "toastCopyFallback": "Téléchargé (presse-papiers indisponible)",
+    "toastPngDownloaded": "PNG téléchargé",
+    "toastPdfDownloaded": "PDF téléchargé",
+    "toastLinkCopied": "Lien copié",
+    "toastExportError": "Impossible d'exporter l'image",
+    "toastExportPdfError": "Impossible d'exporter le PDF",
+    "toastShareError": "Impossible de copier le lien"
+  },
+  "BusinessStatus": {
+    "business": "Heures ouvrées",
+    "partial": "Partiellement en dehors",
+    "outside": "En dehors des heures ouvrées",
+    "conflictSuffix": "en dehors des heures ouvrées"
+  },
+  "AddCity": {
+    "dialogLabel": "Ajouter une ville",
+    "heading": "Ajouter une ville",
+    "searchPlaceholder": "Ajouter une ville..."
+  },
+  "NotFound": {
+    "title": "404 — Page introuvable",
+    "description": "La page que vous recherchez n'existe pas.",
+    "backHome": "Retour à l'accueil"
+  },
+  "ErrorPage": {
+    "title": "Une erreur est survenue",
+    "description": "Une erreur inattendue s'est produite. Vous pouvez réessayer.",
+    "retry": "Réessayer"
+  },
+  "Settings": {
+    "openLabel": "Paramètres",
+    "title": "Paramètres",
+    "language": "Langue",
+    "moreSoon": "D'autres options (12/24h, thème) arrivent bientôt"
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import type { DateTime } from "luxon";
+import { useLocale, useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import { getZoneInfo, getHourRow } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
@@ -14,21 +15,18 @@ import HourTiles from "./HourTiles";
 
 const BUSINESS_STATUS_META: Record<
   BusinessStatus,
-  { emoji: string; label: string; className: string }
+  { emoji: string; className: string }
 > = {
   business: {
     emoji: "✅",
-    label: "Business hours",
     className: "border-success/40 bg-success/10 text-success",
   },
   partial: {
     emoji: "⚠️",
-    label: "Partially outside",
     className: "border-warning/40 bg-warning/10 text-warning",
   },
   outside: {
     emoji: "🔴",
-    label: "Outside business hours",
     className: "border-danger/40 bg-danger/10 text-danger",
   },
 };
@@ -68,10 +66,13 @@ export default function TimezoneRow({
   selectionStart,
   selectionEnd,
 }: TimezoneRowProps) {
+  const locale = useLocale();
+  const t = useTranslations("Comparator");
+  const tStatus = useTranslations("BusinessStatus");
   const { city } = comparedCity;
   const zoneInfo = getZoneInfo(city.timezone, displayInstant);
   const localNow = displayInstant.setZone(city.timezone);
-  const slots = getHourRow(city.timezone, anchor, 24);
+  const slots = getHourRow(city.timezone, anchor, 24, locale);
   const selectedIndices = slots.map((slot) =>
     isSlotSelected(slot.isoString, selectionStart, selectionEnd),
   );
@@ -107,7 +108,7 @@ export default function TimezoneRow({
         <button
           type="button"
           onPointerDown={onHandlePointerDown}
-          aria-label={`Reorder ${city.name}`}
+          aria-label={t("reorder", { city: city.name })}
           className={`flex touch-none select-none items-center px-1 text-foreground/30 transition-colors hover:text-foreground/70 ${
             isDragging ? "cursor-grabbing text-foreground/70" : "cursor-grab"
           }`}
@@ -132,8 +133,8 @@ export default function TimezoneRow({
               <button
                 type="button"
                 onClick={() => onRemove(city.id)}
-                aria-label={`Remove ${city.name}`}
-                title={`Remove ${city.name}`}
+                aria-label={t("remove", { city: city.name })}
+                title={t("remove", { city: city.name })}
                 className="rounded p-1 leading-none text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
               >
                 ×
@@ -141,8 +142,8 @@ export default function TimezoneRow({
               <button
                 type="button"
                 onClick={onRequestAdd}
-                aria-label="Add time zone"
-                title="Add time zone"
+                aria-label={t("addTimeZone")}
+                title={t("addTimeZone")}
                 className="rounded p-1 leading-none text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
               >
                 +
@@ -171,7 +172,7 @@ export default function TimezoneRow({
                 className={`mt-1 inline-flex w-fit items-center gap-1 rounded border px-1.5 py-0.5 text-[10px] font-semibold leading-tight ${statusMeta.className}`}
               >
                 <span aria-hidden="true">{statusMeta.emoji}</span>
-                {statusMeta.label}
+                {businessStatus ? tStatus(businessStatus) : null}
               </p>
             )}
           </div>

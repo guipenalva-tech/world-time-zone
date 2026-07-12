@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { searchCities } from "@/lib/cities";
 import { getFlagEmoji } from "@/lib/flags";
 import type { City } from "@/types/city";
@@ -16,9 +17,11 @@ interface CitySearchProps {
 export default function CitySearch({
   onSelect,
   excludeIds = [],
-  placeholder = "Add a city...",
+  placeholder,
   autoFocus = false,
 }: CitySearchProps) {
+  const t = useTranslations("AddCity");
+  const resolvedPlaceholder = placeholder ?? t("searchPlaceholder");
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<City[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -100,7 +103,7 @@ export default function CitySearch({
           if (results.length > 0) setIsOpen(true);
         }}
         autoFocus={autoFocus}
-        placeholder={placeholder}
+        placeholder={resolvedPlaceholder}
         role="combobox"
         aria-expanded={isOpen}
         aria-controls={listboxId}

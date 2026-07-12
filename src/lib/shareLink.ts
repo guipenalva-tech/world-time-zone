@@ -1,15 +1,16 @@
 import type { ComparedCity } from "@/types/city";
 
 /**
- * Builds a shareable URL (comparator home, `/`) encoding the current
+ * Builds a shareable URL (comparator home, `/<locale>`) encoding the current
  * comparator state: ordered city ids, plus the selected time range if one
  * is active. Legacy `/compare?...` links still work via a next.config
- * redirect that preserves query params.
+ * redirect (which then gets locale-prefixed by the i18n proxy).
  */
 export function buildShareUrl(
   cities: ComparedCity[],
   selectionStart: string | null,
   selectionEnd: string | null,
+  locale: string,
 ): string {
   const ids = [...cities]
     .sort((a, b) => a.order - b.order)
@@ -25,7 +26,7 @@ export function buildShareUrl(
   const query = params.toString();
   const origin =
     typeof window !== "undefined" ? window.location.origin : "";
-  return `${origin}/${query ? `?${query}` : ""}`;
+  return `${origin}/${locale}${query ? `?${query}` : ""}`;
 }
 
 /** Parsed share-link params read from `window.location.search`. */

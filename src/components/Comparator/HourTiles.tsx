@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import type { HourSlot } from "@/types/timezone";
 
 interface HourTilesProps {
@@ -30,6 +31,8 @@ export default function HourTiles({
   onSlotClick,
   selectedIndices,
 }: HourTilesProps) {
+  const tStatus = useTranslations("BusinessStatus");
+
   return (
     <div
       className="flex"
@@ -55,7 +58,7 @@ export default function HourTiles({
             onClick={() => onSlotClick?.(slot.isoString)}
             aria-pressed={isSelected}
             aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem}${
-              isConflict ? ", outside business hours" : ""
+              isConflict ? `, ${tStatus("conflictSuffix")}` : ""
             }`}
             className={`relative flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
               weekendNight ? "ring-1 ring-inset ring-primary/20" : ""
@@ -65,7 +68,7 @@ export default function HourTiles({
               slot.isNow ? "border-2 border-primary font-semibold" : ""
             } ${slot.isNewDay ? "border-l-2 border-l-foreground/30" : ""}`}
             title={`${slot.weekday} ${slot.day} ${slot.month}${
-              isConflict ? " · outside business hours" : ""
+              isConflict ? ` · ${tStatus("conflictSuffix")}` : ""
             }`}
           >
             {isConflict && (

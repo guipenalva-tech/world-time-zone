@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { DateTime } from "luxon";
+import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
-import { getRowAnchor } from "@/lib/timezone";
+import { getRowAnchor, toLuxonLocale } from "@/lib/timezone";
 import { selectionDurationHours } from "@/lib/timeSelection";
 import {
   captureNodeAsPng,
@@ -14,9 +15,13 @@ import {
 import { buildShareUrl, readShareLinkParams } from "@/lib/shareLink";
 import AddCityButton from "@/components/Search/AddCityButton";
 import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
+import SettingsFab from "@/components/Settings/SettingsFab";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
+  const locale = useLocale();
+  const t = useTranslations("Comparator");
+  const tActions = useTranslations("Actions");
   const cities = useComparatorStore((s) => s.cities);
   const referenceDate = useComparatorStore((s) => s.referenceDate);
   const addCity = useComparatorStore((s) => s.addCity);
@@ -219,9 +224,13 @@ export default function Comparator() {
     try {
       const dataUrl = await captureExportPng();
       const result = await copyPngToClipboard(dataUrl);
-      showToast(result === "copied" ? "Copied to clipboard" : "Downloaded (clipboard unavailable)");
+      showToast(
+        result === "copied"
+          ? tActions("toastCopied")
+          : tActions("toastCopyFallback"),
+      );
     } catch {
-      showToast("Couldn't export image");
+      showToast(tActions("toastExportError"));
     } finally {
       setIsBusy(false);
     }
@@ -232,9 +241,9 @@ export default function Comparator() {
     try {
       const dataUrl = await captureExportPng();
       downloadComparatorPng(dataUrl);
-      showToast("PNG downloaded");
+      showToast(tActions("toastPngDownloaded"));
     } catch {
-      showToast("Couldn't export image");
+      showToast(tActions("toastExportError"));
     } finally {
       setIsBusy(false);
     }
@@ -245,19 +254,19 @@ export default function Comparator() {
     try {
       const dataUrl = await captureExportPng();
       await downloadComparatorPdf(dataUrl);
-      showToast("PDF downloaded");
+      showToast(tActions("toastPdfDownloaded"));
     } catch {
-      showToast("Couldn't export PDF");
+      showToast(tActions("toastExportPdfError"));
     } finally {
       setIsBusy(false);
     }
   }
 
   async function handleShareLink() {
-    const url = buildShareUrl(sortedCities, selectionStart, selectionEnd);
+    const url = buildShareUrl(sortedCities, selectionStart, selectionEnd, locale);
     if (typeof navigator.share === "function") {
       try {
-        await navigator.share({ title: "World Time Zone", url });
+        await navigator.share({ title: t("brand"), url });
         return;
       } catch (err) {
         if (err instanceof Error && err.name === "AbortError") return;
@@ -266,9 +275,9 @@ export default function Comparator() {
     }
     try {
       await navigator.clipboard.writeText(url);
-      showToast("Link copied");
+      showToast(tActions("toastLinkCopied"));
     } catch {
-      showToast("Couldn't copy link");
+      showToast(tActions("toastShareError"));
     }
   }
 
@@ -276,27 +285,23 @@ export default function Comparator() {
     <div className="flex flex-1 flex-col gap-4 px-4 py-6 sm:px-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-semibold sm:text-3xl">
-            Fusos Horários do Mundo
-          </h1>
-          <p className="text-sm text-foreground/60">
-            Compare fusos horários do mundo inteiro e encontre o melhor
-            horário para se reunir, onde quer que seu time esteja.
-          </p>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("title")}</h1>
+          <p className="text-sm text-foreground/60">{t("subtitle")}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           {selectionStart && selectionEnd && (
             <div className="flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-3 py-2 text-sm font-medium text-primary">
               <span>
-                {selectionDurationHours(selectionStart, selectionEnd)}h
-                selected
+                {t("selectedBadge", {
+                  hours: selectionDurationHours(selectionStart, selectionEnd),
+                })}
               </span>
               <button
                 type="button"
                 onClick={clearSelection}
-                aria-label="Clear selection"
-                title="Clear selection"
+                aria-label={t("clearSelection")}
+                title={t("clearSelection")}
                 className="rounded p-0.5 leading-none text-primary/70 transition-colors hover:text-primary"
               >
                 ×
@@ -304,14 +309,14 @@ export default function Comparator() {
             </div>
           )}
           <ActionMenu
-            label="Action"
+            label={tActions("trigger")}
             busy={isBusy}
             actions={[
-              { key: "add-city", label: "Add city", icon: exportIcons.addCity, onSelect: () => setAddPanelOpen(true) },
-              { key: "copy-png", label: "Copy PNG", icon: exportIcons.copy, onSelect: handleCopyPng },
-              { key: "download-png", label: "Download PNG", icon: exportIcons.downloadImage, onSelect: handleDownloadPng },
-              { key: "download-pdf", label: "Download PDF", icon: exportIcons.downloadPdf, onSelect: handleDownloadPdf },
-              { key: "share-link", label: "Share link", icon: exportIcons.share, onSelect: handleShareLink },
+              { key: "add-city", label: tActions("addCity"), icon: exportIcons.addCity, onSelect: () => setAddPanelOpen(true) },
+              { key: "copy-png", label: tActions("copyPng"), icon: exportIcons.copy, onSelect: handleCopyPng },
+              { key: "download-png", label: tActions("downloadPng"), icon: exportIcons.downloadImage, onSelect: handleDownloadPng },
+              { key: "download-pdf", label: tActions("downloadPdf"), icon: exportIcons.downloadPdf, onSelect: handleDownloadPdf },
+              { key: "share-link", label: tActions("shareLink"), icon: exportIcons.share, onSelect: handleShareLink },
             ]}
           />
           <input
@@ -319,7 +324,7 @@ export default function Comparator() {
             value={localDateTimeValue}
             onChange={(e) => handleDateTimeChange(e.target.value)}
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground outline-none focus:border-primary"
-            aria-label="Reference date and time"
+            aria-label={t("referenceDateTime")}
           />
           {referenceDate && (
             <button
@@ -327,7 +332,7 @@ export default function Comparator() {
               onClick={() => setReferenceDate(null)}
               className="rounded-lg border border-border px-3 py-2 text-sm font-medium transition-colors hover:bg-surface"
             >
-              Now
+              {t("now")}
             </button>
           )}
         </div>
@@ -338,16 +343,18 @@ export default function Comparator() {
           {isExporting && (
             <div className="flex items-center justify-between border-b border-border bg-background px-4 py-2">
               <span className="text-sm font-semibold text-foreground">
-                World Time Zone
+                {t("brand")}
               </span>
               <span className="text-xs text-foreground/50">
-                {DateTime.now().toFormat("d LLL yyyy, HH:mm")}
+                {DateTime.now()
+                  .setLocale(toLuxonLocale(locale))
+                  .toFormat("d LLL yyyy, HH:mm")}
               </span>
             </div>
           )}
           {sortedCities.length === 0 ? (
             <p className="px-4 py-10 text-center text-sm text-foreground/50">
-              Add a city with the + button to start comparing time zones.
+              {t("emptyState")}
             </p>
           ) : (
             sortedCities.map((comparedCity, index) => (
@@ -390,6 +397,8 @@ export default function Comparator() {
         open={addPanelOpen}
         onOpenChange={setAddPanelOpen}
       />
+
+      <SettingsFab />
 
       {toast && (
         <div
