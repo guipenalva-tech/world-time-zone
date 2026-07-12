@@ -1,0 +1,9 @@
+# ads.txt — Authorized Digital Sellers
+#
+# Placeholder file. Replace the line below with the real entry from your
+# Google AdSense account once approved (Account > Sites > this domain, or
+# AdSense will show the exact line to paste). Format:
+#
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# Until then this file intentionally has no active entries.

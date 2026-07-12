@@ -17,6 +17,7 @@ import AddCityButton from "@/components/Search/AddCityButton";
 import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
 import SettingsFab from "@/components/Settings/SettingsFab";
 import TimeQuestionInput from "@/components/Question/TimeQuestionInput";
+import AdBanner from "@/components/Ads/AdBanner";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -393,6 +394,8 @@ export default function Comparator() {
       </div>
 
       <TimeQuestionInput />
+
+      <AdBanner />
 
       <AddCityButton
         onSelect={addCity}

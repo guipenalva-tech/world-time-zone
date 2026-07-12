@@ -59,6 +59,10 @@
     "language": "Sprache",
     "moreSoon": "Weitere Optionen (12/24 Std., Design) folgen bald"
   },
+  "Ads": {
+    "label": "Werbung",
+    "placeholder": "Anzeigenplatzhalter"
+  },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
     "ariaLabel": "Eine Frage zu Zeitzonen stellen",

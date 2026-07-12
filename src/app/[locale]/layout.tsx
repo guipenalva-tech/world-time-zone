@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, type AppLocale } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/siteUrl";
 import "../globals.css";
+
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -124,6 +127,17 @@ export default async function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* TODO(consent): gate this behind an LGPD/GDPR consent banner once
+            the deploy sprint adds one — AdSense personalized ads should not
+            fire before consent is collected in applicable regions. */}
+        {ADSENSE_CLIENT && (
+          <Script
+            id="adsbygoogle-init"
+            strategy="lazyOnload"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          />
+        )}
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

@@ -59,6 +59,10 @@
     "language": "Idioma",
     "moreSoon": "Más opciones (12/24h, tema) próximamente"
   },
+  "Ads": {
+    "label": "Publicidad",
+    "placeholder": "Espacio reservado para anuncio"
+  },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",
     "ariaLabel": "Hacer una pregunta sobre husos horarios",

@@ -59,6 +59,10 @@
     "language": "Language",
     "moreSoon": "More options (12/24h, theme) coming soon"
   },
+  "Ads": {
+    "label": "Advertisement",
+    "placeholder": "Ad placeholder"
+  },
   "TimeQuestion": {
     "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",
     "ariaLabel": "Ask a time zone question",
