@@ -87,7 +87,10 @@ export default function TimezoneRow({
 
           <div>
             <p className="text-xl font-bold leading-none tabular-nums">
-              {localNow.toFormat("HH:mm")}
+              {localNow.toFormat("h:mm")}
+              <span className="ml-1 text-xs font-semibold uppercase text-foreground/60">
+                {localNow.toFormat("a")}
+              </span>
             </p>
             <p className="mt-0.5 text-[11px] text-foreground/50">
               {zoneInfo.offsetFormatted} · {zoneInfo.abbreviation}

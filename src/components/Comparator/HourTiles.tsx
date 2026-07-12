@@ -8,12 +8,15 @@ interface HourTilesProps {
   onHoverIndex: (index: number | null) => void;
 }
 
-function formatHourLabel(hour: number, minute: number): string {
+/** 12-hour parts for a tile: hour number on top, am/pm below. */
+function hourParts(
+  hour: number,
+  minute: number,
+): { label: string; meridiem: "am" | "pm" } {
   const mm = minute > 0 ? `:${String(minute).padStart(2, "0")}` : "";
-  if (hour === 0) return `12${mm}a`;
-  if (hour < 12) return `${hour}${mm}a`;
-  if (hour === 12) return `12${mm}p`;
-  return `${hour - 12}${mm}p`;
+  const meridiem: "am" | "pm" = hour < 12 ? "am" : "pm";
+  const h12 = hour % 12 === 0 ? 12 : hour % 12;
+  return { label: `${h12}${mm}`, meridiem };
 }
 
 export default function HourTiles({
@@ -34,12 +37,13 @@ export default function HourTiles({
         else if (slot.isWeekend) bg = "bg-primary/10";
 
         const weekendNight = slot.isNight && slot.isWeekend;
+        const { label, meridiem } = hourParts(slot.hour, slot.minute);
 
         return (
           <div
             key={slot.isoString}
             onMouseEnter={() => onHoverIndex(index)}
-            className={`flex h-14 w-11 shrink-0 flex-col items-center justify-center gap-0.5 border-r border-border/50 text-xs transition-colors ${bg} ${
+            className={`flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
               weekendNight ? "ring-1 ring-inset ring-primary/20" : ""
             } ${isHovered ? "outline outline-2 -outline-offset-2 outline-primary/50" : ""} ${
               slot.isNow ? "border-2 border-primary font-semibold" : ""
@@ -48,17 +52,22 @@ export default function HourTiles({
           >
             {slot.isNewDay ? (
               <>
-                <span className="text-[10px] font-semibold uppercase text-foreground/70">
+                <span className="text-[10px] font-semibold uppercase leading-tight text-foreground/70">
                   {slot.weekday}
                 </span>
-                <span className="text-[10px] text-foreground/50">
+                <span className="text-[10px] leading-tight text-foreground/50">
                   {slot.day}
                 </span>
               </>
             ) : (
-              <span className="text-foreground/80">
-                {formatHourLabel(slot.hour, slot.minute)}
-              </span>
+              <>
+                <span className="leading-tight text-foreground/80">
+                  {label}
+                </span>
+                <span className="text-[9px] font-medium uppercase leading-tight tracking-wide text-foreground/45">
+                  {meridiem}
+                </span>
+              </>
             )}
           </div>
         );
