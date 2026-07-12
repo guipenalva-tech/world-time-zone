@@ -57,11 +57,41 @@
     "openLabel": "Configuración",
     "title": "Configuración",
     "language": "Idioma",
-    "moreSoon": "Más opciones (12/24h, tema) próximamente"
+    "hourFormat": "Formato de hora",
+    "moreSoon": "Tema próximamente"
   },
   "Ads": {
     "label": "Publicidad",
     "placeholder": "Espacio reservado para anuncio"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "Buscar",
+    "menuToggle": "Más opciones",
+    "hourFormatLabel": "Formato de hora",
+    "languageLabel": "Idioma",
+    "cityAdded": "{city} agregada"
+  },
+  "Breadcrumb": {
+    "home": "Inicio",
+    "comparator": "Comparador de husos horarios"
+  },
+  "HourFormat": {
+    "label": "Formato de hora",
+    "format12": "12h",
+    "format24": "24h"
+  },
+  "LocationCard": {
+    "title": "Tu hora local",
+    "dst": "Horario de verano",
+    "useAnotherCity": "Usar otra ciudad"
+  },
+  "Placeholders": {
+    "hourDiffTitle": "Gráfico de diferencia horaria",
+    "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades llegará pronto.",
+    "mapTitle": "Mapa mundial de husos horarios",
+    "mapText": "Un mapa mundial interactivo de husos horarios llegará pronto.",
+    "comingSoon": "Próximamente"
   },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",

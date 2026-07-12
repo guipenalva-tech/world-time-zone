@@ -6,6 +6,8 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, type AppLocale } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/siteUrl";
+import Header from "@/components/Layout/Header";
+import Breadcrumb from "@/components/Layout/Breadcrumb";
 import "../globals.css";
 
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
@@ -138,7 +140,11 @@ export default async function RootLayout({
             crossOrigin="anonymous"
           />
         )}
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Header />
+          <Breadcrumb locale={locale as AppLocale} />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

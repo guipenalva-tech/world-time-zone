@@ -57,11 +57,41 @@
     "openLabel": "सेटिंग्स",
     "title": "सेटिंग्स",
     "language": "भाषा",
-    "moreSoon": "अधिक विकल्प (12/24 घंटे, थीम) जल्द आ रहे हैं"
+    "hourFormat": "समय प्रारूप",
+    "moreSoon": "थीम जल्द आ रही है"
   },
   "Ads": {
     "label": "विज्ञापन",
     "placeholder": "विज्ञापन के लिए स्थान"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "खोजें",
+    "menuToggle": "अधिक विकल्प",
+    "hourFormatLabel": "समय प्रारूप",
+    "languageLabel": "भाषा",
+    "cityAdded": "{city} जोड़ा गया"
+  },
+  "Breadcrumb": {
+    "home": "होम",
+    "comparator": "समय क्षेत्र तुलनाकर्ता"
+  },
+  "HourFormat": {
+    "label": "समय प्रारूप",
+    "format12": "12 घंटे",
+    "format24": "24 घंटे"
+  },
+  "LocationCard": {
+    "title": "आपका स्थानीय समय",
+    "dst": "डेलाइट सेविंग",
+    "useAnotherCity": "दूसरा शहर उपयोग करें"
+  },
+  "Placeholders": {
+    "hourDiffTitle": "घंटे के अंतर का ग्राफ़",
+    "hourDiffText": "आपके शहरों के बीच घंटे के अंतर की विज़ुअल टाइमलाइन जल्द आ रही है।",
+    "mapTitle": "विश्व समय क्षेत्र मानचित्र",
+    "mapText": "समय क्षेत्रों का इंटरैक्टिव विश्व मानचित्र जल्द आ रहा है।",
+    "comingSoon": "जल्द आ रहा है"
   },
   "TimeQuestion": {
     "placeholder": "समय के बारे में पूछें... जैसे \"टोक्यो में क्या समय है?\"",

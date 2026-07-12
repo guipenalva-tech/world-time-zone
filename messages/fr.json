@@ -57,11 +57,41 @@
     "openLabel": "Paramètres",
     "title": "Paramètres",
     "language": "Langue",
-    "moreSoon": "D'autres options (12/24h, thème) arrivent bientôt"
+    "hourFormat": "Format d'heure",
+    "moreSoon": "Thème à venir"
   },
   "Ads": {
     "label": "Publicité",
     "placeholder": "Emplacement publicitaire"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "Rechercher",
+    "menuToggle": "Plus d'options",
+    "hourFormatLabel": "Format d'heure",
+    "languageLabel": "Langue",
+    "cityAdded": "{city} ajoutée"
+  },
+  "Breadcrumb": {
+    "home": "Accueil",
+    "comparator": "Comparateur de fuseaux horaires"
+  },
+  "HourFormat": {
+    "label": "Format d'heure",
+    "format12": "12h",
+    "format24": "24h"
+  },
+  "LocationCard": {
+    "title": "Votre heure locale",
+    "dst": "Heure d'été",
+    "useAnotherCity": "Utiliser une autre ville"
+  },
+  "Placeholders": {
+    "hourDiffTitle": "Graphique de décalage horaire",
+    "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes arrive bientôt.",
+    "mapTitle": "Carte mondiale des fuseaux horaires",
+    "mapText": "Une carte du monde interactive des fuseaux horaires arrive bientôt.",
+    "comingSoon": "Bientôt disponible"
   },
   "TimeQuestion": {
     "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",

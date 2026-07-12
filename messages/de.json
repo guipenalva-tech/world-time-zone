@@ -57,11 +57,41 @@
     "openLabel": "Einstellungen",
     "title": "Einstellungen",
     "language": "Sprache",
-    "moreSoon": "Weitere Optionen (12/24 Std., Design) folgen bald"
+    "hourFormat": "Zeitformat",
+    "moreSoon": "Design folgt bald"
   },
   "Ads": {
     "label": "Werbung",
     "placeholder": "Anzeigenplatzhalter"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "Suchen",
+    "menuToggle": "Weitere Optionen",
+    "hourFormatLabel": "Zeitformat",
+    "languageLabel": "Sprache",
+    "cityAdded": "{city} hinzugefügt"
+  },
+  "Breadcrumb": {
+    "home": "Startseite",
+    "comparator": "Zeitzonenvergleich"
+  },
+  "HourFormat": {
+    "label": "Zeitformat",
+    "format12": "12 Std.",
+    "format24": "24 Std."
+  },
+  "LocationCard": {
+    "title": "Deine Ortszeit",
+    "dst": "Sommerzeit",
+    "useAnotherCity": "Andere Stadt verwenden"
+  },
+  "Placeholders": {
+    "hourDiffTitle": "Zeitunterschied-Diagramm",
+    "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten folgt bald.",
+    "mapTitle": "Weltkarte der Zeitzonen",
+    "mapText": "Eine interaktive Weltkarte der Zeitzonen folgt bald.",
+    "comingSoon": "Demnächst"
   },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
