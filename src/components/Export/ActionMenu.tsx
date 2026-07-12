@@ -9,9 +9,11 @@ interface ExportAction {
   onSelect: () => void;
 }
 
-interface ExportFabProps {
+interface ActionMenuProps {
   actions: ExportAction[];
   busy?: boolean;
+  /** Label for the trigger button (translated by the caller). */
+  label: string;
 }
 
 const iconProps = {
@@ -62,21 +64,19 @@ export const exportIcons = {
       <path d="M8.3 13.3l7.4 4.4" />
     </svg>
   ),
-  toggle: (
-    <svg {...iconProps} strokeWidth={2} className="h-6 w-6">
-      <path d="M5 12h14" />
-      <path d="M12 5v14" />
+  chevronDown: (
+    <svg {...iconProps} className="h-4 w-4" strokeWidth={2.2}>
+      <path d="M6 9l6 6 6-6" />
     </svg>
   ),
 };
 
 /**
- * Single bottom-right FAB (speed dial). Expands into a vertical stack of
- * actions — "Add city" plus export/share — when toggled. The main toggle
- * button is always the primary-blue circle; expanded actions are smaller
- * neutral (surface) buttons with outline icons.
+ * Primary "Action" button, always visible in the comparator's top control
+ * bar. Opens a dropdown with the same city/export/share actions the old
+ * bottom-right speed-dial FAB used to expose.
  */
-export default function ExportFab({ actions, busy }: ExportFabProps) {
+export default function ActionMenu({ actions, busy, label }: ActionMenuProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -109,44 +109,42 @@ export default function ExportFab({ actions, busy }: ExportFabProps) {
   }
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3"
-    >
-      {open && (
-        <div className="flex flex-col items-end gap-2">
-          {actions.map((action) => (
-            <div key={action.key} className="flex items-center gap-2">
-              <span className="rounded-md border border-border bg-background px-2 py-1 text-xs font-medium text-foreground/80 shadow-sm">
-                {action.label}
-              </span>
-              <button
-                type="button"
-                onClick={() => handleAction(action)}
-                aria-label={action.label}
-                disabled={busy}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground/80 shadow-md transition-colors hover:bg-background hover:text-foreground disabled:opacity-50"
-              >
-                {action.icon}
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-
+    <div ref={containerRef} className="relative">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close menu" : "Add city or export"}
+        aria-label={label}
         aria-haspopup="true"
         aria-expanded={open}
         disabled={busy}
-        className={`flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-transform hover:scale-105 active:scale-95 disabled:opacity-50 ${
-          open ? "rotate-45" : ""
-        }`}
+        className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:opacity-90 disabled:opacity-50"
       >
-        {exportIcons.toggle}
+        {label}
+        <span className={`transition-transform ${open ? "rotate-180" : ""}`}>
+          {exportIcons.chevronDown}
+        </span>
       </button>
+
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 z-40 mt-2 w-56 overflow-hidden rounded-lg border border-border bg-background shadow-xl"
+        >
+          {actions.map((action) => (
+            <button
+              key={action.key}
+              type="button"
+              role="menuitem"
+              onClick={() => handleAction(action)}
+              disabled={busy}
+              className="flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm text-foreground/80 transition-colors hover:bg-surface hover:text-foreground disabled:opacity-50"
+            >
+              <span className="text-foreground/60">{action.icon}</span>
+              {action.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

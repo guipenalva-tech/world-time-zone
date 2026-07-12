@@ -13,7 +13,7 @@ import {
 } from "@/lib/exportComparator";
 import { buildShareUrl, readShareLinkParams } from "@/lib/shareLink";
 import AddCityButton from "@/components/Search/AddCityButton";
-import ExportFab, { exportIcons } from "@/components/Export/ExportFab";
+import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -303,6 +303,17 @@ export default function Comparator() {
               </button>
             </div>
           )}
+          <ActionMenu
+            label="Action"
+            busy={isBusy}
+            actions={[
+              { key: "add-city", label: "Add city", icon: exportIcons.addCity, onSelect: () => setAddPanelOpen(true) },
+              { key: "copy-png", label: "Copy PNG", icon: exportIcons.copy, onSelect: handleCopyPng },
+              { key: "download-png", label: "Download PNG", icon: exportIcons.downloadImage, onSelect: handleDownloadPng },
+              { key: "download-pdf", label: "Download PDF", icon: exportIcons.downloadPdf, onSelect: handleDownloadPdf },
+              { key: "share-link", label: "Share link", icon: exportIcons.share, onSelect: handleShareLink },
+            ]}
+          />
           <input
             type="datetime-local"
             value={localDateTimeValue}
@@ -378,17 +389,6 @@ export default function Comparator() {
         excludeIds={existingIds}
         open={addPanelOpen}
         onOpenChange={setAddPanelOpen}
-      />
-
-      <ExportFab
-        busy={isBusy}
-        actions={[
-          { key: "add-city", label: "Add city", icon: exportIcons.addCity, onSelect: () => setAddPanelOpen(true) },
-          { key: "copy-png", label: "Copy PNG", icon: exportIcons.copy, onSelect: handleCopyPng },
-          { key: "download-png", label: "Download PNG", icon: exportIcons.downloadImage, onSelect: handleDownloadPng },
-          { key: "download-pdf", label: "Download PDF", icon: exportIcons.downloadPdf, onSelect: handleDownloadPdf },
-          { key: "share-link", label: "Share link", icon: exportIcons.share, onSelect: handleShareLink },
-        ]}
       />
 
       {toast && (
