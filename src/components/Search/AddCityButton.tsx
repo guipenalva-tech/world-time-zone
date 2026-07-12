@@ -13,9 +13,10 @@ interface AddCityButtonProps {
 }
 
 /**
- * Floating action button + shared "add a city" panel (bottom sheet on
- * mobile, popover on desktop). Open state is controlled by the parent so
- * other triggers (e.g. the per-row "+" button) can reuse the same flow.
+ * Shared "add a city" panel (bottom sheet on mobile, popover on desktop).
+ * Open state is controlled by the parent so any trigger (the unified action
+ * FAB, or a per-row "+" button) can reuse the same flow — this component no
+ * longer renders its own trigger button.
  */
 export default function AddCityButton({
   onSelect,
@@ -52,17 +53,6 @@ export default function AddCityButton({
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => onOpenChange(true)}
-        aria-label="Add a city"
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-3xl font-light leading-none text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
-      >
-        +
-      </button>
-
       {open && (
         <div
           role="dialog"

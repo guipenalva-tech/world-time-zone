@@ -5,7 +5,15 @@ import { DateTime } from "luxon";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { getRowAnchor } from "@/lib/timezone";
 import { selectionDurationHours } from "@/lib/timeSelection";
+import {
+  captureNodeAsPng,
+  copyPngToClipboard,
+  downloadComparatorPdf,
+  downloadComparatorPng,
+} from "@/lib/exportComparator";
+import { buildShareUrl, readShareLinkParams } from "@/lib/shareLink";
 import AddCityButton from "@/components/Search/AddCityButton";
+import ExportFab, { exportIcons } from "@/components/Export/ExportFab";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -22,10 +30,24 @@ export default function Comparator() {
   const selectionEnd = useComparatorStore((s) => s.selectionEnd);
   const selectSlot = useComparatorStore((s) => s.selectSlot);
   const clearSelection = useComparatorStore((s) => s.clearSelection);
+  const hydrateFromShareLink = useComparatorStore(
+    (s) => s.hydrateFromShareLink,
+  );
 
   const [now, setNow] = useState(() => DateTime.now());
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [addPanelOpen, setAddPanelOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+  const [isBusy, setIsBusy] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const exportRef = useRef<HTMLDivElement>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function showToast(message: string) {
+    setToast(message);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setToast(null), 2500);
+  }
 
   // ---- Drag-to-reorder state (native pointer events, no external lib) ----
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -40,10 +62,25 @@ export default function Comparator() {
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [dragDeltaY, setDragDeltaY] = useState(0);
 
-  // One-time client-side hydration + detected-city seeding.
+  // One-time client-side hydration: localStorage first, then a share-link
+  // URL (if present) overrides it, since it reflects explicit user intent.
   useEffect(() => {
-    useComparatorStore.persist.rehydrate();
-    initializeDefaultCities();
+    async function init() {
+      await useComparatorStore.persist.rehydrate();
+
+      const shareParams = readShareLinkParams();
+      if (shareParams) {
+        hydrateFromShareLink(
+          shareParams.cityIds,
+          shareParams.start,
+          shareParams.end,
+        );
+        window.history.replaceState(null, "", window.location.pathname);
+      } else {
+        initializeDefaultCities();
+      }
+    }
+    init();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -162,6 +199,79 @@ export default function Comparator() {
     ? DateTime.fromISO(referenceDate).toFormat("yyyy-LL-dd'T'HH:mm")
     : "";
 
+  // Briefly reveals the export branding header and waits a frame for layout
+  // to settle before handing the node off to html-to-image.
+  async function captureExportPng(): Promise<string> {
+    const node = exportRef.current;
+    if (!node) throw new Error("Export target not found");
+    setIsExporting(true);
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+    try {
+      return await captureNodeAsPng(node);
+    } finally {
+      setIsExporting(false);
+    }
+  }
+
+  async function handleCopyPng() {
+    setIsBusy(true);
+    try {
+      const dataUrl = await captureExportPng();
+      const result = await copyPngToClipboard(dataUrl);
+      showToast(result === "copied" ? "Copied to clipboard" : "Downloaded (clipboard unavailable)");
+    } catch {
+      showToast("Couldn't export image");
+    } finally {
+      setIsBusy(false);
+    }
+  }
+
+  async function handleDownloadPng() {
+    setIsBusy(true);
+    try {
+      const dataUrl = await captureExportPng();
+      downloadComparatorPng(dataUrl);
+      showToast("PNG downloaded");
+    } catch {
+      showToast("Couldn't export image");
+    } finally {
+      setIsBusy(false);
+    }
+  }
+
+  async function handleDownloadPdf() {
+    setIsBusy(true);
+    try {
+      const dataUrl = await captureExportPng();
+      await downloadComparatorPdf(dataUrl);
+      showToast("PDF downloaded");
+    } catch {
+      showToast("Couldn't export PDF");
+    } finally {
+      setIsBusy(false);
+    }
+  }
+
+  async function handleShareLink() {
+    const url = buildShareUrl(sortedCities, selectionStart, selectionEnd);
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: "World Time Zone", url });
+        return;
+      } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") return;
+        // fall through to clipboard copy below
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      showToast("Link copied");
+    } catch {
+      showToast("Couldn't copy link");
+    }
+  }
+
   return (
     <div className="flex flex-1 flex-col gap-4 px-4 py-6 sm:px-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -211,7 +321,17 @@ export default function Comparator() {
       </div>
 
       <div className="overflow-x-auto rounded-xl border border-border">
-        <div className="min-w-max">
+        <div className="min-w-max" ref={exportRef}>
+          {isExporting && (
+            <div className="flex items-center justify-between border-b border-border bg-background px-4 py-2">
+              <span className="text-sm font-semibold text-foreground">
+                World Time Zone
+              </span>
+              <span className="text-xs text-foreground/50">
+                {DateTime.now().toFormat("d LLL yyyy, HH:mm")}
+              </span>
+            </div>
+          )}
           {sortedCities.length === 0 ? (
             <p className="px-4 py-10 text-center text-sm text-foreground/50">
               Add a city with the + button to start comparing time zones.
@@ -257,6 +377,27 @@ export default function Comparator() {
         open={addPanelOpen}
         onOpenChange={setAddPanelOpen}
       />
+
+      <ExportFab
+        busy={isBusy}
+        actions={[
+          { key: "add-city", label: "Add city", icon: exportIcons.addCity, onSelect: () => setAddPanelOpen(true) },
+          { key: "copy-png", label: "Copy PNG", icon: exportIcons.copy, onSelect: handleCopyPng },
+          { key: "download-png", label: "Download PNG", icon: exportIcons.downloadImage, onSelect: handleDownloadPng },
+          { key: "download-pdf", label: "Download PDF", icon: exportIcons.downloadPdf, onSelect: handleDownloadPdf },
+          { key: "share-link", label: "Share link", icon: exportIcons.share, onSelect: handleShareLink },
+        ]}
+      />
+
+      {toast && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground shadow-lg"
+        >
+          {toast}
+        </div>
+      )}
     </div>
   );
 }

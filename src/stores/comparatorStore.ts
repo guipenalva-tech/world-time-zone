@@ -17,6 +17,11 @@ function reindex(cities: ComparedCity[]): ComparedCity[] {
   return cities.map((c, order) => ({ ...c, order }));
 }
 
+function validIso(iso: string | null | undefined): string | null {
+  if (!iso) return null;
+  return DateTime.fromISO(iso).isValid ? iso : null;
+}
+
 interface ComparatorState {
   cities: ComparedCity[];
   /** ISO date string used as the comparator's reference point, or null for "now" (live). */
@@ -39,6 +44,12 @@ interface ComparatorState {
   /** Two-click range selection: first click sets start, second sets end (swapped if reversed). */
   selectSlot: (iso: string) => void;
   clearSelection: () => void;
+  /** Replaces the whole comparator state from a share-link URL (takes precedence over localStorage). */
+  hydrateFromShareLink: (
+    cityIds: string[],
+    startIso: string | null,
+    endIso: string | null,
+  ) => void;
 }
 
 export const useComparatorStore = create<ComparatorState>()(
@@ -121,6 +132,20 @@ export const useComparatorStore = create<ComparatorState>()(
       },
 
       clearSelection: () => set({ selectionStart: null, selectionEnd: null }),
+
+      hydrateFromShareLink: (cityIds, startIso, endIso) => {
+        const resolved = cityIds
+          .map((id) => getCityById(id))
+          .filter((c): c is City => Boolean(c));
+        if (resolved.length === 0) return;
+
+        set({
+          cities: reindex(resolved.map((city) => ({ city, order: 0 }))),
+          initialized: true,
+          selectionStart: validIso(startIso),
+          selectionEnd: validIso(endIso),
+        });
+      },
     }),
     {
       name: "wtz-comparator",
