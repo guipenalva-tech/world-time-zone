@@ -19,6 +19,7 @@ import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
 import SettingsFab from "@/components/Settings/SettingsFab";
 import TimeQuestionInput from "@/components/Question/TimeQuestionInput";
 import AdBanner from "@/components/Ads/AdBanner";
+import LocationCard from "@/components/LocationCard/LocationCard";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -343,6 +344,8 @@ export default function Comparator() {
           )}
         </div>
       </div>
+
+      <LocationCard />
 
       <div className="overflow-x-auto rounded-xl border border-border">
         <div className="min-w-max" ref={exportRef}>
