@@ -4,6 +4,7 @@ import type { DateTime } from "luxon";
 import type { ComparedCity } from "@/types/city";
 import { getZoneInfo, getHourRow } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
+import { formatLocalRange, isSlotSelected } from "@/lib/timeSelection";
 import HourTiles from "./HourTiles";
 
 interface TimezoneRowProps {
@@ -19,6 +20,9 @@ interface TimezoneRowProps {
   isDragging: boolean;
   dragDeltaY: number;
   dropIndicator: "top" | "bottom" | null;
+  onSlotClick: (isoString: string) => void;
+  selectionStart: string | null;
+  selectionEnd: string | null;
 }
 
 export default function TimezoneRow({
@@ -34,11 +38,21 @@ export default function TimezoneRow({
   isDragging,
   dragDeltaY,
   dropIndicator,
+  onSlotClick,
+  selectionStart,
+  selectionEnd,
 }: TimezoneRowProps) {
   const { city } = comparedCity;
   const zoneInfo = getZoneInfo(city.timezone, displayInstant);
   const localNow = displayInstant.setZone(city.timezone);
   const slots = getHourRow(city.timezone, anchor, 24);
+  const selectedIndices = slots.map((slot) =>
+    isSlotSelected(slot.isoString, selectionStart, selectionEnd),
+  );
+  const rangeLabel =
+    selectionStart && selectionEnd
+      ? formatLocalRange(city.timezone, selectionStart, selectionEnd)
+      : null;
 
   return (
     <div
@@ -116,6 +130,11 @@ export default function TimezoneRow({
               {zoneInfo.offsetFormatted} · {zoneInfo.abbreviation}
               {zoneInfo.isDST ? " · DST" : ""}
             </p>
+            {rangeLabel && (
+              <p className="mt-1 truncate text-xs font-semibold text-primary">
+                {rangeLabel}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -124,6 +143,8 @@ export default function TimezoneRow({
         slots={slots}
         hoveredIndex={hoveredIndex}
         onHoverIndex={onHoverIndex}
+        onSlotClick={onSlotClick}
+        selectedIndices={selectedIndices}
       />
     </div>
   );

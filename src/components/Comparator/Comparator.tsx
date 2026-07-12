@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { DateTime } from "luxon";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { getRowAnchor } from "@/lib/timezone";
+import { selectionDurationHours } from "@/lib/timeSelection";
 import AddCityButton from "@/components/Search/AddCityButton";
 import TimezoneRow from "./TimezoneRow";
 
@@ -17,6 +18,10 @@ export default function Comparator() {
   const initializeDefaultCities = useComparatorStore(
     (s) => s.initializeDefaultCities,
   );
+  const selectionStart = useComparatorStore((s) => s.selectionStart);
+  const selectionEnd = useComparatorStore((s) => s.selectionEnd);
+  const selectSlot = useComparatorStore((s) => s.selectSlot);
+  const clearSelection = useComparatorStore((s) => s.clearSelection);
 
   const [now, setNow] = useState(() => DateTime.now());
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -47,6 +52,16 @@ export default function Comparator() {
     const interval = setInterval(() => setNow(DateTime.now()), 30_000);
     return () => clearInterval(interval);
   }, []);
+
+  // Esc clears the active time-range selection (unless the add-city panel
+  // is open, which owns Esc for itself).
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && !addPanelOpen) clearSelection();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [addPanelOpen, clearSelection]);
 
   // Global pointer listeners for the active drag, registered once.
   useEffect(() => {
@@ -153,11 +168,29 @@ export default function Comparator() {
         <div>
           <h1 className="text-2xl font-semibold">Time zone comparator</h1>
           <p className="text-sm text-foreground/60">
-            Hover a column to compare the same hour everywhere.
+            Hover a column to compare the same hour everywhere. Click two
+            tiles to select a time range.
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          {selectionStart && selectionEnd && (
+            <div className="flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-3 py-2 text-sm font-medium text-primary">
+              <span>
+                {selectionDurationHours(selectionStart, selectionEnd)}h
+                selected
+              </span>
+              <button
+                type="button"
+                onClick={clearSelection}
+                aria-label="Clear selection"
+                title="Clear selection"
+                className="rounded p-0.5 leading-none text-primary/70 transition-colors hover:text-primary"
+              >
+                ×
+              </button>
+            </div>
+          )}
           <input
             type="datetime-local"
             value={localDateTimeValue}
@@ -200,6 +233,9 @@ export default function Comparator() {
                 onHandlePointerDown={(e) => handleHandlePointerDown(index, e)}
                 isDragging={dragIndex === index}
                 dragDeltaY={dragDeltaY}
+                onSlotClick={selectSlot}
+                selectionStart={selectionStart}
+                selectionEnd={selectionEnd}
                 dropIndicator={
                   dragIndex !== null &&
                   dragOverIndex === index &&

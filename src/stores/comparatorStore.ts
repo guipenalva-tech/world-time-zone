@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { DateTime } from "luxon";
 import type { City } from "@/types/city";
 import type { ComparedCity } from "@/types/city";
 import { getCityById, findCityByTimezone } from "@/lib/cities";
@@ -24,6 +25,9 @@ interface ComparatorState {
   initialized: boolean;
   /** True once zustand persist has finished reading localStorage (client-only). */
   hasHydrated: boolean;
+  /** Selected time-range bounds, as absolute-instant ISO strings (hour-slot aligned). */
+  selectionStart: string | null;
+  selectionEnd: string | null;
 
   addCity: (city: City) => void;
   removeCity: (cityId: string) => void;
@@ -32,6 +36,9 @@ interface ComparatorState {
   /** Seeds the list with the user's detected city, once, if not already done. */
   initializeDefaultCities: () => void;
   setHasHydrated: (value: boolean) => void;
+  /** Two-click range selection: first click sets start, second sets end (swapped if reversed). */
+  selectSlot: (iso: string) => void;
+  clearSelection: () => void;
 }
 
 export const useComparatorStore = create<ComparatorState>()(
@@ -41,6 +48,8 @@ export const useComparatorStore = create<ComparatorState>()(
       referenceDate: null,
       initialized: false,
       hasHydrated: false,
+      selectionStart: null,
+      selectionEnd: null,
 
       addCity: (city) => {
         const { cities } = get();
@@ -93,6 +102,25 @@ export const useComparatorStore = create<ComparatorState>()(
       },
 
       setHasHydrated: (value) => set({ hasHydrated: value }),
+
+      selectSlot: (iso) => {
+        const { selectionStart, selectionEnd } = get();
+        // No selection yet, or a complete one already exists — start fresh.
+        if (!selectionStart || selectionEnd) {
+          set({ selectionStart: iso, selectionEnd: null });
+          return;
+        }
+        // Second click: close the range, swapping if it lands before the start.
+        const isoMs = DateTime.fromISO(iso).toMillis();
+        const startMs = DateTime.fromISO(selectionStart).toMillis();
+        if (isoMs < startMs) {
+          set({ selectionStart: iso, selectionEnd: selectionStart });
+        } else {
+          set({ selectionEnd: iso });
+        }
+      },
+
+      clearSelection: () => set({ selectionStart: null, selectionEnd: null }),
     }),
     {
       name: "wtz-comparator",
@@ -102,6 +130,8 @@ export const useComparatorStore = create<ComparatorState>()(
         cities: state.cities,
         referenceDate: state.referenceDate,
         initialized: state.initialized,
+        selectionStart: state.selectionStart,
+        selectionEnd: state.selectionEnd,
       }),
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);

@@ -6,6 +6,10 @@ interface HourTilesProps {
   slots: HourSlot[];
   hoveredIndex: number | null;
   onHoverIndex: (index: number | null) => void;
+  /** Called with a slot's instant ISO string when its tile is clicked/tapped. */
+  onSlotClick?: (isoString: string) => void;
+  /** Whether each slot (by index, matching `slots`) is inside the selected range. */
+  selectedIndices?: boolean[];
 }
 
 /** 12-hour parts for a tile: hour number on top, am/pm below. */
@@ -23,6 +27,8 @@ export default function HourTiles({
   slots,
   hoveredIndex,
   onHoverIndex,
+  onSlotClick,
+  selectedIndices,
 }: HourTilesProps) {
   return (
     <div
@@ -31,6 +37,7 @@ export default function HourTiles({
     >
       {slots.map((slot, index) => {
         const isHovered = hoveredIndex === index;
+        const isSelected = selectedIndices?.[index] ?? false;
 
         let bg = "bg-surface";
         if (slot.isNight) bg = "bg-foreground/15";
@@ -40,12 +47,18 @@ export default function HourTiles({
         const { label, meridiem } = hourParts(slot.hour, slot.minute);
 
         return (
-          <div
+          <button
+            type="button"
             key={slot.isoString}
             onMouseEnter={() => onHoverIndex(index)}
+            onClick={() => onSlotClick?.(slot.isoString)}
+            aria-pressed={isSelected}
+            aria-label={`${slot.weekday} ${slot.day} ${slot.month}, ${label}${meridiem}`}
             className={`flex h-16 w-11 shrink-0 flex-col items-center justify-center border-r border-border/50 text-xs transition-colors ${bg} ${
               weekendNight ? "ring-1 ring-inset ring-primary/20" : ""
             } ${isHovered ? "outline outline-2 -outline-offset-2 outline-primary/50" : ""} ${
+              isSelected ? "bg-primary/20 outline outline-2 -outline-offset-2 outline-primary" : ""
+            } ${
               slot.isNow ? "border-2 border-primary font-semibold" : ""
             } ${slot.isNewDay ? "border-l-2 border-l-foreground/30" : ""}`}
             title={`${slot.weekday} ${slot.day} ${slot.month}`}
@@ -69,7 +82,7 @@ export default function HourTiles({
                 </span>
               </>
             )}
-          </div>
+          </button>
         );
       })}
     </div>
