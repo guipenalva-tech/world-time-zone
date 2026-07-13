@@ -45,6 +45,10 @@ interface SettingsState {
   localCardCityId: string | null;
   /** "system" follows the OS preference; "light"/"dark" force a side. */
   theme: Theme;
+  /** Sun view (/sun) card toggles — all default off, persisted. */
+  sunShowGoldenHour: boolean;
+  sunShowTwilight: boolean;
+  sunShowMoonPhase: boolean;
   /** True once zustand persist has finished reading localStorage (client-only). */
   hasHydrated: boolean;
 
@@ -52,6 +56,9 @@ interface SettingsState {
   setLocalCardCityId: (cityId: string | null) => void;
   setTheme: (theme: Theme) => void;
   cycleTheme: () => void;
+  setSunShowGoldenHour: (value: boolean) => void;
+  setSunShowTwilight: (value: boolean) => void;
+  setSunShowMoonPhase: (value: boolean) => void;
   setHasHydrated: (value: boolean) => void;
 }
 
@@ -61,12 +68,18 @@ export const useSettingsStore = create<SettingsState>()(
       hourFormat: null,
       localCardCityId: null,
       theme: "system",
+      sunShowGoldenHour: false,
+      sunShowTwilight: false,
+      sunShowMoonPhase: false,
       hasHydrated: false,
 
       setHourFormat: (format) => set({ hourFormat: format }),
       setLocalCardCityId: (cityId) => set({ localCardCityId: cityId }),
       setTheme: (theme) => set({ theme }),
       cycleTheme: () => set({ theme: nextTheme(get().theme) }),
+      setSunShowGoldenHour: (value) => set({ sunShowGoldenHour: value }),
+      setSunShowTwilight: (value) => set({ sunShowTwilight: value }),
+      setSunShowMoonPhase: (value) => set({ sunShowMoonPhase: value }),
       setHasHydrated: (value) => set({ hasHydrated: value }),
     }),
     {
@@ -77,6 +90,9 @@ export const useSettingsStore = create<SettingsState>()(
         hourFormat: state.hourFormat,
         localCardCityId: state.localCardCityId,
         theme: state.theme,
+        sunShowGoldenHour: state.sunShowGoldenHour,
+        sunShowTwilight: state.sunShowTwilight,
+        sunShowMoonPhase: state.sunShowMoonPhase,
       }),
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);

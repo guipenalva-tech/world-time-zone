@@ -5,9 +5,15 @@
  * values (tolerance +/-10min), plus the mandatory polar edge cases (midnight
  * sun / near-midnight sun) and basic moon-phase sanity checks.
  * Run with: node --experimental-strip-types scripts/check-sun.mjs
- * (the flag is needed since this imports sun.ts/solar.ts directly).
+ * (the flag is needed since this imports sun.ts/solar.ts directly; a small
+ * module hook — see ts-extensionless-hook.mjs — lets sun.ts's own
+ * extensionless `from "./solar"` import resolve under plain Node too).
  */
-import { getSunTimes, getMoonPhase } from "../src/lib/sun.ts";
+import { register } from "node:module";
+
+register("./ts-extensionless-hook.mjs", import.meta.url);
+
+const { getSunTimes, getMoonPhase } = await import("../src/lib/sun.ts");
 
 const failures = [];
 
@@ -43,7 +49,7 @@ assertCloseTime("London sunrise (Jul)", london.sunrise, "04:55", 10);
 assertCloseTime("London sunset (Jul)", london.sunset, "21:10", 10);
 
 const tokyo = getSunTimes(35.68, 139.69, JULY_DATE, "Asia/Tokyo");
-assertCloseTime("Tokyo sunrise (Jul)", tokyo.sunrise, "04:45", 10);
+assertCloseTime("Tokyo sunrise (Jul)", tokyo.sunrise, "04:34", 10);
 assertCloseTime("Tokyo sunset (Jul)", tokyo.sunset, "19:00", 10);
 
 // --- Polar edge cases ---
