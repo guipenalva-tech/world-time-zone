@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { locales, localeNames, type AppLocale } from "@/i18n/routing";
+import { locales, localeNames, localeCountryCode, type AppLocale } from "@/i18n/routing";
+import { getFlagEmoji } from "@/lib/flags";
 
 interface LanguageSelectProps {
   /** "dropdown": compact trigger + popover (header). "list": inline list, no trigger (settings panel). */
@@ -70,10 +71,11 @@ export default function LanguageSelect({
             type="button"
             onClick={() => changeLocale(l)}
             aria-current={l === locale}
-            className={`w-full rounded px-2 py-1.5 text-left text-sm transition-colors hover:bg-surface ${
+            className={`flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-sm transition-colors hover:bg-surface ${
               l === locale ? "font-semibold text-primary" : "text-foreground/80"
             }`}
           >
+            <span aria-hidden="true">{getFlagEmoji(localeCountryCode[l])}</span>
             {localeNames[l]}
           </button>
         </li>
@@ -93,8 +95,11 @@ export default function LanguageSelect({
         aria-label={t("language")}
         aria-haspopup="true"
         aria-expanded={open}
-        className="flex items-center gap-1 rounded-lg border border-border bg-surface px-2.5 py-1.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-background hover:text-foreground"
+        className="flex items-center gap-1.5 rounded-lg border border-border bg-surface px-2.5 py-1.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-background hover:text-foreground"
       >
+        <span aria-hidden="true">
+          {getFlagEmoji(localeCountryCode[locale as AppLocale])}
+        </span>
         <span aria-hidden="true" className="text-xs">
           {locale.toUpperCase()}
         </span>

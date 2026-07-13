@@ -74,7 +74,11 @@
   },
   "Breadcrumb": {
     "home": "Início",
-    "comparator": "Comparador de fusos"
+    "comparator": "Comparador de fusos",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Nascer e pôr do sol",
+    "alerts": "Alertas"
   },
   "HourFormat": {
     "label": "Formato de hora",
@@ -91,7 +95,11 @@
     "hourDiffText": "Uma linha do tempo visual com a diferença de horas entre suas cidades chega em breve.",
     "mapTitle": "Mapa múndi de fusos horários",
     "mapText": "Um mapa múndi interativo dos fusos horários chega em breve.",
-    "comingSoon": "Em breve"
+    "comingSoon": "Em breve",
+    "sunTitle": "Nascer e pôr do sol",
+    "sunText": "Os horários de nascer e pôr do sol das suas cidades chegam em breve.",
+    "alertsTitle": "Alertas de fuso horário",
+    "alertsText": "Alertas personalizados para horários de reunião e mudanças de fuso chegam em breve."
   },
   "TimeQuestion": {
     "placeholder": "Pergunte sobre um horário... ex: \"que horas são em Tóquio?\"",
@@ -111,5 +119,25 @@
       "Que horas são em Tóquio quando for 15h em São Paulo?",
       "Diferença entre Londres e Nova York"
     ]
+  },
+  "Nav": {
+    "home": "Fusos Horários do Mundo",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Nascer e pôr do sol",
+    "alerts": "Alertas"
+  },
+  "EmptyCities": {
+    "title": "Adicione cidades para começar",
+    "text": "Esta página usa as cidades do seu comparador. Adicione algumas na página inicial para ver em ação.",
+    "cta": "Adicionar cidades no comparador"
+  },
+  "PageMeta": {
+    "mapTitle": "Mapa — mapa múndi de fusos horários",
+    "mapDescription": "Um mapa múndi interativo de fusos horários para suas cidades comparadas — em breve.",
+    "sunTitle": "Nascer e pôr do sol — horários para suas cidades",
+    "sunDescription": "Horários de nascer e pôr do sol para suas cidades comparadas — em breve.",
+    "alertsTitle": "Alertas — notificações de fuso horário",
+    "alertsDescription": "Alertas personalizados para horários de reunião e mudanças de fuso — em breve."
   }
 }

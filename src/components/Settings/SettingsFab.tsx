@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import HourFormatToggle from "./HourFormatToggle";
+import ThemeToggle from "./ThemeToggle";
+import LanguageSelect from "./LanguageSelect";
 
 /**
  * Bottom-right settings FAB (replaces the old actions FAB, which moved to
- * the top "Action" button). The language switcher moved to the header, so
- * this panel now covers the 12/24h format toggle, with a note that theme
- * options are coming soon.
+ * the top "Action" button). Covers theme, 12/24h format, and language, so
+ * every display preference is reachable from one place even though theme
+ * and language also have dedicated header controls.
  */
 export default function SettingsFab() {
   const [open, setOpen] = useState(false);
@@ -51,13 +53,19 @@ export default function SettingsFab() {
           </p>
 
           <p className="mb-1 px-1 text-xs font-medium uppercase tracking-wide text-foreground/50">
+            {t("theme")}
+          </p>
+          <ThemeToggle />
+
+          <p className="mb-1 mt-3 px-1 text-xs font-medium uppercase tracking-wide text-foreground/50">
             {t("hourFormat")}
           </p>
           <HourFormatToggle />
 
-          <p className="mt-3 border-t border-border pt-2 text-[11px] text-foreground/40">
-            {t("moreSoon")}
+          <p className="mb-1 mt-3 border-t border-border px-1 pt-2 text-xs font-medium uppercase tracking-wide text-foreground/50">
+            {t("language")}
           </p>
+          <LanguageSelect variant="list" />
         </div>
       )}
 

@@ -74,7 +74,11 @@
   },
   "Breadcrumb": {
     "home": "Accueil",
-    "comparator": "Comparateur de fuseaux horaires"
+    "comparator": "Comparateur de fuseaux horaires",
+    "chart": "Graphique",
+    "map": "Carte",
+    "sun": "Lever et coucher du soleil",
+    "alerts": "Alertes"
   },
   "HourFormat": {
     "label": "Format d'heure",
@@ -91,7 +95,11 @@
     "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes arrive bientôt.",
     "mapTitle": "Carte mondiale des fuseaux horaires",
     "mapText": "Une carte du monde interactive des fuseaux horaires arrive bientôt.",
-    "comingSoon": "Bientôt disponible"
+    "comingSoon": "Bientôt disponible",
+    "sunTitle": "Lever et coucher du soleil",
+    "sunText": "Les heures de lever et coucher du soleil de vos villes arrivent bientôt.",
+    "alertsTitle": "Alertes de fuseau horaire",
+    "alertsText": "Des alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire arrivent bientôt."
   },
   "TimeQuestion": {
     "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",
@@ -111,5 +119,25 @@
       "Quelle heure est-il à Tokyo quand il est 15h à São Paulo ?",
       "Décalage horaire entre Londres et New York"
     ]
+  },
+  "Nav": {
+    "home": "Fuseaux horaires du monde",
+    "chart": "Graphique",
+    "map": "Carte",
+    "sun": "Lever et coucher du soleil",
+    "alerts": "Alertes"
+  },
+  "EmptyCities": {
+    "title": "Ajoutez des villes pour commencer",
+    "text": "Cette page utilise les villes de votre comparateur. Ajoutez-en quelques-unes sur la page d'accueil pour la voir en action.",
+    "cta": "Ajouter des villes dans le comparateur"
+  },
+  "PageMeta": {
+    "mapTitle": "Carte — carte mondiale des fuseaux horaires",
+    "mapDescription": "Une carte du monde interactive des fuseaux horaires pour vos villes comparées — bientôt disponible.",
+    "sunTitle": "Lever et coucher du soleil — heures pour vos villes",
+    "sunDescription": "Heures de lever et coucher du soleil pour vos villes comparées — bientôt disponible.",
+    "alertsTitle": "Alertes — notifications de fuseau horaire",
+    "alertsDescription": "Alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire — bientôt disponible."
   }
 }

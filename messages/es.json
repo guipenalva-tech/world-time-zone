@@ -74,7 +74,11 @@
   },
   "Breadcrumb": {
     "home": "Inicio",
-    "comparator": "Comparador de husos horarios"
+    "comparator": "Comparador de husos horarios",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Amanecer y atardecer",
+    "alerts": "Alertas"
   },
   "HourFormat": {
     "label": "Formato de hora",
@@ -91,7 +95,11 @@
     "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades llegará pronto.",
     "mapTitle": "Mapa mundial de husos horarios",
     "mapText": "Un mapa mundial interactivo de husos horarios llegará pronto.",
-    "comingSoon": "Próximamente"
+    "comingSoon": "Próximamente",
+    "sunTitle": "Amanecer y atardecer",
+    "sunText": "Los horarios de amanecer y atardecer de tus ciudades llegarán pronto.",
+    "alertsTitle": "Alertas de huso horario",
+    "alertsText": "Alertas personalizadas para horarios de reunión y cambios de huso horario llegarán pronto."
   },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",
@@ -111,5 +119,25 @@
       "Cuando son las 15 en Madrid, ¿qué hora es en Lima?",
       "Diferencia entre Londres y Nueva York"
     ]
+  },
+  "Nav": {
+    "home": "Husos Horarios del Mundo",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Amanecer y atardecer",
+    "alerts": "Alertas"
+  },
+  "EmptyCities": {
+    "title": "Agrega ciudades para empezar",
+    "text": "Esta página usa las ciudades de tu comparador. Agrega algunas en la página de inicio para verla en acción.",
+    "cta": "Agregar ciudades en el comparador"
+  },
+  "PageMeta": {
+    "mapTitle": "Mapa — mapa mundial de husos horarios",
+    "mapDescription": "Un mapa mundial interactivo de husos horarios para tus ciudades comparadas — próximamente.",
+    "sunTitle": "Amanecer y atardecer — horarios para tus ciudades",
+    "sunDescription": "Horarios de amanecer y atardecer para tus ciudades comparadas — próximamente.",
+    "alertsTitle": "Alertas — notificaciones de huso horario",
+    "alertsDescription": "Alertas personalizadas para horarios de reunión y cambios de huso horario — próximamente."
   }
 }

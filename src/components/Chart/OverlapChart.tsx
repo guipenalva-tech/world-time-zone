@@ -1,0 +1,138 @@
+"use client";
+
+import { DateTime } from "luxon";
+import { useTranslations } from "next-intl";
+import type { ComparedCity } from "@/types/city";
+import type { HourFormat } from "@/stores/settingsStore";
+import { getHourRow } from "@/lib/timezone";
+import { getFlagEmoji } from "@/lib/flags";
+import { findCommonBusinessWindow, formatWindowRange } from "@/lib/chartCalc";
+
+interface OverlapChartProps {
+  cities: ComparedCity[];
+  referenceCity: ComparedCity;
+  anchor: DateTime;
+  hourFormat: HourFormat;
+  locale: string;
+}
+
+/**
+ * One 24h row per city (slots share the same absolute instant per column,
+ * per getHourRow/getRowAnchor — the same mechanism the home grid uses).
+ * Local business hours (9am-6pm) are highlighted per row; the longest
+ * contiguous run of columns where *every* city is in business hours at once
+ * is outlined as the common meeting window.
+ */
+export default function OverlapChart({
+  cities,
+  referenceCity,
+  anchor,
+  hourFormat,
+  locale,
+}: OverlapChartProps) {
+  const t = useTranslations("Chart");
+
+  const rows = cities.map((c) => ({
+    comparedCity: c,
+    slots: getHourRow(c.city.timezone, anchor, 24, locale),
+  }));
+
+  const window = findCommonBusinessWindow(rows.map((r) => r.slots));
+  const referenceSlots = getHourRow(referenceCity.city.timezone, anchor, 24, locale);
+  const nowIndex = referenceSlots.findIndex((s) => s.isNow);
+  const hourLabelFormat = hourFormat === "24" ? "HH:mm" : "h a";
+
+  return (
+    <section aria-labelledby="overlap-heading">
+      <h2 id="overlap-heading" className="mb-1 text-sm font-semibold text-foreground/80">
+        {t("overlapTitle")}
+      </h2>
+
+      <p className="mb-3 text-xs font-medium text-foreground/70">
+        {window
+          ? t("bestWindow", {
+              range: formatWindowRange(
+                anchor,
+                window,
+                referenceCity.city.timezone,
+                hourFormat,
+              ),
+              city: referenceCity.city.name,
+            })
+          : t("noOverlap")}
+      </p>
+
+      <div className="overflow-x-auto rounded-xl border border-border">
+        <div className="min-w-[720px]">
+          {/* Hour axis, labeled in the reference city's local time */}
+          <div className="flex border-b border-border bg-surface/60 text-[10px] text-foreground/50">
+            <div className="w-36 shrink-0 px-2 py-1.5 sm:w-44" aria-hidden="true" />
+            <div className="flex flex-1">
+              {referenceSlots.map((slot, i) => (
+                <div
+                  key={slot.isoString}
+                  className={`flex h-6 flex-1 items-center justify-center border-l border-border/40 ${
+                    i === nowIndex ? "font-semibold text-primary" : ""
+                  }`}
+                >
+                  {i % 3 === 0
+                    ? DateTime.fromISO(slot.isoString)
+                        .setZone(referenceCity.city.timezone)
+                        .toFormat(hourLabelFormat)
+                    : ""}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {rows.map(({ comparedCity, slots }) => (
+            <div
+              key={comparedCity.city.id}
+              className="flex border-b border-border last:border-b-0"
+            >
+              <div className="flex w-36 shrink-0 items-center gap-1.5 px-2 py-2 text-xs font-medium sm:w-44">
+                <span aria-hidden="true">{getFlagEmoji(comparedCity.city.countryCode)}</span>
+                <span className="truncate">{comparedCity.city.name}</span>
+                {comparedCity.city.id === referenceCity.city.id && (
+                  <span className="shrink-0 text-[10px] font-normal text-foreground/40">
+                    {t("referenceBadge")}
+                  </span>
+                )}
+              </div>
+
+              <div className="flex flex-1">
+                {slots.map((slot, i) => {
+                  const inWindow =
+                    window !== null && i >= window.startIndex && i <= window.endIndex;
+                  const cellLabel = `${comparedCity.city.name}: ${DateTime.fromISO(
+                    slot.isoString,
+                  )
+                    .setZone(comparedCity.city.timezone)
+                    .toFormat(hourFormat === "24" ? "HH:mm" : "h:mm a")} · ${
+                    slot.isBusinessHour ? t("businessHour") : t("nonBusinessHour")
+                  }`;
+
+                  return (
+                    <div
+                      key={slot.isoString}
+                      role="img"
+                      aria-label={cellLabel}
+                      title={cellLabel}
+                      className={`h-7 flex-1 border-l border-border/40 ${
+                        inWindow
+                          ? "bg-success ring-1 ring-inset ring-success"
+                          : slot.isBusinessHour
+                            ? "bg-success/35"
+                            : "bg-border/25"
+                      } ${i === nowIndex ? "outline outline-1 -outline-offset-1 outline-primary" : ""}`}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

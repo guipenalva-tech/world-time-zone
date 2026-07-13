@@ -74,7 +74,11 @@
   },
   "Breadcrumb": {
     "home": "Startseite",
-    "comparator": "Zeitzonenvergleich"
+    "comparator": "Zeitzonenvergleich",
+    "chart": "Diagramm",
+    "map": "Karte",
+    "sun": "Sonnenauf- und -untergang",
+    "alerts": "Benachrichtigungen"
   },
   "HourFormat": {
     "label": "Zeitformat",
@@ -91,7 +95,11 @@
     "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten folgt bald.",
     "mapTitle": "Weltkarte der Zeitzonen",
     "mapText": "Eine interaktive Weltkarte der Zeitzonen folgt bald.",
-    "comingSoon": "Demnächst"
+    "comingSoon": "Demnächst",
+    "sunTitle": "Sonnenauf- und -untergang",
+    "sunText": "Sonnenauf- und -untergangszeiten für deine Städte folgen bald.",
+    "alertsTitle": "Zeitzonen-Benachrichtigungen",
+    "alertsText": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen folgen bald."
   },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
@@ -111,5 +119,25 @@
       "Wie spät ist es in Tokio, wenn es in São Paulo 15 Uhr ist?",
       "Zeitunterschied zwischen London und New York"
     ]
+  },
+  "Nav": {
+    "home": "Weltzeitzonen",
+    "chart": "Diagramm",
+    "map": "Karte",
+    "sun": "Sonnenauf- und -untergang",
+    "alerts": "Benachrichtigungen"
+  },
+  "EmptyCities": {
+    "title": "Füge Städte hinzu, um zu starten",
+    "text": "Diese Seite verwendet die Städte aus deinem Vergleich. Füge auf der Startseite ein paar hinzu, um sie in Aktion zu sehen.",
+    "cta": "Städte im Vergleich hinzufügen"
+  },
+  "PageMeta": {
+    "mapTitle": "Karte — Weltkarte der Zeitzonen",
+    "mapDescription": "Eine interaktive Weltkarte der Zeitzonen für deine verglichenen Städte — demnächst verfügbar.",
+    "sunTitle": "Sonnenauf- und -untergang — Zeiten für deine Städte",
+    "sunDescription": "Sonnenauf- und -untergangszeiten für deine verglichenen Städte — demnächst verfügbar.",
+    "alertsTitle": "Benachrichtigungen — Zeitzonen-Hinweise",
+    "alertsDescription": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen — demnächst verfügbar."
   }
 }

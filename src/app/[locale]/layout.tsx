@@ -8,6 +8,7 @@ import { locales, type AppLocale } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/siteUrl";
 import Header from "@/components/Layout/Header";
 import Breadcrumb from "@/components/Layout/Breadcrumb";
+import StoreHydrator from "@/components/App/StoreHydrator";
 import "../globals.css";
 
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
@@ -141,6 +142,7 @@ export default async function RootLayout({
           />
         )}
         <NextIntlClientProvider>
+          <StoreHydrator />
           <Header />
           <Breadcrumb locale={locale as AppLocale} />
           {children}

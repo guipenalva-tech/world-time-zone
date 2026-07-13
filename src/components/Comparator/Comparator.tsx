@@ -13,7 +13,7 @@ import {
   downloadComparatorPdf,
   downloadComparatorPng,
 } from "@/lib/exportComparator";
-import { buildShareUrl, readShareLinkParams } from "@/lib/shareLink";
+import { buildShareUrl } from "@/lib/shareLink";
 import AddCityButton from "@/components/Search/AddCityButton";
 import ActionMenu, { exportIcons } from "@/components/Export/ActionMenu";
 import SettingsFab from "@/components/Settings/SettingsFab";
@@ -34,16 +34,10 @@ export default function Comparator() {
   const removeCity = useComparatorStore((s) => s.removeCity);
   const reorderCities = useComparatorStore((s) => s.reorderCities);
   const setReferenceDate = useComparatorStore((s) => s.setReferenceDate);
-  const initializeDefaultCities = useComparatorStore(
-    (s) => s.initializeDefaultCities,
-  );
   const selectionStart = useComparatorStore((s) => s.selectionStart);
   const selectionEnd = useComparatorStore((s) => s.selectionEnd);
   const selectSlot = useComparatorStore((s) => s.selectSlot);
   const clearSelection = useComparatorStore((s) => s.clearSelection);
-  const hydrateFromShareLink = useComparatorStore(
-    (s) => s.hydrateFromShareLink,
-  );
   const storedHourFormat = useSettingsStore((s) => s.hourFormat);
   const hourFormat = resolveHourFormat(storedHourFormat, locale);
 
@@ -75,28 +69,9 @@ export default function Comparator() {
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [dragDeltaY, setDragDeltaY] = useState(0);
 
-  // One-time client-side hydration: localStorage first, then a share-link
-  // URL (if present) overrides it, since it reflects explicit user intent.
-  useEffect(() => {
-    async function init() {
-      await useComparatorStore.persist.rehydrate();
-      await useSettingsStore.persist.rehydrate();
-
-      const shareParams = readShareLinkParams();
-      if (shareParams) {
-        hydrateFromShareLink(
-          shareParams.cityIds,
-          shareParams.start,
-          shareParams.end,
-        );
-        window.history.replaceState(null, "", window.location.pathname);
-      } else {
-        initializeDefaultCities();
-      }
-    }
-    init();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // Store rehydration + share-link/default-city seeding happens once,
+  // app-wide, in <StoreHydrator /> (mounted in the root layout) so every
+  // route sees the same hydrated state, not just this page.
 
   // Keep "now" (and therefore the live clock + hour-tile anchor) fresh.
   useEffect(() => {

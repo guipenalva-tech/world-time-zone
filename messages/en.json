@@ -74,7 +74,11 @@
   },
   "Breadcrumb": {
     "home": "Home",
-    "comparator": "Time zone comparator"
+    "comparator": "Time zone comparator",
+    "chart": "Chart View",
+    "map": "Map View",
+    "sun": "Sunrise & Sunset",
+    "alerts": "Alerts"
   },
   "HourFormat": {
     "label": "Time format",
@@ -91,7 +95,11 @@
     "hourDiffText": "A visual timeline of hour differences between your cities is coming soon.",
     "mapTitle": "World time zone map",
     "mapText": "An interactive world map of time zones is coming soon.",
-    "comingSoon": "Coming soon"
+    "comingSoon": "Coming soon",
+    "sunTitle": "Sunrise & sunset",
+    "sunText": "Sunrise and sunset times for your cities are coming soon.",
+    "alertsTitle": "Time zone alerts",
+    "alertsText": "Custom alerts for meeting times and time-zone changes are coming soon."
   },
   "TimeQuestion": {
     "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",
@@ -111,5 +119,25 @@
       "What time is it in Tokyo when it's 3pm in São Paulo?",
       "Time difference between London and New York"
     ]
+  },
+  "Nav": {
+    "home": "World Time Zones",
+    "chart": "Chart View",
+    "map": "Map View",
+    "sun": "Sunrise & Sunset",
+    "alerts": "Alerts"
+  },
+  "EmptyCities": {
+    "title": "Add cities to get started",
+    "text": "This page uses the cities from your comparator. Add a few on the home page to see it in action.",
+    "cta": "Add cities in the comparator"
+  },
+  "PageMeta": {
+    "mapTitle": "Map View — world time zone map",
+    "mapDescription": "An interactive world map of time zones for your compared cities — coming soon.",
+    "sunTitle": "Sunrise & Sunset — times for your cities",
+    "sunDescription": "Sunrise and sunset times for your compared cities — coming soon.",
+    "alertsTitle": "Alerts — time zone notifications",
+    "alertsDescription": "Custom alerts for meeting times and time-zone changes — coming soon."
   }
 }

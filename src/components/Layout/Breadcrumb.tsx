@@ -1,5 +1,7 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { getSiteUrl } from "@/lib/siteUrl";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -7,12 +9,42 @@ interface BreadcrumbProps {
   locale: AppLocale;
 }
 
+type PageKey = "comparator" | "chart" | "map" | "sun" | "alerts";
+
+/** Maps a (locale-stripped) pathname to the current page's breadcrumb key. */
+function pageKeyFromPathname(pathname: string): PageKey {
+  switch (pathname) {
+    case "/chart":
+      return "chart";
+    case "/map":
+      return "map";
+    case "/sun":
+      return "sun";
+    case "/alerts":
+      return "alerts";
+    default:
+      return "comparator";
+  }
+}
+
+const PAGE_PATH: Record<PageKey, string> = {
+  comparator: "/",
+  chart: "/chart",
+  map: "/map",
+  sun: "/sun",
+  alerts: "/alerts",
+};
+
 /**
  * Discreet breadcrumb below the header, with a matching BreadcrumbList
- * JSON-LD block for SEO. Server-rendered since it needs no interactivity.
+ * JSON-LD block for SEO. Updates per route (client-side, since the root
+ * layout — where this is mounted — doesn't otherwise know which page is
+ * active).
  */
-export default async function Breadcrumb({ locale }: BreadcrumbProps) {
-  const t = await getTranslations({ locale, namespace: "Breadcrumb" });
+export default function Breadcrumb({ locale }: BreadcrumbProps) {
+  const t = useTranslations("Breadcrumb");
+  const pathname = usePathname();
+  const pageKey = pageKeyFromPathname(pathname);
   const siteUrl = getSiteUrl();
 
   const jsonLd = {
@@ -28,8 +60,8 @@ export default async function Breadcrumb({ locale }: BreadcrumbProps) {
       {
         "@type": "ListItem",
         position: 2,
-        name: t("comparator"),
-        item: `${siteUrl}/${locale}`,
+        name: t(pageKey),
+        item: `${siteUrl}/${locale}${PAGE_PATH[pageKey]}`,
       },
     ],
   };
@@ -49,7 +81,7 @@ export default async function Breadcrumb({ locale }: BreadcrumbProps) {
         </li>
         <li aria-hidden="true">›</li>
         <li aria-current="page" className="text-foreground/70">
-          {t("comparator")}
+          {t(pageKey)}
         </li>
       </ol>
     </nav>

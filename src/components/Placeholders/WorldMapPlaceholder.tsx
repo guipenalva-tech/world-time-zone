@@ -23,6 +23,11 @@ const icon = (
 export default function WorldMapPlaceholder() {
   const t = useTranslations("Placeholders");
   return (
-    <PlaceholderCard title={t("mapTitle")} text={t("mapText")} icon={icon} />
+    <PlaceholderCard
+      title={t("mapTitle")}
+      text={t("mapText")}
+      icon={icon}
+      href="/map"
+    />
   );
 }

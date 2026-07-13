@@ -15,6 +15,16 @@ export const localeNames: Record<AppLocale, string> = {
   hi: "हिन्दी",
 };
 
+/** ISO 3166-1 alpha-2 country used to render a flag for each locale in the switcher. */
+export const localeCountryCode: Record<AppLocale, string> = {
+  en: "US",
+  pt: "BR",
+  es: "ES",
+  fr: "FR",
+  de: "DE",
+  hi: "IN",
+};
+
 export const routing = defineRouting({
   locales,
   defaultLocale: "en",

@@ -24,6 +24,11 @@ const icon = (
 export default function HourDifferencePlaceholder() {
   const t = useTranslations("Placeholders");
   return (
-    <PlaceholderCard title={t("hourDiffTitle")} text={t("hourDiffText")} icon={icon} />
+    <PlaceholderCard
+      title={t("hourDiffTitle")}
+      text={t("hourDiffText")}
+      icon={icon}
+      href="/chart"
+    />
   );
 }

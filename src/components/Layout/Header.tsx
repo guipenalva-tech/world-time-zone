@@ -8,6 +8,7 @@ import type { City } from "@/types/city";
 import CitySearch from "@/components/Search/CitySearch";
 import LanguageSelect from "@/components/Settings/LanguageSelect";
 import HourFormatToggle from "@/components/Settings/HourFormatToggle";
+import NavBar from "./NavBar";
 
 /**
  * Fixed top header: logo, city search (reuses the same "add city" flow as
@@ -163,6 +164,8 @@ export default function Header() {
           <CitySearch onSelect={handleSelect} excludeIds={existingIds} autoFocus />
         </div>
       )}
+
+      <NavBar />
 
       {toast && (
         <div
