@@ -6,6 +6,10 @@ export interface City {
   countryCode: string;
   /** IANA timezone identifier, e.g. "America/Sao_Paulo" */
   timezone: string;
+  /** Latitude in decimal degrees, [-90, 90]. */
+  lat: number;
+  /** Longitude in decimal degrees, [-180, 180]. */
+  lon: number;
   population: number;
   aliases?: string[];
 }

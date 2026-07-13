@@ -5,6 +5,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 40.71,
+    "lon": -74.01,
     "population": 8400000,
     "aliases": [
       "nyc",
@@ -20,6 +22,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 34.05,
+    "lon": -118.24,
     "population": 3900000,
     "aliases": [
       "la"
@@ -31,6 +35,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 41.88,
+    "lon": -87.63,
     "population": 2700000
   },
   {
@@ -39,6 +45,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 29.76,
+    "lon": -95.37,
     "population": 2300000
   },
   {
@@ -47,6 +55,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Phoenix",
+    "lat": 33.45,
+    "lon": -112.07,
     "population": 1600000
   },
   {
@@ -55,6 +65,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 39.95,
+    "lon": -75.17,
     "population": 1580000,
     "aliases": [
       "philly"
@@ -66,6 +78,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 29.42,
+    "lon": -98.49,
     "population": 1500000
   },
   {
@@ -74,6 +88,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 32.72,
+    "lon": -117.16,
     "population": 1400000
   },
   {
@@ -82,6 +98,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 32.78,
+    "lon": -96.8,
     "population": 1300000
   },
   {
@@ -90,6 +108,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 37.34,
+    "lon": -121.89,
     "population": 1000000
   },
   {
@@ -98,6 +118,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 30.27,
+    "lon": -97.74,
     "population": 960000
   },
   {
@@ -106,6 +128,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 37.77,
+    "lon": -122.42,
     "population": 870000,
     "aliases": [
       "sf",
@@ -118,6 +142,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 47.61,
+    "lon": -122.33,
     "population": 750000
   },
   {
@@ -126,6 +152,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Denver",
+    "lat": 39.74,
+    "lon": -104.99,
     "population": 715000
   },
   {
@@ -134,6 +162,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 42.36,
+    "lon": -71.06,
     "population": 690000
   },
   {
@@ -142,6 +172,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 38.91,
+    "lon": -77.04,
     "population": 700000,
     "aliases": [
       "dc",
@@ -154,6 +186,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 25.76,
+    "lon": -80.19,
     "population": 470000
   },
   {
@@ -162,6 +196,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 33.75,
+    "lon": -84.39,
     "population": 500000
   },
   {
@@ -170,6 +206,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 36.17,
+    "lon": -115.14,
     "population": 640000,
     "aliases": [
       "vegas"
@@ -181,6 +219,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 45.52,
+    "lon": -122.68,
     "population": 650000
   },
   {
@@ -189,6 +229,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Detroit",
+    "lat": 42.33,
+    "lon": -83.05,
     "population": 630000
   },
   {
@@ -197,6 +239,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 44.98,
+    "lon": -93.27,
     "population": 430000
   },
   {
@@ -205,6 +249,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "Pacific/Honolulu",
+    "lat": 21.31,
+    "lon": -157.86,
     "population": 350000
   },
   {
@@ -213,6 +259,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Anchorage",
+    "lat": 61.22,
+    "lon": -149.9,
     "population": 290000
   },
   {
@@ -221,6 +269,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 29.95,
+    "lon": -90.07,
     "population": 390000
   },
   {
@@ -229,6 +279,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Denver",
+    "lat": 40.76,
+    "lon": -111.89,
     "population": 200000
   },
   {
@@ -237,6 +289,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 39.1,
+    "lon": -94.58,
     "population": 500000
   },
   {
@@ -245,6 +299,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Indiana/Indianapolis",
+    "lat": 39.77,
+    "lon": -86.16,
     "population": 880000
   },
   {
@@ -253,6 +309,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 36.16,
+    "lon": -86.78,
     "population": 690000
   },
   {
@@ -261,6 +319,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 35.23,
+    "lon": -80.84,
     "population": 870000
   },
   {
@@ -269,6 +329,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 35.78,
+    "lon": -78.64,
     "population": 470000
   },
   {
@@ -277,6 +339,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 39.29,
+    "lon": -76.61,
     "population": 590000
   },
   {
@@ -285,6 +349,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 43.04,
+    "lon": -87.91,
     "population": 590000
   },
   {
@@ -293,6 +359,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Denver",
+    "lat": 35.08,
+    "lon": -106.65,
     "population": 560000
   },
   {
@@ -301,6 +369,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Phoenix",
+    "lat": 32.22,
+    "lon": -110.97,
     "population": 545000
   },
   {
@@ -309,6 +379,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 38.58,
+    "lon": -121.49,
     "population": 510000
   },
   {
@@ -317,6 +389,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 35.47,
+    "lon": -97.52,
     "population": 655000
   },
   {
@@ -325,6 +399,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Denver",
+    "lat": 31.76,
+    "lon": -106.49,
     "population": 680000
   },
   {
@@ -333,6 +409,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 35.15,
+    "lon": -90.05,
     "population": 630000
   },
   {
@@ -341,6 +419,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 38.25,
+    "lon": -85.76,
     "population": 620000
   },
   {
@@ -349,6 +429,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 36.75,
+    "lon": -119.77,
     "population": 545000
   },
   {
@@ -357,6 +439,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 27.95,
+    "lon": -82.46,
     "population": 400000
   },
   {
@@ -365,6 +449,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 28.54,
+    "lon": -81.38,
     "population": 290000
   },
   {
@@ -373,6 +459,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 38.63,
+    "lon": -90.2,
     "population": 300000
   },
   {
@@ -381,6 +469,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 40.44,
+    "lon": -79.99,
     "population": 300000
   },
   {
@@ -389,6 +479,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 39.1,
+    "lon": -84.51,
     "population": 310000
   },
   {
@@ -397,6 +489,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 41.5,
+    "lon": -81.69,
     "population": 370000
   },
   {
@@ -405,6 +499,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Boise",
+    "lat": 43.62,
+    "lon": -116.2,
     "population": 235000
   },
   {
@@ -413,6 +509,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Juneau",
+    "lat": 58.3,
+    "lon": -134.42,
     "population": 32000
   },
   {
@@ -421,6 +519,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 39.96,
+    "lon": -83,
     "population": 900000
   },
   {
@@ -429,6 +529,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 30.33,
+    "lon": -81.66,
     "population": 950000
   },
   {
@@ -437,6 +539,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 36.85,
+    "lon": -75.98,
     "population": 450000
   },
   {
@@ -445,6 +549,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Denver",
+    "lat": 38.83,
+    "lon": -104.82,
     "population": 480000
   },
   {
@@ -453,6 +559,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 41.26,
+    "lon": -95.94,
     "population": 490000
   },
   {
@@ -461,6 +569,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 37.54,
+    "lon": -77.44,
     "population": 230000
   },
   {
@@ -469,6 +579,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 41.82,
+    "lon": -71.41,
     "population": 190000
   },
   {
@@ -477,6 +589,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 42.89,
+    "lon": -78.88,
     "population": 280000
   },
   {
@@ -485,6 +599,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 43.16,
+    "lon": -77.61,
     "population": 210000
   },
   {
@@ -493,6 +609,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/New_York",
+    "lat": 41.76,
+    "lon": -72.69,
     "population": 120000
   },
   {
@@ -501,6 +619,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 30.45,
+    "lon": -91.19,
     "population": 220000
   },
   {
@@ -509,6 +629,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 34.75,
+    "lon": -92.29,
     "population": 200000
   },
   {
@@ -517,6 +639,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 33.52,
+    "lon": -86.8,
     "population": 200000
   },
   {
@@ -525,6 +649,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 32.3,
+    "lon": -90.18,
     "population": 150000
   },
   {
@@ -533,6 +659,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 37.69,
+    "lon": -97.34,
     "population": 400000
   },
   {
@@ -541,6 +669,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Chicago",
+    "lat": 36.15,
+    "lon": -95.99,
     "population": 410000
   },
   {
@@ -549,6 +679,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 47.66,
+    "lon": -117.43,
     "population": 230000
   },
   {
@@ -557,6 +689,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 47.25,
+    "lon": -122.44,
     "population": 220000
   },
   {
@@ -565,6 +699,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Los_Angeles",
+    "lat": 39.53,
+    "lon": -119.81,
     "population": 270000
   },
   {
@@ -573,6 +709,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Anchorage",
+    "lat": 64.84,
+    "lon": -147.72,
     "population": 32000
   },
   {
@@ -581,6 +719,8 @@
     "country": "United States",
     "countryCode": "US",
     "timezone": "America/Adak",
+    "lat": 51.88,
+    "lon": -176.66,
     "population": 170
   },
   {
@@ -589,6 +729,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Toronto",
+    "lat": 43.65,
+    "lon": -79.38,
     "population": 2900000,
     "aliases": [
       "yyz"
@@ -600,6 +742,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Toronto",
+    "lat": 45.5,
+    "lon": -73.57,
     "population": 1800000
   },
   {
@@ -608,6 +752,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Vancouver",
+    "lat": 49.28,
+    "lon": -123.12,
     "population": 2600000
   },
   {
@@ -616,6 +762,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Edmonton",
+    "lat": 51.05,
+    "lon": -114.07,
     "population": 1500000
   },
   {
@@ -624,6 +772,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Edmonton",
+    "lat": 53.55,
+    "lon": -113.49,
     "population": 1500000
   },
   {
@@ -632,6 +782,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Toronto",
+    "lat": 45.42,
+    "lon": -75.7,
     "population": 1000000
   },
   {
@@ -640,6 +792,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Winnipeg",
+    "lat": 49.9,
+    "lon": -97.14,
     "population": 830000
   },
   {
@@ -648,6 +802,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Toronto",
+    "lat": 46.81,
+    "lon": -71.21,
     "population": 800000
   },
   {
@@ -656,6 +812,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Halifax",
+    "lat": 44.65,
+    "lon": -63.57,
     "population": 440000
   },
   {
@@ -664,6 +822,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/St_Johns",
+    "lat": 47.56,
+    "lon": -52.71,
     "population": 210000
   },
   {
@@ -672,6 +832,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Regina",
+    "lat": 50.45,
+    "lon": -104.62,
     "population": 230000
   },
   {
@@ -680,6 +842,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Regina",
+    "lat": 52.13,
+    "lon": -106.67,
     "population": 270000
   },
   {
@@ -688,6 +852,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Whitehorse",
+    "lat": 60.72,
+    "lon": -135.06,
     "population": 28000
   },
   {
@@ -696,6 +862,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Vancouver",
+    "lat": 48.43,
+    "lon": -123.37,
     "population": 390000
   },
   {
@@ -704,6 +872,8 @@
     "country": "Canada",
     "countryCode": "CA",
     "timezone": "America/Toronto",
+    "lat": 43.26,
+    "lon": -79.87,
     "population": 780000
   },
   {
@@ -712,6 +882,8 @@
     "country": "Mexico",
     "countryCode": "MX",
     "timezone": "America/Mexico_City",
+    "lat": 19.43,
+    "lon": -99.13,
     "population": 21800000,
     "aliases": [
       "cdmx"
@@ -723,6 +895,8 @@
     "country": "Mexico",
     "countryCode": "MX",
     "timezone": "America/Mexico_City",
+    "lat": 20.68,
+    "lon": -103.35,
     "population": 5000000
   },
   {
@@ -731,6 +905,8 @@
     "country": "Mexico",
     "countryCode": "MX",
     "timezone": "America/Monterrey",
+    "lat": 25.69,
+    "lon": -100.32,
     "population": 4700000
   },
   {
@@ -739,6 +915,8 @@
     "country": "Mexico",
     "countryCode": "MX",
     "timezone": "America/Tijuana",
+    "lat": 32.53,
+    "lon": -117.02,
     "population": 1800000
   },
   {
@@ -747,6 +925,8 @@
     "country": "Mexico",
     "countryCode": "MX",
     "timezone": "America/Cancun",
+    "lat": 21.16,
+    "lon": -86.85,
     "population": 900000
   },
   {
@@ -755,6 +935,8 @@
     "country": "Panama",
     "countryCode": "PA",
     "timezone": "America/Panama",
+    "lat": 8.98,
+    "lon": -79.52,
     "population": 1500000
   },
   {
@@ -763,6 +945,8 @@
     "country": "Costa Rica",
     "countryCode": "CR",
     "timezone": "America/Costa_Rica",
+    "lat": 9.93,
+    "lon": -84.08,
     "population": 1400000
   },
   {
@@ -771,6 +955,8 @@
     "country": "Guatemala",
     "countryCode": "GT",
     "timezone": "America/Guatemala",
+    "lat": 14.63,
+    "lon": -90.51,
     "population": 3000000
   },
   {
@@ -779,6 +965,8 @@
     "country": "El Salvador",
     "countryCode": "SV",
     "timezone": "America/El_Salvador",
+    "lat": 13.69,
+    "lon": -89.19,
     "population": 1100000
   },
   {
@@ -787,6 +975,8 @@
     "country": "Honduras",
     "countryCode": "HN",
     "timezone": "America/Tegucigalpa",
+    "lat": 14.1,
+    "lon": -87.22,
     "population": 1400000
   },
   {
@@ -795,6 +985,8 @@
     "country": "Nicaragua",
     "countryCode": "NI",
     "timezone": "America/Managua",
+    "lat": 12.11,
+    "lon": -86.24,
     "population": 1050000
   },
   {
@@ -803,6 +995,8 @@
     "country": "Cuba",
     "countryCode": "CU",
     "timezone": "America/Havana",
+    "lat": 23.13,
+    "lon": -82.38,
     "population": 2100000
   },
   {
@@ -811,6 +1005,8 @@
     "country": "Dominican Republic",
     "countryCode": "DO",
     "timezone": "America/Santo_Domingo",
+    "lat": 18.49,
+    "lon": -69.94,
     "population": 3300000
   },
   {
@@ -819,6 +1015,8 @@
     "country": "Puerto Rico",
     "countryCode": "PR",
     "timezone": "America/Puerto_Rico",
+    "lat": 18.47,
+    "lon": -66.11,
     "population": 2400000
   },
   {
@@ -827,6 +1025,8 @@
     "country": "Jamaica",
     "countryCode": "JM",
     "timezone": "America/Jamaica",
+    "lat": 18.02,
+    "lon": -76.8,
     "population": 1200000
   },
   {
@@ -835,6 +1035,8 @@
     "country": "Bahamas",
     "countryCode": "BS",
     "timezone": "America/Nassau",
+    "lat": 25.06,
+    "lon": -77.35,
     "population": 280000
   },
   {
@@ -843,6 +1045,8 @@
     "country": "Haiti",
     "countryCode": "HT",
     "timezone": "America/Port-au-Prince",
+    "lat": 18.59,
+    "lon": -72.31,
     "population": 2800000
   },
   {
@@ -851,6 +1055,8 @@
     "country": "Barbados",
     "countryCode": "BB",
     "timezone": "America/Barbados",
+    "lat": 13.1,
+    "lon": -59.62,
     "population": 110000
   },
   {
@@ -859,6 +1065,8 @@
     "country": "Trinidad and Tobago",
     "countryCode": "TT",
     "timezone": "America/Port_of_Spain",
+    "lat": 10.65,
+    "lon": -61.52,
     "population": 540000
   },
   {
@@ -867,6 +1075,8 @@
     "country": "Grenada",
     "countryCode": "GD",
     "timezone": "America/Grenada",
+    "lat": 12.06,
+    "lon": -61.75,
     "population": 40000
   },
   {
@@ -875,6 +1085,8 @@
     "country": "Saint Lucia",
     "countryCode": "LC",
     "timezone": "America/St_Lucia",
+    "lat": 14.01,
+    "lon": -61,
     "population": 22000
   },
   {
@@ -883,6 +1095,8 @@
     "country": "Curacao",
     "countryCode": "CW",
     "timezone": "America/Curacao",
+    "lat": 12.11,
+    "lon": -68.93,
     "population": 150000
   },
   {
@@ -891,6 +1105,8 @@
     "country": "Aruba",
     "countryCode": "AW",
     "timezone": "America/Aruba",
+    "lat": 12.52,
+    "lon": -70.03,
     "population": 30000
   },
   {
@@ -899,6 +1115,8 @@
     "country": "Cayman Islands",
     "countryCode": "KY",
     "timezone": "America/Cayman",
+    "lat": 19.3,
+    "lon": -81.38,
     "population": 35000
   },
   {
@@ -907,6 +1125,8 @@
     "country": "British Virgin Islands",
     "countryCode": "VG",
     "timezone": "America/Tortola",
+    "lat": 18.43,
+    "lon": -64.62,
     "population": 15000
   },
   {
@@ -915,6 +1135,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -23.55,
+    "lon": -46.63,
     "population": 22400000,
     "aliases": [
       "sampa",
@@ -928,6 +1150,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -22.91,
+    "lon": -43.17,
     "population": 13600000,
     "aliases": [
       "rio"
@@ -939,6 +1163,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -15.79,
+    "lon": -47.88,
     "population": 4800000
   },
   {
@@ -947,6 +1173,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Bahia",
+    "lat": -12.97,
+    "lon": -38.51,
     "population": 3900000
   },
   {
@@ -955,6 +1183,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Fortaleza",
+    "lat": -3.72,
+    "lon": -38.54,
     "population": 4100000
   },
   {
@@ -963,6 +1193,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -19.92,
+    "lon": -43.94,
     "population": 6100000
   },
   {
@@ -971,6 +1203,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Manaus",
+    "lat": -3.12,
+    "lon": -60.02,
     "population": 2200000
   },
   {
@@ -979,6 +1213,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Recife",
+    "lat": -8.05,
+    "lon": -34.88,
     "population": 4200000
   },
   {
@@ -987,6 +1223,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -30.03,
+    "lon": -51.23,
     "population": 4300000
   },
   {
@@ -995,6 +1233,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Sao_Paulo",
+    "lat": -25.43,
+    "lon": -49.27,
     "population": 3700000
   },
   {
@@ -1003,6 +1243,8 @@
     "country": "Brazil",
     "countryCode": "BR",
     "timezone": "America/Noronha",
+    "lat": -3.86,
+    "lon": -32.42,
     "population": 3000
   },
   {
@@ -1011,6 +1253,8 @@
     "country": "Argentina",
     "countryCode": "AR",
     "timezone": "America/Argentina/Buenos_Aires",
+    "lat": -34.6,
+    "lon": -58.38,
     "population": 15400000,
     "aliases": [
       "baires"
@@ -1022,6 +1266,8 @@
     "country": "Argentina",
     "countryCode": "AR",
     "timezone": "America/Argentina/Cordoba",
+    "lat": -31.42,
+    "lon": -64.18,
     "population": 1600000
   },
   {
@@ -1030,6 +1276,8 @@
     "country": "Argentina",
     "countryCode": "AR",
     "timezone": "America/Argentina/Mendoza",
+    "lat": -32.89,
+    "lon": -68.85,
     "population": 1150000
   },
   {
@@ -1038,6 +1286,8 @@
     "country": "Chile",
     "countryCode": "CL",
     "timezone": "America/Santiago",
+    "lat": -33.45,
+    "lon": -70.67,
     "population": 6800000
   },
   {
@@ -1046,6 +1296,8 @@
     "country": "Peru",
     "countryCode": "PE",
     "timezone": "America/Lima",
+    "lat": -12.05,
+    "lon": -77.04,
     "population": 10700000,
     "aliases": [
       "लीमा"
@@ -1057,6 +1309,8 @@
     "country": "Colombia",
     "countryCode": "CO",
     "timezone": "America/Bogota",
+    "lat": 4.71,
+    "lon": -74.07,
     "population": 10700000
   },
   {
@@ -1065,6 +1319,8 @@
     "country": "Colombia",
     "countryCode": "CO",
     "timezone": "America/Bogota",
+    "lat": 6.25,
+    "lon": -75.56,
     "population": 4000000
   },
   {
@@ -1073,6 +1329,8 @@
     "country": "Venezuela",
     "countryCode": "VE",
     "timezone": "America/Caracas",
+    "lat": 10.48,
+    "lon": -66.9,
     "population": 2900000
   },
   {
@@ -1081,6 +1339,8 @@
     "country": "Ecuador",
     "countryCode": "EC",
     "timezone": "America/Guayaquil",
+    "lat": -0.19,
+    "lon": -78.49,
     "population": 2000000
   },
   {
@@ -1089,6 +1349,8 @@
     "country": "Ecuador",
     "countryCode": "EC",
     "timezone": "America/Guayaquil",
+    "lat": -2.19,
+    "lon": -79.89,
     "population": 2700000
   },
   {
@@ -1097,6 +1359,8 @@
     "country": "Bolivia",
     "countryCode": "BO",
     "timezone": "America/La_Paz",
+    "lat": -16.5,
+    "lon": -68.15,
     "population": 1800000
   },
   {
@@ -1105,6 +1369,8 @@
     "country": "Bolivia",
     "countryCode": "BO",
     "timezone": "America/La_Paz",
+    "lat": -17.78,
+    "lon": -63.18,
     "population": 1700000
   },
   {
@@ -1113,6 +1379,8 @@
     "country": "Paraguay",
     "countryCode": "PY",
     "timezone": "America/Asuncion",
+    "lat": -25.28,
+    "lon": -57.63,
     "population": 3200000
   },
   {
@@ -1121,6 +1389,8 @@
     "country": "Uruguay",
     "countryCode": "UY",
     "timezone": "America/Montevideo",
+    "lat": -34.9,
+    "lon": -56.16,
     "population": 1700000
   },
   {
@@ -1129,6 +1399,8 @@
     "country": "Guyana",
     "countryCode": "GY",
     "timezone": "America/Guyana",
+    "lat": 6.8,
+    "lon": -58.16,
     "population": 200000
   },
   {
@@ -1137,6 +1409,8 @@
     "country": "Suriname",
     "countryCode": "SR",
     "timezone": "America/Paramaribo",
+    "lat": 5.87,
+    "lon": -55.17,
     "population": 240000
   },
   {
@@ -1145,6 +1419,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 51.51,
+    "lon": -0.13,
     "population": 9500000,
     "aliases": [
       "ldn",
@@ -1158,6 +1434,8 @@
     "country": "France",
     "countryCode": "FR",
     "timezone": "Europe/Paris",
+    "lat": 48.85,
+    "lon": 2.35,
     "population": 11000000
   },
   {
@@ -1166,6 +1444,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 52.52,
+    "lon": 13.4,
     "population": 3700000
   },
   {
@@ -1174,6 +1454,8 @@
     "country": "Spain",
     "countryCode": "ES",
     "timezone": "Europe/Madrid",
+    "lat": 40.42,
+    "lon": -3.7,
     "population": 6600000,
     "aliases": [
       "मैड्रिड"
@@ -1185,6 +1467,8 @@
     "country": "Italy",
     "countryCode": "IT",
     "timezone": "Europe/Rome",
+    "lat": 41.9,
+    "lon": 12.5,
     "population": 4300000,
     "aliases": [
       "Roma",
@@ -1197,6 +1481,8 @@
     "country": "Netherlands",
     "countryCode": "NL",
     "timezone": "Europe/Amsterdam",
+    "lat": 52.37,
+    "lon": 4.9,
     "population": 1150000
   },
   {
@@ -1205,6 +1491,8 @@
     "country": "Belgium",
     "countryCode": "BE",
     "timezone": "Europe/Brussels",
+    "lat": 50.85,
+    "lon": 4.35,
     "population": 2100000,
     "aliases": [
       "Bruxelas",
@@ -1219,6 +1507,8 @@
     "country": "Austria",
     "countryCode": "AT",
     "timezone": "Europe/Vienna",
+    "lat": 48.21,
+    "lon": 16.37,
     "population": 1900000,
     "aliases": [
       "Viena",
@@ -1232,6 +1522,8 @@
     "country": "Switzerland",
     "countryCode": "CH",
     "timezone": "Europe/Zurich",
+    "lat": 47.37,
+    "lon": 8.54,
     "population": 1400000
   },
   {
@@ -1240,6 +1532,8 @@
     "country": "Switzerland",
     "countryCode": "CH",
     "timezone": "Europe/Zurich",
+    "lat": 46.2,
+    "lon": 6.14,
     "population": 200000,
     "aliases": [
       "Genebra",
@@ -1254,6 +1548,8 @@
     "country": "Switzerland",
     "countryCode": "CH",
     "timezone": "Europe/Zurich",
+    "lat": 46.95,
+    "lon": 7.45,
     "population": 135000
   },
   {
@@ -1262,6 +1558,8 @@
     "country": "Switzerland",
     "countryCode": "CH",
     "timezone": "Europe/Zurich",
+    "lat": 47.56,
+    "lon": 7.59,
     "population": 175000
   },
   {
@@ -1270,6 +1568,8 @@
     "country": "Sweden",
     "countryCode": "SE",
     "timezone": "Europe/Stockholm",
+    "lat": 59.33,
+    "lon": 18.07,
     "population": 1600000
   },
   {
@@ -1278,6 +1578,8 @@
     "country": "Sweden",
     "countryCode": "SE",
     "timezone": "Europe/Stockholm",
+    "lat": 57.71,
+    "lon": 11.97,
     "population": 600000
   },
   {
@@ -1286,6 +1588,8 @@
     "country": "Norway",
     "countryCode": "NO",
     "timezone": "Europe/Oslo",
+    "lat": 59.91,
+    "lon": 10.75,
     "population": 1000000
   },
   {
@@ -1294,6 +1598,8 @@
     "country": "Norway",
     "countryCode": "NO",
     "timezone": "Europe/Oslo",
+    "lat": 60.39,
+    "lon": 5.32,
     "population": 285000
   },
   {
@@ -1302,6 +1608,8 @@
     "country": "Denmark",
     "countryCode": "DK",
     "timezone": "Europe/Copenhagen",
+    "lat": 55.68,
+    "lon": 12.57,
     "population": 1350000
   },
   {
@@ -1310,6 +1618,8 @@
     "country": "Denmark",
     "countryCode": "DK",
     "timezone": "Europe/Copenhagen",
+    "lat": 56.16,
+    "lon": 10.2,
     "population": 280000
   },
   {
@@ -1318,6 +1628,8 @@
     "country": "Finland",
     "countryCode": "FI",
     "timezone": "Europe/Helsinki",
+    "lat": 60.17,
+    "lon": 24.94,
     "population": 1300000
   },
   {
@@ -1326,6 +1638,8 @@
     "country": "Poland",
     "countryCode": "PL",
     "timezone": "Europe/Warsaw",
+    "lat": 52.23,
+    "lon": 21.01,
     "population": 1800000,
     "aliases": [
       "Varsóvia",
@@ -1340,6 +1654,8 @@
     "country": "Poland",
     "countryCode": "PL",
     "timezone": "Europe/Warsaw",
+    "lat": 50.06,
+    "lon": 19.94,
     "population": 780000
   },
   {
@@ -1348,6 +1664,8 @@
     "country": "Poland",
     "countryCode": "PL",
     "timezone": "Europe/Warsaw",
+    "lat": 54.35,
+    "lon": 18.65,
     "population": 470000
   },
   {
@@ -1356,6 +1674,8 @@
     "country": "Poland",
     "countryCode": "PL",
     "timezone": "Europe/Warsaw",
+    "lat": 51.11,
+    "lon": 17.04,
     "population": 640000
   },
   {
@@ -1364,6 +1684,8 @@
     "country": "Czechia",
     "countryCode": "CZ",
     "timezone": "Europe/Prague",
+    "lat": 50.08,
+    "lon": 14.44,
     "population": 1300000,
     "aliases": [
       "Praga",
@@ -1376,6 +1698,8 @@
     "country": "Hungary",
     "countryCode": "HU",
     "timezone": "Europe/Budapest",
+    "lat": 47.5,
+    "lon": 19.04,
     "population": 1750000
   },
   {
@@ -1384,6 +1708,8 @@
     "country": "Romania",
     "countryCode": "RO",
     "timezone": "Europe/Bucharest",
+    "lat": 44.43,
+    "lon": 26.1,
     "population": 1800000
   },
   {
@@ -1392,6 +1718,8 @@
     "country": "Romania",
     "countryCode": "RO",
     "timezone": "Europe/Bucharest",
+    "lat": 46.77,
+    "lon": 23.6,
     "population": 320000
   },
   {
@@ -1400,6 +1728,8 @@
     "country": "Bulgaria",
     "countryCode": "BG",
     "timezone": "Europe/Sofia",
+    "lat": 42.7,
+    "lon": 23.32,
     "population": 1240000
   },
   {
@@ -1408,6 +1738,8 @@
     "country": "Greece",
     "countryCode": "GR",
     "timezone": "Europe/Athens",
+    "lat": 37.98,
+    "lon": 23.73,
     "population": 3150000,
     "aliases": [
       "Atenas",
@@ -1421,6 +1753,8 @@
     "country": "Greece",
     "countryCode": "GR",
     "timezone": "Europe/Athens",
+    "lat": 40.64,
+    "lon": 22.94,
     "population": 1000000
   },
   {
@@ -1429,6 +1763,8 @@
     "country": "Portugal",
     "countryCode": "PT",
     "timezone": "Europe/Lisbon",
+    "lat": 38.72,
+    "lon": -9.14,
     "population": 2900000,
     "aliases": [
       "Lisboa",
@@ -1442,6 +1778,8 @@
     "country": "Portugal",
     "countryCode": "PT",
     "timezone": "Europe/Lisbon",
+    "lat": 41.15,
+    "lon": -8.61,
     "population": 1300000
   },
   {
@@ -1450,6 +1788,8 @@
     "country": "Ireland",
     "countryCode": "IE",
     "timezone": "Europe/Dublin",
+    "lat": 53.35,
+    "lon": -6.26,
     "population": 1200000
   },
   {
@@ -1458,6 +1798,8 @@
     "country": "Ireland",
     "countryCode": "IE",
     "timezone": "Europe/Dublin",
+    "lat": 51.9,
+    "lon": -8.47,
     "population": 220000
   },
   {
@@ -1466,6 +1808,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 55.95,
+    "lon": -3.19,
     "population": 540000
   },
   {
@@ -1474,6 +1818,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 53.48,
+    "lon": -2.24,
     "population": 550000
   },
   {
@@ -1482,6 +1828,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 55.86,
+    "lon": -4.25,
     "population": 630000
   },
   {
@@ -1490,6 +1838,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 52.48,
+    "lon": -1.9,
     "population": 1150000
   },
   {
@@ -1498,6 +1848,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 53.8,
+    "lon": -1.55,
     "population": 800000
   },
   {
@@ -1506,6 +1858,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 51.48,
+    "lon": -3.18,
     "population": 370000
   },
   {
@@ -1514,6 +1868,8 @@
     "country": "United Kingdom",
     "countryCode": "GB",
     "timezone": "Europe/London",
+    "lat": 54.6,
+    "lon": -5.93,
     "population": 340000
   },
   {
@@ -1522,6 +1878,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Europe/Moscow",
+    "lat": 55.76,
+    "lon": 37.62,
     "population": 12600000,
     "aliases": [
       "Moscou",
@@ -1535,6 +1893,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Europe/Moscow",
+    "lat": 59.93,
+    "lon": 30.34,
     "population": 5400000
   },
   {
@@ -1543,6 +1903,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Europe/Kaliningrad",
+    "lat": 54.71,
+    "lon": 20.51,
     "population": 490000
   },
   {
@@ -1551,6 +1913,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Yekaterinburg",
+    "lat": 56.84,
+    "lon": 60.61,
     "population": 1500000
   },
   {
@@ -1559,6 +1923,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Novosibirsk",
+    "lat": 55.03,
+    "lon": 82.92,
     "population": 1600000
   },
   {
@@ -1567,6 +1933,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Krasnoyarsk",
+    "lat": 56.01,
+    "lon": 92.85,
     "population": 1100000
   },
   {
@@ -1575,6 +1943,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Irkutsk",
+    "lat": 52.29,
+    "lon": 104.3,
     "population": 620000
   },
   {
@@ -1583,6 +1953,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Vladivostok",
+    "lat": 43.12,
+    "lon": 131.89,
     "population": 600000
   },
   {
@@ -1591,6 +1963,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Sakhalin",
+    "lat": 46.96,
+    "lon": 142.74,
     "population": 200000
   },
   {
@@ -1599,6 +1973,8 @@
     "country": "Russia",
     "countryCode": "RU",
     "timezone": "Asia/Kamchatka",
+    "lat": 53.02,
+    "lon": 158.65,
     "population": 180000
   },
   {
@@ -1607,6 +1983,8 @@
     "country": "Ukraine",
     "countryCode": "UA",
     "timezone": "Europe/Kyiv",
+    "lat": 50.45,
+    "lon": 30.52,
     "population": 2900000,
     "aliases": [
       "kiev"
@@ -1618,6 +1996,8 @@
     "country": "Belarus",
     "countryCode": "BY",
     "timezone": "Europe/Minsk",
+    "lat": 53.9,
+    "lon": 27.57,
     "population": 2000000
   },
   {
@@ -1626,6 +2006,8 @@
     "country": "Lithuania",
     "countryCode": "LT",
     "timezone": "Europe/Vilnius",
+    "lat": 54.69,
+    "lon": 25.28,
     "population": 590000
   },
   {
@@ -1634,6 +2016,8 @@
     "country": "Lithuania",
     "countryCode": "LT",
     "timezone": "Europe/Vilnius",
+    "lat": 54.9,
+    "lon": 23.9,
     "population": 310000
   },
   {
@@ -1642,6 +2026,8 @@
     "country": "Latvia",
     "countryCode": "LV",
     "timezone": "Europe/Riga",
+    "lat": 56.95,
+    "lon": 24.11,
     "population": 630000
   },
   {
@@ -1650,6 +2036,8 @@
     "country": "Estonia",
     "countryCode": "EE",
     "timezone": "Europe/Tallinn",
+    "lat": 59.44,
+    "lon": 24.75,
     "population": 440000
   },
   {
@@ -1658,6 +2046,8 @@
     "country": "Croatia",
     "countryCode": "HR",
     "timezone": "Europe/Zagreb",
+    "lat": 45.81,
+    "lon": 15.98,
     "population": 800000
   },
   {
@@ -1666,6 +2056,8 @@
     "country": "Serbia",
     "countryCode": "RS",
     "timezone": "Europe/Belgrade",
+    "lat": 44.79,
+    "lon": 20.45,
     "population": 1400000
   },
   {
@@ -1674,6 +2066,8 @@
     "country": "Bosnia and Herzegovina",
     "countryCode": "BA",
     "timezone": "Europe/Sarajevo",
+    "lat": 43.86,
+    "lon": 18.41,
     "population": 550000
   },
   {
@@ -1682,6 +2076,8 @@
     "country": "Slovenia",
     "countryCode": "SI",
     "timezone": "Europe/Ljubljana",
+    "lat": 46.06,
+    "lon": 14.51,
     "population": 290000
   },
   {
@@ -1690,6 +2086,8 @@
     "country": "North Macedonia",
     "countryCode": "MK",
     "timezone": "Europe/Skopje",
+    "lat": 41.99,
+    "lon": 21.43,
     "population": 600000
   },
   {
@@ -1698,6 +2096,8 @@
     "country": "Montenegro",
     "countryCode": "ME",
     "timezone": "Europe/Podgorica",
+    "lat": 42.44,
+    "lon": 19.26,
     "population": 190000
   },
   {
@@ -1706,6 +2106,8 @@
     "country": "Albania",
     "countryCode": "AL",
     "timezone": "Europe/Tirane",
+    "lat": 41.33,
+    "lon": 19.82,
     "population": 500000
   },
   {
@@ -1714,6 +2116,8 @@
     "country": "Iceland",
     "countryCode": "IS",
     "timezone": "Atlantic/Reykjavik",
+    "lat": 64.15,
+    "lon": -21.94,
     "population": 130000
   },
   {
@@ -1722,6 +2126,8 @@
     "country": "Luxembourg",
     "countryCode": "LU",
     "timezone": "Europe/Luxembourg",
+    "lat": 49.61,
+    "lon": 6.13,
     "population": 130000
   },
   {
@@ -1730,6 +2136,8 @@
     "country": "Malta",
     "countryCode": "MT",
     "timezone": "Europe/Malta",
+    "lat": 35.9,
+    "lon": 14.51,
     "population": 210000
   },
   {
@@ -1738,6 +2146,8 @@
     "country": "Cyprus",
     "countryCode": "CY",
     "timezone": "Asia/Nicosia",
+    "lat": 35.19,
+    "lon": 33.38,
     "population": 330000
   },
   {
@@ -1746,6 +2156,8 @@
     "country": "Moldova",
     "countryCode": "MD",
     "timezone": "Europe/Chisinau",
+    "lat": 47.01,
+    "lon": 28.86,
     "population": 700000
   },
   {
@@ -1754,6 +2166,8 @@
     "country": "Slovakia",
     "countryCode": "SK",
     "timezone": "Europe/Bratislava",
+    "lat": 48.15,
+    "lon": 17.11,
     "population": 475000
   },
   {
@@ -1762,6 +2176,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 50.11,
+    "lon": 8.68,
     "population": 750000
   },
   {
@@ -1770,6 +2186,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 48.14,
+    "lon": 11.58,
     "population": 1500000,
     "aliases": [
       "Munique",
@@ -1782,6 +2200,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 53.55,
+    "lon": 10,
     "population": 1900000
   },
   {
@@ -1790,6 +2210,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 50.94,
+    "lon": 6.96,
     "population": 1100000
   },
   {
@@ -1798,6 +2220,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 48.78,
+    "lon": 9.18,
     "population": 630000
   },
   {
@@ -1806,6 +2230,8 @@
     "country": "Germany",
     "countryCode": "DE",
     "timezone": "Europe/Berlin",
+    "lat": 51.34,
+    "lon": 12.37,
     "population": 620000
   },
   {
@@ -1814,6 +2240,8 @@
     "country": "Italy",
     "countryCode": "IT",
     "timezone": "Europe/Rome",
+    "lat": 45.46,
+    "lon": 9.19,
     "population": 1400000
   },
   {
@@ -1822,6 +2250,8 @@
     "country": "Italy",
     "countryCode": "IT",
     "timezone": "Europe/Rome",
+    "lat": 40.85,
+    "lon": 14.27,
     "population": 970000
   },
   {
@@ -1830,6 +2260,8 @@
     "country": "Italy",
     "countryCode": "IT",
     "timezone": "Europe/Rome",
+    "lat": 45.07,
+    "lon": 7.69,
     "population": 850000
   },
   {
@@ -1838,6 +2270,8 @@
     "country": "Spain",
     "countryCode": "ES",
     "timezone": "Europe/Madrid",
+    "lat": 41.39,
+    "lon": 2.17,
     "population": 5600000
   },
   {
@@ -1846,6 +2280,8 @@
     "country": "Spain",
     "countryCode": "ES",
     "timezone": "Europe/Madrid",
+    "lat": 37.39,
+    "lon": -5.99,
     "population": 690000
   },
   {
@@ -1854,6 +2290,8 @@
     "country": "Netherlands",
     "countryCode": "NL",
     "timezone": "Europe/Amsterdam",
+    "lat": 51.92,
+    "lon": 4.48,
     "population": 650000
   },
   {
@@ -1862,6 +2300,8 @@
     "country": "Belgium",
     "countryCode": "BE",
     "timezone": "Europe/Brussels",
+    "lat": 51.22,
+    "lon": 4.4,
     "population": 530000
   },
   {
@@ -1870,6 +2310,8 @@
     "country": "Gibraltar",
     "countryCode": "GI",
     "timezone": "Europe/Gibraltar",
+    "lat": 36.14,
+    "lon": -5.35,
     "population": 34000
   },
   {
@@ -1878,6 +2320,8 @@
     "country": "Portugal",
     "countryCode": "PT",
     "timezone": "Atlantic/Azores",
+    "lat": 37.74,
+    "lon": -25.67,
     "population": 68000
   },
   {
@@ -1886,6 +2330,8 @@
     "country": "France",
     "countryCode": "FR",
     "timezone": "Europe/Paris",
+    "lat": 43.71,
+    "lon": 7.26,
     "population": 340000
   },
   {
@@ -1894,6 +2340,8 @@
     "country": "France",
     "countryCode": "FR",
     "timezone": "Europe/Paris",
+    "lat": 45.76,
+    "lon": 4.84,
     "population": 520000
   },
   {
@@ -1902,6 +2350,8 @@
     "country": "France",
     "countryCode": "FR",
     "timezone": "Europe/Paris",
+    "lat": 43.3,
+    "lon": 5.37,
     "population": 870000
   },
   {
@@ -1910,6 +2360,8 @@
     "country": "Egypt",
     "countryCode": "EG",
     "timezone": "Africa/Cairo",
+    "lat": 30.04,
+    "lon": 31.24,
     "population": 20900000,
     "aliases": [
       "El Cairo",
@@ -1923,6 +2375,8 @@
     "country": "Egypt",
     "countryCode": "EG",
     "timezone": "Africa/Cairo",
+    "lat": 31.2,
+    "lon": 29.92,
     "population": 5200000
   },
   {
@@ -1931,6 +2385,8 @@
     "country": "Egypt",
     "countryCode": "EG",
     "timezone": "Africa/Cairo",
+    "lat": 30.01,
+    "lon": 31.21,
     "population": 4400000
   },
   {
@@ -1939,6 +2395,8 @@
     "country": "Nigeria",
     "countryCode": "NG",
     "timezone": "Africa/Lagos",
+    "lat": 6.52,
+    "lon": 3.38,
     "population": 15400000
   },
   {
@@ -1947,6 +2405,8 @@
     "country": "Nigeria",
     "countryCode": "NG",
     "timezone": "Africa/Lagos",
+    "lat": 7.38,
+    "lon": 3.9,
     "population": 3600000
   },
   {
@@ -1955,6 +2415,8 @@
     "country": "Nigeria",
     "countryCode": "NG",
     "timezone": "Africa/Lagos",
+    "lat": 12,
+    "lon": 8.52,
     "population": 3900000
   },
   {
@@ -1963,6 +2425,8 @@
     "country": "DR Congo",
     "countryCode": "CD",
     "timezone": "Africa/Kinshasa",
+    "lat": -4.44,
+    "lon": 15.27,
     "population": 15600000
   },
   {
@@ -1971,6 +2435,8 @@
     "country": "DR Congo",
     "countryCode": "CD",
     "timezone": "Africa/Lubumbashi",
+    "lat": -11.66,
+    "lon": 27.48,
     "population": 2500000
   },
   {
@@ -1979,6 +2445,8 @@
     "country": "South Africa",
     "countryCode": "ZA",
     "timezone": "Africa/Johannesburg",
+    "lat": -26.2,
+    "lon": 28.05,
     "population": 5900000
   },
   {
@@ -1987,6 +2455,8 @@
     "country": "South Africa",
     "countryCode": "ZA",
     "timezone": "Africa/Johannesburg",
+    "lat": -33.92,
+    "lon": 18.42,
     "population": 4600000
   },
   {
@@ -1995,6 +2465,8 @@
     "country": "South Africa",
     "countryCode": "ZA",
     "timezone": "Africa/Johannesburg",
+    "lat": -29.86,
+    "lon": 31.02,
     "population": 3400000
   },
   {
@@ -2003,6 +2475,8 @@
     "country": "South Africa",
     "countryCode": "ZA",
     "timezone": "Africa/Johannesburg",
+    "lat": -25.75,
+    "lon": 28.19,
     "population": 2500000
   },
   {
@@ -2011,6 +2485,8 @@
     "country": "Kenya",
     "countryCode": "KE",
     "timezone": "Africa/Nairobi",
+    "lat": -1.29,
+    "lon": 36.82,
     "population": 4700000
   },
   {
@@ -2019,6 +2495,8 @@
     "country": "Kenya",
     "countryCode": "KE",
     "timezone": "Africa/Nairobi",
+    "lat": -4.04,
+    "lon": 39.67,
     "population": 1300000
   },
   {
@@ -2027,6 +2505,8 @@
     "country": "Morocco",
     "countryCode": "MA",
     "timezone": "Africa/Casablanca",
+    "lat": 33.57,
+    "lon": -7.59,
     "population": 3700000
   },
   {
@@ -2035,6 +2515,8 @@
     "country": "Morocco",
     "countryCode": "MA",
     "timezone": "Africa/Casablanca",
+    "lat": 34.02,
+    "lon": -6.83,
     "population": 1900000
   },
   {
@@ -2043,6 +2525,8 @@
     "country": "Morocco",
     "countryCode": "MA",
     "timezone": "Africa/Casablanca",
+    "lat": 31.63,
+    "lon": -7.99,
     "population": 930000
   },
   {
@@ -2051,6 +2535,8 @@
     "country": "Morocco",
     "countryCode": "MA",
     "timezone": "Africa/Casablanca",
+    "lat": 34.03,
+    "lon": -5,
     "population": 1200000
   },
   {
@@ -2059,6 +2545,8 @@
     "country": "Algeria",
     "countryCode": "DZ",
     "timezone": "Africa/Algiers",
+    "lat": 36.75,
+    "lon": 3.06,
     "population": 2700000
   },
   {
@@ -2067,6 +2555,8 @@
     "country": "Tunisia",
     "countryCode": "TN",
     "timezone": "Africa/Tunis",
+    "lat": 36.81,
+    "lon": 10.18,
     "population": 2700000
   },
   {
@@ -2075,6 +2565,8 @@
     "country": "Tunisia",
     "countryCode": "TN",
     "timezone": "Africa/Tunis",
+    "lat": 34.74,
+    "lon": 10.76,
     "population": 950000
   },
   {
@@ -2083,6 +2575,8 @@
     "country": "Libya",
     "countryCode": "LY",
     "timezone": "Africa/Tripoli",
+    "lat": 32.89,
+    "lon": 13.19,
     "population": 1200000
   },
   {
@@ -2091,6 +2585,8 @@
     "country": "Libya",
     "countryCode": "LY",
     "timezone": "Africa/Tripoli",
+    "lat": 32.12,
+    "lon": 20.07,
     "population": 650000
   },
   {
@@ -2099,6 +2595,8 @@
     "country": "Sudan",
     "countryCode": "SD",
     "timezone": "Africa/Khartoum",
+    "lat": 15.5,
+    "lon": 32.56,
     "population": 5300000
   },
   {
@@ -2107,6 +2605,8 @@
     "country": "Ethiopia",
     "countryCode": "ET",
     "timezone": "Africa/Addis_Ababa",
+    "lat": 9.03,
+    "lon": 38.74,
     "population": 5000000
   },
   {
@@ -2115,6 +2615,8 @@
     "country": "Ghana",
     "countryCode": "GH",
     "timezone": "Africa/Accra",
+    "lat": 5.6,
+    "lon": -0.19,
     "population": 2500000
   },
   {
@@ -2123,6 +2625,8 @@
     "country": "Ghana",
     "countryCode": "GH",
     "timezone": "Africa/Accra",
+    "lat": 6.69,
+    "lon": -1.62,
     "population": 3600000
   },
   {
@@ -2131,6 +2635,8 @@
     "country": "Ivory Coast",
     "countryCode": "CI",
     "timezone": "Africa/Abidjan",
+    "lat": 5.36,
+    "lon": -4.01,
     "population": 5200000
   },
   {
@@ -2139,6 +2645,8 @@
     "country": "Senegal",
     "countryCode": "SN",
     "timezone": "Africa/Dakar",
+    "lat": 14.72,
+    "lon": -17.47,
     "population": 3100000
   },
   {
@@ -2147,6 +2655,8 @@
     "country": "Uganda",
     "countryCode": "UG",
     "timezone": "Africa/Kampala",
+    "lat": 0.35,
+    "lon": 32.58,
     "population": 1700000
   },
   {
@@ -2155,6 +2665,8 @@
     "country": "Tanzania",
     "countryCode": "TZ",
     "timezone": "Africa/Dar_es_Salaam",
+    "lat": -6.79,
+    "lon": 39.21,
     "population": 6700000
   },
   {
@@ -2163,6 +2675,8 @@
     "country": "Tanzania",
     "countryCode": "TZ",
     "timezone": "Africa/Dar_es_Salaam",
+    "lat": -6.16,
+    "lon": 39.2,
     "population": 400000
   },
   {
@@ -2171,6 +2685,8 @@
     "country": "Angola",
     "countryCode": "AO",
     "timezone": "Africa/Luanda",
+    "lat": -8.84,
+    "lon": 13.23,
     "population": 8300000
   },
   {
@@ -2179,6 +2695,8 @@
     "country": "Mozambique",
     "countryCode": "MZ",
     "timezone": "Africa/Maputo",
+    "lat": -25.97,
+    "lon": 32.57,
     "population": 1100000
   },
   {
@@ -2187,6 +2705,8 @@
     "country": "Zimbabwe",
     "countryCode": "ZW",
     "timezone": "Africa/Harare",
+    "lat": -17.83,
+    "lon": 31.05,
     "population": 1600000
   },
   {
@@ -2195,6 +2715,8 @@
     "country": "Zambia",
     "countryCode": "ZM",
     "timezone": "Africa/Lusaka",
+    "lat": -15.39,
+    "lon": 28.32,
     "population": 2500000
   },
   {
@@ -2203,6 +2725,8 @@
     "country": "Rwanda",
     "countryCode": "RW",
     "timezone": "Africa/Kigali",
+    "lat": -1.94,
+    "lon": 30.06,
     "population": 1100000
   },
   {
@@ -2211,6 +2735,8 @@
     "country": "Burundi",
     "countryCode": "BI",
     "timezone": "Africa/Bujumbura",
+    "lat": -3.38,
+    "lon": 29.36,
     "population": 1000000
   },
   {
@@ -2219,6 +2745,8 @@
     "country": "Mali",
     "countryCode": "ML",
     "timezone": "Africa/Bamako",
+    "lat": 12.65,
+    "lon": -8,
     "population": 2600000
   },
   {
@@ -2227,6 +2755,8 @@
     "country": "Burkina Faso",
     "countryCode": "BF",
     "timezone": "Africa/Ouagadougou",
+    "lat": 12.37,
+    "lon": -1.53,
     "population": 2700000
   },
   {
@@ -2235,6 +2765,8 @@
     "country": "Cameroon",
     "countryCode": "CM",
     "timezone": "Africa/Douala",
+    "lat": 3.87,
+    "lon": 11.52,
     "population": 4100000
   },
   {
@@ -2243,6 +2775,8 @@
     "country": "Cameroon",
     "countryCode": "CM",
     "timezone": "Africa/Douala",
+    "lat": 4.05,
+    "lon": 9.7,
     "population": 3200000
   },
   {
@@ -2251,6 +2785,8 @@
     "country": "Niger",
     "countryCode": "NE",
     "timezone": "Africa/Niamey",
+    "lat": 13.51,
+    "lon": 2.11,
     "population": 1400000
   },
   {
@@ -2259,6 +2795,8 @@
     "country": "Guinea",
     "countryCode": "GN",
     "timezone": "Africa/Conakry",
+    "lat": 9.64,
+    "lon": -13.58,
     "population": 2000000
   },
   {
@@ -2267,6 +2805,8 @@
     "country": "Sierra Leone",
     "countryCode": "SL",
     "timezone": "Africa/Freetown",
+    "lat": 8.48,
+    "lon": -13.23,
     "population": 1200000
   },
   {
@@ -2275,6 +2815,8 @@
     "country": "Liberia",
     "countryCode": "LR",
     "timezone": "Africa/Monrovia",
+    "lat": 6.3,
+    "lon": -10.8,
     "population": 1700000
   },
   {
@@ -2283,6 +2825,8 @@
     "country": "Namibia",
     "countryCode": "NA",
     "timezone": "Africa/Windhoek",
+    "lat": -22.56,
+    "lon": 17.08,
     "population": 480000
   },
   {
@@ -2291,6 +2835,8 @@
     "country": "Botswana",
     "countryCode": "BW",
     "timezone": "Africa/Gaborone",
+    "lat": -24.66,
+    "lon": 25.91,
     "population": 270000
   },
   {
@@ -2299,6 +2845,8 @@
     "country": "Madagascar",
     "countryCode": "MG",
     "timezone": "Indian/Antananarivo",
+    "lat": -18.88,
+    "lon": 47.51,
     "population": 3200000
   },
   {
@@ -2307,6 +2855,8 @@
     "country": "Mauritius",
     "countryCode": "MU",
     "timezone": "Indian/Mauritius",
+    "lat": -20.16,
+    "lon": 57.5,
     "population": 150000
   },
   {
@@ -2315,6 +2865,8 @@
     "country": "Djibouti",
     "countryCode": "DJ",
     "timezone": "Africa/Djibouti",
+    "lat": 11.59,
+    "lon": 43.15,
     "population": 620000
   },
   {
@@ -2323,6 +2875,8 @@
     "country": "Somalia",
     "countryCode": "SO",
     "timezone": "Africa/Mogadishu",
+    "lat": 2.05,
+    "lon": 45.32,
     "population": 2600000
   },
   {
@@ -2331,6 +2885,8 @@
     "country": "Eritrea",
     "countryCode": "ER",
     "timezone": "Africa/Asmara",
+    "lat": 15.34,
+    "lon": 38.93,
     "population": 960000
   },
   {
@@ -2339,6 +2895,8 @@
     "country": "Chad",
     "countryCode": "TD",
     "timezone": "Africa/Ndjamena",
+    "lat": 12.13,
+    "lon": 15.06,
     "population": 1600000
   },
   {
@@ -2347,6 +2905,8 @@
     "country": "Central African Republic",
     "countryCode": "CF",
     "timezone": "Africa/Bangui",
+    "lat": 4.39,
+    "lon": 18.56,
     "population": 900000
   },
   {
@@ -2355,6 +2915,8 @@
     "country": "Republic of the Congo",
     "countryCode": "CG",
     "timezone": "Africa/Brazzaville",
+    "lat": -4.26,
+    "lon": 15.24,
     "population": 2400000
   },
   {
@@ -2363,6 +2925,8 @@
     "country": "Gabon",
     "countryCode": "GA",
     "timezone": "Africa/Libreville",
+    "lat": 0.39,
+    "lon": 9.45,
     "population": 850000
   },
   {
@@ -2371,6 +2935,8 @@
     "country": "Equatorial Guinea",
     "countryCode": "GQ",
     "timezone": "Africa/Malabo",
+    "lat": 3.75,
+    "lon": 8.78,
     "population": 300000
   },
   {
@@ -2379,6 +2945,8 @@
     "country": "Equatorial Guinea",
     "countryCode": "GQ",
     "timezone": "Africa/Malabo",
+    "lat": 1.86,
+    "lon": 9.77,
     "population": 250000
   },
   {
@@ -2387,6 +2955,8 @@
     "country": "Mauritania",
     "countryCode": "MR",
     "timezone": "Africa/Nouakchott",
+    "lat": 18.09,
+    "lon": -15.98,
     "population": 1300000
   },
   {
@@ -2395,6 +2965,8 @@
     "country": "Cape Verde",
     "countryCode": "CV",
     "timezone": "Atlantic/Cape_Verde",
+    "lat": 14.93,
+    "lon": -23.51,
     "population": 170000
   },
   {
@@ -2403,6 +2975,8 @@
     "country": "United Arab Emirates",
     "countryCode": "AE",
     "timezone": "Asia/Dubai",
+    "lat": 25.2,
+    "lon": 55.27,
     "population": 3500000
   },
   {
@@ -2411,6 +2985,8 @@
     "country": "United Arab Emirates",
     "countryCode": "AE",
     "timezone": "Asia/Dubai",
+    "lat": 24.47,
+    "lon": 54.37,
     "population": 1500000
   },
   {
@@ -2419,6 +2995,8 @@
     "country": "United Arab Emirates",
     "countryCode": "AE",
     "timezone": "Asia/Dubai",
+    "lat": 25.35,
+    "lon": 55.4,
     "population": 1800000
   },
   {
@@ -2427,6 +3005,8 @@
     "country": "Saudi Arabia",
     "countryCode": "SA",
     "timezone": "Asia/Riyadh",
+    "lat": 24.71,
+    "lon": 46.68,
     "population": 7600000
   },
   {
@@ -2435,6 +3015,8 @@
     "country": "Saudi Arabia",
     "countryCode": "SA",
     "timezone": "Asia/Riyadh",
+    "lat": 21.54,
+    "lon": 39.17,
     "population": 4700000
   },
   {
@@ -2443,6 +3025,8 @@
     "country": "Saudi Arabia",
     "countryCode": "SA",
     "timezone": "Asia/Riyadh",
+    "lat": 21.39,
+    "lon": 39.86,
     "population": 2000000
   },
   {
@@ -2451,6 +3035,8 @@
     "country": "Saudi Arabia",
     "countryCode": "SA",
     "timezone": "Asia/Riyadh",
+    "lat": 24.47,
+    "lon": 39.61,
     "population": 1500000
   },
   {
@@ -2459,6 +3045,8 @@
     "country": "Qatar",
     "countryCode": "QA",
     "timezone": "Asia/Qatar",
+    "lat": 25.29,
+    "lon": 51.53,
     "population": 2400000
   },
   {
@@ -2467,6 +3055,8 @@
     "country": "Kuwait",
     "countryCode": "KW",
     "timezone": "Asia/Kuwait",
+    "lat": 29.38,
+    "lon": 47.99,
     "population": 3100000
   },
   {
@@ -2475,6 +3065,8 @@
     "country": "Bahrain",
     "countryCode": "BH",
     "timezone": "Asia/Bahrain",
+    "lat": 26.23,
+    "lon": 50.59,
     "population": 630000
   },
   {
@@ -2483,6 +3075,8 @@
     "country": "Oman",
     "countryCode": "OM",
     "timezone": "Asia/Muscat",
+    "lat": 23.59,
+    "lon": 58.41,
     "population": 1700000
   },
   {
@@ -2491,6 +3085,8 @@
     "country": "Jordan",
     "countryCode": "JO",
     "timezone": "Asia/Amman",
+    "lat": 31.95,
+    "lon": 35.93,
     "population": 4300000
   },
   {
@@ -2499,6 +3095,8 @@
     "country": "Jordan",
     "countryCode": "JO",
     "timezone": "Asia/Amman",
+    "lat": 29.53,
+    "lon": 35.01,
     "population": 150000
   },
   {
@@ -2507,6 +3105,8 @@
     "country": "Lebanon",
     "countryCode": "LB",
     "timezone": "Asia/Beirut",
+    "lat": 33.89,
+    "lon": 35.5,
     "population": 2400000
   },
   {
@@ -2515,6 +3115,8 @@
     "country": "Lebanon",
     "countryCode": "LB",
     "timezone": "Asia/Beirut",
+    "lat": 34.44,
+    "lon": 35.84,
     "population": 500000
   },
   {
@@ -2523,6 +3125,8 @@
     "country": "Syria",
     "countryCode": "SY",
     "timezone": "Asia/Damascus",
+    "lat": 33.51,
+    "lon": 36.29,
     "population": 2500000
   },
   {
@@ -2531,6 +3135,8 @@
     "country": "Syria",
     "countryCode": "SY",
     "timezone": "Asia/Damascus",
+    "lat": 36.2,
+    "lon": 37.16,
     "population": 2100000
   },
   {
@@ -2539,6 +3145,8 @@
     "country": "Iraq",
     "countryCode": "IQ",
     "timezone": "Asia/Baghdad",
+    "lat": 33.32,
+    "lon": 44.36,
     "population": 7100000
   },
   {
@@ -2547,6 +3155,8 @@
     "country": "Iraq",
     "countryCode": "IQ",
     "timezone": "Asia/Baghdad",
+    "lat": 30.51,
+    "lon": 47.78,
     "population": 1400000
   },
   {
@@ -2555,6 +3165,8 @@
     "country": "Iraq",
     "countryCode": "IQ",
     "timezone": "Asia/Baghdad",
+    "lat": 36.19,
+    "lon": 44.01,
     "population": 1000000
   },
   {
@@ -2563,6 +3175,8 @@
     "country": "Iran",
     "countryCode": "IR",
     "timezone": "Asia/Tehran",
+    "lat": 35.69,
+    "lon": 51.39,
     "population": 9100000
   },
   {
@@ -2571,6 +3185,8 @@
     "country": "Iran",
     "countryCode": "IR",
     "timezone": "Asia/Tehran",
+    "lat": 32.65,
+    "lon": 51.68,
     "population": 2200000
   },
   {
@@ -2579,6 +3195,8 @@
     "country": "Iran",
     "countryCode": "IR",
     "timezone": "Asia/Tehran",
+    "lat": 36.3,
+    "lon": 59.61,
     "population": 3400000
   },
   {
@@ -2587,6 +3205,8 @@
     "country": "Iran",
     "countryCode": "IR",
     "timezone": "Asia/Tehran",
+    "lat": 29.61,
+    "lon": 52.53,
     "population": 1900000
   },
   {
@@ -2595,6 +3215,8 @@
     "country": "Israel",
     "countryCode": "IL",
     "timezone": "Asia/Jerusalem",
+    "lat": 31.78,
+    "lon": 35.22,
     "population": 950000
   },
   {
@@ -2603,6 +3225,8 @@
     "country": "Israel",
     "countryCode": "IL",
     "timezone": "Asia/Jerusalem",
+    "lat": 32.08,
+    "lon": 34.78,
     "population": 460000
   },
   {
@@ -2611,6 +3235,8 @@
     "country": "Yemen",
     "countryCode": "YE",
     "timezone": "Asia/Aden",
+    "lat": 15.37,
+    "lon": 44.19,
     "population": 3900000
   },
   {
@@ -2619,6 +3245,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 19.08,
+    "lon": 72.88,
     "population": 20700000,
     "aliases": [
       "bombay"
@@ -2630,6 +3258,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 28.61,
+    "lon": 77.21,
     "population": 30300000,
     "aliases": [
       "new delhi"
@@ -2641,6 +3271,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 12.97,
+    "lon": 77.59,
     "population": 13200000,
     "aliases": [
       "bengaluru"
@@ -2652,6 +3284,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 22.57,
+    "lon": 88.36,
     "population": 14900000,
     "aliases": [
       "calcutta"
@@ -2663,6 +3297,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 13.08,
+    "lon": 80.27,
     "population": 11500000,
     "aliases": [
       "madras"
@@ -2674,6 +3310,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 17.39,
+    "lon": 78.49,
     "population": 10300000
   },
   {
@@ -2682,6 +3320,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 18.52,
+    "lon": 73.86,
     "population": 6600000
   },
   {
@@ -2690,6 +3330,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 23.02,
+    "lon": 72.57,
     "population": 8400000
   },
   {
@@ -2698,6 +3340,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 26.91,
+    "lon": 75.79,
     "population": 3900000
   },
   {
@@ -2706,6 +3350,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 26.85,
+    "lon": 80.95,
     "population": 3600000
   },
   {
@@ -2714,6 +3360,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 21.17,
+    "lon": 72.83,
     "population": 6900000
   },
   {
@@ -2722,6 +3370,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 21.15,
+    "lon": 79.09,
     "population": 2900000
   },
   {
@@ -2730,6 +3380,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 26.45,
+    "lon": 80.33,
     "population": 3200000
   },
   {
@@ -2738,6 +3390,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 22.72,
+    "lon": 75.86,
     "population": 2200000
   },
   {
@@ -2746,6 +3400,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 9.93,
+    "lon": 76.27,
     "population": 2200000
   },
   {
@@ -2754,6 +3410,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 30.73,
+    "lon": 76.78,
     "population": 1100000
   },
   {
@@ -2762,6 +3420,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 26.14,
+    "lon": 91.74,
     "population": 1100000
   },
   {
@@ -2770,6 +3430,8 @@
     "country": "India",
     "countryCode": "IN",
     "timezone": "Asia/Kolkata",
+    "lat": 31.63,
+    "lon": 74.87,
     "population": 1200000
   },
   {
@@ -2778,6 +3440,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 24.86,
+    "lon": 67.01,
     "population": 16800000
   },
   {
@@ -2786,6 +3450,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 31.55,
+    "lon": 74.34,
     "population": 13100000
   },
   {
@@ -2794,6 +3460,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 33.68,
+    "lon": 73.05,
     "population": 1100000
   },
   {
@@ -2802,6 +3470,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 31.42,
+    "lon": 73.09,
     "population": 3800000
   },
   {
@@ -2810,6 +3480,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 33.6,
+    "lon": 73.04,
     "population": 2300000
   },
   {
@@ -2818,6 +3490,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 30.2,
+    "lon": 71.47,
     "population": 2000000
   },
   {
@@ -2826,6 +3500,8 @@
     "country": "Pakistan",
     "countryCode": "PK",
     "timezone": "Asia/Karachi",
+    "lat": 34.01,
+    "lon": 71.58,
     "population": 2000000
   },
   {
@@ -2834,6 +3510,8 @@
     "country": "Bangladesh",
     "countryCode": "BD",
     "timezone": "Asia/Dhaka",
+    "lat": 23.81,
+    "lon": 90.41,
     "population": 21700000
   },
   {
@@ -2842,6 +3520,8 @@
     "country": "Bangladesh",
     "countryCode": "BD",
     "timezone": "Asia/Dhaka",
+    "lat": 22.36,
+    "lon": 91.8,
     "population": 5200000
   },
   {
@@ -2850,6 +3530,8 @@
     "country": "Bangladesh",
     "countryCode": "BD",
     "timezone": "Asia/Dhaka",
+    "lat": 24.9,
+    "lon": 91.87,
     "population": 600000
   },
   {
@@ -2858,6 +3540,8 @@
     "country": "Bangladesh",
     "countryCode": "BD",
     "timezone": "Asia/Dhaka",
+    "lat": 22.85,
+    "lon": 89.55,
     "population": 1500000
   },
   {
@@ -2866,6 +3550,8 @@
     "country": "Nepal",
     "countryCode": "NP",
     "timezone": "Asia/Kathmandu",
+    "lat": 27.72,
+    "lon": 85.32,
     "population": 1500000
   },
   {
@@ -2874,6 +3560,8 @@
     "country": "Nepal",
     "countryCode": "NP",
     "timezone": "Asia/Kathmandu",
+    "lat": 28.21,
+    "lon": 83.96,
     "population": 500000
   },
   {
@@ -2882,6 +3570,8 @@
     "country": "Sri Lanka",
     "countryCode": "LK",
     "timezone": "Asia/Colombo",
+    "lat": 6.93,
+    "lon": 79.85,
     "population": 750000
   },
   {
@@ -2890,6 +3580,8 @@
     "country": "Bhutan",
     "countryCode": "BT",
     "timezone": "Asia/Thimphu",
+    "lat": 27.47,
+    "lon": 89.64,
     "population": 115000
   },
   {
@@ -2898,6 +3590,8 @@
     "country": "Afghanistan",
     "countryCode": "AF",
     "timezone": "Asia/Kabul",
+    "lat": 34.56,
+    "lon": 69.21,
     "population": 4600000
   },
   {
@@ -2906,6 +3600,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 39.9,
+    "lon": 116.41,
     "population": 21500000,
     "aliases": [
       "Pequim",
@@ -2920,6 +3616,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 31.23,
+    "lon": 121.47,
     "population": 28500000
   },
   {
@@ -2928,6 +3626,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 23.13,
+    "lon": 113.26,
     "population": 18700000
   },
   {
@@ -2936,6 +3636,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 22.54,
+    "lon": 114.06,
     "population": 17600000
   },
   {
@@ -2944,6 +3646,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 30.57,
+    "lon": 104.07,
     "population": 16300000
   },
   {
@@ -2952,6 +3656,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 34.27,
+    "lon": 108.95,
     "population": 12900000
   },
   {
@@ -2960,6 +3666,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 30.59,
+    "lon": 114.31,
     "population": 12300000
   },
   {
@@ -2968,6 +3676,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 29.56,
+    "lon": 106.55,
     "population": 16400000
   },
   {
@@ -2976,6 +3686,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 32.06,
+    "lon": 118.8,
     "population": 9300000
   },
   {
@@ -2984,6 +3696,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 39.34,
+    "lon": 117.36,
     "population": 13900000
   },
   {
@@ -2992,6 +3706,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 30.27,
+    "lon": 120.15,
     "population": 10400000
   },
   {
@@ -3000,6 +3716,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 36.07,
+    "lon": 120.38,
     "population": 9500000
   },
   {
@@ -3008,6 +3726,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 41.8,
+    "lon": 123.43,
     "population": 8300000
   },
   {
@@ -3016,6 +3736,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 45.8,
+    "lon": 126.53,
     "population": 5900000
   },
   {
@@ -3024,6 +3746,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 24.48,
+    "lon": 118.09,
     "population": 5100000
   },
   {
@@ -3032,6 +3756,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Shanghai",
+    "lat": 25.04,
+    "lon": 102.72,
     "population": 8500000
   },
   {
@@ -3040,6 +3766,8 @@
     "country": "China",
     "countryCode": "CN",
     "timezone": "Asia/Urumqi",
+    "lat": 43.83,
+    "lon": 87.62,
     "population": 4000000
   },
   {
@@ -3048,6 +3776,8 @@
     "country": "Hong Kong",
     "countryCode": "HK",
     "timezone": "Asia/Hong_Kong",
+    "lat": 22.32,
+    "lon": 114.17,
     "population": 7500000
   },
   {
@@ -3056,6 +3786,8 @@
     "country": "Macau",
     "countryCode": "MO",
     "timezone": "Asia/Macau",
+    "lat": 22.2,
+    "lon": 113.55,
     "population": 680000
   },
   {
@@ -3064,6 +3796,8 @@
     "country": "Taiwan",
     "countryCode": "TW",
     "timezone": "Asia/Taipei",
+    "lat": 25.03,
+    "lon": 121.57,
     "population": 7000000
   },
   {
@@ -3072,6 +3806,8 @@
     "country": "Taiwan",
     "countryCode": "TW",
     "timezone": "Asia/Taipei",
+    "lat": 22.63,
+    "lon": 120.3,
     "population": 2800000
   },
   {
@@ -3080,6 +3816,8 @@
     "country": "Taiwan",
     "countryCode": "TW",
     "timezone": "Asia/Taipei",
+    "lat": 24.15,
+    "lon": 120.68,
     "population": 2800000
   },
   {
@@ -3088,6 +3826,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 35.68,
+    "lon": 139.69,
     "population": 37400000,
     "aliases": [
       "Tóquio",
@@ -3101,6 +3841,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 34.69,
+    "lon": 135.5,
     "population": 19200000
   },
   {
@@ -3109,6 +3851,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 35.44,
+    "lon": 139.64,
     "population": 3800000
   },
   {
@@ -3117,6 +3861,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 35.18,
+    "lon": 136.91,
     "population": 2300000
   },
   {
@@ -3125,6 +3871,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 43.06,
+    "lon": 141.35,
     "population": 1950000
   },
   {
@@ -3133,6 +3881,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 33.59,
+    "lon": 130.4,
     "population": 1600000
   },
   {
@@ -3141,6 +3891,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 34.69,
+    "lon": 135.2,
     "population": 1500000
   },
   {
@@ -3149,6 +3901,8 @@
     "country": "Japan",
     "countryCode": "JP",
     "timezone": "Asia/Tokyo",
+    "lat": 35.01,
+    "lon": 135.77,
     "population": 1460000
   },
   {
@@ -3157,6 +3911,8 @@
     "country": "South Korea",
     "countryCode": "KR",
     "timezone": "Asia/Seoul",
+    "lat": 37.57,
+    "lon": 126.98,
     "population": 9700000,
     "aliases": [
       "Seul",
@@ -3169,6 +3925,8 @@
     "country": "South Korea",
     "countryCode": "KR",
     "timezone": "Asia/Seoul",
+    "lat": 35.18,
+    "lon": 129.08,
     "population": 3400000
   },
   {
@@ -3177,6 +3935,8 @@
     "country": "South Korea",
     "countryCode": "KR",
     "timezone": "Asia/Seoul",
+    "lat": 37.46,
+    "lon": 126.7,
     "population": 3000000
   },
   {
@@ -3185,6 +3945,8 @@
     "country": "South Korea",
     "countryCode": "KR",
     "timezone": "Asia/Seoul",
+    "lat": 35.87,
+    "lon": 128.6,
     "population": 2400000
   },
   {
@@ -3193,6 +3955,8 @@
     "country": "North Korea",
     "countryCode": "KP",
     "timezone": "Asia/Pyongyang",
+    "lat": 39.02,
+    "lon": 125.75,
     "population": 3300000
   },
   {
@@ -3201,6 +3965,8 @@
     "country": "Mongolia",
     "countryCode": "MN",
     "timezone": "Asia/Ulaanbaatar",
+    "lat": 47.92,
+    "lon": 106.92,
     "population": 1500000
   },
   {
@@ -3209,6 +3975,8 @@
     "country": "Singapore",
     "countryCode": "SG",
     "timezone": "Asia/Singapore",
+    "lat": 1.35,
+    "lon": 103.82,
     "population": 5900000
   },
   {
@@ -3217,6 +3985,8 @@
     "country": "Malaysia",
     "countryCode": "MY",
     "timezone": "Asia/Kuala_Lumpur",
+    "lat": 3.14,
+    "lon": 101.69,
     "population": 8400000
   },
   {
@@ -3225,6 +3995,8 @@
     "country": "Malaysia",
     "countryCode": "MY",
     "timezone": "Asia/Kuala_Lumpur",
+    "lat": 1.49,
+    "lon": 103.74,
     "population": 1800000
   },
   {
@@ -3233,6 +4005,8 @@
     "country": "Malaysia",
     "countryCode": "MY",
     "timezone": "Asia/Kuala_Lumpur",
+    "lat": 5.41,
+    "lon": 100.34,
     "population": 800000
   },
   {
@@ -3241,6 +4015,8 @@
     "country": "Malaysia",
     "countryCode": "MY",
     "timezone": "Asia/Kuching",
+    "lat": 5.98,
+    "lon": 116.07,
     "population": 550000
   },
   {
@@ -3249,6 +4025,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": -6.21,
+    "lon": 106.85,
     "population": 10600000
   },
   {
@@ -3257,6 +4035,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": -7.25,
+    "lon": 112.75,
     "population": 2900000
   },
   {
@@ -3265,6 +4045,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": -6.91,
+    "lon": 107.61,
     "population": 2500000
   },
   {
@@ -3273,6 +4055,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": 3.59,
+    "lon": 98.67,
     "population": 2400000
   },
   {
@@ -3281,6 +4065,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": -2.99,
+    "lon": 104.76,
     "population": 1700000
   },
   {
@@ -3289,6 +4075,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jakarta",
+    "lat": -6.97,
+    "lon": 110.42,
     "population": 1700000
   },
   {
@@ -3297,6 +4085,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Makassar",
+    "lat": -5.15,
+    "lon": 119.43,
     "population": 1500000
   },
   {
@@ -3305,6 +4095,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Makassar",
+    "lat": -8.65,
+    "lon": 115.22,
     "population": 900000
   },
   {
@@ -3313,6 +4105,8 @@
     "country": "Indonesia",
     "countryCode": "ID",
     "timezone": "Asia/Jayapura",
+    "lat": -2.53,
+    "lon": 140.72,
     "population": 400000
   },
   {
@@ -3321,6 +4115,8 @@
     "country": "Philippines",
     "countryCode": "PH",
     "timezone": "Asia/Manila",
+    "lat": 14.6,
+    "lon": 120.98,
     "population": 14200000
   },
   {
@@ -3329,6 +4125,8 @@
     "country": "Philippines",
     "countryCode": "PH",
     "timezone": "Asia/Manila",
+    "lat": 10.32,
+    "lon": 123.9,
     "population": 3000000
   },
   {
@@ -3337,6 +4135,8 @@
     "country": "Philippines",
     "countryCode": "PH",
     "timezone": "Asia/Manila",
+    "lat": 7.07,
+    "lon": 125.61,
     "population": 1800000
   },
   {
@@ -3345,6 +4145,8 @@
     "country": "Philippines",
     "countryCode": "PH",
     "timezone": "Asia/Manila",
+    "lat": 10.72,
+    "lon": 122.56,
     "population": 450000
   },
   {
@@ -3353,6 +4155,8 @@
     "country": "Thailand",
     "countryCode": "TH",
     "timezone": "Asia/Bangkok",
+    "lat": 13.75,
+    "lon": 100.5,
     "population": 10700000
   },
   {
@@ -3361,6 +4165,8 @@
     "country": "Thailand",
     "countryCode": "TH",
     "timezone": "Asia/Bangkok",
+    "lat": 18.79,
+    "lon": 98.98,
     "population": 1200000
   },
   {
@@ -3369,6 +4175,8 @@
     "country": "Thailand",
     "countryCode": "TH",
     "timezone": "Asia/Bangkok",
+    "lat": 7.88,
+    "lon": 98.39,
     "population": 420000
   },
   {
@@ -3377,6 +4185,8 @@
     "country": "Thailand",
     "countryCode": "TH",
     "timezone": "Asia/Bangkok",
+    "lat": 12.93,
+    "lon": 100.88,
     "population": 320000
   },
   {
@@ -3385,6 +4195,8 @@
     "country": "Vietnam",
     "countryCode": "VN",
     "timezone": "Asia/Ho_Chi_Minh",
+    "lat": 21.03,
+    "lon": 105.85,
     "population": 8100000
   },
   {
@@ -3393,6 +4205,8 @@
     "country": "Vietnam",
     "countryCode": "VN",
     "timezone": "Asia/Ho_Chi_Minh",
+    "lat": 10.82,
+    "lon": 106.63,
     "population": 9300000,
     "aliases": [
       "saigon"
@@ -3404,6 +4218,8 @@
     "country": "Vietnam",
     "countryCode": "VN",
     "timezone": "Asia/Ho_Chi_Minh",
+    "lat": 16.05,
+    "lon": 108.22,
     "population": 1200000
   },
   {
@@ -3412,6 +4228,8 @@
     "country": "Vietnam",
     "countryCode": "VN",
     "timezone": "Asia/Ho_Chi_Minh",
+    "lat": 10.03,
+    "lon": 105.78,
     "population": 1200000
   },
   {
@@ -3420,6 +4238,8 @@
     "country": "Cambodia",
     "countryCode": "KH",
     "timezone": "Asia/Phnom_Penh",
+    "lat": 11.56,
+    "lon": 104.92,
     "population": 2300000
   },
   {
@@ -3428,6 +4248,8 @@
     "country": "Laos",
     "countryCode": "LA",
     "timezone": "Asia/Vientiane",
+    "lat": 17.97,
+    "lon": 102.6,
     "population": 950000
   },
   {
@@ -3436,6 +4258,8 @@
     "country": "Myanmar",
     "countryCode": "MM",
     "timezone": "Asia/Yangon",
+    "lat": 16.87,
+    "lon": 96.2,
     "population": 5400000,
     "aliases": [
       "rangoon"
@@ -3447,6 +4271,8 @@
     "country": "Myanmar",
     "countryCode": "MM",
     "timezone": "Asia/Yangon",
+    "lat": 19.76,
+    "lon": 96.08,
     "population": 1000000
   },
   {
@@ -3455,6 +4281,8 @@
     "country": "Brunei",
     "countryCode": "BN",
     "timezone": "Asia/Brunei",
+    "lat": 4.94,
+    "lon": 114.94,
     "population": 100000
   },
   {
@@ -3463,6 +4291,8 @@
     "country": "Timor-Leste",
     "countryCode": "TL",
     "timezone": "Asia/Dili",
+    "lat": -8.56,
+    "lon": 125.57,
     "population": 280000
   },
   {
@@ -3471,6 +4301,8 @@
     "country": "Kazakhstan",
     "countryCode": "KZ",
     "timezone": "Asia/Almaty",
+    "lat": 43.24,
+    "lon": 76.95,
     "population": 2000000
   },
   {
@@ -3479,6 +4311,8 @@
     "country": "Kazakhstan",
     "countryCode": "KZ",
     "timezone": "Asia/Almaty",
+    "lat": 51.17,
+    "lon": 71.45,
     "population": 1200000
   },
   {
@@ -3487,6 +4321,8 @@
     "country": "Kazakhstan",
     "countryCode": "KZ",
     "timezone": "Asia/Almaty",
+    "lat": 42.32,
+    "lon": 69.6,
     "population": 1100000
   },
   {
@@ -3495,6 +4331,8 @@
     "country": "Uzbekistan",
     "countryCode": "UZ",
     "timezone": "Asia/Tashkent",
+    "lat": 41.3,
+    "lon": 69.24,
     "population": 2600000
   },
   {
@@ -3503,6 +4341,8 @@
     "country": "Uzbekistan",
     "countryCode": "UZ",
     "timezone": "Asia/Samarkand",
+    "lat": 39.65,
+    "lon": 66.98,
     "population": 550000
   },
   {
@@ -3511,6 +4351,8 @@
     "country": "Kyrgyzstan",
     "countryCode": "KG",
     "timezone": "Asia/Bishkek",
+    "lat": 42.87,
+    "lon": 74.59,
     "population": 1100000
   },
   {
@@ -3519,6 +4361,8 @@
     "country": "Tajikistan",
     "countryCode": "TJ",
     "timezone": "Asia/Dushanbe",
+    "lat": 38.56,
+    "lon": 68.79,
     "population": 950000
   },
   {
@@ -3527,6 +4371,8 @@
     "country": "Turkmenistan",
     "countryCode": "TM",
     "timezone": "Asia/Ashgabat",
+    "lat": 37.95,
+    "lon": 58.38,
     "population": 1100000
   },
   {
@@ -3535,6 +4381,8 @@
     "country": "Azerbaijan",
     "countryCode": "AZ",
     "timezone": "Asia/Baku",
+    "lat": 40.41,
+    "lon": 49.87,
     "population": 2300000
   },
   {
@@ -3543,6 +4391,8 @@
     "country": "Georgia",
     "countryCode": "GE",
     "timezone": "Asia/Tbilisi",
+    "lat": 41.72,
+    "lon": 44.79,
     "population": 1200000
   },
   {
@@ -3551,6 +4401,8 @@
     "country": "Armenia",
     "countryCode": "AM",
     "timezone": "Asia/Yerevan",
+    "lat": 40.18,
+    "lon": 44.51,
     "population": 1100000
   },
   {
@@ -3559,6 +4411,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Sydney",
+    "lat": -33.87,
+    "lon": 151.21,
     "population": 5300000
   },
   {
@@ -3567,6 +4421,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Melbourne",
+    "lat": -37.81,
+    "lon": 144.96,
     "population": 5100000
   },
   {
@@ -3575,6 +4431,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Brisbane",
+    "lat": -27.47,
+    "lon": 153.03,
     "population": 2600000
   },
   {
@@ -3583,6 +4441,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Perth",
+    "lat": -31.95,
+    "lon": 115.86,
     "population": 2100000
   },
   {
@@ -3591,6 +4451,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Adelaide",
+    "lat": -34.93,
+    "lon": 138.6,
     "population": 1400000
   },
   {
@@ -3599,6 +4461,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Sydney",
+    "lat": -35.28,
+    "lon": 149.13,
     "population": 460000
   },
   {
@@ -3607,6 +4471,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Brisbane",
+    "lat": -28.02,
+    "lon": 153.4,
     "population": 700000
   },
   {
@@ -3615,6 +4481,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Hobart",
+    "lat": -42.88,
+    "lon": 147.33,
     "population": 240000
   },
   {
@@ -3623,6 +4491,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Darwin",
+    "lat": -12.46,
+    "lon": 130.84,
     "population": 150000
   },
   {
@@ -3631,6 +4501,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Darwin",
+    "lat": -23.7,
+    "lon": 133.88,
     "population": 26000
   },
   {
@@ -3639,6 +4511,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Eucla",
+    "lat": -31.68,
+    "lon": 128.88,
     "population": 200
   },
   {
@@ -3647,6 +4521,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Sydney",
+    "lat": -32.93,
+    "lon": 151.78,
     "population": 320000
   },
   {
@@ -3655,6 +4531,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Brisbane",
+    "lat": -16.92,
+    "lon": 145.77,
     "population": 160000
   },
   {
@@ -3663,6 +4541,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Brisbane",
+    "lat": -19.26,
+    "lon": 146.82,
     "population": 180000
   },
   {
@@ -3671,6 +4551,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Hobart",
+    "lat": -41.44,
+    "lon": 147.13,
     "population": 90000
   },
   {
@@ -3679,6 +4561,8 @@
     "country": "Australia",
     "countryCode": "AU",
     "timezone": "Australia/Lord_Howe",
+    "lat": -31.55,
+    "lon": 159.08,
     "population": 350
   },
   {
@@ -3687,6 +4571,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Auckland",
+    "lat": -36.85,
+    "lon": 174.76,
     "population": 1700000
   },
   {
@@ -3695,6 +4581,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Auckland",
+    "lat": -41.29,
+    "lon": 174.78,
     "population": 210000
   },
   {
@@ -3703,6 +4591,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Auckland",
+    "lat": -43.53,
+    "lon": 172.64,
     "population": 380000
   },
   {
@@ -3711,6 +4601,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Auckland",
+    "lat": -37.79,
+    "lon": 175.28,
     "population": 180000
   },
   {
@@ -3719,6 +4611,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Auckland",
+    "lat": -45.87,
+    "lon": 170.5,
     "population": 130000
   },
   {
@@ -3727,6 +4621,8 @@
     "country": "New Zealand",
     "countryCode": "NZ",
     "timezone": "Pacific/Chatham",
+    "lat": -43.95,
+    "lon": -176.55,
     "population": 600
   },
   {
@@ -3735,6 +4631,8 @@
     "country": "Fiji",
     "countryCode": "FJ",
     "timezone": "Pacific/Fiji",
+    "lat": -18.14,
+    "lon": 178.44,
     "population": 175000
   },
   {
@@ -3743,6 +4641,8 @@
     "country": "Papua New Guinea",
     "countryCode": "PG",
     "timezone": "Pacific/Port_Moresby",
+    "lat": -9.48,
+    "lon": 147.15,
     "population": 400000
   },
   {
@@ -3751,6 +4651,8 @@
     "country": "New Caledonia",
     "countryCode": "NC",
     "timezone": "Pacific/Noumea",
+    "lat": -22.28,
+    "lon": 166.46,
     "population": 180000
   },
   {
@@ -3759,6 +4661,8 @@
     "country": "French Polynesia",
     "countryCode": "PF",
     "timezone": "Pacific/Tahiti",
+    "lat": -17.54,
+    "lon": -149.57,
     "population": 26000
   },
   {
@@ -3767,6 +4671,8 @@
     "country": "French Polynesia",
     "countryCode": "PF",
     "timezone": "Pacific/Marquesas",
+    "lat": -9.78,
+    "lon": -139.03,
     "population": 9000
   },
   {
@@ -3775,6 +4681,8 @@
     "country": "Samoa",
     "countryCode": "WS",
     "timezone": "Pacific/Apia",
+    "lat": -13.85,
+    "lon": -171.75,
     "population": 37000
   },
   {
@@ -3783,6 +4691,8 @@
     "country": "Tonga",
     "countryCode": "TO",
     "timezone": "Pacific/Tongatapu",
+    "lat": -21.14,
+    "lon": -175.2,
     "population": 24000
   },
   {
@@ -3791,6 +4701,8 @@
     "country": "Solomon Islands",
     "countryCode": "SB",
     "timezone": "Pacific/Guadalcanal",
+    "lat": -9.43,
+    "lon": 159.95,
     "population": 85000
   },
   {
@@ -3799,6 +4711,8 @@
     "country": "Vanuatu",
     "countryCode": "VU",
     "timezone": "Pacific/Efate",
+    "lat": -17.73,
+    "lon": 168.32,
     "population": 51000
   },
   {
@@ -3807,6 +4721,8 @@
     "country": "Micronesia",
     "countryCode": "FM",
     "timezone": "Pacific/Pohnpei",
+    "lat": 6.92,
+    "lon": 158.16,
     "population": 7000
   },
   {
@@ -3815,6 +4731,8 @@
     "country": "Marshall Islands",
     "countryCode": "MH",
     "timezone": "Pacific/Majuro",
+    "lat": 7.12,
+    "lon": 171.38,
     "population": 28000
   },
   {
@@ -3823,6 +4741,8 @@
     "country": "Kiribati",
     "countryCode": "KI",
     "timezone": "Pacific/Tarawa",
+    "lat": 1.33,
+    "lon": 173.02,
     "population": 63000
   },
   {
@@ -3831,6 +4751,8 @@
     "country": "Kiribati",
     "countryCode": "KI",
     "timezone": "Pacific/Kiritimati",
+    "lat": 1.87,
+    "lon": -157.43,
     "population": 7000
   },
   {
@@ -3839,6 +4761,8 @@
     "country": "Tuvalu",
     "countryCode": "TV",
     "timezone": "Pacific/Funafuti",
+    "lat": -8.52,
+    "lon": 179.2,
     "population": 6000
   },
   {
@@ -3847,6 +4771,8 @@
     "country": "Nauru",
     "countryCode": "NR",
     "timezone": "Pacific/Nauru",
+    "lat": -0.55,
+    "lon": 166.92,
     "population": 1100
   },
   {
@@ -3855,6 +4781,8 @@
     "country": "Palau",
     "countryCode": "PW",
     "timezone": "Pacific/Palau",
+    "lat": 7.5,
+    "lon": 134.62,
     "population": 300
   },
   {
@@ -3863,6 +4791,8 @@
     "country": "Cook Islands",
     "countryCode": "CK",
     "timezone": "Pacific/Rarotonga",
+    "lat": -21.21,
+    "lon": -159.78,
     "population": 13000
   },
   {
@@ -3871,6 +4801,8 @@
     "country": "Niue",
     "countryCode": "NU",
     "timezone": "Pacific/Niue",
+    "lat": -19.06,
+    "lon": -169.92,
     "population": 500
   },
   {
@@ -3879,6 +4811,8 @@
     "country": "American Samoa",
     "countryCode": "AS",
     "timezone": "Pacific/Pago_Pago",
+    "lat": -14.28,
+    "lon": -170.7,
     "population": 3700
   },
   {
@@ -3887,6 +4821,8 @@
     "country": "Guam",
     "countryCode": "GU",
     "timezone": "Pacific/Guam",
+    "lat": 13.48,
+    "lon": 144.75,
     "population": 150000
   },
   {
@@ -3895,6 +4831,8 @@
     "country": "Northern Mariana Islands",
     "countryCode": "MP",
     "timezone": "Pacific/Saipan",
+    "lat": 15.18,
+    "lon": 145.75,
     "population": 50000
   },
   {
@@ -3903,6 +4841,8 @@
     "country": "Turkey",
     "countryCode": "TR",
     "timezone": "Europe/Istanbul",
+    "lat": 41.01,
+    "lon": 28.98,
     "population": 15500000
   },
   {
@@ -3911,6 +4851,8 @@
     "country": "Turkey",
     "countryCode": "TR",
     "timezone": "Europe/Istanbul",
+    "lat": 39.93,
+    "lon": 32.86,
     "population": 5700000
   },
   {
@@ -3919,6 +4861,8 @@
     "country": "Turkey",
     "countryCode": "TR",
     "timezone": "Europe/Istanbul",
+    "lat": 38.42,
+    "lon": 27.14,
     "population": 4400000
   },
   {
@@ -3927,6 +4871,8 @@
     "country": "Maldives",
     "countryCode": "MV",
     "timezone": "Indian/Maldives",
+    "lat": 4.17,
+    "lon": 73.51,
     "population": 250000,
     "aliases": [
       "male"
@@ -3938,6 +4884,8 @@
     "country": "Greenland",
     "countryCode": "GL",
     "timezone": "America/Nuuk",
+    "lat": 64.18,
+    "lon": -51.72,
     "population": 19000
   },
   {
@@ -3946,6 +4894,8 @@
     "country": "Faroe Islands",
     "countryCode": "FO",
     "timezone": "Atlantic/Faroe",
+    "lat": 62.01,
+    "lon": -6.77,
     "population": 14000
   },
   {
@@ -3954,6 +4904,8 @@
     "country": "Sao Tome and Principe",
     "countryCode": "ST",
     "timezone": "Africa/Sao_Tome",
+    "lat": 0.34,
+    "lon": 6.73,
     "population": 80000
   },
   {
@@ -3962,6 +4914,8 @@
     "country": "Andorra",
     "countryCode": "AD",
     "timezone": "Europe/Andorra",
+    "lat": 42.51,
+    "lon": 1.52,
     "population": 23000
   }
 ]
