@@ -2,9 +2,11 @@ import { WORLD_LAND_PATH_D } from "./worldLandPath";
 import { WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT } from "./projection";
 
 /**
- * The static land/ocean silhouette: ocean is the page background color,
- * land is a step lighter/darker than it (the --border token), so it reads
- * correctly in both light and dark themes without any map-specific colors.
+ * The static land/ocean silhouette, rendered in the map's "day" palette
+ * (--map-day-ocean / --map-day-land). In light theme this matches the page
+ * background/border tokens; in dark theme it's deliberately lifted lighter
+ * than the page background so the day side of NightOverlay's terminator
+ * reads as visibly "lit" rather than blending into the near-black page.
  */
 export default function WorldMapBase() {
   return (
@@ -14,9 +16,9 @@ export default function WorldMapBase() {
         y={0}
         width={WORLD_MAP_WIDTH}
         height={WORLD_MAP_HEIGHT}
-        fill="var(--background)"
+        fill="var(--map-day-ocean)"
       />
-      <path d={WORLD_LAND_PATH_D} fill="var(--border)" fillRule="evenodd" />
+      <path d={WORLD_LAND_PATH_D} fill="var(--map-day-land)" fillRule="evenodd" />
     </>
   );
 }

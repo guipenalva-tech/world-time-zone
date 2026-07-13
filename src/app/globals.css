@@ -9,6 +9,17 @@
   --success: #15803d;
   --warning: #b45309;
   --danger: #b91c1c;
+
+  /* Map View day/night palette: deliberately distinct colors (not just a
+     translucent wash) so the terminator is obvious at a glance. Light theme
+     keeps the day side identical to the page background/border. */
+  --map-day-ocean: #ffffff;
+  --map-day-land: #e5e5e5;
+  --map-night-ocean: #101a3a;
+  --map-night-land: #232f5c;
+  --map-terminator-stroke: rgba(15, 23, 42, 0.6);
+  --map-day-glow: #fff3c4;
+  --map-legend-border: rgba(23, 23, 23, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +32,17 @@
     --success: #4ade80;
     --warning: #fbbf24;
     --danger: #f87171;
+
+    /* Dark theme: the day side is lifted well above the near-black page
+       background so it reads as "lit", while the night side is pushed even
+       darker (and blue) than the background so it reads as "unlit". */
+    --map-day-ocean: #263258;
+    --map-day-land: #3c4a7c;
+    --map-night-ocean: #04050c;
+    --map-night-land: #0b0f1e;
+    --map-terminator-stroke: rgba(147, 197, 253, 0.55);
+    --map-day-glow: #fde68a;
+    --map-legend-border: rgba(237, 237, 237, 0.35);
   }
 }
 
@@ -34,6 +56,14 @@
   --success: #15803d;
   --warning: #b45309;
   --danger: #b91c1c;
+
+  --map-day-ocean: #ffffff;
+  --map-day-land: #e5e5e5;
+  --map-night-ocean: #101a3a;
+  --map-night-land: #232f5c;
+  --map-terminator-stroke: rgba(15, 23, 42, 0.6);
+  --map-day-glow: #fff3c4;
+  --map-legend-border: rgba(23, 23, 23, 0.35);
 }
 
 :root[data-theme="dark"] {
@@ -45,6 +75,14 @@
   --success: #4ade80;
   --warning: #fbbf24;
   --danger: #f87171;
+
+  --map-day-ocean: #263258;
+  --map-day-land: #3c4a7c;
+  --map-night-ocean: #04050c;
+  --map-night-land: #0b0f1e;
+  --map-terminator-stroke: rgba(147, 197, 253, 0.55);
+  --map-day-glow: #fde68a;
+  --map-legend-border: rgba(237, 237, 237, 0.35);
 }
 
 @theme inline {
