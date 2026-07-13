@@ -1,0 +1,143 @@
+#!/usr/bin/env node
+/**
+ * One-time generator for the equirectangular world-land SVG path used by
+ * Map View. NOT run at runtime — the output is committed to the repo
+ * (src/components/Map/worldLandPath.ts) and the app never fetches anything.
+ *
+ * Source: Natural Earth 110m land polygons, packaged as TopoJSON by the
+ * "world-atlas" project (public domain / CC0 Natural Earth data), fetched
+ * once from a CDN and converted here with a small hand-rolled TopoJSON
+ * decoder (arc delta-decoding + quantization transform) — no topojson-client
+ * dependency needed since the format is simple enough to decode directly.
+ *
+ * Projection: plain equirectangular (lon/lat -> x/y linear map), matching
+ * the projection used by the day/night terminator and city markers in
+ * src/lib/solar.ts and MapView, so everything lines up in the same
+ * WIDTH x HEIGHT pixel space.
+ *
+ * Run with: node scripts/build-world-map.mjs
+ */
+import { writeFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SOURCE_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
+
+// Output projection size — kept modest so the path stays small; MapView
+// renders it inside a responsive viewBox so this is just the coordinate
+// space precision, not the on-screen size.
+const WIDTH = 960;
+const HEIGHT = 480;
+
+function lonLatToXY(lon, lat) {
+  const x = ((lon + 180) / 360) * WIDTH;
+  const y = ((90 - lat) / 180) * HEIGHT;
+  return [x, y];
+}
+
+/** Decodes a quantized TopoJSON arc (array of [dx, dy] deltas) into absolute [lon, lat] points. */
+function decodeArc(arc, transform) {
+  const [sx, sy] = transform.scale;
+  const [tx, ty] = transform.translate;
+  let x = 0;
+  let y = 0;
+  const points = [];
+  for (const [dx, dy] of arc) {
+    x += dx;
+    y += dy;
+    points.push([x * sx + tx, y * sy + ty]);
+  }
+  return points;
+}
+
+/** Stitches a ring's arc-index list (may include ~i for reversed arcs) into one closed point list. */
+function ringToPoints(ring, decodedArcs) {
+  const points = [];
+  for (const arcIndex of ring) {
+    const reversed = arcIndex < 0;
+    const idx = reversed ? ~arcIndex : arcIndex;
+    const arcPoints = decodedArcs[idx];
+    const ordered = reversed ? [...arcPoints].reverse() : arcPoints;
+    // Skip the first point of subsequent arcs to avoid duplicating the
+    // shared junction point between stitched arcs.
+    const start = points.length === 0 ? 0 : 1;
+    for (let i = start; i < ordered.length; i++) points.push(ordered[i]);
+  }
+  return points;
+}
+
+async function main() {
+  const res = await fetch(SOURCE_URL);
+  if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+  const topology = await res.json();
+
+  const decodedArcs = topology.arcs.map((arc) => decodeArc(arc, topology.transform));
+  const land = topology.objects.land.geometries[0]; // single MultiPolygon
+  if (land.type !== "MultiPolygon") throw new Error(`Unexpected geometry type: ${land.type}`);
+
+  const subpaths = [];
+  let skipped = 0;
+  for (const polygon of land.arcs) {
+    for (const ring of polygon) {
+      const points = ringToPoints(ring, decodedArcs);
+      const projected = points.map(([lon, lat]) => lonLatToXY(lon, lat));
+
+      // The 110m land dataset has a couple of degenerate near-antimeridian
+      // slivers that project as a near-full-width, near-zero-height line
+      // across the map (a rendering artifact, not a real landmass) — drop
+      // any ring whose bbox is almost as wide as the whole map but only a
+      // few pixels tall.
+      const xs = projected.map((p) => p[0]);
+      const ys = projected.map((p) => p[1]);
+      const bboxW = Math.max(...xs) - Math.min(...xs);
+      const bboxH = Math.max(...ys) - Math.min(...ys);
+      if (bboxW > WIDTH * 0.9 && bboxH < 5) {
+        skipped++;
+        continue;
+      }
+
+      // Some rings (e.g. Russia's Chukotka Peninsula) cross the antimeridian;
+      // in this linear equirectangular projection that means consecutive
+      // points jump from x~0 to x~WIDTH (or vice versa). Drawing a straight
+      // line for that jump would cut a bogus edge clear across the map, so
+      // instead we break into a new subpath there. Each fragment gets an
+      // implicit closing edge at fill-time, which is a reasonable
+      // approximation right at the map's left/right seam.
+      let d = "";
+      let prev = null;
+      for (const [x, y] of projected) {
+        const bigJump = prev !== null && Math.abs(x - prev[0]) > WIDTH * 0.5;
+        d += `${prev === null || bigJump ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
+        prev = [x, y];
+      }
+      d += "Z";
+      subpaths.push(d);
+    }
+  }
+  if (skipped > 0) console.log(`Dropped ${skipped} degenerate sliver ring(s).`);
+
+  const pathD = subpaths.join("");
+
+  const output = `/**
+ * AUTO-GENERATED by scripts/build-world-map.mjs — do not hand-edit.
+ * Natural Earth 110m land polygons (public domain), equirectangular
+ * projection, ${WIDTH}x${HEIGHT} coordinate space. Regenerate with:
+ *   node scripts/build-world-map.mjs
+ */
+export const WORLD_MAP_WIDTH = ${WIDTH};
+export const WORLD_MAP_HEIGHT = ${HEIGHT};
+
+/** SVG path 'd' for all land masses (evenodd fill rule handles lake holes). */
+export const WORLD_LAND_PATH_D = "${pathD}";
+`;
+
+  const outPath = path.join(__dirname, "..", "src", "components", "Map", "worldLandPath.ts");
+  writeFileSync(outPath, output, "utf8");
+  console.log(`Wrote ${outPath} (${(output.length / 1024).toFixed(1)} KB, ${subpaths.length} rings)`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
