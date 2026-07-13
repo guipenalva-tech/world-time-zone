@@ -64,24 +64,35 @@ export default function OverlapChart({
 
       <div className="overflow-x-auto rounded-xl border border-border">
         <div className="min-w-[720px]">
-          {/* Hour axis, labeled in the reference city's local time */}
+          {/* Hour axis, anchored to the reference city's local clock: a tick
+              every 3h starting at midnight (0, 3, 6, 9, 12, 15, 18, 21). On
+              narrow viewports only the 6h ticks (0, 6, 12, 18) are shown so
+              labels never crowd or wrap. */}
           <div className="flex border-b border-border bg-surface/60 text-[10px] text-foreground/50">
             <div className="w-36 shrink-0 px-2 py-1.5 sm:w-44" aria-hidden="true" />
             <div className="flex flex-1">
-              {referenceSlots.map((slot, i) => (
-                <div
-                  key={slot.isoString}
-                  className={`flex h-6 flex-1 items-center justify-center border-l border-border/40 ${
-                    i === nowIndex ? "font-semibold text-primary" : ""
-                  }`}
-                >
-                  {i % 3 === 0
-                    ? DateTime.fromISO(slot.isoString)
-                        .setZone(referenceCity.city.timezone)
-                        .toFormat(hourLabelFormat)
-                    : ""}
-                </div>
-              ))}
+              {referenceSlots.map((slot, i) => {
+                const isMidnightOrNoon = slot.hour === 0 || slot.hour === 12;
+                const isSixHourTick = slot.hour % 6 === 0;
+                const isThreeHourTick = slot.hour % 3 === 0;
+
+                return (
+                  <div
+                    key={slot.isoString}
+                    className={`flex h-6 flex-1 items-center justify-start overflow-visible whitespace-nowrap border-l pl-0.5 ${
+                      isMidnightOrNoon ? "border-border/70" : "border-border/40"
+                    } ${i === nowIndex ? "font-semibold text-primary" : ""}`}
+                  >
+                    {isThreeHourTick && (
+                      <span className={isSixHourTick ? "" : "hidden sm:inline"}>
+                        {DateTime.fromISO(slot.isoString)
+                          .setZone(referenceCity.city.timezone)
+                          .toFormat(hourLabelFormat)}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -104,6 +115,8 @@ export default function OverlapChart({
                 {slots.map((slot, i) => {
                   const inWindow =
                     window !== null && i >= window.startIndex && i <= window.endIndex;
+                  const referenceHour = referenceSlots[i]?.hour;
+                  const isMidnightOrNoon = referenceHour === 0 || referenceHour === 12;
                   const cellLabel = `${comparedCity.city.name}: ${DateTime.fromISO(
                     slot.isoString,
                   )
@@ -118,7 +131,9 @@ export default function OverlapChart({
                       role="img"
                       aria-label={cellLabel}
                       title={cellLabel}
-                      className={`h-7 flex-1 border-l border-border/40 ${
+                      className={`h-7 flex-1 border-l ${
+                        isMidnightOrNoon ? "border-border/70" : "border-border/40"
+                      } ${
                         inWindow
                           ? "bg-success ring-1 ring-inset ring-success"
                           : slot.isBusinessHour
