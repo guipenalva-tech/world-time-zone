@@ -11,7 +11,8 @@
 const DEG = Math.PI / 180;
 const RAD = 180 / Math.PI;
 
-function toJulianDay(date: Date): number {
+/** Julian Day for a given instant — also used by sun.ts for moon-phase age. */
+export function toJulianDay(date: Date): number {
   return date.getTime() / 86400000 + 2440587.5;
 }
 
