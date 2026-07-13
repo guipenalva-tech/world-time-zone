@@ -45,7 +45,7 @@ interface SettingsState {
   localCardCityId: string | null;
   /** "system" follows the OS preference; "light"/"dark" force a side. */
   theme: Theme;
-  /** Sun view (/sun) card toggles — all default off, persisted. */
+  /** Sun view (/sun) card toggles — all default on, persisted. */
   sunShowGoldenHour: boolean;
   sunShowTwilight: boolean;
   sunShowMoonPhase: boolean;
@@ -68,9 +68,9 @@ export const useSettingsStore = create<SettingsState>()(
       hourFormat: null,
       localCardCityId: null,
       theme: "system",
-      sunShowGoldenHour: false,
-      sunShowTwilight: false,
-      sunShowMoonPhase: false,
+      sunShowGoldenHour: true,
+      sunShowTwilight: true,
+      sunShowMoonPhase: true,
       hasHydrated: false,
 
       setHourFormat: (format) => set({ hourFormat: format }),
@@ -86,6 +86,26 @@ export const useSettingsStore = create<SettingsState>()(
       name: "wtz-settings",
       storage: createJSONStorage(() => localStorage),
       skipHydration: true,
+      // Bumped when the sun-filter defaults flipped from off to on (all
+      // three filters below). Existing localStorage from before this
+      // version has no explicit user intent recorded for these three
+      // keys (there was no other way to reach `false` than the old
+      // default), so migrating them to `true` here is safe and only
+      // runs once per browser — any later explicit toggle by the user
+      // is untouched since it happens after rehydration.
+      version: 1,
+      migrate: (persistedState, version) => {
+        const state = persistedState as Partial<SettingsState>;
+        if (version < 1) {
+          return {
+            ...state,
+            sunShowGoldenHour: true,
+            sunShowTwilight: true,
+            sunShowMoonPhase: true,
+          };
+        }
+        return state;
+      },
       partialize: (state) => ({
         hourFormat: state.hourFormat,
         localCardCityId: state.localCardCityId,

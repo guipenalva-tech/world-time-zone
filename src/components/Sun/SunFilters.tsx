@@ -6,8 +6,9 @@ import { useSettingsStore } from "@/stores/settingsStore";
 /**
  * Toggle chips controlling which optional sections show on every Sun card
  * (golden hour, twilight bands, moon phase). Persisted in settingsStore;
- * all default off so the cards start minimal (sunrise/sunset/day length/
- * solar noon only).
+ * all default on so a fresh profile sees the full card. Existing
+ * localStorage from before this default flipped is migrated once (see
+ * settingsStore's persist `migrate`).
  */
 export default function SunFilters() {
   const t = useTranslations("Sun");
