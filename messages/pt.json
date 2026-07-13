@@ -191,6 +191,91 @@
       "waningCrescent": "Lua minguante"
     }
   },
+  "Alerts": {
+    "pageTitle": "Alertas",
+    "pageSubtitle": "Receba avisos sobre mudanças de horário de verão, horários específicos no exterior e o fim do expediente — tudo no navegador, nesta aba.",
+    "limitationNotice": "Os alertas só funcionam enquanto este site estiver aberto em uma aba do navegador.",
+    "permission": {
+      "default": "Ative as notificações para ser avisado mesmo com esta aba em segundo plano.",
+      "enableButton": "Ativar notificações",
+      "granted": "Notificações ativadas — você receberá um alerta do sistema e uma mensagem no app.",
+      "deniedTitle": "Notificações bloqueadas",
+      "denied": "Este navegador está bloqueando notificações para este site. Você ainda verá mensagens no app enquanto a aba estiver aberta.",
+      "unsupported": "Este navegador não tem suporte a notificações. Você ainda verá mensagens no app enquanto a aba estiver aberta."
+    },
+    "dst": {
+      "sectionTitle": "Mudanças de horário de verão",
+      "sectionSubtitle": "Detectadas automaticamente para cada cidade que você está comparando.",
+      "noChange": "Sem mudanças programadas",
+      "notifyToggle": "Notificar-me",
+      "springForward": "Adianta o relógio (+1h) — entra no horário de verão",
+      "fallBack": "Atrasa o relógio (-1h) — sai do horário de verão",
+      "at": "{date} às {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "Alarme por cidade",
+      "sectionSubtitle": "Seja avisado no momento em que for um horário específico em algum lugar.",
+      "cityLabel": "Cidade",
+      "fromCompared": "Das suas cidades comparadas",
+      "searchAny": "Ou busque qualquer cidade",
+      "timeLabel": "Horário",
+      "repeatOnce": "Uma vez",
+      "repeatDaily": "Diariamente",
+      "addButton": "Adicionar alarme",
+      "emptyState": "Nenhum alarme ainda — adicione um acima.",
+      "firesIn": "Dispara em {duration}",
+      "completed": "Já disparado — alarme de uma vez",
+      "edit": "Editar",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "delete": "Excluir",
+      "deleteAriaLabel": "Excluir alarme de {city}",
+      "chooseCityFirst": "Escolha uma cidade para definir um alarme."
+    },
+    "businessHours": {
+      "sectionTitle": "Fim do horário comercial",
+      "sectionSubtitle": "Um aviso antes do fim do expediente local (9h–18h), em cada dia útil.",
+      "cityLabel": "Cidade",
+      "leadLabel": "Antecedência",
+      "addButton": "Adicionar alerta",
+      "emptyState": "Nenhum alerta de horário comercial ainda — adicione um acima.",
+      "firesIn": "Dispara em {duration}",
+      "delete": "Excluir",
+      "deleteAriaLabel": "Excluir alerta de horário comercial de {city}",
+      "leadOptions": {
+        "15": "15 min",
+        "30": "30 min",
+        "45": "45 min",
+        "60": "1h",
+        "120": "2h",
+        "180": "3h",
+        "240": "4h",
+        "300": "5h",
+        "360": "6h",
+        "420": "7h"
+      }
+    },
+    "duration": {
+      "days": "{count}d {hours}h",
+      "hoursMinutes": "{hours}h {minutes}min",
+      "minutes": "{minutes}min",
+      "lessThanMinute": "< 1 min"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "adianta o relógio",
+        "fallBack": "atrasa o relógio"
+      },
+      "dstReminderTitle": "Mudança de horário amanhã",
+      "dstReminderBody": "{city} {direction} amanhã, dia {date} às {time}.",
+      "dstMomentTitle": "Mudança de horário agora",
+      "dstMomentBody": "{city} {direction} agora.",
+      "cityAlarmTitle": "Alarme",
+      "cityAlarmBody": "Agora são {time} em {city}.",
+      "businessHoursTitle": "Expediente terminando",
+      "businessHoursBody": "O expediente em {city} termina em {lead}, às {time} local."
+    }
+  },
   "TimeQuestion": {
     "placeholder": "Pergunte sobre um horário... ex: \"que horas são em Tóquio?\"",
     "ariaLabel": "Fazer uma pergunta sobre fusos horários",

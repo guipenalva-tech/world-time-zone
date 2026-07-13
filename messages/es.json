@@ -191,6 +191,91 @@
       "waningCrescent": "Luna menguante"
     }
   },
+  "Alerts": {
+    "pageTitle": "Alertas",
+    "pageSubtitle": "Recibe avisos sobre cambios de horario de verano, horas concretas en el extranjero y el fin del horario laboral — todo en el navegador, en esta pestaña.",
+    "limitationNotice": "Las alertas solo funcionan mientras este sitio esté abierto en una pestaña del navegador.",
+    "permission": {
+      "default": "Activa las notificaciones para recibir avisos aunque esta pestaña no esté en primer plano.",
+      "enableButton": "Activar notificaciones",
+      "granted": "Notificaciones activadas: recibirás una alerta del sistema y un mensaje en la app.",
+      "deniedTitle": "Notificaciones bloqueadas",
+      "denied": "Este navegador está bloqueando las notificaciones para este sitio. Seguirás viendo mensajes en la app mientras la pestaña esté abierta.",
+      "unsupported": "Este navegador no admite notificaciones. Seguirás viendo mensajes en la app mientras la pestaña esté abierta."
+    },
+    "dst": {
+      "sectionTitle": "Cambios de horario de verano",
+      "sectionSubtitle": "Detectados automáticamente para cada ciudad que estás comparando.",
+      "noChange": "Sin cambios programados",
+      "notifyToggle": "Notificarme",
+      "springForward": "Adelanta el reloj (+1h) — entra en horario de verano",
+      "fallBack": "Atrasa el reloj (-1h) — sale del horario de verano",
+      "at": "{date} a las {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "Alarma por ciudad",
+      "sectionSubtitle": "Recibe un aviso justo cuando sea una hora concreta en algún lugar.",
+      "cityLabel": "Ciudad",
+      "fromCompared": "De tus ciudades comparadas",
+      "searchAny": "O busca cualquier ciudad",
+      "timeLabel": "Hora",
+      "repeatOnce": "Una vez",
+      "repeatDaily": "A diario",
+      "addButton": "Añadir alarma",
+      "emptyState": "Aún no hay alarmas — añade una arriba.",
+      "firesIn": "Se activa en {duration}",
+      "completed": "Ya activada — alarma de una sola vez",
+      "edit": "Editar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "deleteAriaLabel": "Eliminar alarma de {city}",
+      "chooseCityFirst": "Elige una ciudad para configurar una alarma."
+    },
+    "businessHours": {
+      "sectionTitle": "Fin del horario laboral",
+      "sectionSubtitle": "Un aviso antes de que termine el horario laboral local (9:00–18:00), cada día laborable.",
+      "cityLabel": "Ciudad",
+      "leadLabel": "Antelación",
+      "addButton": "Añadir alerta",
+      "emptyState": "Aún no hay alertas de horario laboral — añade una arriba.",
+      "firesIn": "Se activa en {duration}",
+      "delete": "Eliminar",
+      "deleteAriaLabel": "Eliminar alerta de horario laboral de {city}",
+      "leadOptions": {
+        "15": "15 min",
+        "30": "30 min",
+        "45": "45 min",
+        "60": "1h",
+        "120": "2h",
+        "180": "3h",
+        "240": "4h",
+        "300": "5h",
+        "360": "6h",
+        "420": "7h"
+      }
+    },
+    "duration": {
+      "days": "{count}d {hours}h",
+      "hoursMinutes": "{hours}h {minutes}min",
+      "minutes": "{minutes}min",
+      "lessThanMinute": "< 1 min"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "adelanta el reloj",
+        "fallBack": "atrasa el reloj"
+      },
+      "dstReminderTitle": "Cambio de horario mañana",
+      "dstReminderBody": "{city} {direction} mañana, {date} a las {time}.",
+      "dstMomentTitle": "Cambio de horario ahora",
+      "dstMomentBody": "{city} {direction} ahora.",
+      "cityAlarmTitle": "Alarma",
+      "cityAlarmBody": "Son las {time} en {city}.",
+      "businessHoursTitle": "El horario laboral está por terminar",
+      "businessHoursBody": "El horario laboral en {city} termina en {lead}, a las {time} hora local."
+    }
+  },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",
     "ariaLabel": "Hacer una pregunta sobre husos horarios",

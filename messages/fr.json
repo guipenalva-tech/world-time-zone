@@ -191,6 +191,91 @@
       "waningCrescent": "Dernier croissant"
     }
   },
+  "Alerts": {
+    "pageTitle": "Alertes",
+    "pageSubtitle": "Soyez averti des changements d'heure d'été, d'une heure précise à l'étranger et de la fin des horaires de bureau — tout se passe dans cet onglet.",
+    "limitationNotice": "Les alertes ne fonctionnent que tant que ce site reste ouvert dans un onglet du navigateur.",
+    "permission": {
+      "default": "Activez les notifications pour être averti même si cet onglet n'est pas au premier plan.",
+      "enableButton": "Activer les notifications",
+      "granted": "Notifications activées : vous recevrez une alerte système et un message dans l'application.",
+      "deniedTitle": "Notifications bloquées",
+      "denied": "Ce navigateur bloque les notifications pour ce site. Vous continuerez à voir les messages dans l'application tant que l'onglet est ouvert.",
+      "unsupported": "Ce navigateur ne prend pas en charge les notifications. Vous continuerez à voir les messages dans l'application tant que l'onglet est ouvert."
+    },
+    "dst": {
+      "sectionTitle": "Changements d'heure d'été/hiver",
+      "sectionSubtitle": "Détectés automatiquement pour chaque ville que vous comparez.",
+      "noChange": "Aucun changement prévu",
+      "notifyToggle": "Me notifier",
+      "springForward": "Avance l'horloge (+1h) — passage à l'heure d'été",
+      "fallBack": "Recule l'horloge (-1h) — passage à l'heure d'hiver",
+      "at": "{date} à {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "Alarme par ville",
+      "sectionSubtitle": "Soyez averti dès qu'il est une heure précise quelque part.",
+      "cityLabel": "Ville",
+      "fromCompared": "Parmi vos villes comparées",
+      "searchAny": "Ou recherchez n'importe quelle ville",
+      "timeLabel": "Heure",
+      "repeatOnce": "Une fois",
+      "repeatDaily": "Tous les jours",
+      "addButton": "Ajouter une alarme",
+      "emptyState": "Aucune alarme pour l'instant — ajoutez-en une ci-dessus.",
+      "firesIn": "Se déclenche dans {duration}",
+      "completed": "Déjà déclenchée — alarme ponctuelle",
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "deleteAriaLabel": "Supprimer l'alarme de {city}",
+      "chooseCityFirst": "Choisissez une ville pour définir une alarme."
+    },
+    "businessHours": {
+      "sectionTitle": "Fin des horaires de bureau",
+      "sectionSubtitle": "Un rappel avant la fin des horaires de bureau locaux (9h–18h), chaque jour ouvré.",
+      "cityLabel": "Ville",
+      "leadLabel": "Préavis",
+      "addButton": "Ajouter une alerte",
+      "emptyState": "Aucune alerte d'horaires de bureau pour l'instant — ajoutez-en une ci-dessus.",
+      "firesIn": "Se déclenche dans {duration}",
+      "delete": "Supprimer",
+      "deleteAriaLabel": "Supprimer l'alerte d'horaires de bureau de {city}",
+      "leadOptions": {
+        "15": "15 min",
+        "30": "30 min",
+        "45": "45 min",
+        "60": "1h",
+        "120": "2h",
+        "180": "3h",
+        "240": "4h",
+        "300": "5h",
+        "360": "6h",
+        "420": "7h"
+      }
+    },
+    "duration": {
+      "days": "{count}j {hours}h",
+      "hoursMinutes": "{hours}h {minutes}min",
+      "minutes": "{minutes}min",
+      "lessThanMinute": "< 1 min"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "avance l'horloge",
+        "fallBack": "recule l'horloge"
+      },
+      "dstReminderTitle": "Changement d'heure demain",
+      "dstReminderBody": "{city} {direction} demain, le {date} à {time}.",
+      "dstMomentTitle": "Changement d'heure maintenant",
+      "dstMomentBody": "{city} {direction} maintenant.",
+      "cityAlarmTitle": "Alarme",
+      "cityAlarmBody": "Il est {time} à {city}.",
+      "businessHoursTitle": "Fin des horaires de bureau proche",
+      "businessHoursBody": "Les horaires de bureau à {city} se terminent dans {lead}, à {time} heure locale."
+    }
+  },
   "TimeQuestion": {
     "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",
     "ariaLabel": "Poser une question sur les fuseaux horaires",

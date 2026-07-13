@@ -191,6 +191,91 @@
       "waningCrescent": "Abnehmende Sichel"
     }
   },
+  "Alerts": {
+    "pageTitle": "Erinnerungen",
+    "pageSubtitle": "Werde über Zeitumstellungen, bestimmte Uhrzeiten im Ausland und das Ende der Geschäftszeiten informiert — alles direkt in diesem Tab.",
+    "limitationNotice": "Erinnerungen funktionieren nur, solange diese Seite in einem Browser-Tab geöffnet bleibt.",
+    "permission": {
+      "default": "Aktiviere Benachrichtigungen, um auch informiert zu werden, wenn dieser Tab nicht im Vordergrund ist.",
+      "enableButton": "Benachrichtigungen aktivieren",
+      "granted": "Benachrichtigungen sind aktiviert — du erhältst eine Systembenachrichtigung und eine Meldung in der App.",
+      "deniedTitle": "Benachrichtigungen blockiert",
+      "denied": "Dieser Browser blockiert Benachrichtigungen für diese Seite. Du siehst weiterhin Meldungen in der App, solange der Tab geöffnet ist.",
+      "unsupported": "Dieser Browser unterstützt keine Benachrichtigungen. Du siehst weiterhin Meldungen in der App, solange der Tab geöffnet ist."
+    },
+    "dst": {
+      "sectionTitle": "Zeitumstellungen",
+      "sectionSubtitle": "Automatisch erkannt für jede Stadt, die du vergleichst.",
+      "noChange": "Keine Umstellung geplant",
+      "notifyToggle": "Benachrichtigen",
+      "springForward": "Uhr wird vorgestellt (+1h) — Beginn der Sommerzeit",
+      "fallBack": "Uhr wird zurückgestellt (-1h) — Ende der Sommerzeit",
+      "at": "{date} um {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "Städte-Alarm",
+      "sectionSubtitle": "Werde genau dann benachrichtigt, wenn es irgendwo eine bestimmte Uhrzeit ist.",
+      "cityLabel": "Stadt",
+      "fromCompared": "Aus deinen verglichenen Städten",
+      "searchAny": "Oder eine beliebige Stadt suchen",
+      "timeLabel": "Uhrzeit",
+      "repeatOnce": "Einmalig",
+      "repeatDaily": "Täglich",
+      "addButton": "Alarm hinzufügen",
+      "emptyState": "Noch keine Alarme — füge oben einen hinzu.",
+      "firesIn": "Löst aus in {duration}",
+      "completed": "Bereits ausgelöst — einmaliger Alarm",
+      "edit": "Bearbeiten",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "delete": "Löschen",
+      "deleteAriaLabel": "Alarm für {city} löschen",
+      "chooseCityFirst": "Wähle eine Stadt, um einen Alarm einzurichten."
+    },
+    "businessHours": {
+      "sectionTitle": "Ende der Geschäftszeiten",
+      "sectionSubtitle": "Ein Hinweis, bevor die lokalen Geschäftszeiten (9–18 Uhr) an jedem Werktag enden.",
+      "cityLabel": "Stadt",
+      "leadLabel": "Vorlaufzeit",
+      "addButton": "Erinnerung hinzufügen",
+      "emptyState": "Noch keine Erinnerungen für Geschäftszeiten — füge oben eine hinzu.",
+      "firesIn": "Löst aus in {duration}",
+      "delete": "Löschen",
+      "deleteAriaLabel": "Geschäftszeiten-Erinnerung für {city} löschen",
+      "leadOptions": {
+        "15": "15 Min.",
+        "30": "30 Min.",
+        "45": "45 Min.",
+        "60": "1 Std.",
+        "120": "2 Std.",
+        "180": "3 Std.",
+        "240": "4 Std.",
+        "300": "5 Std.",
+        "360": "6 Std.",
+        "420": "7 Std."
+      }
+    },
+    "duration": {
+      "days": "{count}T {hours}Std.",
+      "hoursMinutes": "{hours}Std. {minutes}Min.",
+      "minutes": "{minutes}Min.",
+      "lessThanMinute": "< 1 Min."
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "stellt die Uhr vor",
+        "fallBack": "stellt die Uhr zurück"
+      },
+      "dstReminderTitle": "Zeitumstellung morgen",
+      "dstReminderBody": "{city} {direction} morgen, {date} um {time}.",
+      "dstMomentTitle": "Zeitumstellung jetzt",
+      "dstMomentBody": "{city} {direction} jetzt.",
+      "cityAlarmTitle": "Alarm",
+      "cityAlarmBody": "Es ist {time} Uhr in {city}.",
+      "businessHoursTitle": "Geschäftszeiten enden bald",
+      "businessHoursBody": "Die Geschäftszeiten in {city} enden in {lead}, um {time} Ortszeit."
+    }
+  },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
     "ariaLabel": "Eine Frage zu Zeitzonen stellen",
