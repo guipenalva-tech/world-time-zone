@@ -10,6 +10,7 @@ import Header from "@/components/Layout/Header";
 import Breadcrumb from "@/components/Layout/Breadcrumb";
 import StoreHydrator from "@/components/App/StoreHydrator";
 import ThemeSync from "@/components/App/ThemeSync";
+import AlertScheduler from "@/components/App/AlertScheduler";
 import "../globals.css";
 
 /**
@@ -171,6 +172,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <StoreHydrator />
           <ThemeSync />
+          <AlertScheduler />
           <Header />
           <Breadcrumb locale={locale as AppLocale} />
           {children}

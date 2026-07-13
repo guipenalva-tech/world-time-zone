@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { useSettingsStore } from "@/stores/settingsStore";
+import { useAlertsStore } from "@/stores/alertsStore";
 import { readShareLinkParams } from "@/lib/shareLink";
 
 /**
@@ -16,6 +17,7 @@ export default function StoreHydrator() {
     async function init() {
       await useComparatorStore.persist.rehydrate();
       await useSettingsStore.persist.rehydrate();
+      await useAlertsStore.persist.rehydrate();
 
       const shareParams = readShareLinkParams();
       if (shareParams) {

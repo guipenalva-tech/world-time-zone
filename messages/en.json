@@ -191,6 +191,91 @@
       "waningCrescent": "Waning crescent"
     }
   },
+  "Alerts": {
+    "pageTitle": "Alerts",
+    "pageSubtitle": "Get notified about DST changes, specific times abroad, and the end of business hours — all client-side, right in this tab.",
+    "limitationNotice": "Alerts only work while this site stays open in a browser tab.",
+    "permission": {
+      "default": "Turn on notifications to get alerted even when this tab isn't focused.",
+      "enableButton": "Enable notifications",
+      "granted": "Notifications are on — you'll get a system alert plus an in-app message.",
+      "deniedTitle": "Notifications are blocked",
+      "denied": "This browser is blocking notifications for this site. You'll still see in-app messages while the tab is open.",
+      "unsupported": "This browser doesn't support notifications. You'll still see in-app messages while the tab is open."
+    },
+    "dst": {
+      "sectionTitle": "Daylight saving time changes",
+      "sectionSubtitle": "Detected automatically for each city you're comparing.",
+      "noChange": "No changes scheduled",
+      "notifyToggle": "Notify me",
+      "springForward": "Springs forward (+1h) — enters daylight saving time",
+      "fallBack": "Falls back (-1h) — exits daylight saving time",
+      "at": "{date} at {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "City alarm",
+      "sectionSubtitle": "Get alerted the moment it's a specific time somewhere.",
+      "cityLabel": "City",
+      "fromCompared": "From your compared cities",
+      "searchAny": "Or search any city",
+      "timeLabel": "Time",
+      "repeatOnce": "Once",
+      "repeatDaily": "Daily",
+      "addButton": "Add alarm",
+      "emptyState": "No city alarms yet — add one above.",
+      "firesIn": "Fires in {duration}",
+      "completed": "Already fired — one-time alarm",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "deleteAriaLabel": "Delete alarm for {city}",
+      "chooseCityFirst": "Choose a city to set an alarm."
+    },
+    "businessHours": {
+      "sectionTitle": "End of business hours",
+      "sectionSubtitle": "A heads-up before the 9am–6pm local business day ends, every weekday.",
+      "cityLabel": "City",
+      "leadLabel": "Notice",
+      "addButton": "Add alert",
+      "emptyState": "No business-hours alerts yet — add one above.",
+      "firesIn": "Fires in {duration}",
+      "delete": "Delete",
+      "deleteAriaLabel": "Delete business-hours alert for {city}",
+      "leadOptions": {
+        "15": "15 min",
+        "30": "30 min",
+        "45": "45 min",
+        "60": "1h",
+        "120": "2h",
+        "180": "3h",
+        "240": "4h",
+        "300": "5h",
+        "360": "6h",
+        "420": "7h"
+      }
+    },
+    "duration": {
+      "days": "{count}d {hours}h",
+      "hoursMinutes": "{hours}h {minutes}min",
+      "minutes": "{minutes}min",
+      "lessThanMinute": "< 1 min"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "springs forward",
+        "fallBack": "falls back"
+      },
+      "dstReminderTitle": "DST change tomorrow",
+      "dstReminderBody": "{city} {direction} tomorrow, {date} at {time}.",
+      "dstMomentTitle": "DST change now",
+      "dstMomentBody": "{city} {direction} now.",
+      "cityAlarmTitle": "Alarm",
+      "cityAlarmBody": "It's {time} in {city}.",
+      "businessHoursTitle": "Business hours ending soon",
+      "businessHoursBody": "Business hours in {city} end in {lead}, at {time} local."
+    }
+  },
   "TimeQuestion": {
     "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",
     "ariaLabel": "Ask a time zone question",
