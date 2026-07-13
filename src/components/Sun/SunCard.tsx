@@ -91,11 +91,17 @@ export default function SunCard({
       ) : (
         <dl className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
           <div>
-            <dt className="text-xs text-foreground/50">🌅 {t("sunrise")}</dt>
+            <dt className="flex items-center gap-1 text-xs text-foreground/50">
+              <SunriseIcon className="h-4 w-4" />
+              {t("sunrise")}
+            </dt>
             <dd className="font-mono font-medium tabular-nums">{fmt(sunTimes.sunrise)}</dd>
           </div>
           <div>
-            <dt className="text-xs text-foreground/50">🌇 {t("sunset")}</dt>
+            <dt className="flex items-center gap-1 text-xs text-foreground/50">
+              <SunsetIcon className="h-4 w-4" />
+              {t("sunset")}
+            </dt>
             <dd className="font-mono font-medium tabular-nums">{fmt(sunTimes.sunset)}</dd>
           </div>
           <div>
@@ -157,9 +163,7 @@ export default function SunCard({
         <div className="border-t border-border pt-3 text-sm">
           <p className="mb-1.5 text-xs font-semibold text-foreground/60">{t("moonPhase")}</p>
           <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="text-2xl">
-              {moonPhase.emoji}
-            </span>
+            <MoonIcon className="h-6 w-6 shrink-0 text-foreground/70" />
             <div className="min-w-0">
               <p className="font-medium">{t(`moonPhaseNames.${moonPhase.phase}` as `moonPhaseNames.${MoonPhaseName}`)}</p>
               <p className="text-xs text-foreground/50">
