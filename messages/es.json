@@ -58,7 +58,7 @@
     "title": "Configuración",
     "language": "Idioma",
     "hourFormat": "Formato de hora",
-    "moreSoon": "Tema próximamente"
+    "theme": "Tema"
   },
   "Ads": {
     "label": "Publicidad",
@@ -70,6 +70,7 @@
     "menuToggle": "Más opciones",
     "hourFormatLabel": "Formato de hora",
     "languageLabel": "Idioma",
+    "themeLabel": "Tema",
     "cityAdded": "{city} agregada"
   },
   "Breadcrumb": {
@@ -92,14 +93,59 @@
   },
   "Placeholders": {
     "hourDiffTitle": "Gráfico de diferencia horaria",
-    "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades llegará pronto.",
+    "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades.",
     "mapTitle": "Mapa mundial de husos horarios",
     "mapText": "Un mapa mundial interactivo de husos horarios llegará pronto.",
-    "comingSoon": "Próximamente",
     "sunTitle": "Amanecer y atardecer",
     "sunText": "Los horarios de amanecer y atardecer de tus ciudades llegarán pronto.",
     "alertsTitle": "Alertas de huso horario",
-    "alertsText": "Alertas personalizadas para horarios de reunión y cambios de huso horario llegarán pronto."
+    "alertsText": "Alertas personalizadas para horarios de reunión y cambios de huso horario llegarán pronto.",
+    "comingSoon": "Próximamente",
+    "viewPage": "Ver página →"
+  },
+  "Theme": {
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "toggle": "Cambiar tema (actual: {current})"
+  },
+  "Nav": {
+    "home": "Husos Horarios del Mundo",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Amanecer y atardecer",
+    "alerts": "Alertas"
+  },
+  "EmptyCities": {
+    "title": "Agrega ciudades para empezar",
+    "text": "Esta página usa las ciudades de tu comparador. Agrega algunas en la página de inicio para verla en acción.",
+    "cta": "Agregar ciudades en el comparador"
+  },
+  "PageMeta": {
+    "chartTitle": "Gráfico — Diferencia horaria y superposición de 24h",
+    "chartDescription": "Consulta barras de diferencia horaria y un gráfico de superposición de horario laboral de 24h para tus ciudades comparadas.",
+    "mapTitle": "Mapa — mapa mundial de husos horarios",
+    "mapDescription": "Un mapa mundial interactivo de husos horarios para tus ciudades comparadas — próximamente.",
+    "sunTitle": "Amanecer y atardecer — horarios para tus ciudades",
+    "sunDescription": "Horarios de amanecer y atardecer para tus ciudades comparadas — próximamente.",
+    "alertsTitle": "Alertas — notificaciones de huso horario",
+    "alertsDescription": "Alertas personalizadas para horarios de reunión y cambios de huso horario — próximamente."
+  },
+  "Chart": {
+    "pageTitle": "Gráfico",
+    "pageSubtitle": "Diferencias horarias y la mejor ventana de superposición para reuniones entre tus ciudades comparadas.",
+    "referenceLabel": "Ciudad de referencia",
+    "hourDiffTitle": "Diferencia horaria",
+    "hourDiffSubtitle": "Respecto a {city}",
+    "referenceBadge": "(referencia)",
+    "needMoreCities": "Agrega otra ciudad para ver las diferencias horarias.",
+    "sameTime": "Mismo horario",
+    "barAriaLabel": "{city} está {diff} respecto a la referencia, hora local {time}",
+    "overlapTitle": "Superposición de 24h",
+    "bestWindow": "Mejor ventana: {range} (hora de {city})",
+    "noOverlap": "No hay superposición de horario laboral entre todas las ciudades.",
+    "businessHour": "horario laboral",
+    "nonBusinessHour": "fuera del horario laboral"
   },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",
@@ -119,25 +165,5 @@
       "Cuando son las 15 en Madrid, ¿qué hora es en Lima?",
       "Diferencia entre Londres y Nueva York"
     ]
-  },
-  "Nav": {
-    "home": "Husos Horarios del Mundo",
-    "chart": "Gráfico",
-    "map": "Mapa",
-    "sun": "Amanecer y atardecer",
-    "alerts": "Alertas"
-  },
-  "EmptyCities": {
-    "title": "Agrega ciudades para empezar",
-    "text": "Esta página usa las ciudades de tu comparador. Agrega algunas en la página de inicio para verla en acción.",
-    "cta": "Agregar ciudades en el comparador"
-  },
-  "PageMeta": {
-    "mapTitle": "Mapa — mapa mundial de husos horarios",
-    "mapDescription": "Un mapa mundial interactivo de husos horarios para tus ciudades comparadas — próximamente.",
-    "sunTitle": "Amanecer y atardecer — horarios para tus ciudades",
-    "sunDescription": "Horarios de amanecer y atardecer para tus ciudades comparadas — próximamente.",
-    "alertsTitle": "Alertas — notificaciones de huso horario",
-    "alertsDescription": "Alertas personalizadas para horarios de reunión y cambios de huso horario — próximamente."
   }
 }

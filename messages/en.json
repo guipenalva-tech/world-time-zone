@@ -58,7 +58,7 @@
     "title": "Settings",
     "language": "Language",
     "hourFormat": "Time format",
-    "moreSoon": "Theme coming soon"
+    "theme": "Theme"
   },
   "Ads": {
     "label": "Advertisement",
@@ -70,6 +70,7 @@
     "menuToggle": "More options",
     "hourFormatLabel": "Time format",
     "languageLabel": "Language",
+    "themeLabel": "Theme",
     "cityAdded": "{city} added"
   },
   "Breadcrumb": {
@@ -92,14 +93,59 @@
   },
   "Placeholders": {
     "hourDiffTitle": "Hour difference chart",
-    "hourDiffText": "A visual timeline of hour differences between your cities is coming soon.",
+    "hourDiffText": "A visual timeline of hour differences between your cities.",
     "mapTitle": "World time zone map",
     "mapText": "An interactive world map of time zones is coming soon.",
-    "comingSoon": "Coming soon",
     "sunTitle": "Sunrise & sunset",
     "sunText": "Sunrise and sunset times for your cities are coming soon.",
     "alertsTitle": "Time zone alerts",
-    "alertsText": "Custom alerts for meeting times and time-zone changes are coming soon."
+    "alertsText": "Custom alerts for meeting times and time-zone changes are coming soon.",
+    "comingSoon": "Coming soon",
+    "viewPage": "View page →"
+  },
+  "Theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Switch theme (current: {current})"
+  },
+  "Nav": {
+    "home": "World Time Zones",
+    "chart": "Chart View",
+    "map": "Map View",
+    "sun": "Sunrise & Sunset",
+    "alerts": "Alerts"
+  },
+  "EmptyCities": {
+    "title": "Add cities to get started",
+    "text": "This page uses the cities from your comparator. Add a few on the home page to see it in action.",
+    "cta": "Add cities in the comparator"
+  },
+  "PageMeta": {
+    "chartTitle": "Chart View — Hour differences and 24h overlap",
+    "chartDescription": "See hour-difference bars and a 24-hour business-hours overlap chart for your compared cities.",
+    "mapTitle": "Map View — world time zone map",
+    "mapDescription": "An interactive world map of time zones for your compared cities — coming soon.",
+    "sunTitle": "Sunrise & Sunset — times for your cities",
+    "sunDescription": "Sunrise and sunset times for your compared cities — coming soon.",
+    "alertsTitle": "Alerts — time zone notifications",
+    "alertsDescription": "Custom alerts for meeting times and time-zone changes — coming soon."
+  },
+  "Chart": {
+    "pageTitle": "Chart View",
+    "pageSubtitle": "Hour differences and the best overlapping meeting window for your compared cities.",
+    "referenceLabel": "Reference city",
+    "hourDiffTitle": "Hour difference",
+    "hourDiffSubtitle": "Compared to {city}",
+    "referenceBadge": "(reference)",
+    "needMoreCities": "Add another city to see hour differences.",
+    "sameTime": "Same time",
+    "barAriaLabel": "{city} is {diff} relative to the reference, local time {time}",
+    "overlapTitle": "24-hour overlap",
+    "bestWindow": "Best window: {range} ({city} time)",
+    "noOverlap": "No business-hours overlap across all cities.",
+    "businessHour": "business hours",
+    "nonBusinessHour": "outside business hours"
   },
   "TimeQuestion": {
     "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",
@@ -119,25 +165,5 @@
       "What time is it in Tokyo when it's 3pm in São Paulo?",
       "Time difference between London and New York"
     ]
-  },
-  "Nav": {
-    "home": "World Time Zones",
-    "chart": "Chart View",
-    "map": "Map View",
-    "sun": "Sunrise & Sunset",
-    "alerts": "Alerts"
-  },
-  "EmptyCities": {
-    "title": "Add cities to get started",
-    "text": "This page uses the cities from your comparator. Add a few on the home page to see it in action.",
-    "cta": "Add cities in the comparator"
-  },
-  "PageMeta": {
-    "mapTitle": "Map View — world time zone map",
-    "mapDescription": "An interactive world map of time zones for your compared cities — coming soon.",
-    "sunTitle": "Sunrise & Sunset — times for your cities",
-    "sunDescription": "Sunrise and sunset times for your compared cities — coming soon.",
-    "alertsTitle": "Alerts — time zone notifications",
-    "alertsDescription": "Custom alerts for meeting times and time-zone changes — coming soon."
   }
 }

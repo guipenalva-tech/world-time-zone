@@ -58,7 +58,7 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "hourFormat": "Zeitformat",
-    "moreSoon": "Design folgt bald"
+    "theme": "Design"
   },
   "Ads": {
     "label": "Werbung",
@@ -70,6 +70,7 @@
     "menuToggle": "Weitere Optionen",
     "hourFormatLabel": "Zeitformat",
     "languageLabel": "Sprache",
+    "themeLabel": "Design",
     "cityAdded": "{city} hinzugefügt"
   },
   "Breadcrumb": {
@@ -92,14 +93,59 @@
   },
   "Placeholders": {
     "hourDiffTitle": "Zeitunterschied-Diagramm",
-    "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten folgt bald.",
+    "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten.",
     "mapTitle": "Weltkarte der Zeitzonen",
     "mapText": "Eine interaktive Weltkarte der Zeitzonen folgt bald.",
-    "comingSoon": "Demnächst",
     "sunTitle": "Sonnenauf- und -untergang",
     "sunText": "Sonnenauf- und -untergangszeiten für deine Städte folgen bald.",
     "alertsTitle": "Zeitzonen-Benachrichtigungen",
-    "alertsText": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen folgen bald."
+    "alertsText": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen folgen bald.",
+    "comingSoon": "Demnächst",
+    "viewPage": "Seite ansehen →"
+  },
+  "Theme": {
+    "system": "System",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "toggle": "Design wechseln (aktuell: {current})"
+  },
+  "Nav": {
+    "home": "Weltzeitzonen",
+    "chart": "Diagramm",
+    "map": "Karte",
+    "sun": "Sonnenauf- und -untergang",
+    "alerts": "Benachrichtigungen"
+  },
+  "EmptyCities": {
+    "title": "Füge Städte hinzu, um zu starten",
+    "text": "Diese Seite verwendet die Städte aus deinem Vergleich. Füge auf der Startseite ein paar hinzu, um sie in Aktion zu sehen.",
+    "cta": "Städte im Vergleich hinzufügen"
+  },
+  "PageMeta": {
+    "chartTitle": "Diagramm — Stundenunterschiede und 24-Std.-Überschneidung",
+    "chartDescription": "Sieh dir Balken für Stundenunterschiede und ein 24-Stunden-Überschneidungsdiagramm der Geschäftszeiten für deine verglichenen Städte an.",
+    "mapTitle": "Karte — Weltkarte der Zeitzonen",
+    "mapDescription": "Eine interaktive Weltkarte der Zeitzonen für deine verglichenen Städte — demnächst verfügbar.",
+    "sunTitle": "Sonnenauf- und -untergang — Zeiten für deine Städte",
+    "sunDescription": "Sonnenauf- und -untergangszeiten für deine verglichenen Städte — demnächst verfügbar.",
+    "alertsTitle": "Benachrichtigungen — Zeitzonen-Hinweise",
+    "alertsDescription": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen — demnächst verfügbar."
+  },
+  "Chart": {
+    "pageTitle": "Diagramm",
+    "pageSubtitle": "Stundenunterschiede und das beste Überschneidungsfenster für Meetings zwischen deinen verglichenen Städten.",
+    "referenceLabel": "Referenzstadt",
+    "hourDiffTitle": "Stundenunterschied",
+    "hourDiffSubtitle": "Im Vergleich zu {city}",
+    "referenceBadge": "(Referenz)",
+    "needMoreCities": "Füge eine weitere Stadt hinzu, um Stundenunterschiede zu sehen.",
+    "sameTime": "Gleiche Uhrzeit",
+    "barAriaLabel": "{city} liegt {diff} zur Referenz, Ortszeit {time}",
+    "overlapTitle": "24-Std.-Überschneidung",
+    "bestWindow": "Bestes Fenster: {range} ({city}-Zeit)",
+    "noOverlap": "Keine Überschneidung der Geschäftszeiten zwischen allen Städten.",
+    "businessHour": "Geschäftszeiten",
+    "nonBusinessHour": "außerhalb der Geschäftszeiten"
   },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",
@@ -119,25 +165,5 @@
       "Wie spät ist es in Tokio, wenn es in São Paulo 15 Uhr ist?",
       "Zeitunterschied zwischen London und New York"
     ]
-  },
-  "Nav": {
-    "home": "Weltzeitzonen",
-    "chart": "Diagramm",
-    "map": "Karte",
-    "sun": "Sonnenauf- und -untergang",
-    "alerts": "Benachrichtigungen"
-  },
-  "EmptyCities": {
-    "title": "Füge Städte hinzu, um zu starten",
-    "text": "Diese Seite verwendet die Städte aus deinem Vergleich. Füge auf der Startseite ein paar hinzu, um sie in Aktion zu sehen.",
-    "cta": "Städte im Vergleich hinzufügen"
-  },
-  "PageMeta": {
-    "mapTitle": "Karte — Weltkarte der Zeitzonen",
-    "mapDescription": "Eine interaktive Weltkarte der Zeitzonen für deine verglichenen Städte — demnächst verfügbar.",
-    "sunTitle": "Sonnenauf- und -untergang — Zeiten für deine Städte",
-    "sunDescription": "Sonnenauf- und -untergangszeiten für deine verglichenen Städte — demnächst verfügbar.",
-    "alertsTitle": "Benachrichtigungen — Zeitzonen-Hinweise",
-    "alertsDescription": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen — demnächst verfügbar."
   }
 }

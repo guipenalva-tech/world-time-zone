@@ -58,7 +58,7 @@
     "title": "Paramètres",
     "language": "Langue",
     "hourFormat": "Format d'heure",
-    "moreSoon": "Thème à venir"
+    "theme": "Thème"
   },
   "Ads": {
     "label": "Publicité",
@@ -70,6 +70,7 @@
     "menuToggle": "Plus d'options",
     "hourFormatLabel": "Format d'heure",
     "languageLabel": "Langue",
+    "themeLabel": "Thème",
     "cityAdded": "{city} ajoutée"
   },
   "Breadcrumb": {
@@ -92,14 +93,59 @@
   },
   "Placeholders": {
     "hourDiffTitle": "Graphique de décalage horaire",
-    "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes arrive bientôt.",
+    "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes.",
     "mapTitle": "Carte mondiale des fuseaux horaires",
     "mapText": "Une carte du monde interactive des fuseaux horaires arrive bientôt.",
-    "comingSoon": "Bientôt disponible",
     "sunTitle": "Lever et coucher du soleil",
     "sunText": "Les heures de lever et coucher du soleil de vos villes arrivent bientôt.",
     "alertsTitle": "Alertes de fuseau horaire",
-    "alertsText": "Des alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire arrivent bientôt."
+    "alertsText": "Des alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire arrivent bientôt.",
+    "comingSoon": "Bientôt disponible",
+    "viewPage": "Voir la page →"
+  },
+  "Theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre",
+    "toggle": "Changer de thème (actuel : {current})"
+  },
+  "Nav": {
+    "home": "Fuseaux horaires du monde",
+    "chart": "Graphique",
+    "map": "Carte",
+    "sun": "Lever et coucher du soleil",
+    "alerts": "Alertes"
+  },
+  "EmptyCities": {
+    "title": "Ajoutez des villes pour commencer",
+    "text": "Cette page utilise les villes de votre comparateur. Ajoutez-en quelques-unes sur la page d'accueil pour la voir en action.",
+    "cta": "Ajouter des villes dans le comparateur"
+  },
+  "PageMeta": {
+    "chartTitle": "Graphique — Décalage horaire et chevauchement sur 24h",
+    "chartDescription": "Consultez des barres de décalage horaire et un graphique de chevauchement des heures ouvrées sur 24h pour vos villes comparées.",
+    "mapTitle": "Carte — carte mondiale des fuseaux horaires",
+    "mapDescription": "Une carte du monde interactive des fuseaux horaires pour vos villes comparées — bientôt disponible.",
+    "sunTitle": "Lever et coucher du soleil — heures pour vos villes",
+    "sunDescription": "Heures de lever et coucher du soleil pour vos villes comparées — bientôt disponible.",
+    "alertsTitle": "Alertes — notifications de fuseau horaire",
+    "alertsDescription": "Alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire — bientôt disponible."
+  },
+  "Chart": {
+    "pageTitle": "Graphique",
+    "pageSubtitle": "Décalages horaires et meilleure fenêtre de chevauchement pour les réunions entre vos villes comparées.",
+    "referenceLabel": "Ville de référence",
+    "hourDiffTitle": "Décalage horaire",
+    "hourDiffSubtitle": "Par rapport à {city}",
+    "referenceBadge": "(référence)",
+    "needMoreCities": "Ajoutez une autre ville pour voir les décalages horaires.",
+    "sameTime": "Même heure",
+    "barAriaLabel": "{city} est {diff} par rapport à la référence, heure locale {time}",
+    "overlapTitle": "Chevauchement sur 24h",
+    "bestWindow": "Meilleure fenêtre : {range} (heure de {city})",
+    "noOverlap": "Aucun chevauchement des heures ouvrées entre toutes les villes.",
+    "businessHour": "heures ouvrées",
+    "nonBusinessHour": "en dehors des heures ouvrées"
   },
   "TimeQuestion": {
     "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",
@@ -119,25 +165,5 @@
       "Quelle heure est-il à Tokyo quand il est 15h à São Paulo ?",
       "Décalage horaire entre Londres et New York"
     ]
-  },
-  "Nav": {
-    "home": "Fuseaux horaires du monde",
-    "chart": "Graphique",
-    "map": "Carte",
-    "sun": "Lever et coucher du soleil",
-    "alerts": "Alertes"
-  },
-  "EmptyCities": {
-    "title": "Ajoutez des villes pour commencer",
-    "text": "Cette page utilise les villes de votre comparateur. Ajoutez-en quelques-unes sur la page d'accueil pour la voir en action.",
-    "cta": "Ajouter des villes dans le comparateur"
-  },
-  "PageMeta": {
-    "mapTitle": "Carte — carte mondiale des fuseaux horaires",
-    "mapDescription": "Une carte du monde interactive des fuseaux horaires pour vos villes comparées — bientôt disponible.",
-    "sunTitle": "Lever et coucher du soleil — heures pour vos villes",
-    "sunDescription": "Heures de lever et coucher du soleil pour vos villes comparées — bientôt disponible.",
-    "alertsTitle": "Alertes — notifications de fuseau horaire",
-    "alertsDescription": "Alertes personnalisées pour les horaires de réunion et les changements de fuseau horaire — bientôt disponible."
   }
 }

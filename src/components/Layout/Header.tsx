@@ -8,6 +8,7 @@ import type { City } from "@/types/city";
 import CitySearch from "@/components/Search/CitySearch";
 import LanguageSelect from "@/components/Settings/LanguageSelect";
 import HourFormatToggle from "@/components/Settings/HourFormatToggle";
+import ThemeToggle from "@/components/Settings/ThemeToggle";
 import NavBar from "./NavBar";
 
 /**
@@ -86,6 +87,7 @@ export default function Header() {
 
         {/* Desktop: right controls */}
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
+          <ThemeToggle />
           <HourFormatToggle />
           <LanguageSelect />
         </div>
@@ -145,6 +147,10 @@ export default function Header() {
                 className="absolute right-0 z-40 mt-2 flex w-52 flex-col gap-2 rounded-lg border border-border bg-background p-3 shadow-xl"
               >
                 <p className="px-0.5 text-xs font-medium uppercase tracking-wide text-foreground/50">
+                  {t("themeLabel")}
+                </p>
+                <ThemeToggle />
+                <p className="mt-1 px-0.5 text-xs font-medium uppercase tracking-wide text-foreground/50">
                   {t("hourFormatLabel")}
                 </p>
                 <HourFormatToggle />

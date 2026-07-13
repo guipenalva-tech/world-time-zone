@@ -9,7 +9,27 @@ import { getSiteUrl } from "@/lib/siteUrl";
 import Header from "@/components/Layout/Header";
 import Breadcrumb from "@/components/Layout/Breadcrumb";
 import StoreHydrator from "@/components/App/StoreHydrator";
+import ThemeSync from "@/components/App/ThemeSync";
 import "../globals.css";
+
+/**
+ * Runs before hydration to apply any explicit light/dark override stored by
+ * settingsStore, so the first paint already matches it (no flash). "system"
+ * leaves the attribute unset, falling back to the `prefers-color-scheme`
+ * rules in globals.css. Kept in sync with the "wtz-settings" persist key
+ * and zustand's persist storage shape (`{ state: { theme } }`).
+ */
+const THEME_INIT_SCRIPT = `
+(function () {
+  try {
+    var raw = localStorage.getItem("wtz-settings");
+    var theme = raw ? (JSON.parse(raw).state || {}).theme : null;
+    if (theme === "light" || theme === "dark") {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+  } catch (e) {}
+})();
+`;
 
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
@@ -123,8 +143,15 @@ export default async function RootLayout({
     <html
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      // The beforeInteractive theme-init script (below) sets data-theme on
+      // this element before hydration to avoid a flash, which intentionally
+      // differs from the server-rendered markup — expected, not a bug.
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SCRIPT}
+        </Script>
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -143,6 +170,7 @@ export default async function RootLayout({
         )}
         <NextIntlClientProvider>
           <StoreHydrator />
+          <ThemeSync />
           <Header />
           <Breadcrumb locale={locale as AppLocale} />
           {children}

@@ -58,7 +58,7 @@
     "title": "Configurações",
     "language": "Idioma",
     "hourFormat": "Formato de hora",
-    "moreSoon": "Tema em breve"
+    "theme": "Tema"
   },
   "Ads": {
     "label": "Publicidade",
@@ -70,6 +70,7 @@
     "menuToggle": "Mais opções",
     "hourFormatLabel": "Formato de hora",
     "languageLabel": "Idioma",
+    "themeLabel": "Tema",
     "cityAdded": "{city} adicionada"
   },
   "Breadcrumb": {
@@ -92,14 +93,59 @@
   },
   "Placeholders": {
     "hourDiffTitle": "Gráfico de diferença de horas",
-    "hourDiffText": "Uma linha do tempo visual com a diferença de horas entre suas cidades chega em breve.",
+    "hourDiffText": "Uma linha do tempo visual com a diferença de horas entre suas cidades.",
     "mapTitle": "Mapa múndi de fusos horários",
     "mapText": "Um mapa múndi interativo dos fusos horários chega em breve.",
-    "comingSoon": "Em breve",
     "sunTitle": "Nascer e pôr do sol",
     "sunText": "Os horários de nascer e pôr do sol das suas cidades chegam em breve.",
     "alertsTitle": "Alertas de fuso horário",
-    "alertsText": "Alertas personalizados para horários de reunião e mudanças de fuso chegam em breve."
+    "alertsText": "Alertas personalizados para horários de reunião e mudanças de fuso chegam em breve.",
+    "comingSoon": "Em breve",
+    "viewPage": "Ver página →"
+  },
+  "Theme": {
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "toggle": "Alternar tema (atual: {current})"
+  },
+  "Nav": {
+    "home": "Fusos Horários do Mundo",
+    "chart": "Gráfico",
+    "map": "Mapa",
+    "sun": "Nascer e pôr do sol",
+    "alerts": "Alertas"
+  },
+  "EmptyCities": {
+    "title": "Adicione cidades para começar",
+    "text": "Esta página usa as cidades do seu comparador. Adicione algumas na página inicial para ver em ação.",
+    "cta": "Adicionar cidades no comparador"
+  },
+  "PageMeta": {
+    "chartTitle": "Gráfico — Diferença de horas e sobreposição de 24h",
+    "chartDescription": "Veja barras de diferença de horas e um gráfico de sobreposição comercial de 24h para as cidades comparadas.",
+    "mapTitle": "Mapa — mapa múndi de fusos horários",
+    "mapDescription": "Um mapa múndi interativo de fusos horários para suas cidades comparadas — em breve.",
+    "sunTitle": "Nascer e pôr do sol — horários para suas cidades",
+    "sunDescription": "Horários de nascer e pôr do sol para suas cidades comparadas — em breve.",
+    "alertsTitle": "Alertas — notificações de fuso horário",
+    "alertsDescription": "Alertas personalizados para horários de reunião e mudanças de fuso — em breve."
+  },
+  "Chart": {
+    "pageTitle": "Gráfico",
+    "pageSubtitle": "Diferenças de horário e a melhor janela de sobreposição para reuniões entre suas cidades comparadas.",
+    "referenceLabel": "Cidade de referência",
+    "hourDiffTitle": "Diferença de horas",
+    "hourDiffSubtitle": "Em relação a {city}",
+    "referenceBadge": "(referência)",
+    "needMoreCities": "Adicione outra cidade para ver as diferenças de horas.",
+    "sameTime": "Mesmo horário",
+    "barAriaLabel": "{city} está {diff} em relação à referência, horário local {time}",
+    "overlapTitle": "Sobreposição de 24h",
+    "bestWindow": "Melhor janela: {range} (horário de {city})",
+    "noOverlap": "Sem sobreposição de horário comercial entre todas as cidades.",
+    "businessHour": "horário comercial",
+    "nonBusinessHour": "fora do horário comercial"
   },
   "TimeQuestion": {
     "placeholder": "Pergunte sobre um horário... ex: \"que horas são em Tóquio?\"",
@@ -119,25 +165,5 @@
       "Que horas são em Tóquio quando for 15h em São Paulo?",
       "Diferença entre Londres e Nova York"
     ]
-  },
-  "Nav": {
-    "home": "Fusos Horários do Mundo",
-    "chart": "Gráfico",
-    "map": "Mapa",
-    "sun": "Nascer e pôr do sol",
-    "alerts": "Alertas"
-  },
-  "EmptyCities": {
-    "title": "Adicione cidades para começar",
-    "text": "Esta página usa as cidades do seu comparador. Adicione algumas na página inicial para ver em ação.",
-    "cta": "Adicionar cidades no comparador"
-  },
-  "PageMeta": {
-    "mapTitle": "Mapa — mapa múndi de fusos horários",
-    "mapDescription": "Um mapa múndi interativo de fusos horários para suas cidades comparadas — em breve.",
-    "sunTitle": "Nascer e pôr do sol — horários para suas cidades",
-    "sunDescription": "Horários de nascer e pôr do sol para suas cidades comparadas — em breve.",
-    "alertsTitle": "Alertas — notificações de fuso horário",
-    "alertsDescription": "Alertas personalizados para horários de reunião e mudanças de fuso — em breve."
   }
 }
