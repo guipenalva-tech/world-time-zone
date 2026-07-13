@@ -187,6 +187,25 @@ export function getSunTimes(lat: number, lon: number, dateISO: string, tz: strin
   };
 }
 
+/**
+ * The sun's current altitude (degrees above the horizon, negative below)
+ * at `lat`, given the day's solar noon and declination already computed
+ * by {@link getSunTimes}. Used for the day-arc's "sun now" tooltip — a
+ * one-line elevation readout, not a full position (no azimuth).
+ *
+ * Standard altitude formula: sin(alt) = sin(lat)sin(dec) +
+ * cos(lat)cos(dec)cos(H), where H is the hour angle (degrees from solar
+ * noon, derived here from the clock-time offset from `solarNoon`).
+ */
+export function sunAltitudeDeg(lat: number, now: DateTime, solarNoon: DateTime, declinationDeg: number): number {
+  const hourAngleDeg = now.diff(solarNoon, "hours").hours * 15;
+  const latRad = lat * DEG;
+  const decRad = declinationDeg * DEG;
+  const hRad = hourAngleDeg * DEG;
+  const sinAlt = Math.sin(latRad) * Math.sin(decRad) + Math.cos(latRad) * Math.cos(decRad) * Math.cos(hRad);
+  return Math.asin(Math.max(-1, Math.min(1, sinAlt))) * RAD;
+}
+
 // --- Moon phase --------------------------------------------------------
 
 export type MoonPhaseName =

@@ -8,6 +8,8 @@ import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
 import { toLuxonLocale } from "@/lib/timezone";
 import { getSunTimes, type MoonPhase, type MoonPhaseName, type TwilightBand } from "@/lib/sun";
+import { MoonIcon } from "@/components/icons/SunMoonIcons";
+import { SunriseIcon, SunsetIcon } from "./icons";
 import DayArc from "./DayArc";
 
 interface SunCardProps {
@@ -76,10 +78,10 @@ export default function SunCard({
       <DayArc
         sunTimes={sunTimes}
         now={cityNow}
+        lat={city.lat}
+        hourFormat={hourFormat}
         showGoldenHour={showGoldenHour}
         showTwilight={showTwilight}
-        alwaysUpLabel={t("sunNeverSets")}
-        alwaysDownLabel={t("sunNeverRises")}
       />
 
       {sunTimes.daylightState !== "normal" ? (
