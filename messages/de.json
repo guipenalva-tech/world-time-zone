@@ -95,7 +95,7 @@
     "hourDiffTitle": "Zeitunterschied-Diagramm",
     "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten.",
     "mapTitle": "Weltkarte der Zeitzonen",
-    "mapText": "Eine interaktive Weltkarte der Zeitzonen folgt bald.",
+    "mapText": "Eine Live-Weltkarte zeigt die Tag/Nacht-Grenze und deine verglichenen Städte.",
     "sunTitle": "Sonnenauf- und -untergang",
     "sunText": "Sonnenauf- und -untergangszeiten für deine Städte folgen bald.",
     "alertsTitle": "Zeitzonen-Benachrichtigungen",
@@ -125,7 +125,7 @@
     "chartTitle": "Diagramm — Stundenunterschiede und 24-Std.-Überschneidung",
     "chartDescription": "Sieh dir Balken für Stundenunterschiede und ein 24-Stunden-Überschneidungsdiagramm der Geschäftszeiten für deine verglichenen Städte an.",
     "mapTitle": "Karte — Weltkarte der Zeitzonen",
-    "mapDescription": "Eine interaktive Weltkarte der Zeitzonen für deine verglichenen Städte — demnächst verfügbar.",
+    "mapDescription": "Eine interaktive Weltkarte mit der Live-Tag/Nacht-Grenze für deine verglichenen Städte.",
     "sunTitle": "Sonnenauf- und -untergang — Zeiten für deine Städte",
     "sunDescription": "Sonnenauf- und -untergangszeiten für deine verglichenen Städte — demnächst verfügbar.",
     "alertsTitle": "Benachrichtigungen — Zeitzonen-Hinweise",
@@ -146,6 +146,16 @@
     "noOverlap": "Keine Überschneidung der Geschäftszeiten zwischen allen Städten.",
     "businessHour": "Geschäftszeiten",
     "nonBusinessHour": "außerhalb der Geschäftszeiten"
+  },
+  "Map": {
+    "pageTitle": "Karte",
+    "pageSubtitle": "Eine Live-Karte mit der Tag/Nacht-Grenze und Markierungen deiner verglichenen Städte.",
+    "legendDay": "Tag",
+    "legendNight": "Nacht",
+    "legendSubsolar": "Sonne im Zenit",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
   },
   "TimeQuestion": {
     "placeholder": "Frag nach einer Uhrzeit... z. B. \"wie spät ist es in Tokio?\"",

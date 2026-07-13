@@ -95,7 +95,7 @@
     "hourDiffTitle": "Gráfico de diferencia horaria",
     "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades.",
     "mapTitle": "Mapa mundial de husos horarios",
-    "mapText": "Un mapa mundial interactivo de husos horarios llegará pronto.",
+    "mapText": "Un mapa mundial en vivo muestra la línea de día y noche y tus ciudades comparadas.",
     "sunTitle": "Amanecer y atardecer",
     "sunText": "Los horarios de amanecer y atardecer de tus ciudades llegarán pronto.",
     "alertsTitle": "Alertas de huso horario",
@@ -125,7 +125,7 @@
     "chartTitle": "Gráfico — Diferencia horaria y superposición de 24h",
     "chartDescription": "Consulta barras de diferencia horaria y un gráfico de superposición de horario laboral de 24h para tus ciudades comparadas.",
     "mapTitle": "Mapa — mapa mundial de husos horarios",
-    "mapDescription": "Un mapa mundial interactivo de husos horarios para tus ciudades comparadas — próximamente.",
+    "mapDescription": "Un mapa mundial interactivo con la línea día/noche en vivo para tus ciudades comparadas.",
     "sunTitle": "Amanecer y atardecer — horarios para tus ciudades",
     "sunDescription": "Horarios de amanecer y atardecer para tus ciudades comparadas — próximamente.",
     "alertsTitle": "Alertas — notificaciones de huso horario",
@@ -146,6 +146,16 @@
     "noOverlap": "No hay superposición de horario laboral entre todas las ciudades.",
     "businessHour": "horario laboral",
     "nonBusinessHour": "fuera del horario laboral"
+  },
+  "Map": {
+    "pageTitle": "Mapa",
+    "pageSubtitle": "Un mapa en vivo con la línea día/noche y marcadores de tus ciudades comparadas.",
+    "legendDay": "Día",
+    "legendNight": "Noche",
+    "legendSubsolar": "Sol en el cenit",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
   },
   "TimeQuestion": {
     "placeholder": "Pregunta sobre un horario... ej: \"¿qué hora es en Tokio?\"",

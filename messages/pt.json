@@ -95,7 +95,7 @@
     "hourDiffTitle": "Gráfico de diferença de horas",
     "hourDiffText": "Uma linha do tempo visual com a diferença de horas entre suas cidades.",
     "mapTitle": "Mapa múndi de fusos horários",
-    "mapText": "Um mapa múndi interativo dos fusos horários chega em breve.",
+    "mapText": "Um mapa múndi ao vivo mostra a linha do dia e da noite e suas cidades comparadas.",
     "sunTitle": "Nascer e pôr do sol",
     "sunText": "Os horários de nascer e pôr do sol das suas cidades chegam em breve.",
     "alertsTitle": "Alertas de fuso horário",
@@ -125,7 +125,7 @@
     "chartTitle": "Gráfico — Diferença de horas e sobreposição de 24h",
     "chartDescription": "Veja barras de diferença de horas e um gráfico de sobreposição comercial de 24h para as cidades comparadas.",
     "mapTitle": "Mapa — mapa múndi de fusos horários",
-    "mapDescription": "Um mapa múndi interativo de fusos horários para suas cidades comparadas — em breve.",
+    "mapDescription": "Um mapa múndi interativo com a linha dia/noite ao vivo para suas cidades comparadas.",
     "sunTitle": "Nascer e pôr do sol — horários para suas cidades",
     "sunDescription": "Horários de nascer e pôr do sol para suas cidades comparadas — em breve.",
     "alertsTitle": "Alertas — notificações de fuso horário",
@@ -146,6 +146,16 @@
     "noOverlap": "Sem sobreposição de horário comercial entre todas as cidades.",
     "businessHour": "horário comercial",
     "nonBusinessHour": "fora do horário comercial"
+  },
+  "Map": {
+    "pageTitle": "Mapa",
+    "pageSubtitle": "Um mapa ao vivo com a linha dia/noite e marcadores das suas cidades comparadas.",
+    "legendDay": "Dia",
+    "legendNight": "Noite",
+    "legendSubsolar": "Sol a pino",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
   },
   "TimeQuestion": {
     "placeholder": "Pergunte sobre um horário... ex: \"que horas são em Tóquio?\"",

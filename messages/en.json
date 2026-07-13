@@ -95,7 +95,7 @@
     "hourDiffTitle": "Hour difference chart",
     "hourDiffText": "A visual timeline of hour differences between your cities.",
     "mapTitle": "World time zone map",
-    "mapText": "An interactive world map of time zones is coming soon.",
+    "mapText": "A live world map shows the day/night line and your compared cities.",
     "sunTitle": "Sunrise & sunset",
     "sunText": "Sunrise and sunset times for your cities are coming soon.",
     "alertsTitle": "Time zone alerts",
@@ -125,7 +125,7 @@
     "chartTitle": "Chart View — Hour differences and 24h overlap",
     "chartDescription": "See hour-difference bars and a 24-hour business-hours overlap chart for your compared cities.",
     "mapTitle": "Map View — world time zone map",
-    "mapDescription": "An interactive world map of time zones for your compared cities — coming soon.",
+    "mapDescription": "An interactive world map with a live day/night terminator for your compared cities.",
     "sunTitle": "Sunrise & Sunset — times for your cities",
     "sunDescription": "Sunrise and sunset times for your compared cities — coming soon.",
     "alertsTitle": "Alerts — time zone notifications",
@@ -146,6 +146,16 @@
     "noOverlap": "No business-hours overlap across all cities.",
     "businessHour": "business hours",
     "nonBusinessHour": "outside business hours"
+  },
+  "Map": {
+    "pageTitle": "Map View",
+    "pageSubtitle": "A live day/night map with pins for your compared cities.",
+    "legendDay": "Day",
+    "legendNight": "Night",
+    "legendSubsolar": "Sun directly overhead",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
   },
   "TimeQuestion": {
     "placeholder": "Ask about a time... e.g. \"what time is it in Tokyo?\"",

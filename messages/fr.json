@@ -95,7 +95,7 @@
     "hourDiffTitle": "Graphique de décalage horaire",
     "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes.",
     "mapTitle": "Carte mondiale des fuseaux horaires",
-    "mapText": "Une carte du monde interactive des fuseaux horaires arrive bientôt.",
+    "mapText": "Une carte du monde en direct affiche la ligne jour/nuit et vos villes comparées.",
     "sunTitle": "Lever et coucher du soleil",
     "sunText": "Les heures de lever et coucher du soleil de vos villes arrivent bientôt.",
     "alertsTitle": "Alertes de fuseau horaire",
@@ -125,7 +125,7 @@
     "chartTitle": "Graphique — Décalage horaire et chevauchement sur 24h",
     "chartDescription": "Consultez des barres de décalage horaire et un graphique de chevauchement des heures ouvrées sur 24h pour vos villes comparées.",
     "mapTitle": "Carte — carte mondiale des fuseaux horaires",
-    "mapDescription": "Une carte du monde interactive des fuseaux horaires pour vos villes comparées — bientôt disponible.",
+    "mapDescription": "Une carte du monde interactive avec la ligne jour/nuit en direct pour vos villes comparées.",
     "sunTitle": "Lever et coucher du soleil — heures pour vos villes",
     "sunDescription": "Heures de lever et coucher du soleil pour vos villes comparées — bientôt disponible.",
     "alertsTitle": "Alertes — notifications de fuseau horaire",
@@ -146,6 +146,16 @@
     "noOverlap": "Aucun chevauchement des heures ouvrées entre toutes les villes.",
     "businessHour": "heures ouvrées",
     "nonBusinessHour": "en dehors des heures ouvrées"
+  },
+  "Map": {
+    "pageTitle": "Carte",
+    "pageSubtitle": "Une carte en direct avec la ligne jour/nuit et des repères pour vos villes comparées.",
+    "legendDay": "Jour",
+    "legendNight": "Nuit",
+    "legendSubsolar": "Soleil au zénith",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
   },
   "TimeQuestion": {
     "placeholder": "Posez une question sur l'heure... ex : \"quelle heure est-il à Tokyo ?\"",
