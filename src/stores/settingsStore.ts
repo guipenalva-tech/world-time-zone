@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist, type PersistStorage, type StorageValue } from "zustand/middleware";
 
 export type HourFormat = "12" | "24";
 
@@ -38,6 +38,37 @@ export function resolveHourFormat(
   return stored ?? defaultHourFormat(locale);
 }
 
+/**
+ * Plain localStorage-backed JSON storage, like `createJSONStorage(() =>
+ * localStorage)`, but stamps a `version: 0` onto any persisted payload
+ * that doesn't already carry a numeric `version` field. Zustand's persist
+ * middleware only invokes `migrate` when `typeof storedValue.version ===
+ * "number"` — every browser that saved settings before this file
+ * introduced `version`/`migrate` has no such field at all, so without
+ * this shim `migrate` would silently never run for them and the
+ * golden-hour/twilight/moon-phase defaults would stay stuck on the old
+ * `false` forever.
+ */
+function createMigratingStorage<S>(): PersistStorage<S> {
+  return {
+    getItem: (name) => {
+      const raw = localStorage.getItem(name);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw) as StorageValue<S> & { version?: number };
+      if (typeof parsed.version !== "number") {
+        parsed.version = 0;
+      }
+      return parsed;
+    },
+    setItem: (name, value) => {
+      localStorage.setItem(name, JSON.stringify(value));
+    },
+    removeItem: (name) => {
+      localStorage.removeItem(name);
+    },
+  };
+}
+
 interface SettingsState {
   /** Explicit user choice, or null to follow the locale default. */
   hourFormat: HourFormat | null;
@@ -62,6 +93,12 @@ interface SettingsState {
   setHasHydrated: (value: boolean) => void;
 }
 
+/** The subset of SettingsState actually written to localStorage (see `partialize` below). */
+type PersistedSettings = Pick<
+  SettingsState,
+  "hourFormat" | "localCardCityId" | "theme" | "sunShowGoldenHour" | "sunShowTwilight" | "sunShowMoonPhase"
+>;
+
 export const useSettingsStore = create<SettingsState>()(
   persist(
     (set, get) => ({
@@ -84,7 +121,7 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: "wtz-settings",
-      storage: createJSONStorage(() => localStorage),
+      storage: createMigratingStorage<PersistedSettings>(),
       skipHydration: true,
       // Bumped when the sun-filter defaults flipped from off to on (all
       // three filters below). Existing localStorage from before this
@@ -95,8 +132,12 @@ export const useSettingsStore = create<SettingsState>()(
       // is untouched since it happens after rehydration.
       version: 1,
       migrate: (persistedState, version) => {
-        const state = persistedState as Partial<SettingsState>;
-        if (version < 1) {
+        const state = persistedState as PersistedSettings;
+        // `version` is `undefined` (not `0`) for storage written before this
+        // field existed at all — `undefined < 1` is `false` in JS, so the
+        // comparison must normalize that case first or pre-existing
+        // localStorage silently skips the migration below.
+        if ((version ?? 0) < 1) {
           return {
             ...state,
             sunShowGoldenHour: true,
