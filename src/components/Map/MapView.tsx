@@ -31,9 +31,17 @@ export default function MapView() {
   );
   const referenceCityId = sortedCities[0]?.city.id ?? null;
 
-  const [now, setNow] = useState(() => DateTime.now());
+  // `now` starts null and is only set client-side (in an effect) rather than
+  // via a `useState(() => DateTime.now())` initializer: the terminator and
+  // marker positions are precise enough that the few milliseconds between
+  // server render and client hydration produce different sub-pixel values,
+  // which React flags as a hydration mismatch. Deferring to an effect keeps
+  // the server/first-client-render markup identical (nothing time-based
+  // rendered yet), then fills in once mounted.
+  const [now, setNow] = useState<DateTime | null>(null);
 
   useEffect(() => {
+    setNow(DateTime.now());
     const interval = setInterval(() => setNow(DateTime.now()), 60_000);
     return () => clearInterval(interval);
   }, []);
@@ -49,15 +57,21 @@ export default function MapView() {
         <EmptyCitiesInvite />
       ) : (
         <>
-          <div className="overflow-hidden rounded-xl border border-border bg-surface/40">
+          <div
+            className="relative w-full overflow-hidden rounded-xl border border-border bg-surface/40"
+            style={{ aspectRatio: `${WORLD_MAP_WIDTH} / ${WORLD_MAP_HEIGHT}` }}
+          >
             <svg
               viewBox={`0 0 ${WORLD_MAP_WIDTH} ${WORLD_MAP_HEIGHT}`}
-              className="w-full h-auto"
+              className="absolute inset-0 h-full w-full"
               role="img"
               aria-label={t("pageTitle")}
             >
               <WorldMapBase />
-              <NightOverlay now={now.toJSDate()} subsolarLabel={t("legendSubsolar")} />
+              {now && <NightOverlay now={now.toJSDate()} subsolarLabel={t("legendSubsolar")} />}
+            </svg>
+
+            {now && (
               <CityMarkers
                 cities={sortedCities}
                 referenceCityId={referenceCityId}
@@ -68,10 +82,10 @@ export default function MapView() {
                   t("markerAriaLabel", { city, time, offset })
                 }
               />
-            </svg>
+            )}
           </div>
 
-          <MapLegend now={now} />
+          {now && <MapLegend now={now} />}
         </>
       )}
     </div>

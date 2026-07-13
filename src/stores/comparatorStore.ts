@@ -158,6 +158,20 @@ export const useComparatorStore = create<ComparatorState>()(
         selectionStart: state.selectionStart,
         selectionEnd: state.selectionEnd,
       }),
+      // Re-resolve each persisted city by id against the current
+      // src/data/cities.json instead of trusting the cached city object
+      // as-is: the dataset gains fields over time (e.g. lat/lon, added
+      // after some users already had cities saved in localStorage), and
+      // without this, those users would be stuck with stale data forever.
+      // Falls back to the persisted object if the id was ever removed.
+      merge: (persistedState, currentState) => {
+        const persisted = persistedState as Partial<ComparatorState> | undefined;
+        const cities = (persisted?.cities ?? currentState.cities).map((c) => ({
+          city: getCityById(c.city.id) ?? c.city,
+          order: c.order,
+        }));
+        return { ...currentState, ...persisted, cities };
+      },
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
       },

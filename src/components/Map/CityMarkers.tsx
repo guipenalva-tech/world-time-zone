@@ -6,7 +6,7 @@ import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
 import { formatOffset } from "@/lib/timezone";
-import { project } from "./projection";
+import { project, WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT } from "./projection";
 
 interface CityMarkersProps {
   cities: ComparedCity[];
@@ -19,8 +19,8 @@ interface CityMarkersProps {
 
 interface MarkerLayout {
   comparedCity: ComparedCity;
-  x: number;
-  y: number;
+  leftPct: number;
+  topPct: number;
   labelOffset: number;
 }
 
@@ -31,27 +31,38 @@ interface MarkerLayout {
  */
 function layoutMarkers(cities: ComparedCity[]): MarkerLayout[] {
   const RADIUS = 55;
-  const STEP = 13;
+  const STEP = 15;
   const placed: { x: number; y: number }[] = [];
 
-  return cities.map((comparedCity) => {
-    const { x, y } = project(comparedCity.city.lon, comparedCity.city.lat);
-    let level = 0;
-    // Find the first vertical stack level that doesn't collide with an
-    // already-placed label near this x position.
-    // eslint-disable-next-line no-constant-condition
-    while (
-      placed.some(
-        (p) => Math.abs(p.x - x) < RADIUS && Math.abs(p.y - (y + level * STEP)) < STEP - 2,
-      )
-    ) {
-      level++;
-    }
-    placed.push({ x, y: y + level * STEP });
-    return { comparedCity, x, y, labelOffset: level * STEP };
-  });
+  return cities
+    .filter((c) => Number.isFinite(c.city.lat) && Number.isFinite(c.city.lon))
+    .map((comparedCity) => {
+      const { x, y } = project(comparedCity.city.lon, comparedCity.city.lat);
+      let level = 0;
+      while (
+        placed.some(
+          (p) => Math.abs(p.x - x) < RADIUS && Math.abs(p.y - (y + level * STEP)) < STEP - 2,
+        )
+      ) {
+        level++;
+      }
+      placed.push({ x, y: y + level * STEP });
+      return {
+        comparedCity,
+        leftPct: (x / WORLD_MAP_WIDTH) * 100,
+        topPct: (y / WORLD_MAP_HEIGHT) * 100,
+        labelOffset: level * STEP,
+      };
+    });
 }
 
+/**
+ * HTML overlay (not SVG) positioned absolutely over the map via percentage
+ * coordinates from the same equirectangular projection — foreignObject
+ * inside the SVG proved unreliable for text layout across browsers when
+ * the SVG itself is scaled via viewBox, so markers/labels live in a plain
+ * absolutely-positioned div stacked on top of the map SVG instead.
+ */
 export default function CityMarkers({
   cities,
   referenceCityId,
@@ -66,54 +77,50 @@ export default function CityMarkers({
   const markers = useMemo(() => layoutMarkers(cities), [cities]);
 
   return (
-    <>
-      {markers.map(({ comparedCity, x, y, labelOffset }) => {
+    <div className="pointer-events-none absolute inset-0">
+      {markers.map(({ comparedCity, leftPct, topPct, labelOffset }) => {
         const { city } = comparedCity;
         const isReference = city.id === referenceCityId;
         const isFocused = city.id === focusedId;
         const localTime = now.setZone(city.timezone).toFormat(timeFormat);
         const offset = formatOffset(city.timezone, now);
-        const labelY = y + 4 + labelOffset;
 
         return (
-          <g
+          <button
             key={city.id}
-            transform={`translate(${x}, ${y})`}
-            className="cursor-pointer"
+            type="button"
+            title={tooltipFormatter(city.country, offset)}
+            aria-label={ariaLabelFormatter(city.name, localTime, offset)}
             onClick={() => setFocusedId((prev) => (prev === city.id ? null : city.id))}
+            className="pointer-events-auto absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5"
+            style={{ left: `${leftPct}%`, top: `${topPct}%`, zIndex: isFocused ? 20 : 10 }}
           >
-            <title>{tooltipFormatter(city.country, offset)}</title>
-            <circle
-              r={isReference ? 5 : 3.5}
-              fill={isReference ? "var(--primary)" : "var(--foreground)"}
-              stroke="var(--background)"
-              strokeWidth={1.25}
-              opacity={isFocused ? 1 : 0.9}
+            <span
+              aria-hidden="true"
+              className="block rounded-full ring-2"
+              style={{
+                width: isReference ? 10 : 8,
+                height: isReference ? 10 : 8,
+                background: isReference ? "var(--primary)" : "var(--foreground)",
+                ["--tw-ring-color" as string]: "var(--background)",
+              }}
             />
-            <foreignObject
-              x={-90}
-              y={labelY}
-              width={180}
-              height={28}
-              style={{ overflow: "visible", pointerEvents: "none" }}
+            <span
+              aria-hidden="true"
+              className={`flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-[10px] leading-none whitespace-nowrap shadow-sm ${
+                isReference
+                  ? "border-primary bg-primary text-white"
+                  : "border-border bg-surface/95 text-foreground"
+              } ${isFocused ? "ring-2 ring-primary" : ""}`}
+              style={{ marginTop: labelOffset }}
             >
-              <div
-                role="img"
-                aria-label={ariaLabelFormatter(city.name, localTime, offset)}
-                className={`mx-auto flex w-fit max-w-[178px] items-center gap-1 rounded-full border px-1.5 py-0.5 text-[10px] leading-none whitespace-nowrap shadow-sm ${
-                  isReference
-                    ? "border-primary bg-primary text-white"
-                    : "border-border bg-surface/95 text-foreground"
-                } ${isFocused ? "ring-2 ring-primary" : ""}`}
-              >
-                <span aria-hidden="true">{getFlagEmoji(city.countryCode)}</span>
-                <span className="truncate font-medium">{city.name}</span>
-                <span className="font-mono tabular-nums opacity-80">{localTime}</span>
-              </div>
-            </foreignObject>
-          </g>
+              <span>{getFlagEmoji(city.countryCode)}</span>
+              <span className="max-w-20 truncate font-medium">{city.name}</span>
+              <span className="font-mono tabular-nums opacity-80">{localTime}</span>
+            </span>
+          </button>
         );
       })}
-    </>
+    </div>
   );
 }
