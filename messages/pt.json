@@ -195,6 +195,8 @@
     "pageTitle": "Alertas",
     "pageSubtitle": "Receba avisos sobre mudanças de horário de verão, horários específicos no exterior e o fim do expediente — tudo no navegador, nesta aba.",
     "limitationNotice": "Os alertas só funcionam enquanto este site estiver aberto em uma aba do navegador.",
+    "toggleOn": "Ativo",
+    "toggleOff": "Inativo",
     "permission": {
       "default": "Ative as notificações para ser avisado mesmo com esta aba em segundo plano.",
       "enableButton": "Ativar notificações",

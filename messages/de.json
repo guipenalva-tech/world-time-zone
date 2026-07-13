@@ -195,6 +195,8 @@
     "pageTitle": "Erinnerungen",
     "pageSubtitle": "Werde über Zeitumstellungen, bestimmte Uhrzeiten im Ausland und das Ende der Geschäftszeiten informiert — alles direkt in diesem Tab.",
     "limitationNotice": "Erinnerungen funktionieren nur, solange diese Seite in einem Browser-Tab geöffnet bleibt.",
+    "toggleOn": "An",
+    "toggleOff": "Aus",
     "permission": {
       "default": "Aktiviere Benachrichtigungen, um auch informiert zu werden, wenn dieser Tab nicht im Vordergrund ist.",
       "enableButton": "Benachrichtigungen aktivieren",

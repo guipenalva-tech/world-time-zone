@@ -195,6 +195,8 @@
     "pageTitle": "Alertes",
     "pageSubtitle": "Soyez averti des changements d'heure d'été, d'une heure précise à l'étranger et de la fin des horaires de bureau — tout se passe dans cet onglet.",
     "limitationNotice": "Les alertes ne fonctionnent que tant que ce site reste ouvert dans un onglet du navigateur.",
+    "toggleOn": "Actif",
+    "toggleOff": "Inactif",
     "permission": {
       "default": "Activez les notifications pour être averti même si cet onglet n'est pas au premier plan.",
       "enableButton": "Activer les notifications",

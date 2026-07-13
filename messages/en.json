@@ -195,6 +195,8 @@
     "pageTitle": "Alerts",
     "pageSubtitle": "Get notified about DST changes, specific times abroad, and the end of business hours — all client-side, right in this tab.",
     "limitationNotice": "Alerts only work while this site stays open in a browser tab.",
+    "toggleOn": "On",
+    "toggleOff": "Off",
     "permission": {
       "default": "Turn on notifications to get alerted even when this tab isn't focused.",
       "enableButton": "Enable notifications",

@@ -128,3 +128,20 @@ export function shouldFire(
   if (!occurrence.prev) return { fire: false, key: null };
   return shouldFireOnce(occurrence.prev, now, lastFiredKey);
 }
+
+export interface CountdownParts {
+  days: number;
+  hours: number;
+  minutes: number;
+}
+
+/** Breaks the time until `target` into whole days/hours/minutes, floored
+ * (never negative) — used to render "fires in Xh Ymin" countdowns. */
+export function countdownParts(now: DateTime, target: DateTime): CountdownParts {
+  const diff = target.diff(now, ["days", "hours", "minutes"]).toObject();
+  return {
+    days: Math.max(0, Math.floor(diff.days ?? 0)),
+    hours: Math.max(0, Math.floor(diff.hours ?? 0)),
+    minutes: Math.max(0, Math.floor(diff.minutes ?? 0)),
+  };
+}

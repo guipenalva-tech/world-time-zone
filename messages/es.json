@@ -195,6 +195,8 @@
     "pageTitle": "Alertas",
     "pageSubtitle": "Recibe avisos sobre cambios de horario de verano, horas concretas en el extranjero y el fin del horario laboral — todo en el navegador, en esta pestaña.",
     "limitationNotice": "Las alertas solo funcionan mientras este sitio esté abierto en una pestaña del navegador.",
+    "toggleOn": "Activa",
+    "toggleOff": "Inactiva",
     "permission": {
       "default": "Activa las notificaciones para recibir avisos aunque esta pestaña no esté en primer plano.",
       "enableButton": "Activar notificaciones",
