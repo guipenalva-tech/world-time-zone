@@ -367,6 +367,9 @@
     "errorText": "Couldn't load news right now.",
     "retry": "Retry",
     "emptyText": "No relevant news right now.",
+    "count": "{count} headlines",
+    "expand": "Expand",
+    "collapse": "Collapse",
     "badge": {
       "disaster": "Disaster",
       "warning": "Warning",

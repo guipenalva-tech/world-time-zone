@@ -26,9 +26,9 @@ export default function AlertsView() {
 
       <p className="text-xs text-foreground/40">{t("limitationNotice")}</p>
 
+      <BusinessHoursSection />
       <DstSection />
       <CityAlarmSection />
-      <BusinessHoursSection />
     </div>
   );
 }

@@ -339,9 +339,16 @@ export default function Comparator() {
             </div>
           )}
           {sortedCities.length === 0 ? (
-            <p className="px-4 py-10 text-center text-sm text-foreground/50">
-              {t("emptyState")}
-            </p>
+            <div className="flex flex-col items-center gap-3 px-4 py-10 text-center">
+              <p className="text-sm text-foreground/50">{t("emptyState")}</p>
+              <button
+                type="button"
+                onClick={() => setAddPanelOpen(true)}
+                className="mt-1 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              >
+                {tActions("addCity")}
+              </button>
+            </div>
           ) : (
             sortedCities.map((comparedCity, index) => (
               <TimezoneRow
