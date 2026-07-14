@@ -367,6 +367,9 @@
     "errorText": "Nachrichten konnten gerade nicht geladen werden.",
     "retry": "Erneut versuchen",
     "emptyText": "Derzeit keine relevanten Nachrichten.",
+    "count": "{count} Schlagzeilen",
+    "expand": "Erweitern",
+    "collapse": "Einklappen",
     "badge": {
       "disaster": "Katastrophe",
       "warning": "Warnung",
@@ -374,10 +377,10 @@
     }
   },
   "Flights": {
-    "title": "Flüge — Routen und Status für Ihre verglichenen Städte",
-    "description": "Flugrouten, Zeiten und Status zwischen den Städten in Ihrem Vergleich — demnächst verfügbar.",
+    "title": "Flüge — geschätzte Preise und Flugzeiten für Ihre verglichenen Städte",
+    "description": "Entfernungsbasierte geschätzte Flugpreise und -zeiten zwischen den Städten in Ihrem Vergleich.",
     "heading": "Flüge",
-    "subtitle": "Flugrouten und Status für Ihre verglichenen Städte.",
+    "subtitle": "Geschätzte Flugpreise und -zeiten für Ihre verglichenen Städte.",
     "comingSoonTitle": "Flüge",
     "comingSoonText": "Flugrouten, Dauer und Status zwischen Ihren Städten sind demnächst verfügbar.",
     "disclaimerTitle": "Schätzungen, keine echten Preise",

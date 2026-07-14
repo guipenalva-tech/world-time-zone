@@ -367,6 +367,9 @@
     "errorText": "Impossible de charger les actualités pour le moment.",
     "retry": "Réessayer",
     "emptyText": "Aucune actualité pertinente pour le moment.",
+    "count": "{count} titres",
+    "expand": "Développer",
+    "collapse": "Réduire",
     "badge": {
       "disaster": "Catastrophe",
       "warning": "Alerte",
@@ -374,10 +377,10 @@
     }
   },
   "Flights": {
-    "title": "Vols — itinéraires et statuts pour vos villes comparées",
-    "description": "Itinéraires, horaires et statuts de vols entre les villes de votre comparateur — bientôt disponible.",
+    "title": "Vols — prix et durées estimés pour vos villes comparées",
+    "description": "Prix et durées de vol estimés selon la distance entre les villes de votre comparateur.",
     "heading": "Vols",
-    "subtitle": "Itinéraires et statuts de vols pour vos villes comparées.",
+    "subtitle": "Prix et durées de vol estimés pour vos villes comparées.",
     "comingSoonTitle": "Vols",
     "comingSoonText": "Les itinéraires, durées et statuts de vols entre vos villes arrivent bientôt.",
     "disclaimerTitle": "Estimations, pas des tarifs réels",

@@ -367,6 +367,9 @@
     "errorText": "Não foi possível carregar as notícias agora.",
     "retry": "Tentar novamente",
     "emptyText": "Sem notícias relevantes no momento.",
+    "count": "{count} manchetes",
+    "expand": "Expandir",
+    "collapse": "Recolher",
     "badge": {
       "disaster": "Desastre",
       "warning": "Alerta",
@@ -374,10 +377,10 @@
     }
   },
   "Flights": {
-    "title": "Voos — rotas e status para suas cidades comparadas",
-    "description": "Rotas, horários e status de voos entre as cidades do seu comparador — em breve.",
+    "title": "Voos — preços e durações estimados para suas cidades comparadas",
+    "description": "Preços e durações de voo estimados por distância entre as cidades do seu comparador.",
     "heading": "Voos",
-    "subtitle": "Rotas e status de voos para suas cidades comparadas.",
+    "subtitle": "Preços e durações de voo estimados para suas cidades comparadas.",
     "comingSoonTitle": "Voos",
     "comingSoonText": "Rotas, durações e status de voos entre suas cidades em breve.",
     "disclaimerTitle": "Estimativas, não são tarifas reais",
