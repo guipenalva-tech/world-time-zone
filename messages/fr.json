@@ -79,7 +79,11 @@
     "chart": "Graphique",
     "map": "Carte",
     "sun": "Lever et coucher du soleil",
-    "alerts": "Alertes"
+    "alerts": "Alertes",
+    "weather": "Météo",
+    "currency": "Devises",
+    "news": "Actualités",
+    "flights": "Vols"
   },
   "HourFormat": {
     "label": "Format d'heure",
@@ -114,7 +118,12 @@
     "chart": "Graphique",
     "map": "Carte",
     "sun": "Lever et coucher du soleil",
-    "alerts": "Alertes"
+    "alerts": "Alertes",
+    "weather": "Météo",
+    "currency": "Devises",
+    "news": "Actualités",
+    "flights": "Vols",
+    "more": "Plus"
   },
   "EmptyCities": {
     "title": "Ajoutez des villes pour commencer",
@@ -303,5 +312,37 @@
       "Quelle heure est-il à Tokyo quand il est 15h à São Paulo ?",
       "Décalage horaire entre Londres et New York"
     ]
+  },
+  "Weather": {
+    "title": "Météo — prévisions pour vos villes comparées",
+    "description": "Conditions actuelles et prévisions météo pour les villes de votre comparateur — bientôt disponible.",
+    "heading": "Météo",
+    "subtitle": "Conditions actuelles et prévisions météo pour vos villes comparées.",
+    "comingSoonTitle": "Prévisions météo",
+    "comingSoonText": "Les conditions météo en direct et les prévisions pour vos villes arrivent bientôt."
+  },
+  "Currency": {
+    "title": "Devises — taux de change pour vos villes comparées",
+    "description": "Taux de change en direct et conversion de devises pour les pays de votre comparateur — bientôt disponible.",
+    "heading": "Devises",
+    "subtitle": "Taux de change et conversion de devises pour vos villes comparées.",
+    "comingSoonTitle": "Taux de change",
+    "comingSoonText": "Les taux de change en direct et un convertisseur de devises pour vos villes arrivent bientôt."
+  },
+  "News": {
+    "title": "Actualités — titres locaux pour vos villes comparées",
+    "description": "Titres d'actualités locales pour les villes et pays de votre comparateur — bientôt disponible.",
+    "heading": "Actualités",
+    "subtitle": "Titres d'actualités locales pour vos villes comparées.",
+    "comingSoonTitle": "Actualités locales",
+    "comingSoonText": "Les titres d'actualités locales pour vos villes arrivent bientôt."
+  },
+  "Flights": {
+    "title": "Vols — itinéraires et statuts pour vos villes comparées",
+    "description": "Itinéraires, horaires et statuts de vols entre les villes de votre comparateur — bientôt disponible.",
+    "heading": "Vols",
+    "subtitle": "Itinéraires et statuts de vols pour vos villes comparées.",
+    "comingSoonTitle": "Vols",
+    "comingSoonText": "Les itinéraires, durées et statuts de vols entre vos villes arrivent bientôt."
   }
 }

@@ -79,7 +79,11 @@
     "chart": "Chart View",
     "map": "Map View",
     "sun": "Sunrise & Sunset",
-    "alerts": "Alerts"
+    "alerts": "Alerts",
+    "weather": "Weather",
+    "currency": "Currency",
+    "news": "News",
+    "flights": "Flights"
   },
   "HourFormat": {
     "label": "Time format",
@@ -114,7 +118,12 @@
     "chart": "Chart View",
     "map": "Map View",
     "sun": "Sunrise & Sunset",
-    "alerts": "Alerts"
+    "alerts": "Alerts",
+    "weather": "Weather",
+    "currency": "Currency",
+    "news": "News",
+    "flights": "Flights",
+    "more": "More"
   },
   "EmptyCities": {
     "title": "Add cities to get started",
@@ -303,5 +312,37 @@
       "What time is it in Tokyo when it's 3pm in São Paulo?",
       "Time difference between London and New York"
     ]
+  },
+  "Weather": {
+    "title": "Weather — forecasts for your compared cities",
+    "description": "Current conditions and forecasts for the cities in your comparator — coming soon.",
+    "heading": "Weather",
+    "subtitle": "Current conditions and forecasts for your compared cities.",
+    "comingSoonTitle": "Weather forecast",
+    "comingSoonText": "Live weather conditions and forecasts for your cities are coming soon."
+  },
+  "Currency": {
+    "title": "Currency — exchange rates for your compared cities",
+    "description": "Live exchange rates and currency conversion for the countries in your comparator — coming soon.",
+    "heading": "Currency",
+    "subtitle": "Exchange rates and currency conversion for your compared cities.",
+    "comingSoonTitle": "Currency rates",
+    "comingSoonText": "Live exchange rates and a currency converter for your cities are coming soon."
+  },
+  "News": {
+    "title": "News — local headlines for your compared cities",
+    "description": "Local news headlines for the cities and countries in your comparator — coming soon.",
+    "heading": "News",
+    "subtitle": "Local headlines for your compared cities.",
+    "comingSoonTitle": "Local news",
+    "comingSoonText": "Local news headlines for your cities are coming soon."
+  },
+  "Flights": {
+    "title": "Flights — routes and status for your compared cities",
+    "description": "Flight routes, times, and status between the cities in your comparator — coming soon.",
+    "heading": "Flights",
+    "subtitle": "Flight routes and status for your compared cities.",
+    "comingSoonTitle": "Flights",
+    "comingSoonText": "Flight routes, durations, and status between your cities are coming soon."
   }
 }

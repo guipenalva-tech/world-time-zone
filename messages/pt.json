@@ -79,7 +79,11 @@
     "chart": "Gráfico",
     "map": "Mapa",
     "sun": "Nascer e pôr do sol",
-    "alerts": "Alertas"
+    "alerts": "Alertas",
+    "weather": "Clima",
+    "currency": "Moeda",
+    "news": "Notícias",
+    "flights": "Voos"
   },
   "HourFormat": {
     "label": "Formato de hora",
@@ -114,7 +118,12 @@
     "chart": "Gráfico",
     "map": "Mapa",
     "sun": "Nascer e pôr do sol",
-    "alerts": "Alertas"
+    "alerts": "Alertas",
+    "weather": "Clima",
+    "currency": "Moeda",
+    "news": "Notícias",
+    "flights": "Voos",
+    "more": "Mais"
   },
   "EmptyCities": {
     "title": "Adicione cidades para começar",
@@ -303,5 +312,37 @@
       "Que horas são em Tóquio quando for 15h em São Paulo?",
       "Diferença entre Londres e Nova York"
     ]
+  },
+  "Weather": {
+    "title": "Clima — previsão para suas cidades comparadas",
+    "description": "Condições atuais e previsão do tempo para as cidades do seu comparador — em breve.",
+    "heading": "Clima",
+    "subtitle": "Condições atuais e previsão do tempo para suas cidades comparadas.",
+    "comingSoonTitle": "Previsão do tempo",
+    "comingSoonText": "Condições climáticas e previsões em tempo real para suas cidades em breve."
+  },
+  "Currency": {
+    "title": "Moeda — taxas de câmbio para suas cidades comparadas",
+    "description": "Taxas de câmbio e conversão de moeda para os países do seu comparador — em breve.",
+    "heading": "Moeda",
+    "subtitle": "Taxas de câmbio e conversão de moeda para suas cidades comparadas.",
+    "comingSoonTitle": "Taxas de câmbio",
+    "comingSoonText": "Taxas de câmbio em tempo real e um conversor de moedas para suas cidades em breve."
+  },
+  "News": {
+    "title": "Notícias — manchetes locais para suas cidades comparadas",
+    "description": "Manchetes de notícias locais para as cidades e países do seu comparador — em breve.",
+    "heading": "Notícias",
+    "subtitle": "Manchetes locais para suas cidades comparadas.",
+    "comingSoonTitle": "Notícias locais",
+    "comingSoonText": "Manchetes de notícias locais para suas cidades em breve."
+  },
+  "Flights": {
+    "title": "Voos — rotas e status para suas cidades comparadas",
+    "description": "Rotas, horários e status de voos entre as cidades do seu comparador — em breve.",
+    "heading": "Voos",
+    "subtitle": "Rotas e status de voos para suas cidades comparadas.",
+    "comingSoonTitle": "Voos",
+    "comingSoonText": "Rotas, durações e status de voos entre suas cidades em breve."
   }
 }

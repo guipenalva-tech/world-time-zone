@@ -79,7 +79,11 @@
     "chart": "Diagramm",
     "map": "Karte",
     "sun": "Sonnenauf- und -untergang",
-    "alerts": "Benachrichtigungen"
+    "alerts": "Benachrichtigungen",
+    "weather": "Wetter",
+    "currency": "Währung",
+    "news": "Nachrichten",
+    "flights": "Flüge"
   },
   "HourFormat": {
     "label": "Zeitformat",
@@ -114,7 +118,12 @@
     "chart": "Diagramm",
     "map": "Karte",
     "sun": "Sonnenauf- und -untergang",
-    "alerts": "Benachrichtigungen"
+    "alerts": "Benachrichtigungen",
+    "weather": "Wetter",
+    "currency": "Währung",
+    "news": "Nachrichten",
+    "flights": "Flüge",
+    "more": "Mehr"
   },
   "EmptyCities": {
     "title": "Füge Städte hinzu, um zu starten",
@@ -303,5 +312,37 @@
       "Wie spät ist es in Tokio, wenn es in São Paulo 15 Uhr ist?",
       "Zeitunterschied zwischen London und New York"
     ]
+  },
+  "Weather": {
+    "title": "Wetter — Vorhersage für Ihre verglichenen Städte",
+    "description": "Aktuelle Bedingungen und Wettervorhersage für die Städte in Ihrem Vergleich — demnächst verfügbar.",
+    "heading": "Wetter",
+    "subtitle": "Aktuelle Bedingungen und Wettervorhersage für Ihre verglichenen Städte.",
+    "comingSoonTitle": "Wettervorhersage",
+    "comingSoonText": "Live-Wetterbedingungen und Vorhersagen für Ihre Städte sind demnächst verfügbar."
+  },
+  "Currency": {
+    "title": "Währung — Wechselkurse für Ihre verglichenen Städte",
+    "description": "Live-Wechselkurse und Währungsumrechnung für die Länder in Ihrem Vergleich — demnächst verfügbar.",
+    "heading": "Währung",
+    "subtitle": "Wechselkurse und Währungsumrechnung für Ihre verglichenen Städte.",
+    "comingSoonTitle": "Wechselkurse",
+    "comingSoonText": "Live-Wechselkurse und ein Währungsrechner für Ihre Städte sind demnächst verfügbar."
+  },
+  "News": {
+    "title": "Nachrichten — lokale Schlagzeilen für Ihre verglichenen Städte",
+    "description": "Lokale Nachrichten-Schlagzeilen für die Städte und Länder in Ihrem Vergleich — demnächst verfügbar.",
+    "heading": "Nachrichten",
+    "subtitle": "Lokale Schlagzeilen für Ihre verglichenen Städte.",
+    "comingSoonTitle": "Lokale Nachrichten",
+    "comingSoonText": "Lokale Nachrichten-Schlagzeilen für Ihre Städte sind demnächst verfügbar."
+  },
+  "Flights": {
+    "title": "Flüge — Routen und Status für Ihre verglichenen Städte",
+    "description": "Flugrouten, Zeiten und Status zwischen den Städten in Ihrem Vergleich — demnächst verfügbar.",
+    "heading": "Flüge",
+    "subtitle": "Flugrouten und Status für Ihre verglichenen Städte.",
+    "comingSoonTitle": "Flüge",
+    "comingSoonText": "Flugrouten, Dauer und Status zwischen Ihren Städten sind demnächst verfügbar."
   }
 }

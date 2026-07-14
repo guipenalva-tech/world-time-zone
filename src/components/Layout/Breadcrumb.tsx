@@ -9,7 +9,16 @@ interface BreadcrumbProps {
   locale: AppLocale;
 }
 
-type PageKey = "comparator" | "chart" | "map" | "sun" | "alerts";
+type PageKey =
+  | "comparator"
+  | "chart"
+  | "map"
+  | "sun"
+  | "alerts"
+  | "weather"
+  | "currency"
+  | "news"
+  | "flights";
 
 /** Maps a (locale-stripped) pathname to the current page's breadcrumb key. */
 function pageKeyFromPathname(pathname: string): PageKey {
@@ -22,6 +31,14 @@ function pageKeyFromPathname(pathname: string): PageKey {
       return "sun";
     case "/alerts":
       return "alerts";
+    case "/weather":
+      return "weather";
+    case "/currency":
+      return "currency";
+    case "/news":
+      return "news";
+    case "/flights":
+      return "flights";
     default:
       return "comparator";
   }
@@ -33,6 +50,10 @@ const PAGE_PATH: Record<PageKey, string> = {
   map: "/map",
   sun: "/sun",
   alerts: "/alerts",
+  weather: "/weather",
+  currency: "/currency",
+  news: "/news",
+  flights: "/flights",
 };
 
 /**
