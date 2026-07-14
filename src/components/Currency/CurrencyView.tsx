@@ -125,7 +125,7 @@ export default function CurrencyView() {
             <select
               id="currency-base"
               value={baseCurrency ?? ""}
-              onChange={(e) => setBaseCurrency(e.target.value)}
+              onChange={(e) => setBaseOverride(e.target.value)}
               disabled={baseOptions.length === 0}
               className="rounded-lg border border-border bg-surface px-3 py-1.5 text-sm text-foreground outline-none focus:border-primary"
             >

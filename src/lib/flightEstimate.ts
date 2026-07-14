@@ -176,19 +176,15 @@ function roundTo5(value: number): number {
 }
 
 // ---------------------------------------------------------------------------
-// Deterministic "randomness" (seeded by distance + date, not Math.random)
+// Deterministic "randomness" (seeded by distance + option, not Math.random)
 // ---------------------------------------------------------------------------
 
 /** Deterministic pseudo-random fraction in [0, 1) from a numeric seed, so
- * the same route + date always renders the same simulated fares (no
+ * the same route always renders the same simulated per-carrier fares (no
  * flicker on re-render, no server/client mismatch). */
 function seededFraction(seed: number): number {
   const x = Math.sin(seed) * 43758.5453123;
   return x - Math.floor(x);
-}
-
-function dateSeedComponent(dateOption: DateOption): number {
-  return DATE_OPTIONS.indexOf(dateOption) * 97;
 }
 
 // ---------------------------------------------------------------------------
