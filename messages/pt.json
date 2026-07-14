@@ -319,7 +319,22 @@
     "heading": "Clima",
     "subtitle": "Condições atuais e previsão do tempo para suas cidades comparadas.",
     "comingSoonTitle": "Previsão do tempo",
-    "comingSoonText": "Condições climáticas e previsões em tempo real para suas cidades em breve."
+    "comingSoonText": "Condições climáticas e previsões em tempo real para suas cidades em breve.",
+    "feelsLike": "Sensação térmica",
+    "humidity": "Umidade",
+    "wind": "Vento",
+    "forecast7Day": "Previsão de 7 dias",
+    "retry": "Tentar novamente",
+    "errorText": "Não foi possível carregar o clima desta cidade.",
+    "conditions": {
+      "clear": "Céu limpo",
+      "partlyCloudy": "Parcialmente nublado",
+      "cloudy": "Nublado",
+      "fog": "Neblina",
+      "rain": "Chuva",
+      "snow": "Neve",
+      "storm": "Tempestade"
+    }
   },
   "Currency": {
     "title": "Moeda — taxas de câmbio para suas cidades comparadas",
@@ -327,7 +342,19 @@
     "heading": "Moeda",
     "subtitle": "Taxas de câmbio e conversão de moeda para suas cidades comparadas.",
     "comingSoonTitle": "Taxas de câmbio",
-    "comingSoonText": "Taxas de câmbio em tempo real e um conversor de moedas para suas cidades em breve."
+    "comingSoonText": "Taxas de câmbio em tempo real e um conversor de moedas para suas cidades em breve.",
+    "baseCurrencyLabel": "Moeda base",
+    "baseCurrency": "Moeda base",
+    "amountLabel": "Valor",
+    "customAmountPlaceholder": "Valor personalizado",
+    "loading": "Carregando taxas de câmbio…",
+    "errorTitle": "Não foi possível carregar as taxas de câmbio",
+    "errorText": "Algo deu errado ao acessar o serviço de câmbio. Tente novamente.",
+    "retry": "Tentar novamente",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "Conversão indisponível para esta moeda",
+    "updated": "Taxas atualizadas em {date}",
+    "disclaimer": "Dados do Banco Central Europeu via Frankfurter — não garantidos para uso financeiro real."
   },
   "News": {
     "title": "Notícias — manchetes locais para suas cidades comparadas",
@@ -335,7 +362,16 @@
     "heading": "Notícias",
     "subtitle": "Manchetes locais para suas cidades comparadas.",
     "comingSoonTitle": "Notícias locais",
-    "comingSoonText": "Manchetes de notícias locais para suas cidades em breve."
+    "comingSoonText": "Manchetes de notícias locais para suas cidades em breve.",
+    "disclaimer": "Agregado via Google News — verifique fontes oficiais antes de viajar.",
+    "errorText": "Não foi possível carregar as notícias agora.",
+    "retry": "Tentar novamente",
+    "emptyText": "Sem notícias relevantes no momento.",
+    "badge": {
+      "disaster": "Desastre",
+      "warning": "Alerta",
+      "disruption": "Transtorno"
+    }
   },
   "Flights": {
     "title": "Voos — rotas e status para suas cidades comparadas",
@@ -343,6 +379,28 @@
     "heading": "Voos",
     "subtitle": "Rotas e status de voos para suas cidades comparadas.",
     "comingSoonTitle": "Voos",
-    "comingSoonText": "Rotas, durações e status de voos entre suas cidades em breve."
+    "comingSoonText": "Rotas, durações e status de voos entre suas cidades em breve.",
+    "disclaimerTitle": "Estimativas, não são tarifas reais",
+    "disclaimerText": "Preços e durações são calculados por distância e data — não são cotações reais de nenhuma companhia aérea. Use apenas para planejamento aproximado.",
+    "originLabel": "De",
+    "changeOrigin": "Trocar",
+    "dateLabel": "Partida",
+    "dateToday": "Hoje",
+    "dateTomorrow": "Amanhã",
+    "date48h": "48h",
+    "date1Week": "1 semana",
+    "date2Weeks": "2 semanas",
+    "date3Weeks": "3 semanas",
+    "date1Month": "1 mês",
+    "distanceKm": "{km} km",
+    "durationValue": "{hours}h {minutes}min",
+    "direct": "Direto",
+    "oneStop": "1 conexão",
+    "stopsCount": "{count} conexões",
+    "optionFastest": "Mais rápida",
+    "optionCheapest": "Mais barata",
+    "optionBalanced": "Equilibrada",
+    "fromTo": "{origin} para {destination}",
+    "needMoreCities": "Adicione outra cidade ao seu comparador para ver estimativas de voo."
   }
 }

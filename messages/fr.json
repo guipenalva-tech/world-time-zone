@@ -319,7 +319,22 @@
     "heading": "Météo",
     "subtitle": "Conditions actuelles et prévisions météo pour vos villes comparées.",
     "comingSoonTitle": "Prévisions météo",
-    "comingSoonText": "Les conditions météo en direct et les prévisions pour vos villes arrivent bientôt."
+    "comingSoonText": "Les conditions météo en direct et les prévisions pour vos villes arrivent bientôt.",
+    "feelsLike": "Ressenti",
+    "humidity": "Humidité",
+    "wind": "Vent",
+    "forecast7Day": "Prévisions sur 7 jours",
+    "retry": "Réessayer",
+    "errorText": "Impossible de charger la météo pour cette ville.",
+    "conditions": {
+      "clear": "Ciel dégagé",
+      "partlyCloudy": "Partiellement nuageux",
+      "cloudy": "Nuageux",
+      "fog": "Brouillard",
+      "rain": "Pluie",
+      "snow": "Neige",
+      "storm": "Orage"
+    }
   },
   "Currency": {
     "title": "Devises — taux de change pour vos villes comparées",
@@ -327,7 +342,19 @@
     "heading": "Devises",
     "subtitle": "Taux de change et conversion de devises pour vos villes comparées.",
     "comingSoonTitle": "Taux de change",
-    "comingSoonText": "Les taux de change en direct et un convertisseur de devises pour vos villes arrivent bientôt."
+    "comingSoonText": "Les taux de change en direct et un convertisseur de devises pour vos villes arrivent bientôt.",
+    "baseCurrencyLabel": "Devise de base",
+    "baseCurrency": "Devise de base",
+    "amountLabel": "Montant",
+    "customAmountPlaceholder": "Montant personnalisé",
+    "loading": "Chargement des taux de change…",
+    "errorTitle": "Impossible de charger les taux de change",
+    "errorText": "Une erreur s'est produite lors de la connexion au service de change. Veuillez réessayer.",
+    "retry": "Réessayer",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "Conversion indisponible pour cette devise",
+    "updated": "Taux mis à jour le {date}",
+    "disclaimer": "Données de la Banque centrale européenne via Frankfurter — non garanties pour un usage financier réel."
   },
   "News": {
     "title": "Actualités — titres locaux pour vos villes comparées",
@@ -335,7 +362,16 @@
     "heading": "Actualités",
     "subtitle": "Titres d'actualités locales pour vos villes comparées.",
     "comingSoonTitle": "Actualités locales",
-    "comingSoonText": "Les titres d'actualités locales pour vos villes arrivent bientôt."
+    "comingSoonText": "Les titres d'actualités locales pour vos villes arrivent bientôt.",
+    "disclaimer": "Agrégé via Google News — vérifiez les sources officielles avant de voyager.",
+    "errorText": "Impossible de charger les actualités pour le moment.",
+    "retry": "Réessayer",
+    "emptyText": "Aucune actualité pertinente pour le moment.",
+    "badge": {
+      "disaster": "Catastrophe",
+      "warning": "Alerte",
+      "disruption": "Perturbation"
+    }
   },
   "Flights": {
     "title": "Vols — itinéraires et statuts pour vos villes comparées",
@@ -343,6 +379,28 @@
     "heading": "Vols",
     "subtitle": "Itinéraires et statuts de vols pour vos villes comparées.",
     "comingSoonTitle": "Vols",
-    "comingSoonText": "Les itinéraires, durées et statuts de vols entre vos villes arrivent bientôt."
+    "comingSoonText": "Les itinéraires, durées et statuts de vols entre vos villes arrivent bientôt.",
+    "disclaimerTitle": "Estimations, pas des tarifs réels",
+    "disclaimerText": "Les prix et durées sont calculés à partir de la distance et de la date — ce ne sont pas de vraies cotations de compagnies aériennes. À utiliser uniquement pour une planification approximative.",
+    "originLabel": "Depuis",
+    "changeOrigin": "Changer",
+    "dateLabel": "Départ",
+    "dateToday": "Aujourd'hui",
+    "dateTomorrow": "Demain",
+    "date48h": "48h",
+    "date1Week": "1 semaine",
+    "date2Weeks": "2 semaines",
+    "date3Weeks": "3 semaines",
+    "date1Month": "1 mois",
+    "distanceKm": "{km} km",
+    "durationValue": "{hours}h {minutes}min",
+    "direct": "Direct",
+    "oneStop": "1 correspondance",
+    "stopsCount": "{count} correspondances",
+    "optionFastest": "Le plus rapide",
+    "optionCheapest": "Le moins cher",
+    "optionBalanced": "Équilibré",
+    "fromTo": "{origin} vers {destination}",
+    "needMoreCities": "Ajoutez une autre ville à votre comparateur pour voir les estimations de vol."
   }
 }

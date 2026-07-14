@@ -319,7 +319,22 @@
     "heading": "Weather",
     "subtitle": "Current conditions and forecasts for your compared cities.",
     "comingSoonTitle": "Weather forecast",
-    "comingSoonText": "Live weather conditions and forecasts for your cities are coming soon."
+    "comingSoonText": "Live weather conditions and forecasts for your cities are coming soon.",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "forecast7Day": "7-day forecast",
+    "retry": "Retry",
+    "errorText": "Couldn't load weather for this city.",
+    "conditions": {
+      "clear": "Clear sky",
+      "partlyCloudy": "Partly cloudy",
+      "cloudy": "Cloudy",
+      "fog": "Fog",
+      "rain": "Rain",
+      "snow": "Snow",
+      "storm": "Thunderstorm"
+    }
   },
   "Currency": {
     "title": "Currency — exchange rates for your compared cities",
@@ -327,7 +342,19 @@
     "heading": "Currency",
     "subtitle": "Exchange rates and currency conversion for your compared cities.",
     "comingSoonTitle": "Currency rates",
-    "comingSoonText": "Live exchange rates and a currency converter for your cities are coming soon."
+    "comingSoonText": "Live exchange rates and a currency converter for your cities are coming soon.",
+    "baseCurrencyLabel": "Base currency",
+    "baseCurrency": "Base currency",
+    "amountLabel": "Amount",
+    "customAmountPlaceholder": "Custom amount",
+    "loading": "Loading exchange rates…",
+    "errorTitle": "Couldn't load exchange rates",
+    "errorText": "Something went wrong reaching the exchange rate service. Please try again.",
+    "retry": "Retry",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "Conversion unavailable for this currency",
+    "updated": "Rates updated {date}",
+    "disclaimer": "Data from the European Central Bank via Frankfurter — not guaranteed for real financial transactions."
   },
   "News": {
     "title": "News — local headlines for your compared cities",
@@ -335,14 +362,45 @@
     "heading": "News",
     "subtitle": "Local headlines for your compared cities.",
     "comingSoonTitle": "Local news",
-    "comingSoonText": "Local news headlines for your cities are coming soon."
+    "comingSoonText": "Local news headlines for your cities are coming soon.",
+    "disclaimer": "Aggregated from Google News — verify official sources before you travel.",
+    "errorText": "Couldn't load news right now.",
+    "retry": "Retry",
+    "emptyText": "No relevant news right now.",
+    "badge": {
+      "disaster": "Disaster",
+      "warning": "Warning",
+      "disruption": "Disruption"
+    }
   },
   "Flights": {
-    "title": "Flights — routes and status for your compared cities",
-    "description": "Flight routes, times, and status between the cities in your comparator — coming soon.",
+    "title": "Flights — estimated prices and durations for your compared cities",
+    "description": "Distance-based estimated flight prices and durations between the cities in your comparator.",
     "heading": "Flights",
-    "subtitle": "Flight routes and status for your compared cities.",
+    "subtitle": "Estimated flight prices and durations for your compared cities.",
     "comingSoonTitle": "Flights",
-    "comingSoonText": "Flight routes, durations, and status between your cities are coming soon."
+    "comingSoonText": "Flight routes, durations, and status between your cities are coming soon.",
+    "disclaimerTitle": "Estimates, not real fares",
+    "disclaimerText": "Prices and durations are calculated from distance and date — not real quotes from any airline. Use them for rough trip planning only.",
+    "originLabel": "From",
+    "changeOrigin": "Change",
+    "dateLabel": "Departure",
+    "dateToday": "Today",
+    "dateTomorrow": "Tomorrow",
+    "date48h": "48h",
+    "date1Week": "1 week",
+    "date2Weeks": "2 weeks",
+    "date3Weeks": "3 weeks",
+    "date1Month": "1 month",
+    "distanceKm": "{km} km",
+    "durationValue": "{hours}h {minutes}min",
+    "direct": "Direct",
+    "oneStop": "1 connection",
+    "stopsCount": "{count} connections",
+    "optionFastest": "Fastest",
+    "optionCheapest": "Cheapest",
+    "optionBalanced": "Balanced",
+    "fromTo": "{origin} to {destination}",
+    "needMoreCities": "Add another city to your comparator to see flight estimates."
   }
 }
