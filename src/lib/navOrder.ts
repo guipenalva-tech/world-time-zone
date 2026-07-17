@@ -36,7 +36,7 @@ export function reconcileNavOrder(
 ): NavId[] {
   const validSet = new Set(validIds);
   const kept = order.filter((id): id is NavId => validSet.has(id));
-  const keptSet = new Set(kept);
+  const keptSet = new Set<string>(kept);
   const appended = validIds.filter((id) => !keptSet.has(id)) as NavId[];
   return [...kept, ...appended];
 }
