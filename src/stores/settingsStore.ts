@@ -149,22 +149,36 @@ export const useSettingsStore = create<SettingsState>()(
       // default), so migrating them to `true` here is safe and only
       // runs once per browser — any later explicit toggle by the user
       // is untouched since it happens after rehydration.
-      version: 1,
+      //
+      // v2 added `navOrder` (user-customizable nav bar order). Storage
+      // from before v2 has no `navOrder` key at all, so it's seeded with
+      // the default order here. Beyond that one-time seed, `navOrder` is
+      // also reconciled against `NAV_IDS` on every rehydration (see
+      // `onRehydrateStorage` below) — that's what handles routes being
+      // added or removed later, without needing a v3 bump.
+      version: 2,
       migrate: (persistedState, version) => {
         const state = persistedState as PersistedSettings;
         // `version` is `undefined` (not `0`) for storage written before this
         // field existed at all — `undefined < 1` is `false` in JS, so the
         // comparison must normalize that case first or pre-existing
         // localStorage silently skips the migration below.
+        let next = state;
         if ((version ?? 0) < 1) {
-          return {
-            ...state,
+          next = {
+            ...next,
             sunShowGoldenHour: true,
             sunShowTwilight: true,
             sunShowMoonPhase: true,
           };
         }
-        return state;
+        if ((version ?? 0) < 2) {
+          next = {
+            ...next,
+            navOrder: DEFAULT_NAV_ORDER,
+          };
+        }
+        return next;
       },
       partialize: (state) => ({
         hourFormat: state.hourFormat,
@@ -173,8 +187,15 @@ export const useSettingsStore = create<SettingsState>()(
         sunShowGoldenHour: state.sunShowGoldenHour,
         sunShowTwilight: state.sunShowTwilight,
         sunShowMoonPhase: state.sunShowMoonPhase,
+        navOrder: state.navOrder,
       }),
       onRehydrateStorage: () => (state) => {
+        if (state) {
+          // Reconcile every rehydration (not just the v1→v2 migration
+          // above) so a future page add/remove is handled automatically:
+          // unknown ids are dropped, new ids are appended at the end.
+          state.setNavOrder(reconcileNavOrder(state.navOrder, NAV_IDS));
+        }
         state?.setHasHydrated(true);
       },
     },
