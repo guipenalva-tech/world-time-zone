@@ -125,6 +125,16 @@
     "flights": "Vols",
     "more": "Plus"
   },
+  "NavCustomize": {
+    "openLabel": "Personnaliser la navigation",
+    "title": "Personnaliser la navigation",
+    "description": "Faites glisser pour réorganiser ou utilisez les flèches. Les changements s'appliquent immédiatement.",
+    "moveUp": "Déplacer {item} vers le haut",
+    "moveDown": "Déplacer {item} vers le bas",
+    "dragHandle": "Réorganiser {item}",
+    "resetDefault": "Réinitialiser par défaut",
+    "done": "Terminé"
+  },
   "EmptyCities": {
     "title": "Ajoutez des villes pour commencer",
     "text": "Cette page utilise les villes de votre comparateur. Ajoutez-en quelques-unes sur la page d'accueil pour la voir en action.",

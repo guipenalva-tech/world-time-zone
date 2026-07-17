@@ -125,6 +125,16 @@
     "flights": "Flüge",
     "more": "Mehr"
   },
+  "NavCustomize": {
+    "openLabel": "Navigation anpassen",
+    "title": "Navigation anpassen",
+    "description": "Zum Neuanordnen ziehen oder die Pfeiltasten verwenden. Änderungen werden sofort übernommen.",
+    "moveUp": "{item} nach oben verschieben",
+    "moveDown": "{item} nach unten verschieben",
+    "dragHandle": "{item} neu anordnen",
+    "resetDefault": "Auf Standard zurücksetzen",
+    "done": "Fertig"
+  },
   "EmptyCities": {
     "title": "Füge Städte hinzu, um zu starten",
     "text": "Diese Seite verwendet die Städte aus deinem Vergleich. Füge auf der Startseite ein paar hinzu, um sie in Aktion zu sehen.",

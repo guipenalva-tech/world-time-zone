@@ -125,6 +125,16 @@
     "flights": "Vuelos",
     "more": "Más"
   },
+  "NavCustomize": {
+    "openLabel": "Personalizar navegación",
+    "title": "Personalizar navegación",
+    "description": "Arrastra para reordenar o usa los botones de flecha. Los cambios se aplican de inmediato.",
+    "moveUp": "Mover {item} hacia arriba",
+    "moveDown": "Mover {item} hacia abajo",
+    "dragHandle": "Reordenar {item}",
+    "resetDefault": "Restablecer valores predeterminados",
+    "done": "Listo"
+  },
   "EmptyCities": {
     "title": "Agrega ciudades para empezar",
     "text": "Esta página usa las ciudades de tu comparador. Agrega algunas en la página de inicio para verla en acción.",

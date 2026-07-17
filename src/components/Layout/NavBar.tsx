@@ -3,9 +3,11 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import { SlidersIcon } from "@/components/icons/NavIcons";
 import { NAV_ITEM_DEFS } from "./navItemDefs";
 import { NAV_IDS, reconcileNavOrder } from "@/lib/navOrder";
 import { useSettingsStore } from "@/stores/settingsStore";
+import NavCustomizeModal from "./NavCustomizeModal";
 
 const chevronDownIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
@@ -43,6 +45,7 @@ const itemLinkClass = (isActive: boolean) =>
  */
 export default function NavBar() {
   const t = useTranslations("Nav");
+  const tCustomize = useTranslations("NavCustomize");
   const locale = useLocale();
   const pathname = usePathname();
 
@@ -54,12 +57,14 @@ export default function NavBar() {
   );
 
   const [moreOpen, setMoreOpen] = useState(false);
+  const [customizeOpen, setCustomizeOpen] = useState(false);
   const moreRef = useRef<HTMLLIElement>(null);
 
   // ---- Responsive overflow measurement ("priority+" pattern) ----
   const containerRef = useRef<HTMLDivElement>(null);
   const itemMeasureRefs = useRef<Array<HTMLLIElement | null>>([]);
   const moreMeasureRef = useRef<HTMLLIElement>(null);
+  const customizeMeasureRef = useRef<HTMLLIElement>(null);
   // null = not measured yet — render every item so there's content on the
   // very first paint (before hydration/ResizeObserver can run).
   const [visibleCount, setVisibleCount] = useState<number | null>(null);
@@ -72,18 +77,20 @@ export default function NavBar() {
       (el) => el?.getBoundingClientRect().width ?? 0,
     );
     const moreWidth = moreMeasureRef.current?.getBoundingClientRect().width ?? 0;
+    const customizeWidth = customizeMeasureRef.current?.getBoundingClientRect().width ?? 0;
 
+    const reserved = customizeWidth + ITEM_GAP;
     const allItemsWidth = itemWidths.reduce((sum, w) => sum + w + ITEM_GAP, 0);
 
     // Everything fits without a "More" button at all.
-    if (allItemsWidth <= available) {
+    if (reserved + allItemsWidth <= available) {
       setVisibleCount(itemWidths.length);
       return;
     }
 
     // Otherwise reserve room for the "More" button too, and fit as many
     // leading items as possible in what's left.
-    let total = moreWidth + ITEM_GAP;
+    let total = reserved + moreWidth + ITEM_GAP;
     let count = 0;
     for (let i = 0; i < itemWidths.length; i++) {
       total += itemWidths[i] + ITEM_GAP;
@@ -137,12 +144,12 @@ export default function NavBar() {
   return (
     <nav aria-label={t("home")} className="border-t border-border/60 px-4 sm:px-6">
       <div ref={containerRef} className="relative flex items-center gap-1">
-        {/* Hidden measuring row: every item + the "More" trigger, styled
-            identically to the visible row, so their true rendered widths
-            can be read via getBoundingClientRect. Wrapped in a zero-height,
-            overflow-hidden, absolutely-positioned box (not just an
-            invisible one) so it can never expand the page's scrollable
-            area, however wide the full 9-item row gets. */}
+        {/* Hidden measuring row: every item + the "More" trigger + the
+            customize button, styled identically to the visible row, so
+            their true rendered widths can be read via getBoundingClientRect.
+            Wrapped in a zero-height, overflow-hidden, absolutely-positioned
+            box (not just an invisible one) so it can never expand the
+            page's scrollable area, however wide the full 9-item row gets. */}
         <div
           aria-hidden="true"
           className="pointer-events-none invisible absolute left-0 top-0 h-0 w-full overflow-hidden"
@@ -166,6 +173,11 @@ export default function NavBar() {
               <span className={itemLinkClass(false)}>
                 {t("more")}
                 {chevronDownIcon}
+              </span>
+            </li>
+            <li ref={customizeMeasureRef} className="shrink-0 border-l border-border/60 pl-2">
+              <span className="flex items-center justify-center rounded p-2">
+                <SlidersIcon />
               </span>
             </li>
           </ul>
@@ -233,8 +245,22 @@ export default function NavBar() {
               )}
             </li>
           )}
+
+          <li className="shrink-0 border-l border-border/60 pl-2">
+            <button
+              type="button"
+              onClick={() => setCustomizeOpen(true)}
+              aria-label={tCustomize("openLabel")}
+              title={tCustomize("openLabel")}
+              className="flex items-center justify-center rounded p-2 text-foreground/50 transition-colors hover:bg-surface hover:text-foreground"
+            >
+              <SlidersIcon />
+            </button>
+          </li>
         </ul>
       </div>
+
+      <NavCustomizeModal open={customizeOpen} onClose={() => setCustomizeOpen(false)} />
     </nav>
   );
 }

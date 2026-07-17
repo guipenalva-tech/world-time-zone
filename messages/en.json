@@ -125,6 +125,16 @@
     "flights": "Flights",
     "more": "More"
   },
+  "NavCustomize": {
+    "openLabel": "Customize navigation",
+    "title": "Customize navigation",
+    "description": "Drag to reorder, or use the arrow buttons. Changes apply immediately.",
+    "moveUp": "Move {item} up",
+    "moveDown": "Move {item} down",
+    "dragHandle": "Reorder {item}",
+    "resetDefault": "Reset to default",
+    "done": "Done"
+  },
   "EmptyCities": {
     "title": "Add cities to get started",
     "text": "This page uses the cities from your comparator. Add a few on the home page to see it in action.",
