@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist, type PersistStorage, type StorageValue } from "zustand/middleware";
+import { DEFAULT_NAV_ORDER, NAV_IDS, reconcileNavOrder, type NavId } from "@/lib/navOrder";
 
 export type HourFormat = "12" | "24";
 
@@ -80,6 +81,13 @@ interface SettingsState {
   sunShowGoldenHour: boolean;
   sunShowTwilight: boolean;
   sunShowMoonPhase: boolean;
+  /**
+   * User-customized order of the 9 top-level nav routes (route paths as
+   * ids). Reconciled against `NAV_IDS` on every rehydration — see
+   * `reconcileNavOrder` in `@/lib/navOrder` — so adding or removing a nav
+   * route later doesn't require another store version bump.
+   */
+  navOrder: NavId[];
   /** True once zustand persist has finished reading localStorage (client-only). */
   hasHydrated: boolean;
 
@@ -90,13 +98,21 @@ interface SettingsState {
   setSunShowGoldenHour: (value: boolean) => void;
   setSunShowTwilight: (value: boolean) => void;
   setSunShowMoonPhase: (value: boolean) => void;
+  setNavOrder: (order: NavId[]) => void;
+  resetNavOrder: () => void;
   setHasHydrated: (value: boolean) => void;
 }
 
 /** The subset of SettingsState actually written to localStorage (see `partialize` below). */
 type PersistedSettings = Pick<
   SettingsState,
-  "hourFormat" | "localCardCityId" | "theme" | "sunShowGoldenHour" | "sunShowTwilight" | "sunShowMoonPhase"
+  | "hourFormat"
+  | "localCardCityId"
+  | "theme"
+  | "sunShowGoldenHour"
+  | "sunShowTwilight"
+  | "sunShowMoonPhase"
+  | "navOrder"
 >;
 
 export const useSettingsStore = create<SettingsState>()(
@@ -108,6 +124,7 @@ export const useSettingsStore = create<SettingsState>()(
       sunShowGoldenHour: true,
       sunShowTwilight: true,
       sunShowMoonPhase: true,
+      navOrder: DEFAULT_NAV_ORDER,
       hasHydrated: false,
 
       setHourFormat: (format) => set({ hourFormat: format }),
@@ -117,6 +134,8 @@ export const useSettingsStore = create<SettingsState>()(
       setSunShowGoldenHour: (value) => set({ sunShowGoldenHour: value }),
       setSunShowTwilight: (value) => set({ sunShowTwilight: value }),
       setSunShowMoonPhase: (value) => set({ sunShowMoonPhase: value }),
+      setNavOrder: (order) => set({ navOrder: reconcileNavOrder(order, NAV_IDS) }),
+      resetNavOrder: () => set({ navOrder: DEFAULT_NAV_ORDER }),
       setHasHydrated: (value) => set({ hasHydrated: value }),
     }),
     {
