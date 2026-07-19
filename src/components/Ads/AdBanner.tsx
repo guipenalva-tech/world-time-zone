@@ -14,16 +14,23 @@ const ADSENSE_SLOT_BOTTOM = process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM;
 const ADSENSE_SLOT_INFEED_1 = process.env.NEXT_PUBLIC_ADSENSE_SLOT_INFEED_1;
 const ADSENSE_SLOT_INFEED_2 = process.env.NEXT_PUBLIC_ADSENSE_SLOT_INFEED_2;
 
+// AdSense allows the same ad unit to be rendered multiple times on one
+// page, so every in-feed placement reuses this single "default in-feed
+// slot" env var instead of needing one var per section. _INFEED_2 is kept
+// only as a legacy fallback for deployments that had it set before this
+// consolidation (see .env.example) — no call site targets it directly
+// anymore.
+const ADSENSE_SLOT_INFEED_DEFAULT = ADSENSE_SLOT_INFEED_1 || ADSENSE_SLOT_INFEED_2;
+
 /** Named ad placements, each backed by its own env var (see above) — kept
  * as literal `process.env.NEXT_PUBLIC_*` reads so Next.js can statically
  * inline them; a dynamic `process.env[name]` lookup would not be replaced
  * at build time. */
-export type AdSlotName = "bottom" | "infeed1" | "infeed2";
+export type AdSlotName = "bottom" | "infeed";
 
 const SLOT_IDS: Record<AdSlotName, string | undefined> = {
   bottom: ADSENSE_SLOT_BOTTOM,
-  infeed1: ADSENSE_SLOT_INFEED_1,
-  infeed2: ADSENSE_SLOT_INFEED_2,
+  infeed: ADSENSE_SLOT_INFEED_DEFAULT,
 };
 
 interface AdBannerProps {
@@ -34,9 +41,10 @@ interface AdBannerProps {
 
 /**
  * AdSense banner (leaderboard/horizontal, responsive). Used both at the
- * bottom of every page and, on the home dashboard, in-feed between a couple
- * of sections (`slot="infeed1"` / `"infeed2"`) — each placement reads its
- * own slot id so multiple instances can render on the same page.
+ * bottom of every page and, on the home dashboard, in-feed after every
+ * section (`slot="infeed"`) — the same in-feed ad unit is repeated at each
+ * spot (AdSense supports this), so adding more sections never needs a new
+ * env var.
  *
  * Reserves a fixed min-height for both the live ad and the placeholder so
  * swapping between them (or the ad loading async) never shifts layout —

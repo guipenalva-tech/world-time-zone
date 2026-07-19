@@ -37,8 +37,14 @@ const SECTION_ICON_CLASS = "h-4 w-4";
  * feature view embedded in sequence, each behind its own SectionHeader and
  * lazily mounted as it nears the viewport (see LazySection) — the dedicated
  * /map, /chart, /weather, ... pages stay exactly as they were, for SEO and
- * for anyone who wants a single feature full-page. In-feed ad slots sit
- * after Chart and after Currency, never above the comparator.
+ * for anyone who wants a single feature full-page. An in-feed ad slot sits
+ * after every section below the comparator (Map, Chart, Weather, Sun,
+ * Currency, Flights, News) — never above the comparator. Alerts (the last
+ * section) intentionally has none per product decision, on the assumption
+ * that the Comparator's own "bottom" AdBanner already covers the page's
+ * end; note that AdBanner actually renders inside the Comparator itself
+ * (near the top of this dashboard), so nothing currently sits after Alerts
+ * — revisit if that gap turns out to matter.
  */
 export default function HomeDashboard() {
   const t = useTranslations("HomeSections");
@@ -91,13 +97,17 @@ export default function HomeDashboard() {
         <MapView embedded />
       </LazySection>
 
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed" />
+      </div>
+
       <SectionHeader id="chart" icon={<ChartIcon className="h-5 w-5" />} title={t("chart")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[420px]">
         <ChartView embedded />
       </LazySection>
 
       <div className="px-4 pt-8 sm:px-6">
-        <AdBanner slot="infeed1" />
+        <AdBanner slot="infeed" />
       </div>
 
       <SectionHeader id="weather" icon={<WeatherIcon className="h-5 w-5" />} title={t("weather")} cities={sortedCities} />
@@ -105,10 +115,18 @@ export default function HomeDashboard() {
         <WeatherView embedded />
       </LazySection>
 
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed" />
+      </div>
+
       <SectionHeader id="sun" icon={<SunIcon className="h-5 w-5" />} title={t("sun")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[360px]">
         <SunView embedded />
       </LazySection>
+
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed" />
+      </div>
 
       <SectionHeader id="currency" icon={<CurrencyIcon className="h-5 w-5" />} title={t("currency")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[420px]">
@@ -116,13 +134,17 @@ export default function HomeDashboard() {
       </LazySection>
 
       <div className="px-4 pt-8 sm:px-6">
-        <AdBanner slot="infeed2" />
+        <AdBanner slot="infeed" />
       </div>
 
       <SectionHeader id="flights" icon={<FlightsIcon className="h-5 w-5" />} title={t("flights")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[420px]">
         <FlightsView embedded />
       </LazySection>
+
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed" />
+      </div>
 
       <SectionHeader id="news" icon={<NewsIcon className="h-5 w-5" />} title={t("news")} cities={sortedCities} />
       <div className="pt-3">
@@ -136,6 +158,10 @@ export default function HomeDashboard() {
       <LazySection minHeightClassName="min-h-[420px]">
         <NewsView embedded countryFilter={newsCountryFilter} />
       </LazySection>
+
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed" />
+      </div>
 
       <SectionHeader id="alerts" icon={<AlertsIcon className="h-5 w-5" />} title={t("alerts")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[320px]">
