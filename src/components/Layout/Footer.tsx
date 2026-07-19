@@ -1,9 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useConsentStore } from "@/stores/consentStore";
 import { getPopularCities } from "@/lib/cities";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import LanguageSelect from "@/components/Settings/LanguageSelect";
 
 /** Sitewide internal links to the highest-population /time/[city] pages —
@@ -27,6 +28,7 @@ const POPULAR_CITIES = getPopularCities(12);
  */
 export default function Footer() {
   const t = useTranslations("Footer");
+  const locale = useLocale();
   const openPreferences = useConsentStore((s) => s.openPreferences);
   const year = new Date().getFullYear();
 
@@ -44,7 +46,7 @@ export default function Footer() {
                   href={`/time/${city.id}`}
                   className="text-foreground/60 underline-offset-2 transition-colors hover:text-foreground hover:underline"
                 >
-                  {city.name}
+                  {getLocalizedCityName(city, locale)}
                 </Link>
               </li>
             ))}

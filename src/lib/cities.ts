@@ -1,5 +1,6 @@
 import type { City } from "@/types/city";
 import citiesData from "@/data/cities.json";
+import { getSearchableLocalizedNames } from "@/lib/i18nNames";
 
 const cities = citiesData as City[];
 
@@ -13,9 +14,13 @@ export function normalize(s: string): string {
 }
 
 /**
- * Search cities by name, country, or alias. Case/accent-insensitive.
- * Ranks prefix matches above substring matches, then by population.
- * Returns at most `limit` results (default 8).
+ * Search cities by name, country, alias, or curated localized name (from
+ * `cityNames.json`) — so typing "Londres" finds London regardless of
+ * which locale is currently active (a visitor may search in whatever
+ * language they're comfortable with, or copy-paste a name they saw
+ * elsewhere), in addition to the canonical English name always matching.
+ * Case/accent-insensitive. Ranks prefix matches above substring matches,
+ * then by population. Returns at most `limit` results (default 8).
  */
 export function searchCities(query: string, limit = 8): City[] {
   const q = normalize(query);
@@ -28,15 +33,18 @@ export function searchCities(query: string, limit = 8): City[] {
     const name = normalize(city.name);
     const country = normalize(city.country);
     const aliases = (city.aliases ?? []).map(normalize);
+    const localizedNames = getSearchableLocalizedNames(city).map(normalize);
 
     let score: number | null = null;
 
     if (name === q) score = 0;
     else if (name.startsWith(q)) score = 1;
     else if (aliases.some((a) => a.startsWith(q))) score = 2;
+    else if (localizedNames.some((n) => n.startsWith(q))) score = 2;
     else if (country.startsWith(q)) score = 3;
     else if (name.includes(q)) score = 4;
     else if (aliases.some((a) => a.includes(q))) score = 5;
+    else if (localizedNames.some((n) => n.includes(q))) score = 5;
     else if (country.includes(q)) score = 6;
 
     if (score !== null) results.push({ city, score });

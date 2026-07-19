@@ -7,6 +7,15 @@
  * Actual sentence text/translation happens at render time via
  * `next-intl`'s `t(sentence.key, sentence.values)`.
  *
+ * City/country names are deliberately NOT resolved to a display string
+ * here: this module has no `locale`, and the same city's name must render
+ * differently per locale (e.g. "London" vs "Londres") for SEO. Instead,
+ * sentences carry `cityId`/`refCityId`/`contrastCityId` (city.id) and
+ * `countryCode` (ISO 3166-1 alpha-2) alongside an English fallback
+ * (`country`) — `resolveNarrativeValues` in page.tsx expands those into
+ * the actual localized `city`/`refCity`/`contrastCity`/`country` params
+ * the ICU message templates expect, via `src/lib/i18nNames.ts`.
+ *
  * Every branch below reads real per-city data (DST status, latitude,
  * offset shape, country timezone count) — swapping the city changes which
  * branches fire and what numbers they carry, which is the whole point:
@@ -43,8 +52,8 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
   );
   if (primaryDiff && facts.primaryReference) {
     const base = {
-      city: city.name,
-      refCity: facts.primaryReference.name,
+      cityId: city.id,
+      refCityId: facts.primaryReference.id,
       hours: primaryDiff.diffHoursAbs,
       minutes: primaryDiff.diffMinutesAbs,
       direction: primaryDiff.direction,
@@ -54,7 +63,7 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
       if (city.countryCode === "BR") {
         sentences.push({
           key: "narrativeDstAbolished",
-          values: { city: city.name, offset: facts.zoneInfo.offsetFormatted },
+          values: { cityId: city.id, offset: facts.zoneInfo.offsetFormatted },
         });
       } else if (facts.dstTransition) {
         sentences.push({ key: "narrativeOffsetVaries", values: base });
@@ -63,8 +72,8 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
           key: "narrativeOffsetConstant",
           values: {
             ...base,
-            contrastCity: (facts.dstContrastCity ?? facts.primaryReference)
-              .name,
+            contrastCityId: (facts.dstContrastCity ?? facts.primaryReference)
+              .id,
           },
         });
       }
@@ -78,7 +87,7 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
     sentences.push({
       key: "narrativeMidnightSun",
       values: {
-        city: city.name,
+        cityId: city.id,
         lat: facts.latAbs,
         hemisphereKey: hemisphereWordKey,
       },
@@ -87,7 +96,7 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
     sentences.push({
       key: "narrativePolarNight",
       values: {
-        city: city.name,
+        cityId: city.id,
         lat: facts.latAbs,
         hemisphereKey: hemisphereWordKey,
       },
@@ -97,7 +106,7 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
     sentences.push({
       key: "narrativeDaylightExtreme",
       values: {
-        city: city.name,
+        cityId: city.id,
         lat: facts.latAbs,
         hemisphereKey: hemisphereWordKey,
         hours: Math.floor(totalMinutes / 60),
@@ -111,7 +120,7 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
     sentences.push({
       key: "narrativeHalfHourOffset",
       values: {
-        city: city.name,
+        cityId: city.id,
         offset: facts.zoneInfo.offsetFormatted,
         minutesPart: facts.offsetFractionMinutes,
       },
@@ -122,13 +131,14 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
   if (facts.isChinaSpecialCase) {
     sentences.push({
       key: "narrativeChinaSpecial",
-      values: { city: city.name, offset: facts.zoneInfo.offsetFormatted },
+      values: { cityId: city.id, offset: facts.zoneInfo.offsetFormatted },
     });
   } else if (facts.countryTimezoneCount > 1) {
     sentences.push({
       key: "narrativeMultiZoneCountry",
       values: {
-        city: city.name,
+        cityId: city.id,
+        countryCode: city.countryCode,
         country: city.country,
         count: facts.countryTimezoneCount,
       },
@@ -136,12 +146,12 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
   } else if (facts.isIslandNation) {
     sentences.push({
       key: "narrativeIslandNation",
-      values: { city: city.name, country: city.country },
+      values: { cityId: city.id, countryCode: city.countryCode, country: city.country },
     });
   } else {
     sentences.push({
       key: "narrativeSingleZoneCountry",
-      values: { city: city.name, country: city.country },
+      values: { cityId: city.id, countryCode: city.countryCode, country: city.country },
     });
   }
 

@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { searchCities } from "@/lib/cities";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import type { City } from "@/types/city";
 
 interface CitySearchProps {
@@ -21,6 +22,7 @@ export default function CitySearch({
   autoFocus = false,
 }: CitySearchProps) {
   const t = useTranslations("AddCity");
+  const locale = useLocale();
   const resolvedPlaceholder = placeholder ?? t("searchPlaceholder");
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<City[]>([]);
@@ -132,10 +134,10 @@ export default function CitySearch({
                   <span aria-hidden="true" className="mr-1.5">
                     {getFlagEmoji(city.countryCode)}
                   </span>
-                  {city.name}
+                  {getLocalizedCityName(city, locale)}
                 </span>
                 <span className="shrink-0 text-xs text-foreground/50">
-                  {city.country}
+                  {getLocalizedCountryName(city.countryCode, locale, city.country)}
                 </span>
               </button>
             </li>

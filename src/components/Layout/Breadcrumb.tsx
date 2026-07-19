@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { getSiteUrl } from "@/lib/siteUrl";
 import { getCityById } from "@/lib/cities";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import type { AppLocale } from "@/i18n/routing";
 
 interface BreadcrumbProps {
@@ -101,7 +102,7 @@ export default function Breadcrumb({ locale }: BreadcrumbProps) {
   const cityId = isCityPage ? pathname.slice(CITY_PATH_PREFIX.length) : null;
   const city = cityId ? getCityById(cityId) : undefined;
   const currentLabel = isCityPage
-    ? (city?.name ?? cityId ?? t(pageKey))
+    ? (city ? getLocalizedCityName(city, locale) : (cityId ?? t(pageKey)))
     : t(pageKey);
   const currentHref = isCityPage ? pathname : PAGE_PATH[pageKey];
 
