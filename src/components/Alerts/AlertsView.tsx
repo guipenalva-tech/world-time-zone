@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import AdBanner from "@/components/Ads/AdBanner";
 import NotificationPermissionBanner from "./NotificationPermissionBanner";
 import DstSection from "./DstSection";
 import CityAlarmSection from "./CityAlarmSection";
@@ -42,6 +43,8 @@ export default function AlertsView({ embedded = false }: AlertsViewProps) {
       <BusinessHoursSection />
       <DstSection />
       <CityAlarmSection />
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

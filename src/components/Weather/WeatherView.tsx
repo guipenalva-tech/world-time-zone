@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import WeatherCard from "./WeatherCard";
 
 interface WeatherViewProps {
@@ -51,6 +52,8 @@ export default function WeatherView({ embedded = false }: WeatherViewProps) {
           ))}
         </div>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

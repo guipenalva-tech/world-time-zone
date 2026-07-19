@@ -7,6 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getMoonPhase } from "@/lib/sun";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import SunFilters from "./SunFilters";
 import SunCard from "./SunCard";
 
@@ -94,6 +95,8 @@ export default function SunView({ embedded = false }: SunViewProps) {
           )}
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

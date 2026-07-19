@@ -7,6 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getRowAnchor } from "@/lib/timezone";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import HourDifferenceBars from "./HourDifferenceBars";
 import OverlapChart from "./OverlapChart";
 
@@ -110,6 +111,8 @@ export default function ChartView({ embedded = false }: ChartViewProps) {
           />
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

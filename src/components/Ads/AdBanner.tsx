@@ -40,11 +40,12 @@ interface AdBannerProps {
 }
 
 /**
- * AdSense banner (leaderboard/horizontal, responsive). Used both at the
- * bottom of every page and, on the home dashboard, in-feed after every
- * section (`slot="infeed"`) — the same in-feed ad unit is repeated at each
- * spot (AdSense supports this), so adding more sections never needs a new
- * env var.
+ * AdSense banner (leaderboard/horizontal, responsive). Used at the bottom
+ * of the comparator, on the home dashboard in-feed after every section, and
+ * in-feed at the end of each dedicated page's content (`slot="infeed"`,
+ * gated by `!embedded` inside each View) — the same in-feed ad unit is
+ * repeated at each spot (AdSense supports this), so adding more sections or
+ * pages never needs a new env var.
  *
  * Reserves a fixed min-height for both the live ad and the placeholder so
  * swapping between them (or the ad loading async) never shifts layout —

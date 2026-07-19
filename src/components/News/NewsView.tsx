@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import { groupCitiesByCountry } from "@/lib/newsGroups";
 import CountryNewsSection from "./CountryNewsSection";
 
@@ -64,6 +65,8 @@ export default function NewsView({ embedded = false, countryFilter = null }: New
           </div>
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

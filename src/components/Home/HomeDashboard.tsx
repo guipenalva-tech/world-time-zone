@@ -36,8 +36,11 @@ const SECTION_ICON_CLASS = "h-4 w-4";
  * Home dashboard: the comparator (eager, as before) followed by every other
  * feature view embedded in sequence, each behind its own SectionHeader and
  * lazily mounted as it nears the viewport (see LazySection) — the dedicated
- * /map, /chart, /weather, ... pages stay exactly as they were, for SEO and
- * for anyone who wants a single feature full-page. An in-feed ad slot sits
+ * /map, /chart, /weather, ... pages keep their own layout and behavior, for
+ * SEO and for anyone who wants a single feature full-page; each of those
+ * pages also renders its own in-feed ad after its content (gated by
+ * `!embedded` inside the View itself), independent of the slots below. An
+ * in-feed ad slot sits
  * after every section below the comparator (Map, Chart, Weather, Sun,
  * Currency, Flights, News) — never above the comparator. Alerts (the last
  * section) intentionally has none per product decision, on the assumption

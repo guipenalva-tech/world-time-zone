@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import WorldMapBase from "./WorldMapBase";
 import NightOverlay from "./NightOverlay";
 import CityMarkers from "./CityMarkers";
@@ -101,6 +102,8 @@ export default function MapView({ embedded = false }: MapViewProps) {
           {now && <MapLegend now={now} />}
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { toLuxonLocale } from "@/lib/timezone";
 import { getCurrencyForCountry, fetchExchangeRates, type ExchangeRates } from "@/lib/currency";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import CurrencyCard from "./CurrencyCard";
 
 const QUICK_AMOUNTS = [1, 10, 100, 1000, 10000];
@@ -221,6 +222,8 @@ export default function CurrencyView({ embedded = false }: CurrencyViewProps) {
           )}
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }

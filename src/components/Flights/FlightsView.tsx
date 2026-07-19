@@ -7,6 +7,7 @@ import { useSettingsStore } from "@/stores/settingsStore";
 import { findCityByTimezone, getCityById } from "@/lib/cities";
 import { haversineDistanceKm, type DateOption } from "@/lib/flightEstimate";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
+import AdBanner from "@/components/Ads/AdBanner";
 import type { City } from "@/types/city";
 import DisclaimerBanner from "./DisclaimerBanner";
 import OriginPicker from "./OriginPicker";
@@ -133,6 +134,8 @@ export default function FlightsView({ embedded = false }: FlightsViewProps) {
           )}
         </>
       )}
+
+      {!embedded && <AdBanner slot="infeed" />}
     </div>
   );
 }
