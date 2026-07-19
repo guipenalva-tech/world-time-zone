@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Incremental generator for src/data/cityNames.json -- locale-specific
- * display names for city.json entries, sourced from Wikidata where it
- * has a confident match. NOT run at runtime (same pattern as
+ * Incremental generator + verifier for src/data/cityNames.json -- locale-
+ * specific display names for city.json entries, sourced from Wikidata
+ * where it has a confident match. NOT run at runtime (same pattern as
  * scripts/build-world-map.mjs): the output is committed and the app
  * never calls Wikidata itself.
  *
@@ -13,51 +13,61 @@
  * for the vast majority of cities in this dataset, maintained by human
  * editors in each language's own Wikipedia community.
  *
- * IMPORTANT -- rate limiting, read before re-running:
- * Anonymous (unauthenticated, no bot flag) requests to the MediaWiki
- * action API get a *much* lower burst allowance than this script's first
- * draft assumed. An early run at concurrency=6 with no inter-request
- * spacing got 429'd almost immediately, and even a corrected, fully
- * serial run with a 400ms floor between requests still hit 429s with an
- * escalating `Retry-After` (43s, then 56s, ...) -- i.e. the earlier burst
- * appears to have put this IP in a cooldown window that a *slower* retry
- * doesn't shorten. Practical consequence: this script is written to be
- * run repeatedly over multiple short sessions rather than once
- * end-to-end. Each run:
- *   - loads the *existing* src/data/cityNames.json and only looks up
- *     cities missing from it (so a hand-curated or previously-fetched
- *     entry is never overwritten or re-requested),
- *   - stops after CITY_LIMIT new cities (default 40 -- see below),
- *   - merges its results into the existing file rather than replacing it.
- * Run it again (same command) on a later day/session to cover more
- * cities; each run's console output reports exactly how many are left.
- * A registered Wikidata bot account/OAuth token would get a much higher
- * rate limit if this ever needs to run to completion in one sitting.
+ * -- Two query strategies --
  *
- * Pipeline (per run, over up to CITY_LIMIT not-yet-covered cities):
- *   1. Fetch every country item's ISO 3166-1 alpha-2 code (P297) once via
- *      SPARQL -- ~260 rows, used to check a candidate's country (P17)
- *      against city.countryCode. This is the strongest disambiguator:
- *      city *names* repeat constantly ("San Jose", "Springfield",
- *      "Alexandria", ...), so name-only matching is not safe.
- *   2. Search Wikidata (wbsearchentities, en) for candidate items sharing
- *      each city's name.
- *   3. Batch-fetch each candidate's P17 (country) + P625 (coordinates)
- *      via wbgetentities, keep candidates whose country matches
- *      city.countryCode, and pick the one whose coordinates are closest
- *      to (and within MAX_DISTANCE_KM of) the city's lat/lon. No country
- *      match or no candidate within range => the city is left unmatched
- *      (reported, not guessed) and falls back to the English name at
- *      lookup time (see src/lib/i18nNames.ts).
- *   4. For every matched city, batch-fetch labels in the app's 10
- *      non-English locales and keep only the ones that actually differ
- *      from the English `city.name` -- everything else already falls
- *      back to it, so there's no point storing a duplicate.
- *   5. Cross-checks the result against a small hand-verified reference
- *      table (this script's REFERENCE_CHECK) and prints any divergence,
- *      as a sanity check on both sides.
+ * 1) SPARQL geo-box batch match (primary, fast): the Wikidata Query
+ *    Service exposes a `wikibase:box` geospatial index service that is
+ *    genuinely indexed (unlike a bare `FILTER(STR(?label) = ?name)`
+ *    scan across the whole label graph, which was tried first and timed
+ *    out / 500'd even for 3 names -- there is no index for arbitrary
+ *    literal-value search on rdfs:label, only for entities-in-a-region).
+ *    For each city this runs one UNION block: find every item within a
+ *    ~60km box of the city's (lat, lon) whose *English* label is an
+ *    exact match for `city.name`, plus its P17 country and this run's
+ *    target-language labels, all in the same block. Many cities' blocks
+ *    are combined with UNION into a single POST request (SPARQL endpoint
+ *    has no meaningful per-request rate limit like the anonymous action
+ *    API does, but a single query can still time out past ~30 cities'
+ *    worth of blocks, so batches are kept smaller and split-and-retried
+ *    on failure). This is what let the entire 477-city set be attempted
+ *    in one sitting, instead of the ~40-city, multi-session, multi-day
+ *    plan the old wbsearchentities-only approach required under
+ *    anonymous rate limits (see git history for that account: 429s with
+ *    escalating Retry-After that a slower retry didn't shorten).
  *
- * Run with: node scripts/build-city-names.mjs [--limit=40]
+ * 2) Legacy wbsearchentities + wbgetentities per-city fallback (slow,
+ *    only for stragglers): a small number of cities have an English
+ *    Wikidata label that doesn't literally equal `city.name` (accents,
+ *    "City" suffixes, alternate romanization, etc.), so the exact-match
+ *    SPARQL query above finds nothing for them. For just that residual
+ *    set, fall back to the original fuzzy `wbsearchentities` search +
+ *    P17/P625-verified candidate picking, one city at a time, paced at
+ *    1.5s/request with 429 backoff -- safe because the residual set is
+ *    now small (dozens, not hundreds).
+ *
+ * Both paths apply the *same* confidence bar: a candidate is only
+ * accepted if its P17 country matches city.countryCode AND its P625
+ * coordinates are within MAX_DISTANCE_KM of the city's own (lat, lon).
+ * City *names* repeat constantly ("San Jose", "Springfield",
+ * "Alexandria", ...) so name-only matching is never safe on its own.
+ * No match => left unmatched (reported, not guessed); the app falls
+ * back to the English name at lookup time (see src/lib/i18nNames.ts).
+ *
+ * A label is only stored if it differs from the English `city.name` --
+ * identical values already fall back correctly, so storing them would
+ * just bloat the file.
+ *
+ * -- Modes --
+ *   node scripts/build-city-names.mjs            expand coverage to new
+ *                                                 cities, most populous
+ *                                                 first, merged into the
+ *                                                 existing file.
+ *   node scripts/build-city-names.mjs --verify    re-fetch fresh Wikidata
+ *                                                 data for cities ALREADY
+ *                                                 in the file and report
+ *                                                 divergences instead of
+ *                                                 overwriting anything.
+ *   --limit=N   cap on new cities attempted this run (expand mode only).
  */
 import { writeFileSync, readFileSync } from "node:fs";
 import path from "node:path";
@@ -68,7 +78,7 @@ const CITIES_PATH = path.join(__dirname, "../src/data/cities.json");
 const OUT_PATH = path.join(__dirname, "../src/data/cityNames.json");
 
 const USER_AGENT =
-  "WorldTimeZoneBuildScript/1.0 (build-time city-name lookup; not a runtime dependency)";
+  "WorldTimeZoneBuildScript/1.0 (contact: ai4guip@gmail.com; build-time city-name lookup; not a runtime dependency)";
 const API = "https://www.wikidata.org/w/api.php";
 const SPARQL = "https://query.wikidata.org/sparql";
 
@@ -87,13 +97,14 @@ const LOCALE_TO_WIKIDATA_LANG = {
   "zh-TW": "zh-tw",
   ja: "ja",
 };
+const LATIN_SCRIPT_LOCALES = new Set(["pt", "es", "fr", "de", "it"]);
 
 const MAX_DISTANCE_KM = 60;
 const SEARCH_LIMIT = 10;
-// Strictly 1: `throttle()` serializes on a single shared timestamp with no
-// locking, so anything >1 here would let several workers race past it at
-// once (each reads the same "last call" time before any of them updates
-// it) and burst the API again -- exactly what caused the first run's 429s.
+// Strictly 1 for the legacy REST fallback: `throttle()` serializes on a
+// single shared timestamp with no locking, so anything >1 here would let
+// several workers race past it at once -- exactly what caused the first
+// run's 429s.
 const CONCURRENCY = 1;
 
 function haversineKm(lat1, lon1, lat2, lon2) {
@@ -110,21 +121,18 @@ function haversineKm(lat1, lon1, lat2, lon2) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Global pacing across every request this script makes (search, claims,
- * and label fetches alike) -- the first run hammered the MediaWiki action
- * API with 6-way concurrency and no inter-request spacing and got rate
- * limited (429) into an unrecoverable crash partway through. Anonymous,
- * unauthenticated API clients get a much lower burst allowance than a
- * registered bot, so every call funnels through this single choke point
- * regardless of which function issues it or how many run "concurrently". */
-const MIN_INTERVAL_MS = 1500;
+function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
 
-/** How many not-yet-covered cities a single run attempts, so a run stays
- * a few minutes long instead of hours -- see the rate-limiting note in
- * this file's header. Override with `--limit=N`. */
-const DEFAULT_CITY_LIMIT = 40;
-const limitArg = process.argv.find((a) => a.startsWith("--limit="));
-const CITY_LIMIT = limitArg ? Number(limitArg.slice("--limit=".length)) : DEFAULT_CITY_LIMIT;
+// ---------------------------------------------------------------------
+// Legacy per-city REST path (wbsearchentities + wbgetentities), used
+// only as a fallback for cities the SPARQL exact-label match misses.
+// ---------------------------------------------------------------------
+
+const MIN_INTERVAL_MS = 1500;
 let lastCallAt = 0;
 async function throttle() {
   const wait = lastCallAt + MIN_INTERVAL_MS - Date.now();
@@ -150,7 +158,6 @@ async function fetchJson(url, attempt = 1) {
   return res.json();
 }
 
-/** Runs `fn` over `items` with at most `n` in flight at once. */
 async function mapPool(items, n, fn) {
   const results = new Array(items.length);
   let cursor = 0;
@@ -164,16 +171,10 @@ async function mapPool(items, n, fn) {
   return results;
 }
 
-function chunk(arr, size) {
-  const out = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
-
 async function fetchCountryIsoMap() {
   const query = "SELECT ?country ?iso WHERE { ?country wdt:P297 ?iso . }";
-  const json = await fetchJson(`${SPARQL}?query=${encodeURIComponent(query)}&format=json`);
-  const map = new Map(); // QID -> ISO2
+  const json = await sparqlQuery(query);
+  const map = new Map();
   for (const row of json.results.bindings) {
     const qid = row.country.value.split("/").pop();
     map.set(qid, row.iso.value);
@@ -188,9 +189,8 @@ async function searchCandidates(name) {
 }
 
 async function fetchClaims(ids) {
-  const out = new Map(); // QID -> { countryQid, lat, lon }
+  const out = new Map();
   const groups = chunk(ids, 50);
-  let done = 0;
   for (const group of groups) {
     if (group.length === 0) continue;
     const url = `${API}?action=wbgetentities&ids=${group.join("|")}&props=claims&format=json`;
@@ -199,30 +199,19 @@ async function fetchClaims(ids) {
       for (const [id, entity] of Object.entries(json.entities ?? {})) {
         const countryQid = entity.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
         const coord = entity.claims?.P625?.[0]?.mainsnak?.datavalue?.value;
-        out.set(id, {
-          countryQid,
-          lat: coord?.latitude,
-          lon: coord?.longitude,
-        });
+        out.set(id, { countryQid, lat: coord?.latitude, lon: coord?.longitude });
       }
     } catch (err) {
-      // A dropped chunk just means those candidates get no claims data ->
-      // they'll fail the country/distance check below and the affected
-      // cities fall back to the English name, same as a genuine no-match.
-      // Not worth crashing a 10-minute run over one bad chunk.
       console.error(`  claims chunk failed (${group.length} ids): ${err.message}`);
     }
-    done += group.length;
-    console.log(`  claims: ${done}/${ids.length}`);
   }
   return out;
 }
 
 async function fetchLabels(ids) {
-  const out = new Map(); // QID -> { lang: label }
+  const out = new Map();
   const langs = Object.values(LOCALE_TO_WIKIDATA_LANG).join("|");
   const groups = chunk(ids, 50);
-  let done = 0;
   for (const group of groups) {
     if (group.length === 0) continue;
     const url = `${API}?action=wbgetentities&ids=${group.join("|")}&props=labels&languages=${langs}&format=json`;
@@ -230,23 +219,294 @@ async function fetchLabels(ids) {
       const json = await fetchJson(url);
       for (const [id, entity] of Object.entries(json.entities ?? {})) {
         const labels = {};
-        for (const [lang, entry] of Object.entries(entity.labels ?? {})) {
-          labels[lang] = entry.value;
-        }
+        for (const [lang, entry] of Object.entries(entity.labels ?? {})) labels[lang] = entry.value;
         out.set(id, labels);
       }
     } catch (err) {
       console.error(`  labels chunk failed (${group.length} ids): ${err.message}`);
     }
-    done += group.length;
-    console.log(`  labels: ${done}/${ids.length}`);
   }
   return out;
 }
 
-/** Small hand-verified set (well-known reference/hub cities) used purely
- * to sanity-check the Wikidata-sourced output -- NOT written to the
- * output file. Divergences are printed for manual review. */
+/** Legacy per-city match for a small residual set. Returns a Map
+ * cityId -> { qid, labels: { locale: label } }. */
+async function legacyMatchCities(cities, countryIsoByQid) {
+  if (cities.length === 0) return new Map();
+  console.log(`  Legacy fallback search for ${cities.length} cities (paced ~1.5s/request)...`);
+  const searchResults = await mapPool(cities, CONCURRENCY, async (city) => {
+    try {
+      return await searchCandidates(city.name);
+    } catch (err) {
+      console.error(`    search failed for ${city.id}: ${err.message}`);
+      return [];
+    }
+  });
+  const allCandidateIds = [...new Set(searchResults.flat())];
+  const claimsById = await fetchClaims(allCandidateIds);
+
+  const matchedQidByCity = new Map();
+  cities.forEach((city, i) => {
+    let best = null;
+    let bestDist = Infinity;
+    for (const qid of searchResults[i]) {
+      const claim = claimsById.get(qid);
+      if (!claim || claim.lat === undefined) continue;
+      const iso = claim.countryQid ? countryIsoByQid.get(claim.countryQid) : undefined;
+      if (iso !== city.countryCode) continue;
+      const dist = haversineKm(city.lat, city.lon, claim.lat, claim.lon);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = qid;
+      }
+    }
+    if (best && bestDist <= MAX_DISTANCE_KM) matchedQidByCity.set(city.id, best);
+  });
+
+  const labelsByQid = await fetchLabels([...matchedQidByCity.values()]);
+  const results = new Map();
+  for (const city of cities) {
+    const qid = matchedQidByCity.get(city.id);
+    if (!qid) continue;
+    const labels = {};
+    for (const [locale, lang] of Object.entries(LOCALE_TO_WIKIDATA_LANG)) {
+      const val = labelsByQid.get(qid)?.[lang];
+      if (val) labels[locale] = val;
+    }
+    results.set(city.id, { qid, labels });
+  }
+  console.log(`  Legacy fallback matched ${results.size}/${cities.length}.`);
+  return results;
+}
+
+// ---------------------------------------------------------------------
+// SPARQL geo-box batch path (primary).
+// ---------------------------------------------------------------------
+
+const SPARQL_MIN_INTERVAL_MS = 1500;
+let lastSparqlAt = 0;
+async function sparqlThrottle() {
+  const wait = lastSparqlAt + SPARQL_MIN_INTERVAL_MS - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastSparqlAt = Date.now();
+}
+
+async function sparqlQuery(query, attempt = 1) {
+  await sparqlThrottle();
+  const res = await fetch(SPARQL, {
+    method: "POST",
+    headers: {
+      "User-Agent": USER_AGENT,
+      Accept: "application/sparql-results+json",
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: `query=${encodeURIComponent(query)}`,
+  });
+  lastSparqlAt = Date.now();
+  if (!res.ok) {
+    if ((res.status === 429 || res.status === 502 || res.status === 503 || res.status === 500) && attempt <= 4) {
+      const retryAfterHeader = Number(res.headers.get("retry-after"));
+      const backoffMs = Number.isFinite(retryAfterHeader) && retryAfterHeader > 0
+        ? retryAfterHeader * 1000
+        : 3000 * attempt;
+      console.log(`  SPARQL ${res.status}, waiting ${backoffMs}ms (attempt ${attempt})...`);
+      await sleep(backoffMs);
+      return sparqlQuery(query, attempt + 1);
+    }
+    throw new Error(`SPARQL ${res.status} ${res.statusText}`);
+  }
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`SPARQL returned non-JSON / truncated body (${text.length} bytes)`);
+  }
+}
+
+function geoBox(lat, lon, kmHalf) {
+  const dLat = kmHalf / 111;
+  const dLon = kmHalf / (111 * Math.cos((lat * Math.PI) / 180));
+  return {
+    west: `Point(${(lon - dLon).toFixed(4)} ${(lat - dLat).toFixed(4)})`,
+    east: `Point(${(lon + dLon).toFixed(4)} ${(lat + dLat).toFixed(4)})`,
+  };
+}
+
+function escapeSparqlString(s) {
+  return s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+function langVar(lang) {
+  return lang.replace(/[^a-zA-Z0-9]/g, "");
+}
+
+function buildBatchQuery(cities) {
+  const blocks = cities.map((city, i) => {
+    const b = geoBox(city.lat, city.lon, MAX_DISTANCE_KM);
+    const optionals = Object.values(LOCALE_TO_WIKIDATA_LANG)
+      .map((lang) => {
+        const v = langVar(lang);
+        return `      OPTIONAL { ?place${i} rdfs:label ?l${i}_${v} . FILTER(LANG(?l${i}_${v})="${lang}") }`;
+      })
+      .join("\n");
+    const selects = Object.values(LOCALE_TO_WIKIDATA_LANG)
+      .map((lang) => `(SAMPLE(?l${i}_${langVar(lang)}) AS ?name${i}_${langVar(lang)})`)
+      .join(" ");
+    return `  {
+    SELECT ?place${i} ?iso${i} ?lat${i} ?lon${i} ${selects} WHERE {
+      SERVICE wikibase:box {
+        ?place${i} wdt:P625 ?loc${i} .
+        bd:serviceParam wikibase:cornerWest "${b.west}"^^geo:wktLiteral .
+        bd:serviceParam wikibase:cornerEast "${b.east}"^^geo:wktLiteral .
+      }
+      ?place${i} rdfs:label ?en${i} .
+      FILTER(LANG(?en${i})="en" && STR(?en${i})="${escapeSparqlString(city.name)}")
+      ?place${i} wdt:P17 ?country${i} .
+      ?country${i} wdt:P297 ?iso${i} .
+      ?place${i} p:P625/psv:P625 ?coordNode${i} .
+      ?coordNode${i} wikibase:geoLatitude ?lat${i} .
+      ?coordNode${i} wikibase:geoLongitude ?lon${i} .
+${optionals}
+    }
+    GROUP BY ?place${i} ?iso${i} ?lat${i} ?lon${i}
+  }`;
+  });
+  return `PREFIX geo: <http://www.opengis.net/ont/geosparql#>\nSELECT * WHERE {\n${blocks.join("\n  UNION\n")}\n}`;
+}
+
+/** Runs one SPARQL batch (no retries/splitting -- see runBatchResilient
+ * for that) and returns a Map cityId -> { qid, dist, labels }. */
+async function runBatch(cities) {
+  const query = buildBatchQuery(cities);
+  const json = await sparqlQuery(query);
+  const rows = json.results.bindings;
+  const perCityCandidates = cities.map(() => []);
+  for (const row of rows) {
+    for (let i = 0; i < cities.length; i++) {
+      const placeKey = `place${i}`;
+      if (!(placeKey in row)) continue;
+      const qid = row[placeKey].value.split("/").pop();
+      const iso = row[`iso${i}`]?.value;
+      const lat = Number(row[`lat${i}`]?.value);
+      const lon = Number(row[`lon${i}`]?.value);
+      const labels = {};
+      for (const [locale, lang] of Object.entries(LOCALE_TO_WIKIDATA_LANG)) {
+        const val = row[`name${i}_${langVar(lang)}`]?.value;
+        if (val) labels[locale] = val;
+      }
+      perCityCandidates[i].push({ qid, iso, lat, lon, labels });
+    }
+  }
+  const results = new Map();
+  cities.forEach((city, i) => {
+    const candidates = perCityCandidates[i].filter(
+      (c) => c.iso === city.countryCode && Number.isFinite(c.lat) && Number.isFinite(c.lon),
+    );
+    let best = null;
+    let bestDist = Infinity;
+    for (const c of candidates) {
+      const dist = haversineKm(city.lat, city.lon, c.lat, c.lon);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = c;
+      }
+    }
+    if (best && bestDist <= MAX_DISTANCE_KM) {
+      results.set(city.id, { qid: best.qid, dist: bestDist, labels: best.labels });
+    }
+  });
+  return results;
+}
+
+/** Splits a batch in half and retries on failure (502/timeout on a large
+ * UNION), down to single cities, instead of giving up on the whole
+ * batch. A single city that still fails is simply left for the legacy
+ * fallback path. */
+async function runBatchResilient(cities, depth = 0) {
+  if (cities.length === 0) return new Map();
+  try {
+    return await runBatch(cities);
+  } catch (err) {
+    if (cities.length === 1) {
+      console.error(`    SPARQL failed for ${cities[0].id}: ${err.message} (will try legacy fallback)`);
+      return new Map();
+    }
+    console.log(`    batch of ${cities.length} failed (${err.message}), splitting in half...`);
+    const mid = Math.ceil(cities.length / 2);
+    const a = await runBatchResilient(cities.slice(0, mid), depth + 1);
+    const b = await runBatchResilient(cities.slice(mid), depth + 1);
+    return new Map([...a, ...b]);
+  }
+}
+
+async function sparqlMatchCities(cities, batchSize = 15) {
+  const matches = new Map();
+  const batches = chunk(cities, batchSize);
+  for (const [idx, b] of batches.entries()) {
+    console.log(`  SPARQL batch ${idx + 1}/${batches.length} (${b.length} cities)...`);
+    const res = await runBatchResilient(b);
+    for (const [id, v] of res) matches.set(id, v);
+    console.log(`    matched ${res.size}/${b.length}`);
+  }
+  return matches;
+}
+
+// ---------------------------------------------------------------------
+// Suspicious-label heuristic: flags (does not silently drop) a Latin-
+// script label that shares almost no characters with the English name.
+// This is what caught a real Wikidata data-quality bug during
+// development: Q121157 (en label "Mashhad", Iran) has its ptwiki
+// sitelink/pt label wrongly pointing at "Mexede" (an unrelated Portuguese
+// parish) -- a genuine interlanguage-link mixup on Wikidata's side, not
+// a translation. Non-Latin scripts (ru/ja/zh/hi) aren't checked this way
+// since transliteration divergence from the English spelling is normal
+// and expected there.
+// ---------------------------------------------------------------------
+function normalizeForCompare(s) {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function bigramSimilarity(a, b) {
+  const bigrams = (s) => {
+    const out = new Set();
+    for (let i = 0; i < s.length - 1; i++) out.add(s.slice(i, i + 2));
+    return out;
+  };
+  const A = bigrams(a);
+  const B = bigrams(b);
+  if (A.size === 0 || B.size === 0) return a === b ? 1 : 0;
+  let shared = 0;
+  for (const g of A) if (B.has(g)) shared++;
+  return (2 * shared) / (A.size + B.size);
+}
+
+/** Returns true if `label` looks suspiciously unrelated to `englishName`
+ * for a Latin-script locale (i.e. worth a human double-check). */
+function isSuspiciousLatinLabel(englishName, label) {
+  const a = normalizeForCompare(englishName);
+  const b = normalizeForCompare(label);
+  if (a.length < 3 || b.length < 3) return false;
+  return bigramSimilarity(a, b) < 0.15;
+}
+
+function collectSuspicious(cityId, englishName, labels) {
+  const flags = [];
+  for (const [locale, label] of Object.entries(labels)) {
+    if (LATIN_SCRIPT_LOCALES.has(locale) && isSuspiciousLatinLabel(englishName, label)) {
+      flags.push({ cityId, locale, englishName, label });
+    }
+  }
+  return flags;
+}
+
+// ---------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------
+
 const REFERENCE_CHECK = {
   london: { pt: "Londres", "zh-CN": "伦敦", "zh-TW": "倫敦", ja: "ロンドン", ru: "Лондон", hi: "लंदन" },
   tokyo: { pt: "Tóquio", "zh-CN": "东京", "zh-TW": "東京", ja: "東京", ru: "Токио", hi: "टोक्यो" },
@@ -259,97 +519,111 @@ const REFERENCE_CHECK = {
   "mexico-city": { es: "Ciudad de México", fr: "Mexico", de: "Mexiko-Stadt" },
 };
 
-async function main() {
-  const allCities = JSON.parse(readFileSync(CITIES_PATH, "utf8"));
-  console.log(`Loaded ${allCities.length} cities.`);
+const argv = process.argv.slice(2);
+const VERIFY_MODE = argv.includes("--verify");
+const limitArg = argv.find((a) => a.startsWith("--limit="));
+const CITY_LIMIT = limitArg ? Number(limitArg.slice("--limit=".length)) : Infinity;
+const batchSizeArg = argv.find((a) => a.startsWith("--batch-size="));
+const BATCH_SIZE = batchSizeArg ? Number(batchSizeArg.slice("--batch-size=".length)) : 15;
 
-  let existingCityNames = {};
-  try {
-    existingCityNames = JSON.parse(readFileSync(OUT_PATH, "utf8"));
-  } catch {
-    // No existing file yet -- starting from scratch is fine.
+async function verifyMain(allCities, existingCityNames) {
+  const coveredCities = allCities.filter((c) => existingCityNames[c.id]);
+  console.log(`Verifying ${coveredCities.length} existing entries against fresh Wikidata data...\n`);
+
+  const matches = await sparqlMatchCities(coveredCities, BATCH_SIZE);
+  const stillUnmatched = coveredCities.filter((c) => !matches.has(c.id));
+  if (stillUnmatched.length > 0) {
+    console.log(`\n${stillUnmatched.length} not matched by exact-label SPARQL, trying legacy fallback...`);
+    const countryIsoByQid = await fetchCountryIsoMap();
+    const legacy = await legacyMatchCities(stillUnmatched, countryIsoByQid);
+    for (const [id, v] of legacy) matches.set(id, v);
   }
+
+  const divergences = [];
+  const suspicious = [];
+  let noMatchCount = 0;
+  for (const city of coveredCities) {
+    const existing = existingCityNames[city.id];
+    const fresh = matches.get(city.id);
+    if (!fresh) {
+      noMatchCount++;
+      divergences.push({ city: city.id, locale: "*", existing: JSON.stringify(existing), fresh: "(no confident Wikidata match found on re-check)" });
+      continue;
+    }
+    suspicious.push(...collectSuspicious(city.id, city.name, fresh.labels));
+    for (const locale of Object.keys(LOCALE_TO_WIKIDATA_LANG)) {
+      const existingVal = existing[locale];
+      const rawFresh = fresh.labels[locale];
+      const freshVal = rawFresh && rawFresh !== city.name ? rawFresh : undefined;
+      if (existingVal !== freshVal) {
+        divergences.push({
+          city: city.id,
+          locale,
+          existing: existingVal ?? "(absent -> English fallback)",
+          fresh: freshVal ?? "(absent/same-as-English -> English fallback)",
+        });
+      }
+    }
+  }
+
+  console.log(`\n=== DIVERGENCES (${divergences.length} across ${coveredCities.length} cities, ${noMatchCount} cities had no re-verifiable match) ===`);
+  for (const d of divergences) {
+    console.log(`  ${d.city} [${d.locale}]: existing="${d.existing}"  wikidata="${d.fresh}"`);
+  }
+
+  console.log(`\n=== SUSPICIOUS LABELS (${suspicious.length}) -- low character overlap with English name, needs a human look ===`);
+  for (const s of suspicious) {
+    console.log(`  ${s.cityId} [${s.locale}]: "${s.englishName}" -> "${s.label}"`);
+  }
+
+  const perLocaleFieldCount = coveredCities.reduce((n, c) => n + Object.keys(existingCityNames[c.id]).length, 0);
+  const perLocaleDivergentFields = divergences.filter((d) => d.locale !== "*").length;
+  console.log(`\n=== SUMMARY ===`);
+  console.log(`Cities checked: ${coveredCities.length}`);
+  console.log(`Cities with no re-verifiable Wikidata match: ${noMatchCount}`);
+  console.log(`Existing (city, locale) name fields: ${perLocaleFieldCount}`);
+  console.log(`Fields diverging from a fresh Wikidata fetch: ${perLocaleDivergentFields} (${((perLocaleDivergentFields / perLocaleFieldCount) * 100).toFixed(1)}%)`);
+  console.log(`Suspicious (low-similarity Latin-script) labels: ${suspicious.length}`);
+}
+
+async function expandMain(allCities, existingCityNames) {
   const alreadyCovered = new Set(Object.keys(existingCityNames));
-  const remaining = allCities.filter((c) => !alreadyCovered.has(c.id));
-  console.log(`${alreadyCovered.size} cities already have a name entry (kept as-is, not re-fetched).`);
+  const remaining = allCities
+    .filter((c) => !alreadyCovered.has(c.id))
+    .sort((a, b) => b.population - a.population);
+  console.log(`${alreadyCovered.size} cities already covered.`);
   console.log(`${remaining.length} cities remain uncovered.`);
 
   const cities = remaining.slice(0, CITY_LIMIT);
   if (cities.length === 0) {
-    console.log("Nothing to do this run -- every city is already covered.");
+    console.log("Nothing to do -- every city is already covered.");
     return;
   }
-  console.log(`This run: looking up ${cities.length} of them (--limit=${CITY_LIMIT}).`);
+  console.log(`This run: attempting ${cities.length} of them, most populous first.\n`);
 
-  console.log("Fetching country QID -> ISO2 map...");
-  const countryIsoByQid = await fetchCountryIsoMap();
-  console.log(`  ${countryIsoByQid.size} countries.`);
+  console.log("SPARQL geo-box batch matching...");
+  const matches = await sparqlMatchCities(cities, BATCH_SIZE);
+  console.log(`\nSPARQL matched ${matches.size}/${cities.length}.`);
 
-  console.log(`Searching Wikidata for ${cities.length} city names (concurrency ${CONCURRENCY})...`);
-  let searchDone = 0;
-  const searchResults = await mapPool(cities, CONCURRENCY, async (city) => {
-    let result;
-    try {
-      result = await searchCandidates(city.name);
-    } catch (err) {
-      console.error(`  search failed for ${city.id}: ${err.message}`);
-      result = [];
-    }
-    searchDone += 1;
-    if (searchDone % 25 === 0 || searchDone === cities.length) {
-      console.log(`  search: ${searchDone}/${cities.length}`);
-    }
-    return result;
-  });
-
-  const allCandidateIds = [...new Set(searchResults.flat())];
-  console.log(`Fetching claims for ${allCandidateIds.length} candidate entities...`);
-  const claimsById = await fetchClaims(allCandidateIds);
-
-  const matchedQidByCity = new Map();
-  const unmatched = [];
-  cities.forEach((city, i) => {
-    const candidates = searchResults[i];
-    let best = null;
-    let bestDist = Infinity;
-    for (const qid of candidates) {
-      const claim = claimsById.get(qid);
-      if (!claim || claim.lat === undefined) continue;
-      const iso = claim.countryQid ? countryIsoByQid.get(claim.countryQid) : undefined;
-      if (iso !== city.countryCode) continue;
-      const dist = haversineKm(city.lat, city.lon, claim.lat, claim.lon);
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = qid;
-      }
-    }
-    if (best && bestDist <= MAX_DISTANCE_KM) {
-      matchedQidByCity.set(city.id, best);
-    } else {
-      unmatched.push(city.id);
-    }
-  });
-  console.log(`Matched ${matchedQidByCity.size}/${cities.length} cities (within ${MAX_DISTANCE_KM}km, country-verified).`);
-  if (unmatched.length > 0) {
-    console.log(`Unmatched (${unmatched.length}), will fall back to English name:`);
-    console.log(`  ${unmatched.join(", ")}`);
+  const stillUnmatched = cities.filter((c) => !matches.has(c.id));
+  if (stillUnmatched.length > 0) {
+    console.log(`\n${stillUnmatched.length} unmatched by exact-label SPARQL, trying legacy fuzzy fallback...`);
+    const countryIsoByQid = await fetchCountryIsoMap();
+    const legacy = await legacyMatchCities(stillUnmatched, countryIsoByQid);
+    for (const [id, v] of legacy) matches.set(id, v);
   }
 
-  console.log(`Fetching labels for ${matchedQidByCity.size} matched entities...`);
-  const labelsByQid = await fetchLabels([...matchedQidByCity.values()]);
-
+  const rejectedDuplicateMatch = [];
   const newCityNames = {};
+  const suspicious = [];
   let totalLabelEntries = 0;
   for (const city of cities) {
-    const qid = matchedQidByCity.get(city.id);
-    if (!qid) continue;
-    const labels = labelsByQid.get(qid) ?? {};
+    const match = matches.get(city.id);
+    if (!match) continue;
+    suspicious.push(...collectSuspicious(city.id, city.name, match.labels));
     const entry = {};
-    for (const [locale, wikidataLang] of Object.entries(LOCALE_TO_WIKIDATA_LANG)) {
-      const label = labels[wikidataLang];
-      if (label && label.trim() && label.trim() !== city.name) {
-        entry[locale] = label.trim();
-      }
+    for (const [locale, label] of Object.entries(match.labels)) {
+      if (label && label.trim() && label.trim() !== city.name) entry[locale] = label.trim();
     }
     if (Object.keys(entry).length > 0) {
       newCityNames[city.id] = entry;
@@ -357,8 +631,36 @@ async function main() {
     }
   }
 
+  const unmatchedFinal = cities.filter((c) => !matches.has(c.id));
   console.log(`\nNewly-covered cities this run: ${Object.keys(newCityNames).length} (of ${cities.length} attempted)`);
   console.log(`New (city, locale) name entries: ${totalLabelEntries}`);
+  console.log(`Rejected as no confident match (fell back to English): ${unmatchedFinal.length}`);
+  if (unmatchedFinal.length > 0) {
+    console.log(`  ${unmatchedFinal.map((c) => c.id).join(", ")}`);
+  }
+
+  console.log(`\n=== SUSPICIOUS LABELS (${suspicious.length}) -- low character overlap with English name, needs a human look ===`);
+  for (const s of suspicious) {
+    console.log(`  ${s.cityId} [${s.locale}]: "${s.englishName}" -> "${s.label}"`);
+  }
+
+  // Sanity check: no two cities in this run should have been assigned
+  // the exact same Wikidata QID (that would mean one got the other's
+  // identity/name).
+  const qidToCity = new Map();
+  for (const city of cities) {
+    const match = matches.get(city.id);
+    if (!match) continue;
+    if (qidToCity.has(match.qid)) {
+      rejectedDuplicateMatch.push({ a: qidToCity.get(match.qid), b: city.id, qid: match.qid });
+    } else {
+      qidToCity.set(match.qid, city.id);
+    }
+  }
+  if (rejectedDuplicateMatch.length > 0) {
+    console.log(`\n!!! WARNING: ${rejectedDuplicateMatch.length} cities matched the SAME Wikidata QID:`);
+    for (const r of rejectedDuplicateMatch) console.log(`  ${r.a} and ${r.b} both -> ${r.qid}`);
+  }
 
   console.log("\n--- Cross-check against hand-verified reference set ---");
   const merged = { ...existingCityNames, ...newCityNames };
@@ -377,6 +679,24 @@ async function main() {
 
   writeFileSync(OUT_PATH, JSON.stringify(merged, null, 2) + "\n");
   console.log(`Wrote ${OUT_PATH}`);
+}
+
+async function main() {
+  const allCities = JSON.parse(readFileSync(CITIES_PATH, "utf8"));
+  console.log(`Loaded ${allCities.length} cities.`);
+
+  let existingCityNames = {};
+  try {
+    existingCityNames = JSON.parse(readFileSync(OUT_PATH, "utf8"));
+  } catch {
+    // No existing file yet -- starting from scratch is fine.
+  }
+
+  if (VERIFY_MODE) {
+    await verifyMain(allCities, existingCityNames);
+  } else {
+    await expandMain(allCities, existingCityNames);
+  }
 }
 
 main().catch((err) => {
