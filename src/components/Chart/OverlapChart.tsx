@@ -6,6 +6,7 @@ import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getHourRow } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { findCommonBusinessWindow, formatWindowRange } from "@/lib/chartCalc";
 
 interface OverlapChartProps {
@@ -41,6 +42,7 @@ export default function OverlapChart({
   const referenceSlots = getHourRow(referenceCity.city.timezone, anchor, 24, locale);
   const nowIndex = referenceSlots.findIndex((s) => s.isNow);
   const hourLabelFormat = hourFormat === "24" ? "HH:mm" : "h a";
+  const referenceCityName = getLocalizedCityName(referenceCity.city, locale);
 
   return (
     <section aria-labelledby="overlap-heading">
@@ -57,7 +59,7 @@ export default function OverlapChart({
                 referenceCity.city.timezone,
                 hourFormat,
               ),
-              city: referenceCity.city.name,
+              city: referenceCityName,
             })
           : t("noOverlap")}
       </p>
@@ -103,7 +105,7 @@ export default function OverlapChart({
             >
               <div className="flex w-36 shrink-0 items-center gap-1.5 px-2 py-2 text-xs font-medium sm:w-44">
                 <span aria-hidden="true">{getFlagEmoji(comparedCity.city.countryCode)}</span>
-                <span className="truncate">{comparedCity.city.name}</span>
+                <span className="truncate">{getLocalizedCityName(comparedCity.city, locale)}</span>
                 {comparedCity.city.id === referenceCity.city.id && (
                   <span className="shrink-0 text-[10px] font-normal text-foreground/40">
                     {t("referenceBadge")}
@@ -117,7 +119,7 @@ export default function OverlapChart({
                     window !== null && i >= window.startIndex && i <= window.endIndex;
                   const referenceHour = referenceSlots[i]?.hour;
                   const isMidnightOrNoon = referenceHour === 0 || referenceHour === 12;
-                  const cellLabel = `${comparedCity.city.name}: ${DateTime.fromISO(
+                  const cellLabel = `${getLocalizedCityName(comparedCity.city, locale)}: ${DateTime.fromISO(
                     slot.isoString,
                   )
                     .setZone(comparedCity.city.timezone)

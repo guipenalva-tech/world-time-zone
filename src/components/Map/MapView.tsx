@@ -91,6 +91,7 @@ export default function MapView({ embedded = false }: MapViewProps) {
                 referenceCityId={referenceCityId}
                 now={now}
                 hourFormat={hourFormat}
+                locale={locale}
                 tooltipFormatter={(country, offset) => t("tooltip", { country, offset })}
                 ariaLabelFormatter={(city, time, offset) =>
                   t("markerAriaLabel", { city, time, offset })

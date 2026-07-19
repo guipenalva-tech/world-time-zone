@@ -6,6 +6,7 @@ import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
 import { formatOffset } from "@/lib/timezone";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import { project, WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT } from "./projection";
 
 interface CityMarkersProps {
@@ -13,6 +14,7 @@ interface CityMarkersProps {
   referenceCityId: string | null;
   now: DateTime;
   hourFormat: HourFormat;
+  locale: string;
   tooltipFormatter: (country: string, offset: string) => string;
   ariaLabelFormatter: (city: string, time: string, offset: string) => string;
 }
@@ -68,6 +70,7 @@ export default function CityMarkers({
   referenceCityId,
   now,
   hourFormat,
+  locale,
   tooltipFormatter,
   ariaLabelFormatter,
 }: CityMarkersProps) {
@@ -84,13 +87,15 @@ export default function CityMarkers({
         const isFocused = city.id === focusedId;
         const localTime = now.setZone(city.timezone).toFormat(timeFormat);
         const offset = formatOffset(city.timezone, now);
+        const cityName = getLocalizedCityName(city, locale);
+        const countryName = getLocalizedCountryName(city.countryCode, locale, city.country);
 
         return (
           <button
             key={city.id}
             type="button"
-            title={tooltipFormatter(city.country, offset)}
-            aria-label={ariaLabelFormatter(city.name, localTime, offset)}
+            title={tooltipFormatter(countryName, offset)}
+            aria-label={ariaLabelFormatter(cityName, localTime, offset)}
             onClick={() => setFocusedId((prev) => (prev === city.id ? null : city.id))}
             className="pointer-events-auto absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5"
             style={{ left: `${leftPct}%`, top: `${topPct}%`, zIndex: isFocused ? 20 : 10 }}
@@ -115,7 +120,7 @@ export default function CityMarkers({
               style={{ marginTop: labelOffset }}
             >
               <span>{getFlagEmoji(city.countryCode)}</span>
-              <span className="max-w-20 truncate font-medium">{city.name}</span>
+              <span className="max-w-20 truncate font-medium">{cityName}</span>
               <span className="font-mono tabular-nums opacity-80">{localTime}</span>
             </span>
           </button>

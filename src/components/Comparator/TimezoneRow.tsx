@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import { getZoneInfo, getHourRow } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import {
   formatLocalRange,
   getRangeBusinessStatus,
@@ -88,6 +89,8 @@ export default function TimezoneRow({
       ? getRangeBusinessStatus(city.timezone, selectionStart, selectionEnd)
       : null;
   const statusMeta = businessStatus ? BUSINESS_STATUS_META[businessStatus] : null;
+  const cityName = getLocalizedCityName(city, locale);
+  const countryName = getLocalizedCountryName(city.countryCode, locale, city.country);
 
   return (
     <div
@@ -111,7 +114,7 @@ export default function TimezoneRow({
         <button
           type="button"
           onPointerDown={onHandlePointerDown}
-          aria-label={t("reorder", { city: city.name })}
+          aria-label={t("reorder", { city: cityName })}
           className={`flex touch-none select-none items-center px-1 text-foreground/30 transition-colors hover:text-foreground/70 ${
             isDragging ? "cursor-grabbing text-foreground/70" : "cursor-grab"
           }`}
@@ -126,18 +129,18 @@ export default function TimezoneRow({
                 <span aria-hidden="true" className="mr-1">
                   {getFlagEmoji(city.countryCode)}
                 </span>
-                {city.name}
+                {cityName}
               </p>
               <p className="truncate text-xs text-foreground/50">
-                {city.country}
+                {countryName}
               </p>
             </div>
             <div className="flex shrink-0 flex-col">
               <button
                 type="button"
                 onClick={() => onRemove(city.id)}
-                aria-label={t("remove", { city: city.name })}
-                title={t("remove", { city: city.name })}
+                aria-label={t("remove", { city: cityName })}
+                title={t("remove", { city: cityName })}
                 className="rounded p-1 leading-none text-foreground/40 transition-colors hover:bg-surface hover:text-foreground"
               >
                 ×

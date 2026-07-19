@@ -1,10 +1,11 @@
 "use client";
 
 import { DateTime } from "luxon";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { computeHourDiff, formatHourDiff } from "@/lib/chartCalc";
 
 interface HourDifferenceBarsProps {
@@ -26,6 +27,7 @@ export default function HourDifferenceBars({
   hourFormat,
 }: HourDifferenceBarsProps) {
   const t = useTranslations("Chart");
+  const locale = useLocale();
   const timeFormat = hourFormat === "24" ? "HH:mm" : "h:mm a";
 
   const diffs = otherCities.map((c) => ({
@@ -35,6 +37,7 @@ export default function HourDifferenceBars({
   const maxAbs = Math.max(1, ...diffs.map((d) => Math.abs(d.diffHours)));
 
   const refLocal = now.setZone(referenceCity.city.timezone);
+  const referenceCityName = getLocalizedCityName(referenceCity.city, locale);
 
   return (
     <section aria-labelledby="hour-diff-heading">
@@ -42,7 +45,7 @@ export default function HourDifferenceBars({
         {t("hourDiffTitle")}
       </h2>
       <p className="mb-3 text-xs text-foreground/50">
-        {t("hourDiffSubtitle", { city: referenceCity.city.name })}
+        {t("hourDiffSubtitle", { city: referenceCityName })}
       </p>
 
       <div className="rounded-xl border border-border bg-surface/40 p-4">
@@ -50,7 +53,7 @@ export default function HourDifferenceBars({
           <span aria-hidden="true" className="text-lg">
             {getFlagEmoji(referenceCity.city.countryCode)}
           </span>
-          <span className="font-semibold">{referenceCity.city.name}</span>
+          <span className="font-semibold">{referenceCityName}</span>
           <span className="text-foreground/50">{t("referenceBadge")}</span>
           <span className="ml-auto font-mono tabular-nums text-foreground/70">
             {refLocal.toFormat(timeFormat)}
@@ -65,6 +68,7 @@ export default function HourDifferenceBars({
           <ul className="flex flex-col gap-2.5">
             {diffs.map(({ comparedCity, diffHours }) => {
               const { city } = comparedCity;
+              const cityName = getLocalizedCityName(city, locale);
               const localTime = now.setZone(city.timezone).toFormat(timeFormat);
               const isAhead = diffHours > 0.01;
               const isBehind = diffHours < -0.01;
@@ -85,18 +89,18 @@ export default function HourDifferenceBars({
                 <li key={city.id} className="flex items-center gap-3">
                   <div className="flex w-36 shrink-0 items-center gap-1.5 sm:w-44">
                     <span aria-hidden="true">{getFlagEmoji(city.countryCode)}</span>
-                    <span className="truncate text-sm font-medium">{city.name}</span>
+                    <span className="truncate text-sm font-medium">{cityName}</span>
                   </div>
 
                   <div
                     className="relative h-6 flex-1 rounded bg-border/30"
                     role="img"
                     aria-label={t("barAriaLabel", {
-                      city: city.name,
+                      city: cityName,
                       diff: label,
                       time: localTime,
                     })}
-                    title={`${city.name}: ${label}, ${localTime}`}
+                    title={`${cityName}: ${label}, ${localTime}`}
                   >
                     <div
                       className={`h-full rounded transition-[width] ${barColor}`}
