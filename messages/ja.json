@@ -87,7 +87,8 @@
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
     "about": "このサイトについて",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "time": "タイムゾーン"
   },
   "HourFormat": {
     "label": "時刻形式",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "{city}の現在時刻は？{offset}（{abbreviation}）",
     "metaDescription": "{city}（{country}）の現在のローカル時刻 — {offset}（{abbreviation}）。サマータイム情報、日の出・日の入り、主要都市との時差、天気、通貨、フライト概算。",
-    "breadcrumbTime": "タイムゾーン",
     "heading": "{city}の現在時刻は？",
     "timezoneLabel": "タイムゾーン",
     "populationLabel": "人口",

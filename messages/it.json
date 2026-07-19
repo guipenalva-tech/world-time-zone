@@ -87,7 +87,8 @@
     "privacy": "Informativa sulla privacy",
     "terms": "Termini di utilizzo",
     "about": "Chi siamo",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "time": "Fusi orari"
   },
   "HourFormat": {
     "label": "Formato ora",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "Che ora è a {city}? {offset} ({abbreviation})",
     "metaDescription": "Ora locale attuale a {city}, {country} — {offset} ({abbreviation}). Informazioni sull'ora legale, alba e tramonto, differenza oraria con le grandi città, meteo, valuta e stime di volo.",
-    "breadcrumbTime": "Fusi orari",
     "heading": "Che ora è a {city}?",
     "timezoneLabel": "Fuso orario",
     "populationLabel": "Popolazione",

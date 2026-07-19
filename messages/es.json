@@ -87,7 +87,8 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Uso",
     "about": "Acerca de",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "time": "Zonas horarias"
   },
   "HourFormat": {
     "label": "Formato de hora",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "¿Qué hora es en {city}? {offset} ({abbreviation})",
     "metaDescription": "Hora local actual en {city}, {country} — {offset} ({abbreviation}). Información de horario de verano, salida y puesta de sol, diferencia horaria con grandes ciudades, clima, moneda y estimaciones de vuelo.",
-    "breadcrumbTime": "Zonas horarias",
     "heading": "¿Qué hora es en {city}?",
     "timezoneLabel": "Zona horaria",
     "populationLabel": "Población",

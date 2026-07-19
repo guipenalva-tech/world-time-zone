@@ -87,7 +87,8 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "time": "Fuseaux horaires"
   },
   "HourFormat": {
     "label": "Format d'heure",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "Quelle heure est-il à {city} ? {offset} ({abbreviation})",
     "metaDescription": "Heure locale actuelle à {city}, {country} — {offset} ({abbreviation}). Infos sur l'heure d'été, lever et coucher du soleil, décalage horaire avec les grandes villes, météo, devise et estimations de vol.",
-    "breadcrumbTime": "Fuseaux horaires",
     "heading": "Quelle heure est-il à {city} ?",
     "timezoneLabel": "Fuseau horaire",
     "populationLabel": "Population",

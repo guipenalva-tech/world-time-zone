@@ -87,7 +87,8 @@
     "privacy": "Политика конфиденциальности",
     "terms": "Условия использования",
     "about": "О проекте",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "time": "Часовые пояса"
   },
   "HourFormat": {
     "label": "Формат времени",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "Который час в {city}? {offset} ({abbreviation})",
     "metaDescription": "Текущее местное время в {city}, {country} — {offset} ({abbreviation}). Информация о переходе на летнее время, восход и закат солнца, разница во времени с крупными городами, погода, валюта и оценка перелётов.",
-    "breadcrumbTime": "Часовые пояса",
     "heading": "Который час в {city}?",
     "timezoneLabel": "Часовой пояс",
     "populationLabel": "Население",

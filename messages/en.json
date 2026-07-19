@@ -87,7 +87,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "time": "Time Zones"
   },
   "HourFormat": {
     "label": "Time format",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "What time is it in {city}? {offset} ({abbreviation})",
     "metaDescription": "Current local time in {city}, {country} — {offset} ({abbreviation}). Daylight saving info, sunrise & sunset, time difference with major cities, weather, currency, and flight estimates.",
-    "breadcrumbTime": "Time Zones",
     "heading": "What time is it in {city}?",
     "timezoneLabel": "Time zone",
     "populationLabel": "Population",

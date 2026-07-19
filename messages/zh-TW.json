@@ -87,7 +87,8 @@
     "privacy": "隱私權政策",
     "terms": "使用條款",
     "about": "關於",
-    "contact": "聯絡我們"
+    "contact": "聯絡我們",
+    "time": "時區"
   },
   "HourFormat": {
     "label": "時間格式",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "{city}現在幾點？{offset}（{abbreviation}）",
     "metaDescription": "{city}（{country}）目前當地時間 — {offset}（{abbreviation}）。夏令時資訊、日出日落、與主要城市的時差、天氣、貨幣及航班預估。",
-    "breadcrumbTime": "時區",
     "heading": "{city}現在幾點？",
     "timezoneLabel": "時區",
     "populationLabel": "人口",

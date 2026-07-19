@@ -87,7 +87,8 @@
     "privacy": "गोपनीयता नीति",
     "terms": "उपयोग की शर्तें",
     "about": "परिचय",
-    "contact": "संपर्क"
+    "contact": "संपर्क",
+    "time": "समय क्षेत्र"
   },
   "HourFormat": {
     "label": "समय प्रारूप",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "{city} में अभी क्या समय है? {offset} ({abbreviation})",
     "metaDescription": "{city}, {country} में वर्तमान स्थानीय समय — {offset} ({abbreviation})। डेलाइट सेविंग टाइम की जानकारी, सूर्योदय और सूर्यास्त, प्रमुख शहरों के साथ समय का अंतर, मौसम, मुद्रा और उड़ान अनुमान।",
-    "breadcrumbTime": "समय क्षेत्र",
     "heading": "{city} में अभी क्या समय है?",
     "timezoneLabel": "समय क्षेत्र",
     "populationLabel": "जनसंख्या",

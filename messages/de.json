@@ -87,7 +87,8 @@
     "privacy": "Datenschutzerklärung",
     "terms": "Nutzungsbedingungen",
     "about": "Über uns",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "time": "Zeitzonen"
   },
   "HourFormat": {
     "label": "Zeitformat",
@@ -427,7 +428,6 @@
   "CityPage": {
     "metaTitle": "Wie spät ist es in {city}? {offset} ({abbreviation})",
     "metaDescription": "Aktuelle Ortszeit in {city}, {country} — {offset} ({abbreviation}). Infos zur Sommerzeit, Sonnenauf- und -untergang, Zeitunterschied zu wichtigen Städten, Wetter, Währung und Flugschätzungen.",
-    "breadcrumbTime": "Zeitzonen",
     "heading": "Wie spät ist es in {city}?",
     "timezoneLabel": "Zeitzone",
     "populationLabel": "Einwohnerzahl",
