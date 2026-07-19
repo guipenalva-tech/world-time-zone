@@ -20,8 +20,6 @@ import SettingsFab from "@/components/Settings/SettingsFab";
 import TimeQuestionInput from "@/components/Question/TimeQuestionInput";
 import AdBanner from "@/components/Ads/AdBanner";
 import LocationCard from "@/components/LocationCard/LocationCard";
-import HourDifferencePlaceholder from "@/components/Placeholders/HourDifferencePlaceholder";
-import WorldMapPlaceholder from "@/components/Placeholders/WorldMapPlaceholder";
 import TimezoneRow from "./TimezoneRow";
 
 export default function Comparator() {
@@ -383,11 +381,6 @@ export default function Comparator() {
             ))
           )}
         </div>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <HourDifferencePlaceholder />
-        <WorldMapPlaceholder />
       </div>
 
       <TimeQuestionInput />

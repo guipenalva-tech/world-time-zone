@@ -96,10 +96,6 @@
     "useAnotherCity": "Use another city"
   },
   "Placeholders": {
-    "hourDiffTitle": "Hour difference chart",
-    "hourDiffText": "A visual timeline of hour differences between your cities.",
-    "mapTitle": "World time zone map",
-    "mapText": "A live world map shows the day/night line and your compared cities.",
     "sunTitle": "Sunrise & sunset",
     "sunText": "Sunrise and sunset times for your cities are coming soon.",
     "alertsTitle": "Time zone alerts",

@@ -96,10 +96,6 @@
     "useAnotherCity": "Usar outra cidade"
   },
   "Placeholders": {
-    "hourDiffTitle": "Gráfico de diferença de horas",
-    "hourDiffText": "Uma linha do tempo visual com a diferença de horas entre suas cidades.",
-    "mapTitle": "Mapa múndi de fusos horários",
-    "mapText": "Um mapa múndi ao vivo mostra a linha do dia e da noite e suas cidades comparadas.",
     "sunTitle": "Nascer e pôr do sol",
     "sunText": "Os horários de nascer e pôr do sol das suas cidades chegam em breve.",
     "alertsTitle": "Alertas de fuso horário",

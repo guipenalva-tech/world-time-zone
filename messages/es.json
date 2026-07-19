@@ -96,10 +96,6 @@
     "useAnotherCity": "Usar otra ciudad"
   },
   "Placeholders": {
-    "hourDiffTitle": "Gráfico de diferencia horaria",
-    "hourDiffText": "Una línea de tiempo visual con la diferencia horaria entre tus ciudades.",
-    "mapTitle": "Mapa mundial de husos horarios",
-    "mapText": "Un mapa mundial en vivo muestra la línea de día y noche y tus ciudades comparadas.",
     "sunTitle": "Amanecer y atardecer",
     "sunText": "Los horarios de amanecer y atardecer de tus ciudades llegarán pronto.",
     "alertsTitle": "Alertas de huso horario",

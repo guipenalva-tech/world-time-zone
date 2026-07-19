@@ -96,10 +96,6 @@
     "useAnotherCity": "Utiliser une autre ville"
   },
   "Placeholders": {
-    "hourDiffTitle": "Graphique de décalage horaire",
-    "hourDiffText": "Une chronologie visuelle du décalage horaire entre vos villes.",
-    "mapTitle": "Carte mondiale des fuseaux horaires",
-    "mapText": "Une carte du monde en direct affiche la ligne jour/nuit et vos villes comparées.",
     "sunTitle": "Lever et coucher du soleil",
     "sunText": "Les heures de lever et coucher du soleil de vos villes arrivent bientôt.",
     "alertsTitle": "Alertes de fuseau horaire",

@@ -96,10 +96,6 @@
     "useAnotherCity": "Andere Stadt verwenden"
   },
   "Placeholders": {
-    "hourDiffTitle": "Zeitunterschied-Diagramm",
-    "hourDiffText": "Eine visuelle Zeitleiste der Stundenunterschiede zwischen deinen Städten.",
-    "mapTitle": "Weltkarte der Zeitzonen",
-    "mapText": "Eine Live-Weltkarte zeigt die Tag/Nacht-Grenze und deine verglichenen Städte.",
     "sunTitle": "Sonnenauf- und -untergang",
     "sunText": "Sonnenauf- und -untergangszeiten für deine Städte folgen bald.",
     "alertsTitle": "Zeitzonen-Benachrichtigungen",
