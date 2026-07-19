@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * Generator for src/data/cityNames.json -- locale-specific display names
- * for every city.json entry that Wikidata covers with high confidence.
- * NOT run at runtime (same pattern as scripts/build-world-map.mjs): the
- * output is committed and the app never calls Wikidata itself.
+ * Incremental generator for src/data/cityNames.json -- locale-specific
+ * display names for city.json entries, sourced from Wikidata where it
+ * has a confident match. NOT run at runtime (same pattern as
+ * scripts/build-world-map.mjs): the output is committed and the app
+ * never calls Wikidata itself.
  *
  * Why Wikidata instead of a hand-typed table: a manually-typed table for
  * 477 cities x 10 locales risks silently inventing a translation that
@@ -12,14 +13,35 @@
  * for the vast majority of cities in this dataset, maintained by human
  * editors in each language's own Wikipedia community.
  *
- * Pipeline:
+ * IMPORTANT -- rate limiting, read before re-running:
+ * Anonymous (unauthenticated, no bot flag) requests to the MediaWiki
+ * action API get a *much* lower burst allowance than this script's first
+ * draft assumed. An early run at concurrency=6 with no inter-request
+ * spacing got 429'd almost immediately, and even a corrected, fully
+ * serial run with a 400ms floor between requests still hit 429s with an
+ * escalating `Retry-After` (43s, then 56s, ...) -- i.e. the earlier burst
+ * appears to have put this IP in a cooldown window that a *slower* retry
+ * doesn't shorten. Practical consequence: this script is written to be
+ * run repeatedly over multiple short sessions rather than once
+ * end-to-end. Each run:
+ *   - loads the *existing* src/data/cityNames.json and only looks up
+ *     cities missing from it (so a hand-curated or previously-fetched
+ *     entry is never overwritten or re-requested),
+ *   - stops after CITY_LIMIT new cities (default 40 -- see below),
+ *   - merges its results into the existing file rather than replacing it.
+ * Run it again (same command) on a later day/session to cover more
+ * cities; each run's console output reports exactly how many are left.
+ * A registered Wikidata bot account/OAuth token would get a much higher
+ * rate limit if this ever needs to run to completion in one sitting.
+ *
+ * Pipeline (per run, over up to CITY_LIMIT not-yet-covered cities):
  *   1. Fetch every country item's ISO 3166-1 alpha-2 code (P297) once via
  *      SPARQL -- ~260 rows, used to check a candidate's country (P17)
  *      against city.countryCode. This is the strongest disambiguator:
  *      city *names* repeat constantly ("San Jose", "Springfield",
  *      "Alexandria", ...), so name-only matching is not safe.
- *   2. For each of the 477 cities, search Wikidata (wbsearchentities, en)
- *      for candidate items sharing its name.
+ *   2. Search Wikidata (wbsearchentities, en) for candidate items sharing
+ *      each city's name.
  *   3. Batch-fetch each candidate's P17 (country) + P625 (coordinates)
  *      via wbgetentities, keep candidates whose country matches
  *      city.countryCode, and pick the one whose coordinates are closest
@@ -35,7 +57,7 @@
  *      table (this script's REFERENCE_CHECK) and prints any divergence,
  *      as a sanity check on both sides.
  *
- * Run with: node scripts/build-city-names.mjs
+ * Run with: node scripts/build-city-names.mjs [--limit=40]
  */
 import { writeFileSync, readFileSync } from "node:fs";
 import path from "node:path";
@@ -68,7 +90,11 @@ const LOCALE_TO_WIKIDATA_LANG = {
 
 const MAX_DISTANCE_KM = 60;
 const SEARCH_LIMIT = 10;
-const CONCURRENCY = 6;
+// Strictly 1: `throttle()` serializes on a single shared timestamp with no
+// locking, so anything >1 here would let several workers race past it at
+// once (each reads the same "last call" time before any of them updates
+// it) and burst the API again -- exactly what caused the first run's 429s.
+const CONCURRENCY = 1;
 
 function haversineKm(lat1, lon1, lat2, lon2) {
   const R = 6371;
@@ -82,11 +108,41 @@ function haversineKm(lat1, lon1, lat2, lon2) {
   return 2 * R * Math.asin(Math.sqrt(a));
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Global pacing across every request this script makes (search, claims,
+ * and label fetches alike) -- the first run hammered the MediaWiki action
+ * API with 6-way concurrency and no inter-request spacing and got rate
+ * limited (429) into an unrecoverable crash partway through. Anonymous,
+ * unauthenticated API clients get a much lower burst allowance than a
+ * registered bot, so every call funnels through this single choke point
+ * regardless of which function issues it or how many run "concurrently". */
+const MIN_INTERVAL_MS = 1500;
+
+/** How many not-yet-covered cities a single run attempts, so a run stays
+ * a few minutes long instead of hours -- see the rate-limiting note in
+ * this file's header. Override with `--limit=N`. */
+const DEFAULT_CITY_LIMIT = 40;
+const limitArg = process.argv.find((a) => a.startsWith("--limit="));
+const CITY_LIMIT = limitArg ? Number(limitArg.slice("--limit=".length)) : DEFAULT_CITY_LIMIT;
+let lastCallAt = 0;
+async function throttle() {
+  const wait = lastCallAt + MIN_INTERVAL_MS - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastCallAt = Date.now();
+}
+
 async function fetchJson(url, attempt = 1) {
+  await throttle();
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, Accept: "application/json" } });
   if (!res.ok) {
-    if (res.status === 429 && attempt <= 3) {
-      await new Promise((r) => setTimeout(r, 1000 * attempt));
+    if (res.status === 429 && attempt <= 6) {
+      const retryAfterHeader = Number(res.headers.get("retry-after"));
+      const backoffMs = Number.isFinite(retryAfterHeader) && retryAfterHeader > 0
+        ? retryAfterHeader * 1000
+        : 2000 * attempt;
+      console.log(`  429, waiting ${backoffMs}ms (attempt ${attempt})...`);
+      await sleep(backoffMs);
       return fetchJson(url, attempt + 1);
     }
     throw new Error(`${res.status} ${res.statusText} for ${url}`);
@@ -133,19 +189,31 @@ async function searchCandidates(name) {
 
 async function fetchClaims(ids) {
   const out = new Map(); // QID -> { countryQid, lat, lon }
-  for (const group of chunk(ids, 50)) {
+  const groups = chunk(ids, 50);
+  let done = 0;
+  for (const group of groups) {
     if (group.length === 0) continue;
     const url = `${API}?action=wbgetentities&ids=${group.join("|")}&props=claims&format=json`;
-    const json = await fetchJson(url);
-    for (const [id, entity] of Object.entries(json.entities ?? {})) {
-      const countryQid = entity.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
-      const coord = entity.claims?.P625?.[0]?.mainsnak?.datavalue?.value;
-      out.set(id, {
-        countryQid,
-        lat: coord?.latitude,
-        lon: coord?.longitude,
-      });
+    try {
+      const json = await fetchJson(url);
+      for (const [id, entity] of Object.entries(json.entities ?? {})) {
+        const countryQid = entity.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
+        const coord = entity.claims?.P625?.[0]?.mainsnak?.datavalue?.value;
+        out.set(id, {
+          countryQid,
+          lat: coord?.latitude,
+          lon: coord?.longitude,
+        });
+      }
+    } catch (err) {
+      // A dropped chunk just means those candidates get no claims data ->
+      // they'll fail the country/distance check below and the affected
+      // cities fall back to the English name, same as a genuine no-match.
+      // Not worth crashing a 10-minute run over one bad chunk.
+      console.error(`  claims chunk failed (${group.length} ids): ${err.message}`);
     }
+    done += group.length;
+    console.log(`  claims: ${done}/${ids.length}`);
   }
   return out;
 }
@@ -153,17 +221,25 @@ async function fetchClaims(ids) {
 async function fetchLabels(ids) {
   const out = new Map(); // QID -> { lang: label }
   const langs = Object.values(LOCALE_TO_WIKIDATA_LANG).join("|");
-  for (const group of chunk(ids, 50)) {
+  const groups = chunk(ids, 50);
+  let done = 0;
+  for (const group of groups) {
     if (group.length === 0) continue;
     const url = `${API}?action=wbgetentities&ids=${group.join("|")}&props=labels&languages=${langs}&format=json`;
-    const json = await fetchJson(url);
-    for (const [id, entity] of Object.entries(json.entities ?? {})) {
-      const labels = {};
-      for (const [lang, entry] of Object.entries(entity.labels ?? {})) {
-        labels[lang] = entry.value;
+    try {
+      const json = await fetchJson(url);
+      for (const [id, entity] of Object.entries(json.entities ?? {})) {
+        const labels = {};
+        for (const [lang, entry] of Object.entries(entity.labels ?? {})) {
+          labels[lang] = entry.value;
+        }
+        out.set(id, labels);
       }
-      out.set(id, labels);
+    } catch (err) {
+      console.error(`  labels chunk failed (${group.length} ids): ${err.message}`);
     }
+    done += group.length;
+    console.log(`  labels: ${done}/${ids.length}`);
   }
   return out;
 }
@@ -184,21 +260,46 @@ const REFERENCE_CHECK = {
 };
 
 async function main() {
-  const cities = JSON.parse(readFileSync(CITIES_PATH, "utf8"));
-  console.log(`Loaded ${cities.length} cities.`);
+  const allCities = JSON.parse(readFileSync(CITIES_PATH, "utf8"));
+  console.log(`Loaded ${allCities.length} cities.`);
+
+  let existingCityNames = {};
+  try {
+    existingCityNames = JSON.parse(readFileSync(OUT_PATH, "utf8"));
+  } catch {
+    // No existing file yet -- starting from scratch is fine.
+  }
+  const alreadyCovered = new Set(Object.keys(existingCityNames));
+  const remaining = allCities.filter((c) => !alreadyCovered.has(c.id));
+  console.log(`${alreadyCovered.size} cities already have a name entry (kept as-is, not re-fetched).`);
+  console.log(`${remaining.length} cities remain uncovered.`);
+
+  const cities = remaining.slice(0, CITY_LIMIT);
+  if (cities.length === 0) {
+    console.log("Nothing to do this run -- every city is already covered.");
+    return;
+  }
+  console.log(`This run: looking up ${cities.length} of them (--limit=${CITY_LIMIT}).`);
 
   console.log("Fetching country QID -> ISO2 map...");
   const countryIsoByQid = await fetchCountryIsoMap();
   console.log(`  ${countryIsoByQid.size} countries.`);
 
   console.log(`Searching Wikidata for ${cities.length} city names (concurrency ${CONCURRENCY})...`);
+  let searchDone = 0;
   const searchResults = await mapPool(cities, CONCURRENCY, async (city) => {
+    let result;
     try {
-      return await searchCandidates(city.name);
+      result = await searchCandidates(city.name);
     } catch (err) {
       console.error(`  search failed for ${city.id}: ${err.message}`);
-      return [];
+      result = [];
     }
+    searchDone += 1;
+    if (searchDone % 25 === 0 || searchDone === cities.length) {
+      console.log(`  search: ${searchDone}/${cities.length}`);
+    }
+    return result;
   });
 
   const allCandidateIds = [...new Set(searchResults.flat())];
@@ -237,7 +338,7 @@ async function main() {
   console.log(`Fetching labels for ${matchedQidByCity.size} matched entities...`);
   const labelsByQid = await fetchLabels([...matchedQidByCity.values()]);
 
-  const cityNames = {};
+  const newCityNames = {};
   let totalLabelEntries = 0;
   for (const city of cities) {
     const qid = matchedQidByCity.get(city.id);
@@ -251,27 +352,31 @@ async function main() {
       }
     }
     if (Object.keys(entry).length > 0) {
-      cityNames[city.id] = entry;
+      newCityNames[city.id] = entry;
       totalLabelEntries += Object.keys(entry).length;
     }
   }
 
-  console.log(`\nCities with at least one localized name: ${Object.keys(cityNames).length}`);
-  console.log(`Total (city, locale) name entries: ${totalLabelEntries}`);
+  console.log(`\nNewly-covered cities this run: ${Object.keys(newCityNames).length} (of ${cities.length} attempted)`);
+  console.log(`New (city, locale) name entries: ${totalLabelEntries}`);
 
   console.log("\n--- Cross-check against hand-verified reference set ---");
+  const merged = { ...existingCityNames, ...newCityNames };
   for (const [cityId, expected] of Object.entries(REFERENCE_CHECK)) {
-    const got = cityNames[cityId] ?? {};
+    const got = merged[cityId] ?? {};
     for (const [locale, expectedName] of Object.entries(expected)) {
       const gotName = got[locale];
       if (gotName !== expectedName) {
-        console.log(`  DIVERGENCE ${cityId} [${locale}]: expected "${expectedName}", Wikidata gave ${gotName ? `"${gotName}"` : "(missing/same-as-English)"}`);
+        console.log(`  DIVERGENCE ${cityId} [${locale}]: expected "${expectedName}", got ${gotName ? `"${gotName}"` : "(missing/same-as-English)"}`);
       }
     }
   }
 
-  writeFileSync(OUT_PATH, JSON.stringify(cityNames, null, 2) + "\n");
-  console.log(`\nWrote ${OUT_PATH}`);
+  const stillRemaining = allCities.length - Object.keys(merged).length;
+  console.log(`\nTotal covered after this run: ${Object.keys(merged).length}/${allCities.length} (${stillRemaining} still fall back to English).`);
+
+  writeFileSync(OUT_PATH, JSON.stringify(merged, null, 2) + "\n");
+  console.log(`Wrote ${OUT_PATH}`);
 }
 
 main().catch((err) => {
