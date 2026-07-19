@@ -415,5 +415,18 @@
     "optionBalanced": "Ausgewogen",
     "fromTo": "{origin} nach {destination}",
     "needMoreCities": "Fügen Sie eine weitere Stadt zu Ihrem Vergleich hinzu, um Flugschätzungen zu sehen."
+  },
+  "HomeSections": {
+    "jumpNavLabel": "Zum Abschnitt springen",
+    "comparator": "Zeitzonenvergleich",
+    "map": "Karte",
+    "chart": "Diagramm",
+    "weather": "Wetter",
+    "sun": "Sonnenauf- und -untergang",
+    "currency": "Währung",
+    "flights": "Flüge",
+    "news": "Nachrichten",
+    "alerts": "Benachrichtigungen",
+    "allCountries": "Alle Länder"
   }
 }

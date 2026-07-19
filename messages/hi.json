@@ -415,5 +415,18 @@
     "optionBalanced": "संतुलित",
     "fromTo": "{origin} से {destination}",
     "needMoreCities": "उड़ान अनुमान देखने के लिए अपने तुलनाकर्ता में एक और शहर जोड़ें।"
+  },
+  "HomeSections": {
+    "jumpNavLabel": "सेक्शन पर जाएं",
+    "comparator": "समय क्षेत्र तुलनाकर्ता",
+    "map": "मानचित्र",
+    "chart": "ग्राफ़",
+    "weather": "मौसम",
+    "sun": "सूर्योदय और सूर्यास्त",
+    "currency": "मुद्रा",
+    "flights": "उड़ानें",
+    "news": "समाचार",
+    "alerts": "अलर्ट",
+    "allCountries": "सभी देश"
   }
 }

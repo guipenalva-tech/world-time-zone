@@ -14,7 +14,14 @@ import CountryNewsSection from "./CountryNewsSection";
  * come from Google News RSS via the /api/news proxy (see that route's
  * docstring for why a proxy is needed).
  */
-export default function NewsView() {
+interface NewsViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /news page is unchanged. */
+  embedded?: boolean;
+}
+
+export default function NewsView({ embedded = false }: NewsViewProps) {
   const locale = useLocale();
   const t = useTranslations("News");
   const cities = useComparatorStore((s) => s.cities);
@@ -22,11 +29,17 @@ export default function NewsView() {
   const groups = useMemo(() => groupCitiesByCountry(cities), [cities]);
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
-        <p className="text-sm text-foreground/60">{t("subtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
+          <p className="text-sm text-foreground/60">{t("subtitle")}</p>
+        </div>
+      )}
 
       {groups.length === 0 ? (
         <EmptyCitiesInvite />

@@ -415,5 +415,18 @@
     "optionBalanced": "Balanced",
     "fromTo": "{origin} to {destination}",
     "needMoreCities": "Add another city to your comparator to see flight estimates."
+  },
+  "HomeSections": {
+    "jumpNavLabel": "Jump to section",
+    "comparator": "Time Zone Comparator",
+    "map": "Map View",
+    "chart": "Chart View",
+    "weather": "Weather",
+    "sun": "Sunrise & Sunset",
+    "currency": "Currency",
+    "flights": "Flights",
+    "news": "News",
+    "alerts": "Alerts",
+    "allCountries": "All countries"
   }
 }

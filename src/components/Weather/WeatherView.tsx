@@ -6,13 +6,20 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
 import WeatherCard from "./WeatherCard";
 
+interface WeatherViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /weather page is unchanged. */
+  embedded?: boolean;
+}
+
 /**
  * Weather View (/weather): a card per compared city with current
  * conditions and a 7-day forecast, sourced from Open-Meteo (no API key).
  * Each card fetches independently, so one city's network error never
  * blanks out the rest of the grid.
  */
-export default function WeatherView() {
+export default function WeatherView({ embedded = false }: WeatherViewProps) {
   const locale = useLocale();
   const t = useTranslations("Weather");
   const cities = useComparatorStore((s) => s.cities);
@@ -23,11 +30,17 @@ export default function WeatherView() {
   );
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
-        <p className="text-sm text-foreground/60">{t("subtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
+          <p className="text-sm text-foreground/60">{t("subtitle")}</p>
+        </div>
+      )}
 
       {sortedCities.length === 0 ? (
         <EmptyCitiesInvite />

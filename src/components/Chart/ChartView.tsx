@@ -10,13 +10,20 @@ import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
 import HourDifferenceBars from "./HourDifferenceBars";
 import OverlapChart from "./OverlapChart";
 
+interface ChartViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /chart page is unchanged. */
+  embedded?: boolean;
+}
+
 /**
  * Chart View (/chart): hour-difference bars + 24h business-hours overlap,
  * both driven by the shared comparatorStore cities. The reference city
  * (used as the "0" baseline) defaults to the first city in the grid, with a
  * dropdown here to change it — page-local only, not persisted.
  */
-export default function ChartView() {
+export default function ChartView({ embedded = false }: ChartViewProps) {
   const locale = useLocale();
   const t = useTranslations("Chart");
   const cities = useComparatorStore((s) => s.cities);
@@ -53,11 +60,17 @@ export default function ChartView() {
     sortedCities.find((c) => c.city.id === referenceCityId) ?? sortedCities[0] ?? null;
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
-        <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
+          <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
+        </div>
+      )}
 
       {!referenceCity ? (
         <EmptyCitiesInvite />

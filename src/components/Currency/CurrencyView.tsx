@@ -18,7 +18,14 @@ const QUICK_AMOUNTS = [1, 10, 100, 1000, 10000];
  * Mirrors Chart View's "reference city" pattern but for currency instead
  * of time offset.
  */
-export default function CurrencyView() {
+interface CurrencyViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /currency page is unchanged. */
+  embedded?: boolean;
+}
+
+export default function CurrencyView({ embedded = false }: CurrencyViewProps) {
   const locale = useLocale();
   const luxonLocale = toLuxonLocale(locale);
   const t = useTranslations("Currency");
@@ -108,11 +115,17 @@ export default function CurrencyView() {
   }, [rates, luxonLocale]);
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
-        <p className="text-sm text-foreground/60">{t("subtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
+          <p className="text-sm text-foreground/60">{t("subtitle")}</p>
+        </div>
+      )}
 
       {sortedCities.length === 0 ? (
         <EmptyCitiesInvite />

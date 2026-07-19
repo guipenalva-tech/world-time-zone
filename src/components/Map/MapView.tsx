@@ -12,13 +12,20 @@ import CityMarkers from "./CityMarkers";
 import MapLegend from "./MapLegend";
 import { WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT } from "./projection";
 
+interface MapViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /map page is unchanged. */
+  embedded?: boolean;
+}
+
 /**
  * Map View (/map): a world map with a live day/night terminator and pins
  * for every city in the shared comparatorStore. Everything (terminator,
  * subsolar point, marker local times) recomputes once a minute from a
  * single `now` tick, so it all stays in sync.
  */
-export default function MapView() {
+export default function MapView({ embedded = false }: MapViewProps) {
   const locale = useLocale();
   const t = useTranslations("Map");
   const cities = useComparatorStore((s) => s.cities);
@@ -47,11 +54,17 @@ export default function MapView() {
   }, []);
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
-        <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
+          <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
+        </div>
+      )}
 
       {sortedCities.length === 0 ? (
         <EmptyCitiesInvite />

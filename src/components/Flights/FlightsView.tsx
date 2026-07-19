@@ -24,7 +24,14 @@ const FALLBACK_ORIGIN_ID = "london";
  * There's no paid flights API behind this — see src/lib/flightEstimate.ts
  * for the estimation formulas and the very visible DisclaimerBanner below.
  */
-export default function FlightsView() {
+interface FlightsViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /flights page is unchanged. */
+  embedded?: boolean;
+}
+
+export default function FlightsView({ embedded = false }: FlightsViewProps) {
   const t = useTranslations("Flights");
   const locale = useLocale();
   const cities = useComparatorStore((s) => s.cities);
@@ -73,11 +80,17 @@ export default function FlightsView() {
   }, [dateOption]);
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
-        <p className="text-sm text-foreground/60">{t("subtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("heading")}</h1>
+          <p className="text-sm text-foreground/60">{t("subtitle")}</p>
+        </div>
+      )}
 
       {cities.length === 0 ? (
         <EmptyCitiesInvite />

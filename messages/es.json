@@ -415,5 +415,18 @@
     "optionBalanced": "Equilibrado",
     "fromTo": "{origin} a {destination}",
     "needMoreCities": "Agrega otra ciudad a tu comparador para ver estimaciones de vuelo."
+  },
+  "HomeSections": {
+    "jumpNavLabel": "Ir a la sección",
+    "comparator": "Comparador de husos",
+    "map": "Mapa",
+    "chart": "Gráfico",
+    "weather": "Clima",
+    "sun": "Amanecer y atardecer",
+    "currency": "Moneda",
+    "flights": "Vuelos",
+    "news": "Noticias",
+    "alerts": "Alertas",
+    "allCountries": "Todos los países"
   }
 }

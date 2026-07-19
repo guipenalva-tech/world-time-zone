@@ -18,7 +18,14 @@ import SunCard from "./SunCard";
  * moon phase is computed once here and shared across every card so it's
  * globally coherent regardless of each city's own local calendar date.
  */
-export default function SunView() {
+interface SunViewProps {
+  /** Hides the page-level h1/subtitle when embedded on the home dashboard,
+   * which already shows a SectionHeader above this view. Defaults to false
+   * so the dedicated /sun page is unchanged. */
+  embedded?: boolean;
+}
+
+export default function SunView({ embedded = false }: SunViewProps) {
   const locale = useLocale();
   const t = useTranslations("Sun");
   const cities = useComparatorStore((s) => s.cities);
@@ -50,11 +57,17 @@ export default function SunView() {
   );
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 pb-24 pt-6 sm:px-6">
-      <div>
-        <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
-        <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
-      </div>
+    <div
+      className={`mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 px-4 sm:px-6 ${
+        embedded ? "" : "pb-24 pt-6"
+      }`}
+    >
+      {!embedded && (
+        <div>
+          <h1 className="text-2xl font-semibold sm:text-3xl">{t("pageTitle")}</h1>
+          <p className="text-sm text-foreground/60">{t("pageSubtitle")}</p>
+        </div>
+      )}
 
       {sortedCities.length === 0 ? (
         <EmptyCitiesInvite />

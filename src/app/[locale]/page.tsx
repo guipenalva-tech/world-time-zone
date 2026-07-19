@@ -1,5 +1,5 @@
-import Comparator from "@/components/Comparator/Comparator";
+import HomeDashboard from "@/components/Home/HomeDashboard";
 
 export default function Home() {
-  return <Comparator />;
+  return <HomeDashboard />;
 }
