@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
+import { groupCitiesByCountry } from "@/lib/newsGroups";
 import {
   ClockIcon,
   MapIcon,
@@ -26,6 +27,7 @@ import AlertsView from "@/components/Alerts/AlertsView";
 import JumpNav, { type JumpNavItem } from "./JumpNav";
 import SectionHeader from "./SectionHeader";
 import LazySection from "./LazySection";
+import NewsCountryFilter from "./NewsCountryFilter";
 
 const SECTION_ICON_CLASS = "h-4 w-4";
 
@@ -44,6 +46,21 @@ export default function HomeDashboard() {
     () => [...cities].sort((a, b) => a.order - b.order),
     [cities],
   );
+
+  const newsGroups = useMemo(() => groupCitiesByCountry(cities), [cities]);
+  const [newsCountryFilter, setNewsCountryFilter] = useState<string | null>(null);
+
+  // If the selected country's group disappears (its city was removed from
+  // the comparator), fall back to "All" rather than showing a filter chip
+  // that no longer exists.
+  useEffect(() => {
+    if (
+      newsCountryFilter &&
+      !newsGroups.some((g) => g.countryCode === newsCountryFilter)
+    ) {
+      setNewsCountryFilter(null);
+    }
+  }, [newsGroups, newsCountryFilter]);
 
   const jumpItems: JumpNavItem[] = [
     { id: "comparator", label: t("comparator"), icon: <ClockIcon className={SECTION_ICON_CLASS} /> },
@@ -98,8 +115,16 @@ export default function HomeDashboard() {
       </LazySection>
 
       <SectionHeader id="news" icon={<NewsIcon className="h-5 w-5" />} title={t("news")} cities={sortedCities} />
+      <div className="pt-3">
+        <NewsCountryFilter
+          groups={newsGroups}
+          value={newsCountryFilter}
+          onChange={setNewsCountryFilter}
+          allLabel={t("allCountries")}
+        />
+      </div>
       <LazySection minHeightClassName="min-h-[420px]">
-        <NewsView embedded />
+        <NewsView embedded countryFilter={newsCountryFilter} />
       </LazySection>
 
       <SectionHeader id="alerts" icon={<AlertsIcon className="h-5 w-5" />} title={t("alerts")} cities={sortedCities} />

@@ -19,14 +19,22 @@ interface NewsViewProps {
    * which already shows a SectionHeader above this view. Defaults to false
    * so the dedicated /news page is unchanged. */
   embedded?: boolean;
+  /** Narrows the sections shown to a single country (by ISO code), used by
+   * the home dashboard's country filter chips. null/undefined shows every
+   * compared country, same as the dedicated /news page. */
+  countryFilter?: string | null;
 }
 
-export default function NewsView({ embedded = false }: NewsViewProps) {
+export default function NewsView({ embedded = false, countryFilter = null }: NewsViewProps) {
   const locale = useLocale();
   const t = useTranslations("News");
   const cities = useComparatorStore((s) => s.cities);
 
   const groups = useMemo(() => groupCitiesByCountry(cities), [cities]);
+  const visibleGroups = useMemo(
+    () => (countryFilter ? groups.filter((g) => g.countryCode === countryFilter) : groups),
+    [groups, countryFilter],
+  );
 
   return (
     <div
@@ -50,7 +58,7 @@ export default function NewsView({ embedded = false }: NewsViewProps) {
           </p>
 
           <div className="flex flex-col gap-6">
-            {groups.map((group) => (
+            {visibleGroups.map((group) => (
               <CountryNewsSection key={group.countryCode} group={group} locale={locale} />
             ))}
           </div>
