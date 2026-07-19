@@ -8,9 +8,12 @@ import { locales, type AppLocale } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/siteUrl";
 import Header from "@/components/Layout/Header";
 import Breadcrumb from "@/components/Layout/Breadcrumb";
+import Footer from "@/components/Layout/Footer";
 import StoreHydrator from "@/components/App/StoreHydrator";
 import ThemeSync from "@/components/App/ThemeSync";
 import AlertScheduler from "@/components/App/AlertScheduler";
+import AdSenseLoader from "@/components/Ads/AdSenseLoader";
+import ConsentBanner from "@/components/Consent/ConsentBanner";
 import "../globals.css";
 
 /**
@@ -31,8 +34,6 @@ const THEME_INIT_SCRIPT = `
   } catch (e) {}
 })();
 `;
-
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -163,17 +164,11 @@ export default async function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* TODO(consent): gate this behind an LGPD/GDPR consent banner once
-            the deploy sprint adds one — AdSense personalized ads should not
-            fire before consent is collected in applicable regions. */}
-        {ADSENSE_CLIENT && (
-          <Script
-            id="adsbygoogle-init"
-            strategy="lazyOnload"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-          />
-        )}
+        {/* AdSense script only loads once the visitor has accepted cookies
+            via the consent banner below — see AdSenseLoader for the gate
+            and ConsentBanner/useConsentStore for the LGPD/GDPR consent
+            flow itself. */}
+        <AdSenseLoader />
         <NextIntlClientProvider>
           <StoreHydrator />
           <ThemeSync />
@@ -181,6 +176,8 @@ export default async function RootLayout({
           <Header />
           <Breadcrumb locale={locale as AppLocale} />
           {children}
+          <Footer />
+          <ConsentBanner />
         </NextIntlClientProvider>
       </body>
     </html>

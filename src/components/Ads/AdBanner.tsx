@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
+import { useConsentStore } from "@/stores/consentStore";
 
 declare global {
   interface Window {
@@ -54,14 +55,24 @@ interface AdBannerProps {
  * Without `NEXT_PUBLIC_ADSENSE_CLIENT` / the slot's own env var set (local
  * dev, previews, or before AdSense approval) it renders a discreet
  * placeholder instead of the real ad unit.
+ *
+ * Real AdSense gate: even fully configured, this never renders the live
+ * `<ins>` unit (nor pushes to `adsbygoogle`) until the visitor has
+ * accepted cookies via the consent banner (`useConsentStore`, see
+ * `src/components/Consent`) — LGPD/GDPR require no personalized-ad
+ * cookies before consent. The AdSense loader script itself is gated the
+ * same way in the root layout (`src/components/Ads/AdSenseLoader.tsx`),
+ * so nothing AdSense-related loads pre-consent even if this component
+ * somehow rendered its `<ins>` markup.
  */
 export default function AdBanner({ slot = "bottom" }: AdBannerProps) {
   const t = useTranslations("Ads");
   const insRef = useRef<HTMLModElement>(null);
   const pushedRef = useRef(false);
 
+  const consentStatus = useConsentStore((s) => s.status);
   const adSlotId = SLOT_IDS[slot];
-  const isConfigured = Boolean(ADSENSE_CLIENT && adSlotId);
+  const isConfigured = Boolean(ADSENSE_CLIENT && adSlotId && consentStatus === "accepted");
 
   useEffect(() => {
     if (!isConfigured) return;

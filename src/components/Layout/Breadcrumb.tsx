@@ -18,7 +18,11 @@ type PageKey =
   | "weather"
   | "currency"
   | "news"
-  | "flights";
+  | "flights"
+  | "privacy"
+  | "terms"
+  | "about"
+  | "contact";
 
 /** Maps a (locale-stripped) pathname to the current page's breadcrumb key. */
 function pageKeyFromPathname(pathname: string): PageKey {
@@ -39,6 +43,14 @@ function pageKeyFromPathname(pathname: string): PageKey {
       return "news";
     case "/flights":
       return "flights";
+    case "/privacy":
+      return "privacy";
+    case "/terms":
+      return "terms";
+    case "/about":
+      return "about";
+    case "/contact":
+      return "contact";
     default:
       return "comparator";
   }
@@ -54,6 +66,10 @@ const PAGE_PATH: Record<PageKey, string> = {
   currency: "/currency",
   news: "/news",
   flights: "/flights",
+  privacy: "/privacy",
+  terms: "/terms",
+  about: "/about",
+  contact: "/contact",
 };
 
 /**

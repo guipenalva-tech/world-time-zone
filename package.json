@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check:locales": "node scripts/check-locale-parity.mjs"
   },
   "dependencies": {
     "html-to-image": "^1.11.13",
