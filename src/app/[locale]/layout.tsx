@@ -52,6 +52,11 @@ const OG_LOCALES: Record<AppLocale, string> = {
   fr: "fr_FR",
   de: "de_DE",
   hi: "hi_IN",
+  it: "it_IT",
+  ru: "ru_RU",
+  "zh-CN": "zh_CN",
+  "zh-TW": "zh_TW",
+  ja: "ja_JP",
 };
 
 export function generateStaticParams() {

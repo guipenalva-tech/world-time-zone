@@ -1,0 +1,428 @@
+{
+  "Metadata": {
+    "title": "Fusi orari nel mondo — Confronta gli orari e pianifica riunioni",
+    "description": "Confronta i fusi orari nel mondo e trova il momento migliore per una riunione, ovunque si trovi il tuo team."
+  },
+  "Comparator": {
+    "title": "Fusi Orari nel Mondo",
+    "subtitle": "Confronta i fusi orari nel mondo e trova il momento migliore per una riunione, ovunque si trovi il tuo team.",
+    "selectedBadge": "{hours}h selezionate",
+    "clearSelection": "Cancella selezione",
+    "referenceDateTime": "Data e ora di riferimento",
+    "now": "Adesso",
+    "emptyState": "Aggiungi una città con il pulsante + per iniziare a confrontare i fusi orari.",
+    "reorder": "Riordina {city}",
+    "remove": "Rimuovi {city}",
+    "addTimeZone": "Aggiungi fuso orario",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "Azioni",
+    "addCity": "Aggiungi città",
+    "copyPng": "Copia PNG",
+    "downloadPng": "Scarica PNG",
+    "downloadPdf": "Scarica PDF",
+    "shareLink": "Condividi link",
+    "toastCopied": "Copiato negli appunti",
+    "toastCopyFallback": "Scaricato (appunti non disponibili)",
+    "toastPngDownloaded": "PNG scaricato",
+    "toastPdfDownloaded": "PDF scaricato",
+    "toastLinkCopied": "Link copiato",
+    "toastExportError": "Impossibile esportare l'immagine",
+    "toastExportPdfError": "Impossibile esportare il PDF",
+    "toastShareError": "Impossibile copiare il link"
+  },
+  "BusinessStatus": {
+    "business": "Orario di lavoro",
+    "partial": "Parzialmente fuori",
+    "outside": "Fuori dall'orario di lavoro",
+    "conflictSuffix": "fuori dall'orario di lavoro"
+  },
+  "AddCity": {
+    "dialogLabel": "Aggiungi una città",
+    "heading": "Aggiungi una città",
+    "searchPlaceholder": "Aggiungi una città..."
+  },
+  "NotFound": {
+    "title": "404 — Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste.",
+    "backHome": "Torna alla home"
+  },
+  "ErrorPage": {
+    "title": "Qualcosa è andato storto",
+    "description": "Si è verificato un errore imprevisto. Puoi riprovare.",
+    "retry": "Riprova"
+  },
+  "Settings": {
+    "openLabel": "Impostazioni",
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "hourFormat": "Formato ora",
+    "theme": "Tema"
+  },
+  "Ads": {
+    "label": "Pubblicità",
+    "placeholder": "Spazio pubblicitario"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "Cerca",
+    "menuToggle": "Altre opzioni",
+    "hourFormatLabel": "Formato ora",
+    "languageLabel": "Lingua",
+    "themeLabel": "Tema",
+    "cityAdded": "{city} aggiunta"
+  },
+  "Breadcrumb": {
+    "home": "Home",
+    "comparator": "Confronto fusi orari",
+    "chart": "Grafico",
+    "map": "Mappa",
+    "sun": "Alba e tramonto",
+    "alerts": "Avvisi",
+    "weather": "Meteo",
+    "currency": "Valuta",
+    "news": "Notizie",
+    "flights": "Voli"
+  },
+  "HourFormat": {
+    "label": "Formato ora",
+    "format12": "12h",
+    "format24": "24h"
+  },
+  "LocationCard": {
+    "title": "Il tuo orario locale",
+    "dst": "Ora legale",
+    "useAnotherCity": "Usa un'altra città"
+  },
+  "Placeholders": {
+    "sunTitle": "Alba e tramonto",
+    "sunText": "Gli orari di alba e tramonto per le tue città arriveranno presto.",
+    "alertsTitle": "Avvisi sui fusi orari",
+    "alertsText": "Avvisi personalizzati per orari di riunione e cambi di fuso orario in arrivo.",
+    "comingSoon": "In arrivo",
+    "viewPage": "Vai alla pagina →"
+  },
+  "Theme": {
+    "system": "Sistema",
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "toggle": "Cambia tema (attuale: {current})"
+  },
+  "Nav": {
+    "home": "Fusi Orari nel Mondo",
+    "chart": "Grafico",
+    "map": "Mappa",
+    "sun": "Alba e tramonto",
+    "alerts": "Avvisi",
+    "weather": "Meteo",
+    "currency": "Valuta",
+    "news": "Notizie",
+    "flights": "Voli",
+    "more": "Altro"
+  },
+  "NavCustomize": {
+    "openLabel": "Personalizza la navigazione",
+    "title": "Personalizza la navigazione",
+    "description": "Trascina per riordinare, oppure usa i pulsanti freccia. Le modifiche si applicano subito.",
+    "moveUp": "Sposta {item} in su",
+    "moveDown": "Sposta {item} in giù",
+    "dragHandle": "Riordina {item}",
+    "resetDefault": "Ripristina predefiniti",
+    "done": "Fine"
+  },
+  "EmptyCities": {
+    "title": "Aggiungi città per iniziare",
+    "text": "Questa pagina usa le città del tuo comparatore. Aggiungine alcune nella home per vederla in azione.",
+    "cta": "Aggiungi città nel comparatore"
+  },
+  "PageMeta": {
+    "chartTitle": "Grafico — Differenze orarie e sovrapposizione 24h",
+    "chartDescription": "Visualizza barre di differenza oraria e un grafico di sovrapposizione dell'orario di lavoro su 24h per le città confrontate.",
+    "mapTitle": "Mappa — mappa mondiale dei fusi orari",
+    "mapDescription": "Una mappa mondiale interattiva con la linea giorno/notte in tempo reale per le tue città confrontate.",
+    "sunTitle": "Alba e tramonto — orari per le tue città",
+    "sunDescription": "Alba, tramonto, crepuscolo, ora dorata e fase lunare per le città confrontate.",
+    "alertsTitle": "Avvisi — notifiche sui fusi orari",
+    "alertsDescription": "Avvisi personalizzati per orari di riunione e cambi di fuso orario — in arrivo."
+  },
+  "Chart": {
+    "pageTitle": "Grafico",
+    "pageSubtitle": "Differenze orarie e la miglior finestra di sovrapposizione per le riunioni tra le tue città confrontate.",
+    "referenceLabel": "Città di riferimento",
+    "hourDiffTitle": "Differenza oraria",
+    "hourDiffSubtitle": "Rispetto a {city}",
+    "referenceBadge": "(riferimento)",
+    "needMoreCities": "Aggiungi un'altra città per vedere le differenze orarie.",
+    "sameTime": "Stesso orario",
+    "barAriaLabel": "{city} è {diff} rispetto al riferimento, ora locale {time}",
+    "overlapTitle": "Sovrapposizione 24h",
+    "bestWindow": "Finestra migliore: {range} (ora di {city})",
+    "noOverlap": "Nessuna sovrapposizione dell'orario di lavoro tra tutte le città.",
+    "businessHour": "orario di lavoro",
+    "nonBusinessHour": "fuori dall'orario di lavoro"
+  },
+  "Map": {
+    "pageTitle": "Mappa",
+    "pageSubtitle": "Una mappa in tempo reale con la linea giorno/notte e indicatori per le tue città confrontate.",
+    "legendDay": "Giorno",
+    "legendNight": "Notte",
+    "legendSubsolar": "Sole allo zenit",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}, {time} ({offset})"
+  },
+  "Sun": {
+    "pageTitle": "Alba e tramonto",
+    "pageSubtitle": "Alba, tramonto, crepuscolo, ora dorata e fase lunare per le tue città confrontate.",
+    "filtersLabel": "Mostra sulle schede",
+    "filterGoldenHour": "Ora dorata",
+    "filterTwilight": "Crepuscolo",
+    "filterMoonPhase": "Fase lunare",
+    "sunrise": "Alba",
+    "sunset": "Tramonto",
+    "dayLength": "Durata del giorno",
+    "dayLengthValue": "{hours}h {minutes}min",
+    "solarNoon": "Mezzogiorno solare",
+    "goldenHourMorning": "Mattina",
+    "goldenHourEvening": "Sera",
+    "civilTwilight": "Civile",
+    "nauticalTwilight": "Nautico",
+    "astronomicalTwilight": "Astronomico",
+    "dayArcSunNow": "Sole ora",
+    "dayArcElevation": "{degrees}° di elevazione",
+    "dayArcGoldenMorning": "Ora dorata del mattino",
+    "dayArcGoldenEvening": "Ora dorata della sera",
+    "dayArcTwilightMorning": "Crepuscolo del mattino",
+    "dayArcTwilightEvening": "Crepuscolo della sera",
+    "dayArcMidnight": "Mezzanotte",
+    "moonPhase": "Fase lunare",
+    "illuminated": "{percent}% illuminata",
+    "nextFullMoon": "Prossima luna piena {date}",
+    "nextNewMoon": "Prossima luna nuova {date}",
+    "sunNeverSets": "Il sole non tramonta oggi",
+    "sunNeverRises": "Il sole non sorge oggi",
+    "moonPhaseNames": {
+      "newMoon": "Luna nuova",
+      "waxingCrescent": "Luna crescente",
+      "firstQuarter": "Primo quarto",
+      "waxingGibbous": "Gibbosa crescente",
+      "fullMoon": "Luna piena",
+      "waningGibbous": "Gibbosa calante",
+      "lastQuarter": "Ultimo quarto",
+      "waningCrescent": "Luna calante"
+    }
+  },
+  "Alerts": {
+    "pageTitle": "Avvisi",
+    "pageSubtitle": "Ricevi notifiche su cambi dell'ora legale, orari specifici all'estero e fine dell'orario di lavoro — tutto lato client, direttamente in questa scheda.",
+    "limitationNotice": "Gli avvisi funzionano solo finché questo sito resta aperto in una scheda del browser.",
+    "toggleOn": "Attivo",
+    "toggleOff": "Disattivo",
+    "permission": {
+      "default": "Attiva le notifiche per essere avvisato anche quando questa scheda non è in primo piano.",
+      "enableButton": "Attiva notifiche",
+      "granted": "Le notifiche sono attive — riceverai un avviso di sistema più un messaggio nell'app.",
+      "deniedTitle": "Notifiche bloccate",
+      "denied": "Questo browser sta bloccando le notifiche per questo sito. Vedrai comunque i messaggi nell'app finché la scheda resta aperta.",
+      "unsupported": "Questo browser non supporta le notifiche. Vedrai comunque i messaggi nell'app finché la scheda resta aperta."
+    },
+    "dst": {
+      "sectionTitle": "Cambi dell'ora legale",
+      "sectionSubtitle": "Rilevati automaticamente per ogni città che stai confrontando.",
+      "noChange": "Nessun cambio programmato",
+      "notifyToggle": "Avvisami",
+      "springForward": "Avanti di 1h — inizia l'ora legale",
+      "fallBack": "Indietro di 1h — finisce l'ora legale",
+      "at": "{date} alle {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "Sveglia per città",
+      "sectionSubtitle": "Ricevi un avviso nel momento esatto in cui è un orario specifico da qualche parte.",
+      "cityLabel": "Città",
+      "fromCompared": "Dalle tue città confrontate",
+      "searchAny": "Oppure cerca qualsiasi città",
+      "timeLabel": "Orario",
+      "repeatOnce": "Una volta",
+      "repeatDaily": "Ogni giorno",
+      "addButton": "Aggiungi sveglia",
+      "emptyState": "Nessuna sveglia per città ancora — aggiungine una sopra.",
+      "firesIn": "Suona tra {duration}",
+      "completed": "Già suonata — sveglia singola",
+      "edit": "Modifica",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "delete": "Elimina",
+      "deleteAriaLabel": "Elimina la sveglia per {city}",
+      "chooseCityFirst": "Scegli una città per impostare una sveglia."
+    },
+    "businessHours": {
+      "sectionTitle": "Fine dell'orario di lavoro",
+      "sectionSubtitle": "Un avviso prima che finisca l'orario di lavoro locale (9–18), ogni giorno feriale.",
+      "cityLabel": "Città",
+      "leadLabel": "Preavviso",
+      "addButton": "Aggiungi avviso",
+      "emptyState": "Nessun avviso sull'orario di lavoro ancora — aggiungine uno sopra.",
+      "firesIn": "Suona tra {duration}",
+      "delete": "Elimina",
+      "deleteAriaLabel": "Elimina l'avviso sull'orario di lavoro per {city}",
+      "leadOptions": {
+        "15": "15 min",
+        "30": "30 min",
+        "45": "45 min",
+        "60": "1h",
+        "120": "2h",
+        "180": "3h",
+        "240": "4h",
+        "300": "5h",
+        "360": "6h",
+        "420": "7h"
+      }
+    },
+    "duration": {
+      "days": "{count}g {hours}h",
+      "hoursMinutes": "{hours}h {minutes}min",
+      "minutes": "{minutes}min",
+      "lessThanMinute": "< 1 min"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "va avanti",
+        "fallBack": "va indietro"
+      },
+      "dstReminderTitle": "Cambio dell'ora domani",
+      "dstReminderBody": "{city} {direction} domani, {date} alle {time}.",
+      "dstMomentTitle": "Cambio dell'ora ora",
+      "dstMomentBody": "{city} {direction} ora.",
+      "cityAlarmTitle": "Sveglia",
+      "cityAlarmBody": "Sono le {time} a {city}.",
+      "businessHoursTitle": "L'orario di lavoro sta per finire",
+      "businessHoursBody": "L'orario di lavoro a {city} finisce tra {lead}, alle {time} locali."
+    }
+  },
+  "TimeQuestion": {
+    "placeholder": "Chiedi un orario... es. \"che ore sono a Tokyo?\"",
+    "ariaLabel": "Fai una domanda sui fusi orari",
+    "submit": "Chiedi",
+    "answerCurrent": "Sono le {time} a {city}.",
+    "answerConvert": "Quando sono le {sourceTime} a {sourceCity}, sono le {targetTime} a {targetCity}.",
+    "answerDifferenceAhead": "{cityA} è {hours}h avanti rispetto a {cityB}.",
+    "answerDifferenceBehind": "{cityA} è {hours}h indietro rispetto a {cityB}.",
+    "answerDifferenceSame": "{cityA} e {cityB} hanno lo stesso orario.",
+    "addToComparator": "Aggiungi al comparatore",
+    "added": "Aggiunta al comparatore",
+    "unmatchedTitle": "Non ho capito bene.",
+    "unmatchedHint": "Prova una di queste:",
+    "examples": [
+      "Che ore sono a Tokyo?",
+      "Che ore sono a Tokyo quando sono le 15 a San Paolo?",
+      "Differenza oraria tra Londra e New York"
+    ]
+  },
+  "Weather": {
+    "title": "Meteo — previsioni per le tue città confrontate",
+    "description": "Condizioni attuali e previsioni per le città nel tuo comparatore — in arrivo.",
+    "heading": "Meteo",
+    "subtitle": "Condizioni attuali e previsioni per le tue città confrontate.",
+    "comingSoonTitle": "Previsioni meteo",
+    "comingSoonText": "Condizioni meteo in tempo reale e previsioni per le tue città in arrivo.",
+    "feelsLike": "Percepita",
+    "humidity": "Umidità",
+    "wind": "Vento",
+    "forecast7Day": "Previsioni a 7 giorni",
+    "retry": "Riprova",
+    "errorText": "Impossibile caricare il meteo per questa città.",
+    "conditions": {
+      "clear": "Cielo sereno",
+      "partlyCloudy": "Parzialmente nuvoloso",
+      "cloudy": "Nuvoloso",
+      "fog": "Nebbia",
+      "rain": "Pioggia",
+      "snow": "Neve",
+      "storm": "Temporale"
+    }
+  },
+  "Currency": {
+    "title": "Valuta — tassi di cambio per le tue città confrontate",
+    "description": "Tassi di cambio in tempo reale e conversione valuta per i paesi nel tuo comparatore — in arrivo.",
+    "heading": "Valuta",
+    "subtitle": "Tassi di cambio e conversione valuta per le tue città confrontate.",
+    "comingSoonTitle": "Tassi di cambio",
+    "comingSoonText": "Tassi di cambio in tempo reale e un convertitore di valuta per le tue città in arrivo.",
+    "baseCurrencyLabel": "Valuta base",
+    "baseCurrency": "Valuta base",
+    "amountLabel": "Importo",
+    "customAmountPlaceholder": "Importo personalizzato",
+    "loading": "Caricamento tassi di cambio…",
+    "errorTitle": "Impossibile caricare i tassi di cambio",
+    "errorText": "Qualcosa è andato storto nel contattare il servizio di cambio. Riprova.",
+    "retry": "Riprova",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "Conversione non disponibile per questa valuta",
+    "updated": "Tassi aggiornati il {date}",
+    "disclaimer": "Dati dalla Banca Centrale Europea tramite Frankfurter — non garantiti per transazioni finanziarie reali."
+  },
+  "News": {
+    "title": "Notizie — titoli locali per le tue città confrontate",
+    "description": "Titoli di notizie locali per le città e i paesi nel tuo comparatore — in arrivo.",
+    "heading": "Notizie",
+    "subtitle": "Titoli locali per le tue città confrontate.",
+    "comingSoonTitle": "Notizie locali",
+    "comingSoonText": "Titoli di notizie locali per le tue città in arrivo.",
+    "disclaimer": "Aggregato da Google News — verifica le fonti ufficiali prima di viaggiare.",
+    "errorText": "Impossibile caricare le notizie in questo momento.",
+    "retry": "Riprova",
+    "emptyText": "Nessuna notizia rilevante al momento.",
+    "count": "{count} notizie",
+    "expand": "Espandi",
+    "collapse": "Comprimi",
+    "badge": {
+      "disaster": "Disastro",
+      "warning": "Allerta",
+      "disruption": "Disservizio"
+    }
+  },
+  "Flights": {
+    "title": "Voli — prezzi e durate stimati per le tue città confrontate",
+    "description": "Prezzi e durate di volo stimati in base alla distanza tra le città nel tuo comparatore.",
+    "heading": "Voli",
+    "subtitle": "Prezzi e durate di volo stimati per le tue città confrontate.",
+    "comingSoonTitle": "Voli",
+    "comingSoonText": "Rotte, durate e stato dei voli tra le tue città in arrivo.",
+    "disclaimerTitle": "Stime, non tariffe reali",
+    "disclaimerText": "Prezzi e durate sono calcolati in base a distanza e data — non sono preventivi reali di alcuna compagnia aerea. Usali solo per una pianificazione approssimativa.",
+    "originLabel": "Da",
+    "changeOrigin": "Cambia",
+    "dateLabel": "Partenza",
+    "dateToday": "Oggi",
+    "dateTomorrow": "Domani",
+    "date48h": "48h",
+    "date1Week": "1 settimana",
+    "date2Weeks": "2 settimane",
+    "date3Weeks": "3 settimane",
+    "date1Month": "1 mese",
+    "distanceKm": "{km} km",
+    "durationValue": "{hours}h {minutes}min",
+    "direct": "Diretto",
+    "oneStop": "1 scalo",
+    "stopsCount": "{count} scali",
+    "optionFastest": "Più veloce",
+    "optionCheapest": "Più economica",
+    "optionBalanced": "Bilanciata",
+    "fromTo": "Da {origin} a {destination}",
+    "needMoreCities": "Aggiungi un'altra città al tuo comparatore per vedere le stime di volo."
+  },
+  "HomeSections": {
+    "jumpNavLabel": "Vai alla sezione",
+    "comparator": "Comparatore di Fusi Orari",
+    "map": "Mappa",
+    "chart": "Grafico",
+    "weather": "Meteo",
+    "sun": "Alba e tramonto",
+    "currency": "Valuta",
+    "flights": "Voli",
+    "news": "Notizie",
+    "alerts": "Avvisi",
+    "allCountries": "Tutti i paesi"
+  }
+}

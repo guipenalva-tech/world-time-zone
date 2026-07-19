@@ -1,0 +1,428 @@
+{
+  "Metadata": {
+    "title": "世界のタイムゾーン — 時差を比較して会議の予定を立てる",
+    "description": "世界各地のタイムゾーンを比較して、チームがどこにいても最適なミーティング時間を見つけましょう。"
+  },
+  "Comparator": {
+    "title": "世界のタイムゾーン",
+    "subtitle": "世界各地のタイムゾーンを比較して、チームがどこにいても最適なミーティング時間を見つけましょう。",
+    "selectedBadge": "{hours}時間を選択中",
+    "clearSelection": "選択をクリア",
+    "referenceDateTime": "基準日時",
+    "now": "現在",
+    "emptyState": "「+」ボタンで都市を追加すると、タイムゾーンの比較を始められます。",
+    "reorder": "{city}を並べ替え",
+    "remove": "{city}を削除",
+    "addTimeZone": "タイムゾーンを追加",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "操作",
+    "addCity": "都市を追加",
+    "copyPng": "PNGをコピー",
+    "downloadPng": "PNGをダウンロード",
+    "downloadPdf": "PDFをダウンロード",
+    "shareLink": "リンクを共有",
+    "toastCopied": "クリップボードにコピーしました",
+    "toastCopyFallback": "ダウンロードしました（クリップボードが使用できません）",
+    "toastPngDownloaded": "PNGをダウンロードしました",
+    "toastPdfDownloaded": "PDFをダウンロードしました",
+    "toastLinkCopied": "リンクをコピーしました",
+    "toastExportError": "画像を書き出せませんでした",
+    "toastExportPdfError": "PDFを書き出せませんでした",
+    "toastShareError": "リンクをコピーできませんでした"
+  },
+  "BusinessStatus": {
+    "business": "営業時間内",
+    "partial": "一部が営業時間外",
+    "outside": "営業時間外",
+    "conflictSuffix": "営業時間外"
+  },
+  "AddCity": {
+    "dialogLabel": "都市を追加",
+    "heading": "都市を追加",
+    "searchPlaceholder": "都市を追加…"
+  },
+  "NotFound": {
+    "title": "404 — ページが見つかりません",
+    "description": "お探しのページは存在しません。",
+    "backHome": "ホームに戻る"
+  },
+  "ErrorPage": {
+    "title": "問題が発生しました",
+    "description": "予期しないエラーが発生しました。もう一度お試しください。",
+    "retry": "再試行"
+  },
+  "Settings": {
+    "openLabel": "設定",
+    "title": "設定",
+    "language": "言語",
+    "hourFormat": "時刻形式",
+    "theme": "テーマ"
+  },
+  "Ads": {
+    "label": "広告",
+    "placeholder": "広告枠"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "検索",
+    "menuToggle": "その他のオプション",
+    "hourFormatLabel": "時刻形式",
+    "languageLabel": "言語",
+    "themeLabel": "テーマ",
+    "cityAdded": "{city}を追加しました"
+  },
+  "Breadcrumb": {
+    "home": "ホーム",
+    "comparator": "タイムゾーン比較",
+    "chart": "チャート表示",
+    "map": "マップ表示",
+    "sun": "日の出・日の入り",
+    "alerts": "アラート",
+    "weather": "天気",
+    "currency": "通貨",
+    "news": "ニュース",
+    "flights": "フライト"
+  },
+  "HourFormat": {
+    "label": "時刻形式",
+    "format12": "12時間表記",
+    "format24": "24時間表記"
+  },
+  "LocationCard": {
+    "title": "現在地の時刻",
+    "dst": "夏時間",
+    "useAnotherCity": "別の都市を使う"
+  },
+  "Placeholders": {
+    "sunTitle": "日の出・日の入り",
+    "sunText": "各都市の日の出・日の入り時刻は近日公開予定です。",
+    "alertsTitle": "タイムゾーンのアラート",
+    "alertsText": "ミーティング時刻やタイムゾーン変更のカスタムアラートは近日公開予定です。",
+    "comingSoon": "近日公開",
+    "viewPage": "ページを見る →"
+  },
+  "Theme": {
+    "system": "システム",
+    "light": "ライト",
+    "dark": "ダーク",
+    "toggle": "テーマを切り替え（現在：{current}）"
+  },
+  "Nav": {
+    "home": "世界のタイムゾーン",
+    "chart": "チャート表示",
+    "map": "マップ表示",
+    "sun": "日の出・日の入り",
+    "alerts": "アラート",
+    "weather": "天気",
+    "currency": "通貨",
+    "news": "ニュース",
+    "flights": "フライト",
+    "more": "もっと見る"
+  },
+  "NavCustomize": {
+    "openLabel": "ナビゲーションをカスタマイズ",
+    "title": "ナビゲーションをカスタマイズ",
+    "description": "ドラッグして並べ替えるか、矢印ボタンを使用してください。変更はすぐに反映されます。",
+    "moveUp": "{item}を上に移動",
+    "moveDown": "{item}を下に移動",
+    "dragHandle": "{item}を並べ替え",
+    "resetDefault": "デフォルトに戻す",
+    "done": "完了"
+  },
+  "EmptyCities": {
+    "title": "都市を追加して始めましょう",
+    "text": "このページは比較機能に追加した都市を使用します。ホーム画面でいくつか都市を追加すると、実際の動作を確認できます。",
+    "cta": "比較機能で都市を追加"
+  },
+  "PageMeta": {
+    "chartTitle": "チャート表示 — 時差と24時間の重なり",
+    "chartDescription": "比較中の都市について、時差の棒グラフと24時間の営業時間重なりチャートを表示します。",
+    "mapTitle": "マップ表示 — 世界のタイムゾーンマップ",
+    "mapDescription": "比較中の都市とともに、リアルタイムの昼夜境界線を表示するインタラクティブな世界地図です。",
+    "sunTitle": "日の出・日の入り — 各都市の時刻",
+    "sunDescription": "比較中の都市について、日の出、日の入り、薄明、ゴールデンアワー、月相を表示します。",
+    "alertsTitle": "アラート — タイムゾーン通知",
+    "alertsDescription": "ミーティング時刻やタイムゾーン変更のカスタムアラート — 近日公開予定です。"
+  },
+  "Chart": {
+    "pageTitle": "チャート表示",
+    "pageSubtitle": "比較中の都市間の時差と、ミーティングに最適な重なり時間帯です。",
+    "referenceLabel": "基準都市",
+    "hourDiffTitle": "時差",
+    "hourDiffSubtitle": "{city}との比較",
+    "referenceBadge": "（基準）",
+    "needMoreCities": "都市をもう1つ追加すると、時差を確認できます。",
+    "sameTime": "同じ時刻",
+    "barAriaLabel": "{city}は基準都市より{diff}、現地時刻は{time}です",
+    "overlapTitle": "24時間の重なり",
+    "bestWindow": "最適な時間帯：{range}（{city}時間）",
+    "noOverlap": "すべての都市に共通する営業時間の重なりはありません。",
+    "businessHour": "営業時間内",
+    "nonBusinessHour": "営業時間外"
+  },
+  "Map": {
+    "pageTitle": "マップ表示",
+    "pageSubtitle": "比較中の都市のピンとともに、リアルタイムの昼夜境界線を表示するマップです。",
+    "legendDay": "昼",
+    "legendNight": "夜",
+    "legendSubsolar": "太陽の直下点",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country}・{offset}",
+    "markerAriaLabel": "{city}、{time}（{offset}）"
+  },
+  "Sun": {
+    "pageTitle": "日の出・日の入り",
+    "pageSubtitle": "比較中の都市について、日の出、日の入り、薄明、ゴールデンアワー、月相を表示します。",
+    "filtersLabel": "カードに表示する項目",
+    "filterGoldenHour": "ゴールデンアワー",
+    "filterTwilight": "薄明",
+    "filterMoonPhase": "月相",
+    "sunrise": "日の出",
+    "sunset": "日の入り",
+    "dayLength": "日照時間",
+    "dayLengthValue": "{hours}時間{minutes}分",
+    "solarNoon": "南中時刻",
+    "goldenHourMorning": "朝",
+    "goldenHourEvening": "夕方",
+    "civilTwilight": "常用薄明",
+    "nauticalTwilight": "航海薄明",
+    "astronomicalTwilight": "天文薄明",
+    "dayArcSunNow": "現在の太陽の位置",
+    "dayArcElevation": "高度{degrees}°",
+    "dayArcGoldenMorning": "朝のゴールデンアワー",
+    "dayArcGoldenEvening": "夕方のゴールデンアワー",
+    "dayArcTwilightMorning": "朝の薄明",
+    "dayArcTwilightEvening": "夕方の薄明",
+    "dayArcMidnight": "深夜0時",
+    "moonPhase": "月相",
+    "illuminated": "輝面比{percent}%",
+    "nextFullMoon": "次の満月：{date}",
+    "nextNewMoon": "次の新月：{date}",
+    "sunNeverSets": "今日は太陽が沈みません",
+    "sunNeverRises": "今日は太陽が昇りません",
+    "moonPhaseNames": {
+      "newMoon": "新月",
+      "waxingCrescent": "三日月",
+      "firstQuarter": "上弦の月",
+      "waxingGibbous": "十三夜月",
+      "fullMoon": "満月",
+      "waningGibbous": "寝待月",
+      "lastQuarter": "下弦の月",
+      "waningCrescent": "有明月"
+    }
+  },
+  "Alerts": {
+    "pageTitle": "アラート",
+    "pageSubtitle": "夏時間の切り替え、海外での特定の時刻、営業時間の終了について通知を受け取れます — すべてこのタブ内でブラウザ側のみで処理されます。",
+    "limitationNotice": "アラートは、このサイトがブラウザのタブで開かれている間のみ機能します。",
+    "toggleOn": "オン",
+    "toggleOff": "オフ",
+    "permission": {
+      "default": "通知をオンにすると、このタブがフォーカスされていないときもアラートを受け取れます。",
+      "enableButton": "通知を有効にする",
+      "granted": "通知はオンになっています — システム通知とアプリ内メッセージの両方が届きます。",
+      "deniedTitle": "通知がブロックされています",
+      "denied": "このブラウザはこのサイトの通知をブロックしています。タブが開いている間は、引き続きアプリ内メッセージが表示されます。",
+      "unsupported": "このブラウザは通知に対応していません。タブが開いている間は、引き続きアプリ内メッセージが表示されます。"
+    },
+    "dst": {
+      "sectionTitle": "夏時間の切り替え",
+      "sectionSubtitle": "比較中の各都市について自動的に検出されます。",
+      "noChange": "予定されている変更はありません",
+      "notifyToggle": "通知する",
+      "springForward": "1時間進む — 夏時間が始まります",
+      "fallBack": "1時間戻る — 夏時間が終わります",
+      "at": "{date} {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "都市アラーム",
+      "sectionSubtitle": "指定した場所が特定の時刻になった瞬間に通知します。",
+      "cityLabel": "都市",
+      "fromCompared": "比較中の都市から選択",
+      "searchAny": "またはお好きな都市を検索",
+      "timeLabel": "時刻",
+      "repeatOnce": "1回のみ",
+      "repeatDaily": "毎日",
+      "addButton": "アラームを追加",
+      "emptyState": "都市アラームはまだありません — 上で追加してください。",
+      "firesIn": "あと{duration}で鳴ります",
+      "completed": "鳴動済み — 1回限りのアラーム",
+      "edit": "編集",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "delete": "削除",
+      "deleteAriaLabel": "{city}のアラームを削除",
+      "chooseCityFirst": "アラームを設定する都市を選んでください。"
+    },
+    "businessHours": {
+      "sectionTitle": "営業終了リマインダー",
+      "sectionSubtitle": "平日ごとに、現地の営業時間（午前9時〜午後6時）が終わる前にお知らせします。",
+      "cityLabel": "都市",
+      "leadLabel": "事前通知",
+      "addButton": "アラートを追加",
+      "emptyState": "営業時間アラートはまだありません — 上で追加してください。",
+      "firesIn": "あと{duration}で発火します",
+      "delete": "削除",
+      "deleteAriaLabel": "{city}の営業時間アラートを削除",
+      "leadOptions": {
+        "15": "15分",
+        "30": "30分",
+        "45": "45分",
+        "60": "1時間",
+        "120": "2時間",
+        "180": "3時間",
+        "240": "4時間",
+        "300": "5時間",
+        "360": "6時間",
+        "420": "7時間"
+      }
+    },
+    "duration": {
+      "days": "{count}日{hours}時間",
+      "hoursMinutes": "{hours}時間{minutes}分",
+      "minutes": "{minutes}分",
+      "lessThanMinute": "1分未満"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "進みます",
+        "fallBack": "戻ります"
+      },
+      "dstReminderTitle": "明日、時刻が変わります",
+      "dstReminderBody": "{city}は明日{date} {time}に{direction}。",
+      "dstMomentTitle": "ただいま時刻が変わりました",
+      "dstMomentBody": "{city}はただいま{direction}。",
+      "cityAlarmTitle": "アラーム",
+      "cityAlarmBody": "{city}は現在{time}です。",
+      "businessHoursTitle": "まもなく営業時間が終了します",
+      "businessHoursBody": "{city}の営業時間はあと{lead}、現地時刻{time}に終了します。"
+    }
+  },
+  "TimeQuestion": {
+    "placeholder": "時刻について質問…例：「東京は今何時？」",
+    "ariaLabel": "タイムゾーンについて質問する",
+    "submit": "質問する",
+    "answerCurrent": "{city}は現在{time}です。",
+    "answerConvert": "{sourceCity}が{sourceTime}のとき、{targetCity}は{targetTime}です。",
+    "answerDifferenceAhead": "{cityA}は{cityB}より{hours}時間進んでいます。",
+    "answerDifferenceBehind": "{cityA}は{cityB}より{hours}時間遅れています。",
+    "answerDifferenceSame": "{cityA}と{cityB}は同じ時刻です。",
+    "addToComparator": "比較に追加",
+    "added": "比較に追加しました",
+    "unmatchedTitle": "うまく認識できませんでした。",
+    "unmatchedHint": "こちらをお試しください：",
+    "examples": [
+      "東京は今何時？",
+      "サンパウロが午後3時のとき、東京は何時？",
+      "ロンドンとニューヨークの時差"
+    ]
+  },
+  "Weather": {
+    "title": "天気 — 比較中の都市の予報",
+    "description": "比較機能に登録した都市の現在の天気と予報です — 近日公開予定。",
+    "heading": "天気",
+    "subtitle": "比較中の都市の現在の天気と予報です。",
+    "comingSoonTitle": "天気予報",
+    "comingSoonText": "各都市のリアルタイムの天気状況と予報は近日公開予定です。",
+    "feelsLike": "体感温度",
+    "humidity": "湿度",
+    "wind": "風",
+    "forecast7Day": "7日間の予報",
+    "retry": "再試行",
+    "errorText": "この都市の天気を読み込めませんでした。",
+    "conditions": {
+      "clear": "快晴",
+      "partlyCloudy": "晴れ時々曇り",
+      "cloudy": "曇り",
+      "fog": "霧",
+      "rain": "雨",
+      "snow": "雪",
+      "storm": "雷雨"
+    }
+  },
+  "Currency": {
+    "title": "通貨 — 比較中の都市の為替レート",
+    "description": "比較機能に登録した国の為替レートと通貨換算です — 近日公開予定。",
+    "heading": "通貨",
+    "subtitle": "比較中の都市の為替レートと通貨換算です。",
+    "comingSoonTitle": "為替レート",
+    "comingSoonText": "各都市のリアルタイム為替レートと通貨換算機能は近日公開予定です。",
+    "baseCurrencyLabel": "基準通貨",
+    "baseCurrency": "基準通貨",
+    "amountLabel": "金額",
+    "customAmountPlaceholder": "任意の金額",
+    "loading": "為替レートを読み込み中…",
+    "errorTitle": "為替レートを読み込めませんでした",
+    "errorText": "為替レートサービスへの接続中に問題が発生しました。もう一度お試しください。",
+    "retry": "再試行",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "この通貨は換算できません",
+    "updated": "{date}に更新されたレート",
+    "disclaimer": "データはFrankfurter経由で欧州中央銀行から提供されています — 実際の金融取引を保証するものではありません。"
+  },
+  "News": {
+    "title": "ニュース — 比較中の都市の現地ニュース",
+    "description": "比較機能に登録した都市・国の現地ニュースの見出しです — 近日公開予定。",
+    "heading": "ニュース",
+    "subtitle": "比較中の都市の現地ニュース見出しです。",
+    "comingSoonTitle": "現地ニュース",
+    "comingSoonText": "各都市の現地ニュース見出しは近日公開予定です。",
+    "disclaimer": "Googleニュースから集約 — 渡航前に公式情報源をご確認ください。",
+    "errorText": "現在ニュースを読み込めません。",
+    "retry": "再試行",
+    "emptyText": "現在、関連ニュースはありません。",
+    "count": "{count}件のニュース",
+    "expand": "展開",
+    "collapse": "折りたたむ",
+    "badge": {
+      "disaster": "災害",
+      "warning": "警告",
+      "disruption": "運行障害"
+    }
+  },
+  "Flights": {
+    "title": "フライト — 比較中の都市の推定料金と所要時間",
+    "description": "比較機能に登録した都市間の距離をもとにした推定料金と所要時間です。",
+    "heading": "フライト",
+    "subtitle": "比較中の都市の推定フライト料金と所要時間です。",
+    "comingSoonTitle": "フライト",
+    "comingSoonText": "各都市間の運航ルート、所要時間、運航状況は近日公開予定です。",
+    "disclaimerTitle": "あくまで推定値で、実際の運賃ではありません",
+    "disclaimerText": "料金と所要時間は距離と日付から算出したものであり、航空会社による実際の見積もりではありません。おおよその旅程計画にのみご利用ください。",
+    "originLabel": "出発地",
+    "changeOrigin": "変更",
+    "dateLabel": "出発日",
+    "dateToday": "今日",
+    "dateTomorrow": "明日",
+    "date48h": "48時間後",
+    "date1Week": "1週間後",
+    "date2Weeks": "2週間後",
+    "date3Weeks": "3週間後",
+    "date1Month": "1か月後",
+    "distanceKm": "{km} km",
+    "durationValue": "{hours}時間{minutes}分",
+    "direct": "直行",
+    "oneStop": "1回乗り継ぎ",
+    "stopsCount": "{count}回乗り継ぎ",
+    "optionFastest": "最速",
+    "optionCheapest": "最安",
+    "optionBalanced": "バランス重視",
+    "fromTo": "{origin}から{destination}",
+    "needMoreCities": "比較機能に都市をもう1つ追加すると、フライトの推定情報を確認できます。"
+  },
+  "HomeSections": {
+    "jumpNavLabel": "セクションへ移動",
+    "comparator": "タイムゾーン比較",
+    "map": "マップ表示",
+    "chart": "チャート表示",
+    "weather": "天気",
+    "sun": "日の出・日の入り",
+    "currency": "通貨",
+    "flights": "フライト",
+    "news": "ニュース",
+    "alerts": "アラート",
+    "allCountries": "すべての国"
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "Metadata": {
+    "title": "世界时区 — 比较时间，安排会议",
+    "description": "比较世界各地的时区，无论你的团队身处何处，都能找到最佳会议时间。"
+  },
+  "Comparator": {
+    "title": "世界时区",
+    "subtitle": "比较世界各地的时区，无论你的团队身处何处，都能找到最佳会议时间。",
+    "selectedBadge": "已选择 {hours} 小时",
+    "clearSelection": "清除选择",
+    "referenceDateTime": "参考日期和时间",
+    "now": "现在",
+    "emptyState": "点击“+”按钮添加城市，开始比较时区。",
+    "reorder": "重新排序 {city}",
+    "remove": "移除 {city}",
+    "addTimeZone": "添加时区",
+    "brand": "World Time Zone"
+  },
+  "Actions": {
+    "trigger": "操作",
+    "addCity": "添加城市",
+    "copyPng": "复制 PNG",
+    "downloadPng": "下载 PNG",
+    "downloadPdf": "下载 PDF",
+    "shareLink": "分享链接",
+    "toastCopied": "已复制到剪贴板",
+    "toastCopyFallback": "已下载（剪贴板不可用）",
+    "toastPngDownloaded": "PNG 已下载",
+    "toastPdfDownloaded": "PDF 已下载",
+    "toastLinkCopied": "链接已复制",
+    "toastExportError": "图片导出失败",
+    "toastExportPdfError": "PDF 导出失败",
+    "toastShareError": "链接复制失败"
+  },
+  "BusinessStatus": {
+    "business": "工作时间",
+    "partial": "部分不在工作时间内",
+    "outside": "不在工作时间内",
+    "conflictSuffix": "不在工作时间内"
+  },
+  "AddCity": {
+    "dialogLabel": "添加城市",
+    "heading": "添加城市",
+    "searchPlaceholder": "添加城市…"
+  },
+  "NotFound": {
+    "title": "404 — 页面未找到",
+    "description": "你要找的页面不存在。",
+    "backHome": "返回首页"
+  },
+  "ErrorPage": {
+    "title": "出错了",
+    "description": "发生了意外错误，你可以重试。",
+    "retry": "重试"
+  },
+  "Settings": {
+    "openLabel": "设置",
+    "title": "设置",
+    "language": "语言",
+    "hourFormat": "时间格式",
+    "theme": "主题"
+  },
+  "Ads": {
+    "label": "广告",
+    "placeholder": "广告位"
+  },
+  "Header": {
+    "brand": "World Time Zone",
+    "searchToggle": "搜索",
+    "menuToggle": "更多选项",
+    "hourFormatLabel": "时间格式",
+    "languageLabel": "语言",
+    "themeLabel": "主题",
+    "cityAdded": "已添加 {city}"
+  },
+  "Breadcrumb": {
+    "home": "首页",
+    "comparator": "时区对比",
+    "chart": "图表视图",
+    "map": "地图视图",
+    "sun": "日出日落",
+    "alerts": "提醒",
+    "weather": "天气",
+    "currency": "货币",
+    "news": "新闻",
+    "flights": "航班"
+  },
+  "HourFormat": {
+    "label": "时间格式",
+    "format12": "12小时制",
+    "format24": "24小时制"
+  },
+  "LocationCard": {
+    "title": "你的本地时间",
+    "dst": "夏令时",
+    "useAnotherCity": "使用其他城市"
+  },
+  "Placeholders": {
+    "sunTitle": "日出日落",
+    "sunText": "你所在城市的日出日落时间即将上线。",
+    "alertsTitle": "时区提醒",
+    "alertsText": "会议时间和时区变更的自定义提醒即将上线。",
+    "comingSoon": "敬请期待",
+    "viewPage": "查看页面 →"
+  },
+  "Theme": {
+    "system": "跟随系统",
+    "light": "浅色",
+    "dark": "深色",
+    "toggle": "切换主题（当前：{current}）"
+  },
+  "Nav": {
+    "home": "世界时区",
+    "chart": "图表视图",
+    "map": "地图视图",
+    "sun": "日出日落",
+    "alerts": "提醒",
+    "weather": "天气",
+    "currency": "货币",
+    "news": "新闻",
+    "flights": "航班",
+    "more": "更多"
+  },
+  "NavCustomize": {
+    "openLabel": "自定义导航",
+    "title": "自定义导航",
+    "description": "拖动可调整顺序，也可以使用箭头按钮。更改会立即生效。",
+    "moveUp": "将 {item} 上移",
+    "moveDown": "将 {item} 下移",
+    "dragHandle": "重新排序 {item}",
+    "resetDefault": "恢复默认",
+    "done": "完成"
+  },
+  "EmptyCities": {
+    "title": "添加城市即可开始",
+    "text": "此页面使用你在对比器中添加的城市。请先在首页添加几个城市，即可查看效果。",
+    "cta": "在对比器中添加城市"
+  },
+  "PageMeta": {
+    "chartTitle": "图表视图 — 时差与 24 小时重叠情况",
+    "chartDescription": "查看你所比较城市的时差柱状图和 24 小时工作时间重叠图。",
+    "mapTitle": "地图视图 — 世界时区地图",
+    "mapDescription": "带有实时昼夜分界线的交互式世界地图，展示你比较的城市。",
+    "sunTitle": "日出日落 — 你所在城市的时间",
+    "sunDescription": "你所比较城市的日出、日落、暮光、黄金时段和月相信息。",
+    "alertsTitle": "提醒 — 时区通知",
+    "alertsDescription": "会议时间和时区变更的自定义提醒 — 敬请期待。"
+  },
+  "Chart": {
+    "pageTitle": "图表视图",
+    "pageSubtitle": "你所比较城市之间的时差，以及最佳会议重叠时段。",
+    "referenceLabel": "参考城市",
+    "hourDiffTitle": "时差",
+    "hourDiffSubtitle": "相对于 {city}",
+    "referenceBadge": "（参考）",
+    "needMoreCities": "再添加一个城市即可查看时差。",
+    "sameTime": "时间相同",
+    "barAriaLabel": "{city} 相对于参考城市 {diff}，当地时间 {time}",
+    "overlapTitle": "24 小时重叠",
+    "bestWindow": "最佳时段：{range}（{city} 时间）",
+    "noOverlap": "所有城市之间没有工作时间重叠。",
+    "businessHour": "工作时间",
+    "nonBusinessHour": "非工作时间"
+  },
+  "Map": {
+    "pageTitle": "地图视图",
+    "pageSubtitle": "实时地图，展示昼夜分界线以及你所比较城市的标记。",
+    "legendDay": "白天",
+    "legendNight": "夜晚",
+    "legendSubsolar": "太阳直射点",
+    "utcNow": "UTC {time}",
+    "tooltip": "{country} · {offset}",
+    "markerAriaLabel": "{city}，{time}（{offset}）"
+  },
+  "Sun": {
+    "pageTitle": "日出日落",
+    "pageSubtitle": "你所比较城市的日出、日落、暮光、黄金时段和月相信息。",
+    "filtersLabel": "卡片显示内容",
+    "filterGoldenHour": "黄金时段",
+    "filterTwilight": "暮光",
+    "filterMoonPhase": "月相",
+    "sunrise": "日出",
+    "sunset": "日落",
+    "dayLength": "白昼时长",
+    "dayLengthValue": "{hours} 小时 {minutes} 分钟",
+    "solarNoon": "正午太阳时",
+    "goldenHourMorning": "早晨",
+    "goldenHourEvening": "傍晚",
+    "civilTwilight": "民用",
+    "nauticalTwilight": "航海",
+    "astronomicalTwilight": "天文",
+    "dayArcSunNow": "当前太阳位置",
+    "dayArcElevation": "高度角 {degrees}°",
+    "dayArcGoldenMorning": "清晨黄金时段",
+    "dayArcGoldenEvening": "傍晚黄金时段",
+    "dayArcTwilightMorning": "清晨暮光",
+    "dayArcTwilightEvening": "傍晚暮光",
+    "dayArcMidnight": "午夜",
+    "moonPhase": "月相",
+    "illuminated": "{percent}% 被照亮",
+    "nextFullMoon": "下次满月 {date}",
+    "nextNewMoon": "下次新月 {date}",
+    "sunNeverSets": "今天太阳不落",
+    "sunNeverRises": "今天太阳不升",
+    "moonPhaseNames": {
+      "newMoon": "新月",
+      "waxingCrescent": "娥眉月",
+      "firstQuarter": "上弦月",
+      "waxingGibbous": "盈凸月",
+      "fullMoon": "满月",
+      "waningGibbous": "亏凸月",
+      "lastQuarter": "下弦月",
+      "waningCrescent": "残月"
+    }
+  },
+  "Alerts": {
+    "pageTitle": "提醒",
+    "pageSubtitle": "获取夏令时变更、境外特定时间和工作时间结束的提醒 — 全部在浏览器本地完成，就在此标签页中。",
+    "limitationNotice": "提醒功能仅在此网站保持在浏览器标签页打开时有效。",
+    "toggleOn": "开启",
+    "toggleOff": "关闭",
+    "permission": {
+      "default": "开启通知，即使该标签页未处于活动状态也能收到提醒。",
+      "enableButton": "开启通知",
+      "granted": "通知已开启 — 你将收到系统提醒和应用内消息。",
+      "deniedTitle": "通知已被屏蔽",
+      "denied": "此浏览器已屏蔽该网站的通知。只要标签页保持打开，你仍会看到应用内消息。",
+      "unsupported": "此浏览器不支持通知。只要标签页保持打开，你仍会看到应用内消息。"
+    },
+    "dst": {
+      "sectionTitle": "夏令时变更",
+      "sectionSubtitle": "针对你正在比较的每个城市自动检测。",
+      "noChange": "暂无计划中的变更",
+      "notifyToggle": "提醒我",
+      "springForward": "拨快 1 小时 — 进入夏令时",
+      "fallBack": "拨慢 1 小时 — 结束夏令时",
+      "at": "{date} {time}"
+    },
+    "cityAlarm": {
+      "sectionTitle": "城市闹钟",
+      "sectionSubtitle": "在某地到达特定时间时立即收到提醒。",
+      "cityLabel": "城市",
+      "fromCompared": "从你比较的城市中选择",
+      "searchAny": "或搜索任意城市",
+      "timeLabel": "时间",
+      "repeatOnce": "一次",
+      "repeatDaily": "每天",
+      "addButton": "添加闹钟",
+      "emptyState": "暂无城市闹钟 — 在上方添加一个。",
+      "firesIn": "将在 {duration} 后响铃",
+      "completed": "已响铃 — 一次性闹钟",
+      "edit": "编辑",
+      "save": "保存",
+      "cancel": "取消",
+      "delete": "删除",
+      "deleteAriaLabel": "删除 {city} 的闹钟",
+      "chooseCityFirst": "请先选择一个城市来设置闹钟。"
+    },
+    "businessHours": {
+      "sectionTitle": "工作时间结束提醒",
+      "sectionSubtitle": "在每个工作日当地工作时间（上午 9 点至下午 6 点）结束前提醒你。",
+      "cityLabel": "城市",
+      "leadLabel": "提前提醒时间",
+      "addButton": "添加提醒",
+      "emptyState": "暂无工作时间提醒 — 在上方添加一个。",
+      "firesIn": "将在 {duration} 后触发",
+      "delete": "删除",
+      "deleteAriaLabel": "删除 {city} 的工作时间提醒",
+      "leadOptions": {
+        "15": "15 分钟",
+        "30": "30 分钟",
+        "45": "45 分钟",
+        "60": "1 小时",
+        "120": "2 小时",
+        "180": "3 小时",
+        "240": "4 小时",
+        "300": "5 小时",
+        "360": "6 小时",
+        "420": "7 小时"
+      }
+    },
+    "duration": {
+      "days": "{count} 天 {hours} 小时",
+      "hoursMinutes": "{hours} 小时 {minutes} 分钟",
+      "minutes": "{minutes} 分钟",
+      "lessThanMinute": "< 1 分钟"
+    },
+    "notifications": {
+      "direction": {
+        "springForward": "拨快",
+        "fallBack": "拨慢"
+      },
+      "dstReminderTitle": "明天有夏令时变更",
+      "dstReminderBody": "{city} 将于明天 {date} {time} {direction}。",
+      "dstMomentTitle": "夏令时变更现在生效",
+      "dstMomentBody": "{city} 现在{direction}。",
+      "cityAlarmTitle": "闹钟",
+      "cityAlarmBody": "{city} 现在是 {time}。",
+      "businessHoursTitle": "工作时间即将结束",
+      "businessHoursBody": "{city} 的工作时间将在 {lead} 后结束，即当地时间 {time}。"
+    }
+  },
+  "TimeQuestion": {
+    "placeholder": "询问时间…例如“东京现在几点？”",
+    "ariaLabel": "提出时区相关问题",
+    "submit": "提问",
+    "answerCurrent": "{city} 现在是 {time}。",
+    "answerConvert": "当 {sourceCity} 是 {sourceTime} 时，{targetCity} 是 {targetTime}。",
+    "answerDifferenceAhead": "{cityA} 比 {cityB} 快 {hours} 小时。",
+    "answerDifferenceBehind": "{cityA} 比 {cityB} 慢 {hours} 小时。",
+    "answerDifferenceSame": "{cityA} 和 {cityB} 时间相同。",
+    "addToComparator": "添加到对比器",
+    "added": "已添加到对比器",
+    "unmatchedTitle": "没太明白你的意思。",
+    "unmatchedHint": "可以试试这些：",
+    "examples": [
+      "东京现在几点？",
+      "圣保罗下午 3 点时，东京是几点？",
+      "伦敦和纽约的时差"
+    ]
+  },
+  "Weather": {
+    "title": "天气 — 你所比较城市的天气预报",
+    "description": "你对比器中城市的当前天气状况和预报 — 敬请期待。",
+    "heading": "天气",
+    "subtitle": "你所比较城市的当前天气状况和预报。",
+    "comingSoonTitle": "天气预报",
+    "comingSoonText": "你所在城市的实时天气状况和预报即将上线。",
+    "feelsLike": "体感温度",
+    "humidity": "湿度",
+    "wind": "风速",
+    "forecast7Day": "7 天预报",
+    "retry": "重试",
+    "errorText": "无法加载该城市的天气。",
+    "conditions": {
+      "clear": "晴",
+      "partlyCloudy": "多云",
+      "cloudy": "阴",
+      "fog": "雾",
+      "rain": "雨",
+      "snow": "雪",
+      "storm": "雷暴"
+    }
+  },
+  "Currency": {
+    "title": "货币 — 你所比较城市的汇率",
+    "description": "你对比器中所在国家的实时汇率和货币换算 — 敬请期待。",
+    "heading": "货币",
+    "subtitle": "你所比较城市的汇率和货币换算。",
+    "comingSoonTitle": "汇率",
+    "comingSoonText": "你所在城市的实时汇率和货币换算器即将上线。",
+    "baseCurrencyLabel": "本位货币",
+    "baseCurrency": "本位货币",
+    "amountLabel": "金额",
+    "customAmountPlaceholder": "自定义金额",
+    "loading": "正在加载汇率…",
+    "errorTitle": "汇率加载失败",
+    "errorText": "连接汇率服务时出错，请重试。",
+    "retry": "重试",
+    "rateLine": "1 {base} = {value} {currency}",
+    "unavailable": "该货币暂不支持换算",
+    "updated": "汇率更新于 {date}",
+    "disclaimer": "数据来自欧洲中央银行，经 Frankfurter 提供 — 不保证适用于实际金融交易。"
+  },
+  "News": {
+    "title": "新闻 — 你所比较城市的当地头条",
+    "description": "你对比器中城市和国家的本地新闻头条 — 敬请期待。",
+    "heading": "新闻",
+    "subtitle": "你所比较城市的当地头条。",
+    "comingSoonTitle": "本地新闻",
+    "comingSoonText": "你所在城市的本地新闻头条即将上线。",
+    "disclaimer": "内容聚合自 Google 新闻 — 出行前请以官方来源为准。",
+    "errorText": "暂时无法加载新闻。",
+    "retry": "重试",
+    "emptyText": "目前没有相关新闻。",
+    "count": "{count} 条头条新闻",
+    "expand": "展开",
+    "collapse": "收起",
+    "badge": {
+      "disaster": "灾害",
+      "warning": "警告",
+      "disruption": "中断"
+    }
+  },
+  "Flights": {
+    "title": "航班 — 你所比较城市的预估价格和时长",
+    "description": "根据你对比器中城市之间的距离计算出的预估票价和飞行时长。",
+    "heading": "航班",
+    "subtitle": "你所比较城市的预估航班价格和时长。",
+    "comingSoonTitle": "航班",
+    "comingSoonText": "你所在城市之间的航线、时长和航班状态即将上线。",
+    "disclaimerTitle": "仅为预估，非真实票价",
+    "disclaimerText": "价格和时长根据距离和日期计算得出 — 并非任何航空公司的真实报价，仅供大致行程规划参考。",
+    "originLabel": "出发地",
+    "changeOrigin": "更改",
+    "dateLabel": "出发日期",
+    "dateToday": "今天",
+    "dateTomorrow": "明天",
+    "date48h": "48 小时后",
+    "date1Week": "1 周后",
+    "date2Weeks": "2 周后",
+    "date3Weeks": "3 周后",
+    "date1Month": "1 个月后",
+    "distanceKm": "{km} 公里",
+    "durationValue": "{hours} 小时 {minutes} 分钟",
+    "direct": "直飞",
+    "oneStop": "1 次中转",
+    "stopsCount": "{count} 次中转",
+    "optionFastest": "最快",
+    "optionCheapest": "最便宜",
+    "optionBalanced": "均衡",
+    "fromTo": "{origin} 至 {destination}",
+    "needMoreCities": "在对比器中再添加一个城市即可查看航班预估。"
+  },
+  "HomeSections": {
+    "jumpNavLabel": "跳转到板块",
+    "comparator": "时区对比器",
+    "map": "地图视图",
+    "chart": "图表视图",
+    "weather": "天气",
+    "sun": "日出日落",
+    "currency": "货币",
+    "flights": "航班",
+    "news": "新闻",
+    "alerts": "提醒",
+    "allCountries": "所有国家"
+  }
+}
