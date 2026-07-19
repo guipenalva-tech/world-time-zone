@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { getSiteUrl } from "@/lib/siteUrl";
+import { getCityById } from "@/lib/cities";
 import type { AppLocale } from "@/i18n/routing";
 
 interface BreadcrumbProps {
@@ -22,10 +23,15 @@ type PageKey =
   | "privacy"
   | "terms"
   | "about"
-  | "contact";
+  | "contact"
+  | "time";
+
+/** Every /time/[city] page's URL prefix (locale-stripped). */
+const CITY_PATH_PREFIX = "/time/";
 
 /** Maps a (locale-stripped) pathname to the current page's breadcrumb key. */
 function pageKeyFromPathname(pathname: string): PageKey {
+  if (pathname.startsWith(CITY_PATH_PREFIX)) return "time";
   switch (pathname) {
     case "/chart":
       return "chart";
@@ -70,6 +76,9 @@ const PAGE_PATH: Record<PageKey, string> = {
   terms: "/terms",
   about: "/about",
   contact: "/contact",
+  // Not a real listing page (each city has its own URL below) — only used
+  // as a plain-text, unlinked middle crumb for /time/[city] pages.
+  time: "/time",
 };
 
 /**
@@ -77,12 +86,24 @@ const PAGE_PATH: Record<PageKey, string> = {
  * JSON-LD block for SEO. Updates per route (client-side, since the root
  * layout — where this is mounted — doesn't otherwise know which page is
  * active).
+ *
+ * /time/[city] pages get a 3-level *visual* trail (Home > Time Zones >
+ * {city name}) but only a 2-level JSON-LD (Home > city URL) — "Time Zones"
+ * has no page of its own, and a BreadcrumbList item needs a real URL.
  */
 export default function Breadcrumb({ locale }: BreadcrumbProps) {
   const t = useTranslations("Breadcrumb");
   const pathname = usePathname();
   const pageKey = pageKeyFromPathname(pathname);
   const siteUrl = getSiteUrl();
+
+  const isCityPage = pageKey === "time";
+  const cityId = isCityPage ? pathname.slice(CITY_PATH_PREFIX.length) : null;
+  const city = cityId ? getCityById(cityId) : undefined;
+  const currentLabel = isCityPage
+    ? (city?.name ?? cityId ?? t(pageKey))
+    : t(pageKey);
+  const currentHref = isCityPage ? pathname : PAGE_PATH[pageKey];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -97,8 +118,8 @@ export default function Breadcrumb({ locale }: BreadcrumbProps) {
       {
         "@type": "ListItem",
         position: 2,
-        name: t(pageKey),
-        item: `${siteUrl}/${locale}${PAGE_PATH[pageKey]}`,
+        name: currentLabel,
+        item: `${siteUrl}/${locale}${currentHref}`,
       },
     ],
   };
@@ -117,8 +138,14 @@ export default function Breadcrumb({ locale }: BreadcrumbProps) {
           </Link>
         </li>
         <li aria-hidden="true">›</li>
+        {isCityPage && (
+          <>
+            <li className="text-foreground/50">{t("time")}</li>
+            <li aria-hidden="true">›</li>
+          </>
+        )}
         <li aria-current="page" className="text-foreground/70">
-          {t(pageKey)}
+          {currentLabel}
         </li>
       </ol>
     </nav>

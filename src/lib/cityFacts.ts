@@ -8,7 +8,8 @@
 import { DateTime } from "luxon";
 import type { City } from "@/types/city";
 import { cities, getCityById } from "@/lib/cities";
-import { getZoneInfo, type ZoneInfo } from "@/lib/timezone";
+import { getZoneInfo } from "@/lib/timezone";
+import type { ZoneInfo } from "@/types/timezone";
 import { getNextDstTransition, type DstTransition } from "@/lib/dst";
 import { getSunTimes, type SunTimes } from "@/lib/sun";
 import {
@@ -48,7 +49,12 @@ const CITY_REPLACEMENT_POOL = [
 ] as const;
 
 /** 3-4 major aviation hubs the /flights-style estimate is drawn from. */
-export const FLIGHT_HUB_IDS = ["new-york", "london", "dubai", "singapore"] as const;
+export const FLIGHT_HUB_IDS = [
+  "new-york",
+  "london",
+  "dubai",
+  "singapore",
+] as const;
 
 /** Curated set of ISO 3166-1 alpha-2 codes for nations whose entire
  * territory is islands (no land borders) — used only for a supplementary
@@ -204,11 +210,16 @@ function resolveCityList(ids: readonly string[], excludeId: string): City[] {
   return result;
 }
 
-function diffFor(city: City, reference: City, now: DateTime): ReferenceCityDiff {
+function diffFor(
+  city: City,
+  reference: City,
+  now: DateTime,
+): ReferenceCityDiff {
   const cityOffset = now.setZone(city.timezone).offset;
   const refOffset = now.setZone(reference.timezone).offset;
   const diffMinutes = cityOffset - refOffset;
-  const direction: DiffDirection = diffMinutes > 0 ? "ahead" : diffMinutes < 0 ? "behind" : "same";
+  const direction: DiffDirection =
+    diffMinutes > 0 ? "ahead" : diffMinutes < 0 ? "behind" : "same";
   const absMinutes = Math.abs(diffMinutes);
   const overlapHours = businessHourOverlapHours(diffMinutes / 60);
 
@@ -230,7 +241,10 @@ function diffFor(city: City, reference: City, now: DateTime): ReferenceCityDiff 
  * instant always produces the same facts, which is what makes the ISR
  * caching story for this route sane.
  */
-export function buildCityFacts(city: City, now: DateTime = DateTime.utc()): CityFacts {
+export function buildCityFacts(
+  city: City,
+  now: DateTime = DateTime.utc(),
+): CityFacts {
   const zoneInfo = getZoneInfo(city.timezone, now);
   const dstTransition = getNextDstTransition(city.timezone, now);
 
@@ -246,7 +260,9 @@ export function buildCityFacts(city: City, now: DateTime = DateTime.utc()): City
   const isFractionalOffset = offsetFractionMinutes !== 0;
 
   const referenceCityRecords = resolveCityList(REFERENCE_CITY_IDS, city.id);
-  const referenceCities = referenceCityRecords.map((ref) => diffFor(city, ref, now));
+  const referenceCities = referenceCityRecords.map((ref) =>
+    diffFor(city, ref, now),
+  );
 
   const primaryReferenceId = city.id === "new-york" ? "london" : "new-york";
   const [primaryReference] = resolveCityList([primaryReferenceId], city.id);
@@ -255,7 +271,9 @@ export function buildCityFacts(city: City, now: DateTime = DateTime.utc()): City
   const dstContrastId = dstContrastCandidates.find(
     (id) => id !== city.id && id !== primaryReference?.id,
   );
-  const dstContrastCity = dstContrastId ? (getCityById(dstContrastId) ?? null) : null;
+  const dstContrastCity = dstContrastId
+    ? (getCityById(dstContrastId) ?? null)
+    : null;
 
   const sameTimezoneCities = cities
     .filter((c) => c.id !== city.id && c.timezone === city.timezone)
@@ -269,7 +287,12 @@ export function buildCityFacts(city: City, now: DateTime = DateTime.utc()): City
 
   const flightHubs = resolveCityList(FLIGHT_HUB_IDS, city.id);
   const flights: FlightEstimateRow[] = flightHubs.map((hub) => {
-    const distanceKm = haversineDistanceKm(city.lat, city.lon, hub.lat, hub.lon);
+    const distanceKm = haversineDistanceKm(
+      city.lat,
+      city.lon,
+      hub.lat,
+      hub.lon,
+    );
     const durationMinutes = estimateFlightDuration(distanceKm);
     const price = estimateFlightPrice(distanceKm, "in1Week", true);
     return {

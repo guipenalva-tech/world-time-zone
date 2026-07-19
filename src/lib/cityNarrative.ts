@@ -63,7 +63,8 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
           key: "narrativeOffsetConstant",
           values: {
             ...base,
-            contrastCity: (facts.dstContrastCity ?? facts.primaryReference).name,
+            contrastCity: (facts.dstContrastCity ?? facts.primaryReference)
+              .name,
           },
         });
       }
@@ -71,16 +72,25 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
   }
 
   // 2. Sun / latitude sentence.
-  const hemisphereWordKey = facts.hemisphere === "N" ? "hemisphereNorthWord" : "hemisphereSouthWord";
+  const hemisphereWordKey =
+    facts.hemisphere === "N" ? "hemisphereNorthWord" : "hemisphereSouthWord";
   if (facts.sun.daylightState === "alwaysAbove") {
     sentences.push({
       key: "narrativeMidnightSun",
-      values: { city: city.name, lat: facts.latAbs, hemisphereKey: hemisphereWordKey },
+      values: {
+        city: city.name,
+        lat: facts.latAbs,
+        hemisphereKey: hemisphereWordKey,
+      },
     });
   } else if (facts.sun.daylightState === "alwaysBelow") {
     sentences.push({
       key: "narrativePolarNight",
-      values: { city: city.name, lat: facts.latAbs, hemisphereKey: hemisphereWordKey },
+      values: {
+        city: city.name,
+        lat: facts.latAbs,
+        hemisphereKey: hemisphereWordKey,
+      },
     });
   } else if (facts.isExtremeLatitude) {
     const totalMinutes = Math.round(facts.sun.dayLengthMinutes);
@@ -117,7 +127,11 @@ export function buildCityNarrative(facts: CityFacts): NarrativeSentence[] {
   } else if (facts.countryTimezoneCount > 1) {
     sentences.push({
       key: "narrativeMultiZoneCountry",
-      values: { city: city.name, country: city.country, count: facts.countryTimezoneCount },
+      values: {
+        city: city.name,
+        country: city.country,
+        count: facts.countryTimezoneCount,
+      },
     });
   } else if (facts.isIslandNation) {
     sentences.push({
