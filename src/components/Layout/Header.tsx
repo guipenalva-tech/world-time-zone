@@ -144,7 +144,7 @@ export default function Header() {
               <div
                 role="dialog"
                 aria-label={t("menuToggle")}
-                className="absolute right-0 z-40 mt-2 flex w-52 flex-col gap-2 rounded-lg border border-border bg-background p-3 shadow-xl"
+                className="absolute right-0 z-40 mt-2 flex max-h-[calc(100vh-5rem)] w-52 flex-col gap-2 overflow-y-auto rounded-lg border border-border bg-background p-3 shadow-xl"
               >
                 <p className="px-0.5 text-xs font-medium uppercase tracking-wide text-foreground/50">
                   {t("themeLabel")}

@@ -46,7 +46,7 @@ export default function SettingsFab() {
         <div
           role="dialog"
           aria-label={t("title")}
-          className="absolute bottom-16 right-0 w-64 rounded-lg border border-border bg-background p-3 shadow-xl"
+          className="absolute bottom-16 right-0 max-h-[calc(100vh-6rem)] w-64 overflow-y-auto rounded-lg border border-border bg-background p-3 shadow-xl"
         >
           <p className="mb-2 text-sm font-semibold text-foreground">
             {t("title")}

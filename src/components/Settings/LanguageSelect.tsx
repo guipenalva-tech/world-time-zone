@@ -109,7 +109,7 @@ export default function LanguageSelect({
         <div
           role="dialog"
           aria-label={t("language")}
-          className="absolute right-0 z-40 mt-1 w-40 rounded-lg border border-border bg-background p-1.5 shadow-xl"
+          className="absolute right-0 z-40 mt-1 max-h-80 w-44 overflow-y-auto rounded-lg border border-border bg-background p-1.5 shadow-xl"
         >
           {list}
         </div>
