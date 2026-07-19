@@ -515,7 +515,8 @@
     "about": "このサイトについて",
     "contact": "お問い合わせ",
     "cookiePreferences": "Cookie の設定",
-    "languageLabel": "言語"
+    "languageLabel": "言語",
+    "popularCitiesHeading": "人気のタイムゾーン"
   },
   "Consent": {
     "heading": "プライバシーを大切にしています",

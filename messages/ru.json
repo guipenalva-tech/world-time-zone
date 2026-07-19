@@ -515,7 +515,8 @@
     "about": "О проекте",
     "contact": "Контакты",
     "cookiePreferences": "Настройки cookie",
-    "languageLabel": "Язык"
+    "languageLabel": "Язык",
+    "popularCitiesHeading": "Популярные часовые пояса"
   },
   "Consent": {
     "heading": "Мы уважаем вашу конфиденциальность",

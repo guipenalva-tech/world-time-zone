@@ -3,7 +3,14 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useConsentStore } from "@/stores/consentStore";
+import { getPopularCities } from "@/lib/cities";
 import LanguageSelect from "@/components/Settings/LanguageSelect";
+
+/** Sitewide internal links to the highest-population /time/[city] pages —
+ * present in every page's footer (not just the home page) so crawlers can
+ * discover the city pages from anywhere on the site, and so real visitors
+ * have an obvious path into them too. */
+const POPULAR_CITIES = getPopularCities(12);
 
 /**
  * Global footer: legal-page links (AdSense prerequisite), product name +
@@ -25,9 +32,31 @@ export default function Footer() {
 
   return (
     <footer className="mt-auto border-t border-border bg-background">
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+        <nav aria-label={t("popularCitiesHeading")}>
+          <p className="mb-1.5 text-xs font-semibold text-foreground/70">
+            {t("popularCitiesHeading")}
+          </p>
+          <ul className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs">
+            {POPULAR_CITIES.map((city) => (
+              <li key={city.id}>
+                <Link
+                  href={`/time/${city.id}`}
+                  className="text-foreground/60 underline-offset-2 transition-colors hover:text-foreground hover:underline"
+                >
+                  {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 sm:px-6 md:flex-row md:items-start md:justify-between">
         <div className="min-w-0 max-w-sm">
-          <p className="text-sm font-semibold text-foreground">{t("product")}</p>
+          <p className="text-sm font-semibold text-foreground">
+            {t("product")}
+          </p>
           <p className="mt-1 text-xs leading-relaxed text-foreground/60">
             {t("tagline")}
           </p>
@@ -36,7 +65,10 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav aria-label={t("legalHeading")} className="flex flex-col gap-3 sm:flex-row sm:gap-6">
+        <nav
+          aria-label={t("legalHeading")}
+          className="flex flex-col gap-3 sm:flex-row sm:gap-6"
+        >
           <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
             <li>
               <Link

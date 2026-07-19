@@ -515,7 +515,8 @@
     "about": "About",
     "contact": "Contact",
     "cookiePreferences": "Cookie preferences",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "popularCitiesHeading": "Popular time zones"
   },
   "Consent": {
     "heading": "We value your privacy",
