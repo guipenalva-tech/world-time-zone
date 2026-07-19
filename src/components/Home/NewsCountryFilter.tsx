@@ -1,6 +1,8 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCountryName } from "@/lib/i18nNames";
 import type { CountryNewsGroup } from "@/lib/newsGroups";
 
 interface NewsCountryFilterProps {
@@ -28,6 +30,7 @@ export default function NewsCountryFilter({
   onChange,
   allLabel,
 }: NewsCountryFilterProps) {
+  const locale = useLocale();
   if (groups.length === 0) return null;
 
   return (
@@ -44,7 +47,7 @@ export default function NewsCountryFilter({
           className={chipClass(value === group.countryCode)}
         >
           <span aria-hidden="true">{getFlagEmoji(group.countryCode)}</span>
-          {group.country}
+          {getLocalizedCountryName(group.countryCode, locale, group.country)}
         </button>
       ))}
     </div>

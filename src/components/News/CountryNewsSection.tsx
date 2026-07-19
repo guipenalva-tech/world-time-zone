@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import { useTranslations } from "next-intl";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import { useCountryNews } from "@/hooks/useCountryNews";
 import type { CountryNewsGroup } from "@/lib/newsGroups";
 import NewsItemRow from "./NewsItemRow";
@@ -18,6 +19,7 @@ export default function CountryNewsSection({ group, locale }: CountryNewsSection
   const { status, items, retry } = useCountryNews(group.country, group.countryCode, locale);
   const [expanded, setExpanded] = useState(true);
   const contentId = `${useId()}-news-content`;
+  const countryName = getLocalizedCountryName(group.countryCode, locale, group.country);
 
   return (
     <section className="flex flex-col gap-3 rounded-xl border border-border bg-surface/40 p-4">
@@ -26,9 +28,9 @@ export default function CountryNewsSection({ group, locale }: CountryNewsSection
           {getFlagEmoji(group.countryCode)}
         </span>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{group.country}</p>
+          <p className="truncate text-sm font-semibold">{countryName}</p>
           <p className="truncate text-xs text-foreground/50">
-            {group.cities.map((city) => city.name).join(", ")}
+            {group.cities.map((city) => getLocalizedCityName(city, locale)).join(", ")}
             {status === "success" && items.length > 0
               ? ` · ${t("count", { count: items.length })}`
               : ""}

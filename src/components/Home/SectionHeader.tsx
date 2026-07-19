@@ -1,5 +1,9 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { useLocale } from "next-intl";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import type { ComparedCity } from "@/types/city";
 
 interface SectionHeaderProps {
@@ -19,6 +23,8 @@ interface SectionHeaderProps {
  * jump.
  */
 export default function SectionHeader({ id, icon, title, cities }: SectionHeaderProps) {
+  const locale = useLocale();
+
   return (
     <div
       id={id}
@@ -31,16 +37,19 @@ export default function SectionHeader({ id, icon, title, cities }: SectionHeader
 
       {cities.length > 0 && (
         <div className="ml-auto flex flex-wrap items-center gap-1">
-          {cities.map((c) => (
-            <span
-              key={c.city.id}
-              title={c.city.name}
-              aria-label={c.city.name}
-              className="text-base leading-none"
-            >
-              {getFlagEmoji(c.city.countryCode)}
-            </span>
-          ))}
+          {cities.map((c) => {
+            const cityName = getLocalizedCityName(c.city, locale);
+            return (
+              <span
+                key={c.city.id}
+                title={cityName}
+                aria-label={cityName}
+                className="text-base leading-none"
+              >
+                {getFlagEmoji(c.city.countryCode)}
+              </span>
+            );
+          })}
         </div>
       )}
     </div>
