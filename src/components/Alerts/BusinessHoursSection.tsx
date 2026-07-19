@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { DateTime } from "luxon";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import {
   useAlertsStore,
@@ -12,6 +12,7 @@ import {
 } from "@/stores/alertsStore";
 import { getCityById } from "@/lib/cities";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { businessHoursOccurrence, countdownParts } from "@/lib/alertScheduling";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
 import { formatDuration } from "./formatDuration";
@@ -25,6 +26,7 @@ import { formatDuration } from "./formatDuration";
 export default function BusinessHoursSection() {
   const t = useTranslations("Alerts.businessHours");
   const tRoot = useTranslations("Alerts");
+  const locale = useLocale();
   const cities = useComparatorStore((s) => s.cities);
   const alerts = useAlertsStore((s) => s.businessHoursAlerts);
   const addBusinessHoursAlert = useAlertsStore((s) => s.addBusinessHoursAlert);
@@ -81,7 +83,7 @@ export default function BusinessHoursSection() {
               >
                 {sortedCities.map(({ city }) => (
                   <option key={city.id} value={city.id}>
-                    {city.name}
+                    {getLocalizedCityName(city, locale)}
                   </option>
                 ))}
               </select>
@@ -123,6 +125,7 @@ export default function BusinessHoursSection() {
                   key={alert.id}
                   alert={alert}
                   now={now}
+                  locale={locale}
                   cityOptions={sortedCities.map((c) => c.city)}
                   editing={editingId === alert.id}
                   onEdit={() => setEditingId(alert.id)}
@@ -149,6 +152,7 @@ export default function BusinessHoursSection() {
 interface BusinessHoursRowProps {
   alert: BusinessHoursAlert;
   now: DateTime | null;
+  locale: string;
   cityOptions: { id: string; name: string; countryCode: string }[];
   editing: boolean;
   onEdit: () => void;
@@ -162,6 +166,7 @@ interface BusinessHoursRowProps {
 function BusinessHoursRow({
   alert,
   now,
+  locale,
   editing,
   onEdit,
   onCancelEdit,
@@ -176,6 +181,8 @@ function BusinessHoursRow({
 
   if (!city) return null;
 
+  const cityName = getLocalizedCityName(city, locale);
+
   let countdownLabel: string | null = null;
   if (now) {
     const occurrence = businessHoursOccurrence(city.timezone, alert.leadMinutes, now);
@@ -187,7 +194,7 @@ function BusinessHoursRow({
   if (editing) {
     return (
       <li className="flex flex-col gap-2 rounded-xl border border-primary/50 bg-surface/40 p-4">
-        <p className="text-sm font-semibold">{city.name}</p>
+        <p className="text-sm font-semibold">{cityName}</p>
         <select
           value={draftLead}
           onChange={(e) => setDraftLead(Number(e.target.value) as BusinessHoursLeadMinutes)}
@@ -226,7 +233,7 @@ function BusinessHoursRow({
           <span aria-hidden="true" className="mr-1.5">
             {getFlagEmoji(city.countryCode)}
           </span>
-          {city.name}{" "}
+          {cityName}{" "}
           <span className="text-xs font-normal text-foreground/50">
             ({t(`leadOptions.${alert.leadMinutes}`)})
           </span>
@@ -256,7 +263,7 @@ function BusinessHoursRow({
         <button
           type="button"
           onClick={onDelete}
-          aria-label={t("deleteAriaLabel", { city: city.name })}
+          aria-label={t("deleteAriaLabel", { city: cityName })}
           className="rounded-lg border border-border px-2.5 py-1 text-xs font-medium text-foreground/70 transition-colors hover:border-danger/50 hover:text-danger"
         >
           {t("delete")}

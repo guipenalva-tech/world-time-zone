@@ -7,6 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useAlertsStore } from "@/stores/alertsStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getCityById } from "@/lib/cities";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getNextDstTransition } from "@/lib/dst";
 import {
@@ -91,6 +92,7 @@ export default function AlertScheduler() {
 
         const fired = alerts.dstFired[city.id] ?? { reminderKey: null, momentKey: null };
         const directionKey = transition.direction === "forward" ? "springForward" : "fallBack";
+        const cityName = getLocalizedCityName(city, locale);
 
         const reminderCheck = shouldFireOnce(
           transition.at.minus({ days: 1 }),
@@ -101,7 +103,7 @@ export default function AlertScheduler() {
           fireNotification(
             t("dstReminderTitle"),
             t("dstReminderBody", {
-              city: city.name,
+              city: cityName,
               direction: t(`direction.${directionKey}`),
               time: transition.at.setZone(city.timezone).setLocale(luxonLocale).toFormat(timeFormat),
               date: formatLocalizedDate(
@@ -119,7 +121,7 @@ export default function AlertScheduler() {
           fireNotification(
             t("dstMomentTitle"),
             t("dstMomentBody", {
-              city: city.name,
+              city: cityName,
               direction: t(`direction.${directionKey}`),
             }),
           );
@@ -148,7 +150,7 @@ export default function AlertScheduler() {
           fireNotification(
             t("cityAlarmTitle"),
             t("cityAlarmBody", {
-              city: city.name,
+              city: getLocalizedCityName(city, locale),
               time: now.setZone(city.timezone).setLocale(luxonLocale).toFormat(timeFormat),
             }),
           );
@@ -169,7 +171,7 @@ export default function AlertScheduler() {
           fireNotification(
             t("businessHoursTitle"),
             t("businessHoursBody", {
-              city: city.name,
+              city: getLocalizedCityName(city, locale),
               lead: LEAD_LABEL_MINUTES[alert.leadMinutes] ?? `${alert.leadMinutes}m`,
               time: closeTime.setLocale(luxonLocale).toFormat(timeFormat),
             }),

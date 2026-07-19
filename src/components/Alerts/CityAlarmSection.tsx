@@ -8,6 +8,7 @@ import { useAlertsStore, type AlarmRepeat, type CityAlarm } from "@/stores/alert
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getCityById } from "@/lib/cities";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import { dailyOccurrence, onceOccurrence, countdownParts } from "@/lib/alertScheduling";
 import type { City } from "@/types/city";
 import CitySearch from "@/components/Search/CitySearch";
@@ -176,7 +177,7 @@ export default function CityAlarmSection() {
                     <span aria-hidden="true" className="mr-1">
                       {getFlagEmoji(city.countryCode)}
                     </span>
-                    {city.name}
+                    {getLocalizedCityName(city, locale)}
                   </button>
                 ))}
               </div>
@@ -186,7 +187,7 @@ export default function CityAlarmSection() {
           <CitySearch onSelect={setSelectedCity} />
           {selectedCity && (
             <p className="mt-1.5 text-xs text-foreground/60">
-              {getFlagEmoji(selectedCity.countryCode)} {selectedCity.name}
+              {getFlagEmoji(selectedCity.countryCode)} {getLocalizedCityName(selectedCity, locale)}
             </p>
           )}
         </div>
@@ -247,6 +248,7 @@ export default function CityAlarmSection() {
               key={alarm.id}
               alarm={alarm}
               now={now}
+              locale={locale}
               hourFormat={hourFormat}
               editing={editingId === alarm.id}
               onEdit={() => setEditingId(alarm.id)}
@@ -268,6 +270,7 @@ export default function CityAlarmSection() {
 interface CityAlarmRowProps {
   alarm: CityAlarm;
   now: DateTime | null;
+  locale: string;
   hourFormat: "12" | "24";
   editing: boolean;
   onEdit: () => void;
@@ -280,6 +283,7 @@ interface CityAlarmRowProps {
 function CityAlarmRow({
   alarm,
   now,
+  locale,
   hourFormat,
   editing,
   onEdit,
@@ -296,6 +300,9 @@ function CityAlarmRow({
   const [draftRepeat, setDraftRepeat] = useState<AlarmRepeat>(alarm.repeat);
 
   if (!city) return null;
+
+  const cityName = getLocalizedCityName(city, locale);
+  const countryName = getLocalizedCountryName(city.countryCode, locale, city.country);
 
   const timeFormat = hourFormat === "24" ? "HH:mm" : "h:mm a";
   const timeLabel = DateTime.fromObject({ hour: alarm.hour, minute: alarm.minute }).toFormat(timeFormat);
@@ -317,7 +324,7 @@ function CityAlarmRow({
     return (
       <li className="flex flex-col gap-2 rounded-xl border border-primary/50 bg-surface/40 p-4">
         <p className="text-sm font-semibold">
-          {city.name} <span className="font-normal text-foreground/50">({city.country})</span>
+          {cityName} <span className="font-normal text-foreground/50">({countryName})</span>
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <TimePicker
@@ -371,7 +378,7 @@ function CityAlarmRow({
     <li className="flex flex-col gap-2 rounded-xl border border-border bg-surface/40 p-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="min-w-0">
         <p className="text-sm font-semibold">
-          {city.name} <span className="font-mono font-normal text-foreground/60">{timeLabel}</span>{" "}
+          {cityName} <span className="font-mono font-normal text-foreground/60">{timeLabel}</span>{" "}
           <span className="text-xs font-normal text-foreground/50">
             ({alarm.repeat === "daily" ? t("repeatDaily") : t("repeatOnce")})
           </span>
@@ -403,7 +410,7 @@ function CityAlarmRow({
         <button
           type="button"
           onClick={onDelete}
-          aria-label={t("deleteAriaLabel", { city: city.name })}
+          aria-label={t("deleteAriaLabel", { city: cityName })}
           className="rounded-lg border border-border px-2.5 py-1 text-xs font-medium text-foreground/70 transition-colors hover:border-danger/50 hover:text-danger"
         >
           {t("delete")}

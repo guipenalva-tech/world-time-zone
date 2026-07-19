@@ -7,6 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useAlertsStore } from "@/stores/alertsStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getNextDstTransition } from "@/lib/dst";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
@@ -68,7 +69,7 @@ export default function DstSection() {
                       {getFlagEmoji(city.countryCode)}
                     </span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold">{city.name}</p>
+                      <p className="text-sm font-semibold">{getLocalizedCityName(city, locale)}</p>
                       {transition ? (
                         <>
                           <p className="text-sm text-foreground/70">
