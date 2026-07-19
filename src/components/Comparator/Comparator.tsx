@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
-import { getRowAnchor, toLuxonLocale } from "@/lib/timezone";
+import { formatLocalizedDate, getRowAnchor, toLuxonLocale } from "@/lib/timezone";
 import { selectionDurationHours } from "@/lib/timeSelection";
 import {
   captureNodeAsPng,
@@ -330,9 +330,14 @@ export default function Comparator() {
                 {t("brand")}
               </span>
               <span className="text-xs text-foreground/50">
-                {DateTime.now()
-                  .setLocale(toLuxonLocale(locale))
-                  .toFormat("d LLL yyyy, HH:mm")}
+                {(() => {
+                  const exportNow = DateTime.now().setLocale(toLuxonLocale(locale));
+                  return `${formatLocalizedDate(
+                    exportNow,
+                    { day: "numeric", month: "short", year: "numeric" },
+                    "d MMM yyyy",
+                  )}, ${exportNow.toFormat("HH:mm")}`;
+                })()}
               </span>
             </div>
           )}

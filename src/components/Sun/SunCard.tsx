@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
-import { toLuxonLocale } from "@/lib/timezone";
+import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getSunTimes, type MoonPhase, type MoonPhaseName, type TwilightBand } from "@/lib/sun";
 import { MoonIcon } from "@/components/icons/SunMoonIcons";
 import { SunriseIcon, SunsetIcon } from "./icons";
@@ -70,7 +70,11 @@ export default function SunCard({
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold">{city.name}</p>
           <p className="truncate text-xs text-foreground/50">
-            {cityNow.toFormat("cccc, d LLLL")}
+            {formatLocalizedDate(
+              cityNow,
+              { weekday: "long", day: "numeric", month: "long" },
+              "cccc, d MMMM",
+            )}
           </p>
         </div>
       </header>
@@ -171,15 +175,19 @@ export default function SunCard({
               </p>
               <p className="text-xs text-foreground/50">
                 {t("nextFullMoon", {
-                  date: DateTime.fromISO(moonPhase.nextFullMoon, { zone: "utc" })
-                    .setLocale(luxonLocale)
-                    .toFormat("d LLL"),
+                  date: formatLocalizedDate(
+                    DateTime.fromISO(moonPhase.nextFullMoon, { zone: "utc" }).setLocale(luxonLocale),
+                    { day: "numeric", month: "short" },
+                    "d MMM",
+                  ),
                 })}
                 {" · "}
                 {t("nextNewMoon", {
-                  date: DateTime.fromISO(moonPhase.nextNewMoon, { zone: "utc" })
-                    .setLocale(luxonLocale)
-                    .toFormat("d LLL"),
+                  date: formatLocalizedDate(
+                    DateTime.fromISO(moonPhase.nextNewMoon, { zone: "utc" }).setLocale(luxonLocale),
+                    { day: "numeric", month: "short" },
+                    "d MMM",
+                  ),
                 })}
               </p>
             </div>

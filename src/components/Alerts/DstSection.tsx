@@ -7,7 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useAlertsStore } from "@/stores/alertsStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
-import { toLuxonLocale } from "@/lib/timezone";
+import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getNextDstTransition } from "@/lib/dst";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
 
@@ -76,10 +76,11 @@ export default function DstSection() {
                           </p>
                           <p className="text-xs text-foreground/50">
                             {t("at", {
-                              date: transition.at
-                                .setZone(city.timezone)
-                                .setLocale(luxonLocale)
-                                .toFormat("d LLLL"),
+                              date: formatLocalizedDate(
+                                transition.at.setZone(city.timezone).setLocale(luxonLocale),
+                                { day: "numeric", month: "long" },
+                                "d MMMM",
+                              ),
                               time: transition.at
                                 .setZone(city.timezone)
                                 .setLocale(luxonLocale)

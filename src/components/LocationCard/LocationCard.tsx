@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { DateTime } from "luxon";
 import { useLocale, useTranslations } from "next-intl";
 import { findCityByTimezone, getCityById } from "@/lib/cities";
-import { getZoneInfo, toLuxonLocale } from "@/lib/timezone";
+import { formatLocalizedDate, getZoneInfo, toLuxonLocale } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
 import {
   useSettingsStore,
@@ -80,7 +80,11 @@ export default function LocationCard() {
   const zoned = now.setZone(city.timezone).setLocale(luxonLocale);
   const zoneInfo = getZoneInfo(city.timezone, now);
   const timeLabel = zoned.toFormat(hourFormat === "24" ? "HH:mm:ss" : "h:mm:ss a");
-  const dateLabel = zoned.toFormat("cccc, d LLLL yyyy");
+  const dateLabel = formatLocalizedDate(
+    zoned,
+    { weekday: "long", day: "numeric", month: "long", year: "numeric" },
+    "cccc, d MMMM yyyy",
+  );
 
   function handlePick(picked: City) {
     setLocalCardCityId(picked.id);

@@ -16,6 +16,66 @@ export function toLuxonLocale(locale: string): string {
 }
 
 /**
+ * Locales where Luxon's token formatter (`.toFormat()`) drops the CJK month
+ * character ("月") whenever a day field is combined with a month field.
+ * Root cause: `Intl.DateTimeFormat.formatToParts()` splits the bare numeral
+ * and the "月" suffix into separate parts for these locales, and Luxon's
+ * per-token substitution keeps only the part typed "month" — losing the
+ * suffix. Luxon's own source documents a workaround for this for "ja" in
+ * one internal code path (building the 12-month list for `Info.months()`),
+ * but not in the general `.toFormat()` path, and the same Intl behavior
+ * also affects "zh-CN"/"zh-TW", which Luxon doesn't special-case at all.
+ */
+const CJK_MONTH_WORKAROUND_LOCALES = new Set(["ja", "zh-CN", "zh-TW"]);
+
+interface LocalizedDateParts {
+  weekday?: "long";
+  day: "numeric";
+  month: "long" | "short";
+  year?: "numeric";
+}
+
+/**
+ * Formats a day/month(/weekday)(/year) combination, working around the CJK
+ * month bug above by calling `Intl.DateTimeFormat` directly for affected
+ * locales (its plain `.format()` isn't affected — only `formatToParts()`
+ * mislabels the month, and that's what Luxon's token formatter relies on).
+ * `luxonFormat` is the exact Luxon token string used for every other
+ * locale, so output there is byte-for-byte unchanged.
+ */
+export function formatLocalizedDate(
+  dt: DateTime,
+  parts: LocalizedDateParts,
+  luxonFormat: string,
+): string {
+  const locale = dt.locale;
+  if (locale && CJK_MONTH_WORKAROUND_LOCALES.has(locale) && dt.isValid) {
+    const options: Intl.DateTimeFormatOptions = {
+      day: parts.day,
+      month: parts.month,
+    };
+    if (parts.weekday) options.weekday = parts.weekday;
+    if (parts.year) options.year = parts.year;
+    return new Intl.DateTimeFormat(locale, options).format(dt.toJSDate());
+  }
+  return dt.toFormat(luxonFormat);
+}
+
+/**
+ * Short month name only (e.g. "Jul", "7月"). Works around the same CJK
+ * month bug as `formatLocalizedDate` above — for "ja" even a lone month
+ * field is mislabeled by `formatToParts()`, so we bypass Luxon for the
+ * affected locales here too.
+ */
+export function formatMonthShort(dt: DateTime): string {
+  const locale = dt.locale;
+  if (locale && CJK_MONTH_WORKAROUND_LOCALES.has(locale) && dt.isValid) {
+    return new Intl.DateTimeFormat(locale, { month: "short" }).format(dt.toJSDate());
+  }
+  return dt.toFormat("MMM");
+}
+
+/**
  * Format a UTC offset in minutes as "UTC+5:30", "UTC-3", "UTC+0".
  */
 export function formatOffsetMinutes(offsetMinutes: number): string {
@@ -99,7 +159,7 @@ export function getHourRow(
       minute: zoned.minute,
       weekday: zoned.toFormat("ccc"),
       day: zoned.day,
-      month: zoned.toFormat("LLL"),
+      month: formatMonthShort(zoned),
       isWeekend,
       isNight,
       isBusinessHour,

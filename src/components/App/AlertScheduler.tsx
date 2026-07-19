@@ -7,7 +7,7 @@ import { useComparatorStore } from "@/stores/comparatorStore";
 import { useAlertsStore } from "@/stores/alertsStore";
 import { useSettingsStore, resolveHourFormat } from "@/stores/settingsStore";
 import { getCityById } from "@/lib/cities";
-import { toLuxonLocale } from "@/lib/timezone";
+import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getNextDstTransition } from "@/lib/dst";
 import {
   dailyOccurrence,
@@ -104,7 +104,11 @@ export default function AlertScheduler() {
               city: city.name,
               direction: t(`direction.${directionKey}`),
               time: transition.at.setZone(city.timezone).setLocale(luxonLocale).toFormat(timeFormat),
-              date: transition.at.setZone(city.timezone).setLocale(luxonLocale).toFormat("d LLL"),
+              date: formatLocalizedDate(
+                transition.at.setZone(city.timezone).setLocale(luxonLocale),
+                { day: "numeric", month: "short" },
+                "d MMM",
+              ),
             }),
           );
           alerts.markDstFired(city.id, "reminder", reminderCheck.key);
