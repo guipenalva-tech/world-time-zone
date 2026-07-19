@@ -606,6 +606,7 @@
     "dataFrankfurter": "Währung — Frankfurter (frankfurter.dev) mit den Referenzkursen der Europäischen Zentralbank.",
     "dataNews": "Nachrichten — RSS-Feeds von Google News.",
     "dataMap": "Kartengrenzen — Landpolygondaten im Maßstab 110m von Natural Earth (naturalearth.com), gemeinfrei, in die Website eingebettet.",
+    "dataCityNames": "Stadt- und Ländernamen — Wikidata (wikidata.org), eine freie Wissensdatenbank (CC0), verwendet, um Stadt- und Ländernamen in jeder Sprache anzuzeigen.",
     "noAccountHeading": "Kein Konto erforderlich",
     "noAccountP1": "Es gibt nichts zu registrieren. Ihre Städteliste und Ihre Einstellungen werden lokal in Ihrem eigenen Browser gespeichert — Einzelheiten finden Sie in unserer Datenschutzerklärung.",
     "contactHeading": "Kontakt aufnehmen",

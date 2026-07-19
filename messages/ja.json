@@ -606,6 +606,7 @@
     "dataFrankfurter": "為替 — Frankfurter（frankfurter.dev）。欧州中央銀行の参照為替レートを提供しています。",
     "dataNews": "ニュース — Google News の RSS フィードです。",
     "dataMap": "地図の境界線 — Natural Earth（naturalearth.com）の 110m 陸地ポリゴンデータ（パブリックドメイン）をサイトに同梱しています。",
+    "dataCityNames": "都市名・国名 — Wikidata（wikidata.org）。自由なナレッジベース（CC0）で、各言語での都市名・国名の表示に使用しています。",
     "noAccountHeading": "アカウントは不要です",
     "noAccountP1": "登録の必要は一切ありません。都市のリストや各種設定は、お客様自身のブラウザ内にローカル保存されます。詳しくはプライバシーポリシーをご覧ください。",
     "contactHeading": "ご連絡はこちら",

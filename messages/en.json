@@ -606,6 +606,7 @@
     "dataFrankfurter": "Currency — Frankfurter (frankfurter.dev), serving European Central Bank reference exchange rates.",
     "dataNews": "News — Google News RSS feeds.",
     "dataMap": "Map boundaries — Natural Earth (naturalearth.com) 110m land-polygon data, public domain, bundled with the site.",
+    "dataCityNames": "City and country names — Wikidata (wikidata.org), a free knowledge base (CC0), used to show city and country names in each language.",
     "noAccountHeading": "No account needed",
     "noAccountP1": "There's nothing to sign up for. Your city list and preferences are saved locally in your own browser — see our Privacy Policy for details.",
     "contactHeading": "Get in touch",

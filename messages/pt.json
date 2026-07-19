@@ -606,6 +606,7 @@
     "dataFrankfurter": "Câmbio — Frankfurter (frankfurter.dev), que fornece as taxas de referência do Banco Central Europeu.",
     "dataNews": "Notícias — feeds RSS do Google News.",
     "dataMap": "Fronteiras do mapa — dados de polígonos de terra 110m do Natural Earth (naturalearth.com), de domínio público, embutidos no site.",
+    "dataCityNames": "Nomes de cidades e países — Wikidata (wikidata.org), uma base de conhecimento livre (CC0), usada para exibir nomes de cidades e países em cada idioma.",
     "noAccountHeading": "Sem necessidade de conta",
     "noAccountP1": "Não há nada para cadastrar. Sua lista de cidades e suas preferências ficam salvas localmente no seu próprio navegador — veja nossa Política de Privacidade para detalhes.",
     "contactHeading": "Fale com a gente",

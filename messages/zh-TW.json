@@ -606,6 +606,7 @@
     "dataFrankfurter": "匯率 — Frankfurter（frankfurter.dev），提供歐洲中央銀行的參考匯率。",
     "dataNews": "新聞 — Google News 的 RSS 訂閱來源。",
     "dataMap": "地圖邊界 — Natural Earth（naturalearth.com）的 110m 陸地多邊形資料，屬公眾領域，已內建於本網站。",
+    "dataCityNames": "城市與國家名稱 — Wikidata（wikidata.org），一個自由知識庫（CC0），用於以各語言顯示城市與國家名稱。",
     "noAccountHeading": "無須註冊帳號",
     "noAccountP1": "完全不需要註冊。您的城市清單與偏好設定都儲存在您自己的瀏覽器本機 — 詳情請參閱我們的隱私權政策。",
     "contactHeading": "與我們聯繫",

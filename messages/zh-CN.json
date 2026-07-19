@@ -606,6 +606,7 @@
     "dataFrankfurter": "汇率 — Frankfurter（frankfurter.dev），提供欧洲中央银行的参考汇率。",
     "dataNews": "新闻 — Google News 的 RSS 源。",
     "dataMap": "地图边界 — Natural Earth（naturalearth.com）的 110m 陆地多边形数据，属公有领域，已内置于本站。",
+    "dataCityNames": "城市和国家名称 — Wikidata（wikidata.org），一个自由知识库（CC0），用于以各语言显示城市和国家名称。",
     "noAccountHeading": "无需注册账号",
     "noAccountP1": "无需注册任何账号。您的城市列表和偏好设置均保存在您自己的浏览器本地 — 详情请参阅我们的隐私政策。",
     "contactHeading": "与我们联系",

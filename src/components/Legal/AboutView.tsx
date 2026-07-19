@@ -6,7 +6,9 @@ import LegalArticle, { LegalSection } from "./LegalArticle";
  * AdSense review looks favorably on pages that clearly disclose where a
  * site's data comes from, so this lists all 3 live external APIs
  * (Open-Meteo, Frankfurter, Google News) plus the build-time Natural
- * Earth map data, matching what `PrivacyView` also discloses.
+ * Earth map data and Wikidata-sourced localized city/country names
+ * (src/data/cityNames.json, see scripts/build-city-names.mjs), matching
+ * what `PrivacyView` also discloses.
  */
 export default async function AboutView({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "About" });
@@ -39,6 +41,7 @@ export default async function AboutView({ locale }: { locale: string }) {
           <li>{t("dataFrankfurter")}</li>
           <li>{t("dataNews")}</li>
           <li>{t("dataMap")}</li>
+          <li>{t("dataCityNames")}</li>
         </ul>
       </LegalSection>
 

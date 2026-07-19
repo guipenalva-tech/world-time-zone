@@ -606,6 +606,7 @@
     "dataFrankfurter": "Devises — Frankfurter (frankfurter.dev), qui diffuse les taux de change de référence de la Banque centrale européenne.",
     "dataNews": "Actualités — flux RSS Google News.",
     "dataMap": "Frontières de la carte — données de polygones terrestres au 110m de Natural Earth (naturalearth.com), domaine public, intégrées au site.",
+    "dataCityNames": "Noms de villes et de pays — Wikidata (wikidata.org), une base de connaissances libre (CC0), utilisée pour afficher les noms de villes et de pays dans chaque langue.",
     "noAccountHeading": "Aucun compte requis",
     "noAccountP1": "Rien à créer ni à activer. Votre liste de villes et vos préférences sont enregistrées localement dans votre propre navigateur — voir notre politique de confidentialité pour le détail.",
     "contactHeading": "Nous écrire",
