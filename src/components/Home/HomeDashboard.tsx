@@ -24,6 +24,7 @@ import CurrencyView from "@/components/Currency/CurrencyView";
 import FlightsView from "@/components/Flights/FlightsView";
 import NewsView from "@/components/News/NewsView";
 import AlertsView from "@/components/Alerts/AlertsView";
+import AdBanner from "@/components/Ads/AdBanner";
 import JumpNav, { type JumpNavItem } from "./JumpNav";
 import SectionHeader from "./SectionHeader";
 import LazySection from "./LazySection";
@@ -36,7 +37,8 @@ const SECTION_ICON_CLASS = "h-4 w-4";
  * feature view embedded in sequence, each behind its own SectionHeader and
  * lazily mounted as it nears the viewport (see LazySection) — the dedicated
  * /map, /chart, /weather, ... pages stay exactly as they were, for SEO and
- * for anyone who wants a single feature full-page.
+ * for anyone who wants a single feature full-page. In-feed ad slots sit
+ * after Chart and after Currency, never above the comparator.
  */
 export default function HomeDashboard() {
   const t = useTranslations("HomeSections");
@@ -94,6 +96,10 @@ export default function HomeDashboard() {
         <ChartView embedded />
       </LazySection>
 
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed1" />
+      </div>
+
       <SectionHeader id="weather" icon={<WeatherIcon className="h-5 w-5" />} title={t("weather")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[360px]">
         <WeatherView embedded />
@@ -108,6 +114,10 @@ export default function HomeDashboard() {
       <LazySection minHeightClassName="min-h-[420px]">
         <CurrencyView embedded />
       </LazySection>
+
+      <div className="px-4 pt-8 sm:px-6">
+        <AdBanner slot="infeed2" />
+      </div>
 
       <SectionHeader id="flights" icon={<FlightsIcon className="h-5 w-5" />} title={t("flights")} cities={sortedCities} />
       <LazySection minHeightClassName="min-h-[420px]">
