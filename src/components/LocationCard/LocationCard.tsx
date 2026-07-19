@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { findCityByTimezone, getCityById } from "@/lib/cities";
 import { formatLocalizedDate, getZoneInfo, toLuxonLocale } from "@/lib/timezone";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import {
   useSettingsStore,
   resolveHourFormat,
@@ -103,8 +104,12 @@ export default function LocationCard() {
             {getFlagEmoji(city.countryCode)}
           </span>
           <div className="text-left">
-            <p className="text-lg font-semibold leading-tight">{city.name}</p>
-            <p className="text-xs text-foreground/50">{city.country}</p>
+            <p className="text-lg font-semibold leading-tight">
+              {getLocalizedCityName(city, locale)}
+            </p>
+            <p className="text-xs text-foreground/50">
+              {getLocalizedCountryName(city.countryCode, locale, city.country)}
+            </p>
           </div>
         </div>
 

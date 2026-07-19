@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import type { HourFormat } from "@/stores/settingsStore";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { formatLocalizedDate, toLuxonLocale } from "@/lib/timezone";
 import { getSunTimes, type MoonPhase, type MoonPhaseName, type TwilightBand } from "@/lib/sun";
 import { MoonIcon } from "@/components/icons/SunMoonIcons";
@@ -68,7 +69,7 @@ export default function SunCard({
           {getFlagEmoji(city.countryCode)}
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold">{city.name}</p>
+          <p className="truncate text-sm font-semibold">{getLocalizedCityName(city, locale)}</p>
           <p className="truncate text-xs text-foreground/50">
             {formatLocalizedDate(
               cityNow,

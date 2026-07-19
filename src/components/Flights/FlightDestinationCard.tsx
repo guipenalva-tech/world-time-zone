@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import {
   estimateFlightOptions,
   type DateOption,
@@ -103,6 +104,9 @@ export default function FlightDestinationCard({
   );
 
   const distanceLabel = new Intl.NumberFormat(locale).format(Math.round(distanceKm));
+  const destinationName = getLocalizedCityName(destination, locale);
+  const destinationCountry = getLocalizedCountryName(destination.countryCode, locale, destination.country);
+  const originName = getLocalizedCityName(origin, locale);
 
   return (
     <article className="flex flex-col gap-3 rounded-xl border border-border bg-surface/40 p-4">
@@ -112,8 +116,8 @@ export default function FlightDestinationCard({
             {getFlagEmoji(destination.countryCode)}
           </span>
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold">{destination.name}</p>
-            <p className="truncate text-xs text-foreground/50">{destination.country}</p>
+            <p className="truncate text-sm font-semibold">{destinationName}</p>
+            <p className="truncate text-xs text-foreground/50">{destinationCountry}</p>
           </div>
         </div>
         <p className="shrink-0 text-xs text-foreground/50">
@@ -128,7 +132,7 @@ export default function FlightDestinationCard({
       </div>
 
       <p className="sr-only">
-        {t("fromTo", { origin: origin.name, destination: destination.name })}
+        {t("fromTo", { origin: originName, destination: destinationName })}
       </p>
     </article>
   );

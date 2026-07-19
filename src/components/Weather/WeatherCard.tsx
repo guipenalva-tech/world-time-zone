@@ -5,6 +5,7 @@ import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 import type { ComparedCity } from "@/types/city";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 import { toLuxonLocale } from "@/lib/timezone";
 import { fetchWeather, weatherCodeToInfo, type WeatherData } from "@/lib/weather";
 import { WeatherCategoryIcon } from "./icons";
@@ -56,8 +57,10 @@ export default function WeatherCard({ comparedCity, locale }: WeatherCardProps) 
           {getFlagEmoji(city.countryCode)}
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold">{city.name}</p>
-          <p className="truncate text-xs text-foreground/50">{city.country}</p>
+          <p className="truncate text-sm font-semibold">{getLocalizedCityName(city, locale)}</p>
+          <p className="truncate text-xs text-foreground/50">
+            {getLocalizedCountryName(city.countryCode, locale, city.country)}
+          </p>
         </div>
       </header>
 

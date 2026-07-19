@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import { toLuxonLocale } from "@/lib/timezone";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { getCurrencyForCountry, fetchExchangeRates, type ExchangeRates } from "@/lib/currency";
 import EmptyCitiesInvite from "@/components/Placeholders/EmptyCitiesInvite";
 import AdBanner from "@/components/Ads/AdBanner";
@@ -43,10 +44,12 @@ export default function CurrencyView({ embedded = false }: CurrencyViewProps) {
     const seen = new Map<string, string>();
     for (const c of sortedCities) {
       const currency = getCurrencyForCountry(c.city.countryCode);
-      if (currency && !seen.has(currency)) seen.set(currency, c.city.name);
+      if (currency && !seen.has(currency)) {
+        seen.set(currency, getLocalizedCityName(c.city, locale));
+      }
     }
     return [...seen.entries()].map(([currency, cityName]) => ({ currency, cityName }));
-  }, [sortedCities]);
+  }, [sortedCities, locale]);
 
   const referenceCityId = sortedCities[0]?.city.id ?? null;
   const referenceCurrency = sortedCities[0]
@@ -210,6 +213,7 @@ export default function CurrencyView({ embedded = false }: CurrencyViewProps) {
                     amount={amount}
                     rates={rates}
                     locale={luxonLocale}
+                    appLocale={locale}
                   />
                 ))}
               </div>

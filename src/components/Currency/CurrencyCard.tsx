@@ -5,19 +5,29 @@ import type { ComparedCity } from "@/types/city";
 import type { ExchangeRates } from "@/lib/currency";
 import { getCurrencyForCountry, convertAmount } from "@/lib/currency";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
 
 interface CurrencyCardProps {
   comparedCity: ComparedCity;
   amount: number;
   rates: ExchangeRates;
+  /** Luxon-mapped locale (see `toLuxonLocale`), used for Intl.NumberFormat
+   * currency formatting only — NOT necessarily the same string as the
+   * app/next-intl locale (e.g. "pt" becomes "pt-BR" here). */
   locale: string;
+  /** Raw next-intl app locale (e.g. "pt", not "pt-BR"), used to look up
+   * localized city/country names — `cityNames.json` and
+   * `Intl.DisplayNames` are keyed by the app locale, not the Luxon one. */
+  appLocale: string;
 }
 
 /** One compared city's converted amount, or a clear "unavailable" state
  * when its currency isn't one of Frankfurter's ~30 supported currencies. */
-export default function CurrencyCard({ comparedCity, amount, rates, locale }: CurrencyCardProps) {
+export default function CurrencyCard({ comparedCity, amount, rates, locale, appLocale }: CurrencyCardProps) {
   const t = useTranslations("Currency");
   const { city } = comparedCity;
+  const cityName = getLocalizedCityName(city, appLocale);
+  const countryName = getLocalizedCountryName(city.countryCode, appLocale, city.country);
   const currency = getCurrencyForCountry(city.countryCode);
   const isBase = currency === rates.base;
   const converted = currency ? convertAmount(amount, currency, rates) : null;
@@ -43,8 +53,8 @@ export default function CurrencyCard({ comparedCity, amount, rates, locale }: Cu
           {getFlagEmoji(city.countryCode)}
         </span>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{city.name}</p>
-          <p className="truncate text-xs text-foreground/50">{city.country}</p>
+          <p className="truncate text-sm font-semibold">{cityName}</p>
+          <p className="truncate text-xs text-foreground/50">{countryName}</p>
         </div>
         {isBase && (
           <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { getFlagEmoji } from "@/lib/flags";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import CitySearch from "@/components/Search/CitySearch";
 import type { City } from "@/types/city";
 
@@ -19,6 +20,7 @@ interface OriginPickerProps {
  */
 export default function OriginPicker({ origin, onChange }: OriginPickerProps) {
   const t = useTranslations("Flights");
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +52,7 @@ export default function OriginPicker({ origin, onChange }: OriginPickerProps) {
       <span className="text-foreground/50">{t("originLabel")}</span>
       <span className="inline-flex items-center gap-1.5 font-semibold">
         <span aria-hidden="true">{getFlagEmoji(origin.countryCode)}</span>
-        {origin.name}
+        {getLocalizedCityName(origin, locale)}
       </span>
       <div className="relative">
         <button

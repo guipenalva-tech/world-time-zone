@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useComparatorStore } from "@/stores/comparatorStore";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import type { City } from "@/types/city";
 import CitySearch from "@/components/Search/CitySearch";
 import LanguageSelect from "@/components/Settings/LanguageSelect";
@@ -19,6 +20,7 @@ import NavBar from "./NavBar";
  */
 export default function Header() {
   const t = useTranslations("Header");
+  const locale = useLocale();
   const cities = useComparatorStore((s) => s.cities);
   const addCity = useComparatorStore((s) => s.addCity);
 
@@ -49,7 +51,7 @@ export default function Header() {
   function handleSelect(city: City) {
     addCity(city);
     setMobileSearchOpen(false);
-    setToast(t("cityAdded", { city: city.name }));
+    setToast(t("cityAdded", { city: getLocalizedCityName(city, locale) }));
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
     toastTimerRef.current = setTimeout(() => setToast(null), 2200);
   }

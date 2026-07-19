@@ -8,6 +8,7 @@ import {
   formatHourDiff,
   type TimeQuestionAnswer,
 } from "@/lib/timeQuestion";
+import { getLocalizedCityName } from "@/lib/i18nNames";
 import { useComparatorStore } from "@/stores/comparatorStore";
 import {
   useSettingsStore,
@@ -16,12 +17,12 @@ import {
 
 type Translator = ReturnType<typeof useTranslations>;
 
-function buildAnswerText(answer: TimeQuestionAnswer, t: Translator): string {
+function buildAnswerText(answer: TimeQuestionAnswer, t: Translator, locale: string): string {
   switch (answer.intent) {
     case "current":
       return t("answerCurrent", {
         time: answer.time.formatted,
-        city: answer.city.name,
+        city: getLocalizedCityName(answer.city, locale),
       });
 
     case "convert": {
@@ -33,24 +34,24 @@ function buildAnswerText(answer: TimeQuestionAnswer, t: Translator): string {
             : "";
       return t("answerConvert", {
         sourceTime: answer.sourceTime.formatted,
-        sourceCity: answer.sourceCity.name,
+        sourceCity: getLocalizedCityName(answer.sourceCity, locale),
         targetTime: `${answer.targetTime.formatted}${suffix}`,
-        targetCity: answer.targetCity.name,
+        targetCity: getLocalizedCityName(answer.targetCity, locale),
       });
     }
 
     case "difference": {
       if (answer.diffHours === 0) {
         return t("answerDifferenceSame", {
-          cityA: answer.cityA.name,
-          cityB: answer.cityB.name,
+          cityA: getLocalizedCityName(answer.cityA, locale),
+          cityB: getLocalizedCityName(answer.cityB, locale),
         });
       }
       const key =
         answer.diffHours > 0 ? "answerDifferenceAhead" : "answerDifferenceBehind";
       return t(key, {
-        cityA: answer.cityA.name,
-        cityB: answer.cityB.name,
+        cityA: getLocalizedCityName(answer.cityA, locale),
+        cityB: getLocalizedCityName(answer.cityB, locale),
         hours: formatHourDiff(answer.diffHours),
       });
     }
@@ -146,7 +147,7 @@ export default function TimeQuestionInput() {
           ) : (
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="font-medium text-foreground">
-                {buildAnswerText(result, t)}
+                {buildAnswerText(result, t, locale)}
               </p>
               {missingCities.length > 0 && (
                 <button

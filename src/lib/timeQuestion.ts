@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import type { City } from "@/types/city";
 import { cities, normalize } from "@/lib/cities";
+import { getSearchableLocalizedNames } from "@/lib/i18nNames";
 import { toLuxonLocale } from "@/lib/timezone";
 import type { HourFormat } from "@/stores/settingsStore";
 
@@ -72,6 +73,12 @@ function getCandidates(): CityCandidate[] {
     list.push({ normalized: normalize(city.name), city });
     for (const alias of city.aliases ?? []) {
       list.push({ normalized: normalize(alias), city });
+    }
+    // Also match the curated localized names (e.g. "東京", "Токио") so a
+    // question typed in ja/ru/etc. against a city's own display name still
+    // resolves — same rationale as searchCities in cities.ts.
+    for (const localizedName of getSearchableLocalizedNames(city)) {
+      list.push({ normalized: normalize(localizedName), city });
     }
   }
   // Longest candidates first so multi-word names/aliases win over shorter
