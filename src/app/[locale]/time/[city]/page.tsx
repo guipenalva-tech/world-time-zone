@@ -130,12 +130,11 @@ export default async function CityTimePage({
   const facts = buildCityFacts(city, now);
   const narrativeSentences = buildCityNarrative(facts);
 
-  const [t, tSun, tAlerts, tFlights, tBreadcrumb] = await Promise.all([
+  const [t, tSun, tAlerts, tFlights] = await Promise.all([
     getTranslations({ locale, namespace: "CityPage" }),
     getTranslations({ locale, namespace: "Sun" }),
     getTranslations({ locale, namespace: "Alerts" }),
     getTranslations({ locale, namespace: "Flights" }),
-    getTranslations({ locale, namespace: "Breadcrumb" }),
   ]);
 
   const luxonLocale = toLuxonLocale(locale);
@@ -235,7 +234,12 @@ export default async function CityTimePage({
     }),
   });
 
-  // --- JSON-LD ---------------------------------------------------------
+  // --- JSON-LD -----------------------------------------------------------
+  // Note: BreadcrumbList is intentionally NOT duplicated here — the
+  // globally-mounted <Breadcrumb> (src/components/Layout/Breadcrumb.tsx)
+  // already emits one for every route, including this one (it has its
+  // own /time/[city] case). A second identical BreadcrumbList block would
+  // just be confusing duplicate structured data for crawlers.
   const pageUrl = `${siteUrl}/${locale}/time/${city.id}`;
   const placeJsonLd = {
     "@context": "https://schema.org",
@@ -244,19 +248,6 @@ export default async function CityTimePage({
     address: { "@type": "PostalAddress", addressCountry: city.countryCode },
     geo: { "@type": "GeoCoordinates", latitude: city.lat, longitude: city.lon },
     url: pageUrl,
-  };
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: tBreadcrumb("home"),
-        item: `${siteUrl}/${locale}`,
-      },
-      { "@type": "ListItem", position: 2, name: city.name, item: pageUrl },
-    ],
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -274,11 +265,6 @@ export default async function CityTimePage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(placeJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
