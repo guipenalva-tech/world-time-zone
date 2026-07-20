@@ -10,6 +10,7 @@ import {
   type FlightOptionEstimate,
   type FlightOptionKind,
 } from "@/lib/flightEstimate";
+import { CURRENCY_MAP, convertUsdTo } from "./CurrencyPicker";
 import type { City } from "@/types/city";
 
 interface FlightDestinationCardProps {
@@ -18,6 +19,7 @@ interface FlightDestinationCardProps {
   distanceKm: number;
   dateOption: DateOption;
   locale: string;
+  currency: string;
 }
 
 const KIND_BADGE_KEY: Record<FlightOptionKind, string> = {
@@ -38,23 +40,34 @@ function formatDuration(minutes: number, t: ReturnType<typeof useTranslations>) 
   return t("durationValue", { hours, minutes: mins });
 }
 
-function formatPriceRange(minUsd: number, maxUsd: number, locale: string) {
+function formatPriceRange(
+  minUsd: number,
+  maxUsd: number,
+  locale: string,
+  currency: string,
+) {
+  const minConverted = convertUsdTo(minUsd, currency);
+  const maxConverted = convertUsdTo(maxUsd, currency);
+  const currencyInfo = CURRENCY_MAP[currency] || CURRENCY_MAP.USD;
+
   const fmt = new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
+    currency: currency,
+    maximumFractionDigits: currency === "JPY" || currency === "KRW" ? 0 : 0,
   });
-  return `${fmt.format(minUsd)} – ${fmt.format(maxUsd)}`;
+  return `${fmt.format(minConverted)} – ${fmt.format(maxConverted)}`;
 }
 
 function OptionRow({
   option,
   locale,
   t,
+  currency,
 }: {
   option: FlightOptionEstimate;
   locale: string;
   t: ReturnType<typeof useTranslations>;
+  currency: string;
 }) {
   const connectionsLabel =
     option.connections === 0
@@ -72,7 +85,7 @@ function OptionRow({
           {t(KIND_BADGE_KEY[option.kind])}
         </span>
         <span className="font-mono text-sm font-semibold tabular-nums">
-          {formatPriceRange(option.priceMinUsd, option.priceMaxUsd, locale)}
+          {formatPriceRange(option.priceMinUsd, option.priceMaxUsd, locale, currency)}
         </span>
       </div>
       <div className="flex items-center justify-between gap-2 text-xs text-foreground/60">
@@ -95,6 +108,7 @@ export default function FlightDestinationCard({
   distanceKm,
   dateOption,
   locale,
+  currency,
 }: FlightDestinationCardProps) {
   const t = useTranslations("Flights");
 
@@ -127,7 +141,7 @@ export default function FlightDestinationCard({
 
       <div className="flex flex-col gap-2">
         {options.map((option) => (
-          <OptionRow key={option.kind} option={option} locale={locale} t={t} />
+          <OptionRow key={option.kind} option={option} locale={locale} t={t} currency={currency} />
         ))}
       </div>
 

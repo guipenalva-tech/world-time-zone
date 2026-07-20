@@ -406,6 +406,7 @@
     "disclaimerText": "Prices and durations are calculated from distance and date — not real quotes from any airline. Use them for rough trip planning only.",
     "originLabel": "From",
     "changeOrigin": "Change",
+    "currencyLabel": "Currency:",
     "dateLabel": "Departure",
     "dateToday": "Today",
     "dateTomorrow": "Tomorrow",

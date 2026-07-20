@@ -423,7 +423,8 @@
     "optionCheapest": "Più economica",
     "optionBalanced": "Bilanciata",
     "fromTo": "Da {origin} a {destination}",
-    "needMoreCities": "Aggiungi un'altra città al tuo comparatore per vedere le stime di volo."
+    "needMoreCities": "Aggiungi un'altra città al tuo comparatore per vedere le stime di volo.",
+    "currencyLabel": "Valuta:"
   },
   "CityPage": {
     "metaTitle": "Che ora è a {city}? {offset} ({abbreviation})",

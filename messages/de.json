@@ -423,7 +423,8 @@
     "optionCheapest": "Am günstigsten",
     "optionBalanced": "Ausgewogen",
     "fromTo": "{origin} nach {destination}",
-    "needMoreCities": "Fügen Sie eine weitere Stadt zu Ihrem Vergleich hinzu, um Flugschätzungen zu sehen."
+    "needMoreCities": "Fügen Sie eine weitere Stadt zu Ihrem Vergleich hinzu, um Flugschätzungen zu sehen.",
+    "currencyLabel": "Währung:"
   },
   "CityPage": {
     "metaTitle": "Wie spät ist es in {city}? {offset} ({abbreviation})",

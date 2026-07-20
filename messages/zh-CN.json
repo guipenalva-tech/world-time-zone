@@ -423,7 +423,8 @@
     "optionCheapest": "最便宜",
     "optionBalanced": "均衡",
     "fromTo": "{origin} 至 {destination}",
-    "needMoreCities": "在对比器中再添加一个城市即可查看航班预估。"
+    "needMoreCities": "在对比器中再添加一个城市即可查看航班预估。",
+    "currencyLabel": "货币:"
   },
   "CityPage": {
     "metaTitle": "{city}现在几点？{offset}（{abbreviation}）",

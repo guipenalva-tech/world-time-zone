@@ -423,7 +423,8 @@
     "optionCheapest": "सबसे सस्ती",
     "optionBalanced": "संतुलित",
     "fromTo": "{origin} से {destination}",
-    "needMoreCities": "उड़ान अनुमान देखने के लिए अपने तुलनाकर्ता में एक और शहर जोड़ें।"
+    "needMoreCities": "उड़ान अनुमान देखने के लिए अपने तुलनाकर्ता में एक और शहर जोड़ें।",
+    "currencyLabel": "मुद्रा:"
   },
   "CityPage": {
     "metaTitle": "{city} में अभी क्या समय है? {offset} ({abbreviation})",

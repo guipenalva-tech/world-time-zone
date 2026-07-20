@@ -406,6 +406,7 @@
     "disclaimerText": "Los precios y duraciones se calculan según la distancia y la fecha — no son cotizaciones reales de ninguna aerolínea. Úsalos solo para una planificación aproximada.",
     "originLabel": "Desde",
     "changeOrigin": "Cambiar",
+    "currencyLabel": "Moneda:",
     "dateLabel": "Salida",
     "dateToday": "Hoy",
     "dateTomorrow": "Mañana",
@@ -423,7 +424,8 @@
     "optionCheapest": "Más barato",
     "optionBalanced": "Equilibrado",
     "fromTo": "{origin} a {destination}",
-    "needMoreCities": "Agrega otra ciudad a tu comparador para ver estimaciones de vuelo."
+    "needMoreCities": "Agrega otra ciudad a tu comparador para ver estimaciones de vuelo.",
+    "currencyLabel": "Moneda:"
   },
   "CityPage": {
     "metaTitle": "¿Qué hora es en {city}? {offset} ({abbreviation})",

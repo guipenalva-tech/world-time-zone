@@ -423,7 +423,8 @@
     "optionCheapest": "最安",
     "optionBalanced": "バランス重視",
     "fromTo": "{origin}から{destination}",
-    "needMoreCities": "比較機能に都市をもう1つ追加すると、フライトの推定情報を確認できます。"
+    "needMoreCities": "比較機能に都市をもう1つ追加すると、フライトの推定情報を確認できます。",
+    "currencyLabel": "通貨:"
   },
   "CityPage": {
     "metaTitle": "{city}の現在時刻は？{offset}（{abbreviation}）",

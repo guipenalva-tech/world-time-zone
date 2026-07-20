@@ -12,6 +12,7 @@ import type { City } from "@/types/city";
 import DisclaimerBanner from "./DisclaimerBanner";
 import OriginPicker from "./OriginPicker";
 import DateOptionPicker from "./DateOptionPicker";
+import CurrencyPicker from "./CurrencyPicker";
 import FlightDestinationCard from "./FlightDestinationCard";
 
 /** Fallback city if timezone detection fails and no override is set,
@@ -41,6 +42,7 @@ export default function FlightsView({ embedded = false }: FlightsViewProps) {
   const [detectedCity, setDetectedCity] = useState<City | null>(null);
   const [originOverride, setOriginOverride] = useState<City | null>(null);
   const [dateOption, setDateOption] = useState<DateOption>("in1Week");
+  const [currency, setCurrency] = useState("USD");
   // Brief opacity fade whenever the date chip changes, so the recalculated
   // prices below don't just snap to new values.
   const [fadeIn, setFadeIn] = useState(true);
@@ -99,7 +101,10 @@ export default function FlightsView({ embedded = false }: FlightsViewProps) {
         <>
           <DisclaimerBanner />
 
-          {origin && <OriginPicker origin={origin} onChange={setOriginOverride} />}
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            {origin && <OriginPicker origin={origin} onChange={setOriginOverride} />}
+            <CurrencyPicker currency={currency} onChange={setCurrency} />
+          </div>
 
           <DateOptionPicker value={dateOption} onChange={setDateOption} />
 
@@ -128,6 +133,7 @@ export default function FlightsView({ embedded = false }: FlightsViewProps) {
                   )}
                   dateOption={dateOption}
                   locale={locale}
+                  currency={currency}
                 />
               ))}
             </div>

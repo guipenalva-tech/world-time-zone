@@ -423,7 +423,8 @@
     "optionCheapest": "Самый дешёвый",
     "optionBalanced": "Сбалансированный",
     "fromTo": "Из {origin} в {destination}",
-    "needMoreCities": "Добавьте ещё один город в компаратор, чтобы увидеть оценки перелётов."
+    "needMoreCities": "Добавьте ещё один город в компаратор, чтобы увидеть оценки перелётов.",
+    "currencyLabel": "Валюта:"
   },
   "CityPage": {
     "metaTitle": "{city} — который час? {offset} ({abbreviation})",

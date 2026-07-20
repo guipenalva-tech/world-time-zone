@@ -406,6 +406,7 @@
     "disclaimerText": "Preços e durações são calculados por distância e data — não são cotações reais de nenhuma companhia aérea. Use apenas para planejamento aproximado.",
     "originLabel": "De",
     "changeOrigin": "Trocar",
+    "currencyLabel": "Moeda:",
     "dateLabel": "Partida",
     "dateToday": "Hoje",
     "dateTomorrow": "Amanhã",
