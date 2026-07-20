@@ -1,10 +1,10 @@
 {
   "Metadata": {
-    "title": "World Time Zones — Compare times and plan meetings",
+    "title": "World Time Box — Compare times and plan meetings",
     "description": "Compare time zones around the world and find the best time to meet, wherever your team is."
   },
   "Comparator": {
-    "title": "World Time Zones",
+    "title": "World Time Box",
     "subtitle": "Compare time zones around the world and find the best time to meet, wherever your team is.",
     "selectedBadge": "{hours}h selected",
     "clearSelection": "Clear selection",
@@ -115,7 +115,7 @@
     "toggle": "Switch theme (current: {current})"
   },
   "Nav": {
-    "home": "World Time Zones",
+    "home": "World Time Box",
     "chart": "Chart View",
     "map": "Map View",
     "sun": "Sunrise & Sunset",
