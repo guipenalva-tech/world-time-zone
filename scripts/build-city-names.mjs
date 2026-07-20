@@ -127,6 +127,60 @@ function chunk(arr, size) {
   return out;
 }
 
+/** Picks the best candidate Wikidata entity for `city` out of everything
+ * that already passed the country + coordinate-distance gate.
+ *
+ * City *names* collide constantly -- not just with other cities
+ * ("Springfield"), but within a single metro area: a stock exchange
+ * building, a postal micro-district, an administrative province, and a
+ * statistical "microregion" can all share the exact same English label
+ * as the city itself, sit inside the same 60km box, and belong to the
+ * same country. A bare nearest-distance pick among them is wrong more
+ * often than it looks -- three different real failures turned up during
+ * development, each defeating a different naive tiebreaker:
+ *
+ *  - "New York" nearest-matched the New York Stock Exchange (Wall
+ *    Street sits fractionally closer to our stored city-center point
+ *    than the city's own Wikidata coordinate does). Fix: prefer
+ *    candidates that have a population figure (P1082) at all --
+ *    landmarks/organizations essentially never do.
+ *  - "Sao Paulo" then nearest-*population*-matched the "Sao Paulo
+ *    Microregion" statistical entity over the actual city, because the
+ *    metro-area aggregate's population figure is larger than the city
+ *    proper's. Fix: population must not just exist, it has to be
+ *    plausible for THIS city -- compare it against cities.json's own
+ *    population estimate, not against other candidates.
+ *  - "Lima" then nearest-*distance*-among-population-havers matched
+ *    "Lima District" (a small central comuna, ~315k people) over the
+ *    real metro city (~9.9M) and over "Lima Province" (~10.1M) --
+ *    because the tiny district's point happens to sit closest of the
+ *    three. Fix: a population wildly smaller than expected (here, ~3% of
+ *    the ~10.7M cities.json expects) is itself disqualifying, checked
+ *    BEFORE falling back to distance.
+ *
+ * So, in order: (1) require the country+distance gate (done by caller),
+ * (2) prefer candidates whose population is within a plausible order of
+ * magnitude of cities.json's own estimate (catches over-broad admin
+ * aggregates AND under-broad sub-districts at once), (3) break remaining
+ * ties by nearest distance -- never by raw population size, which is
+ * what caused the Sao Paulo regression. */
+function pickBestCandidate(city, candidates) {
+  if (candidates.length <= 1) return candidates[0];
+
+  const expectedPop = Number.isFinite(city.population) && city.population > 0 ? city.population : undefined;
+  const plausiblyPopulated = (c) =>
+    Number.isFinite(c.population) &&
+    (expectedPop === undefined || (c.population >= expectedPop * 0.15 && c.population <= expectedPop * 6));
+
+  const tiers = [
+    candidates.filter(plausiblyPopulated),
+    candidates.filter((c) => Number.isFinite(c.population)),
+    candidates,
+  ];
+  const pool = tiers.find((t) => t.length > 0) ?? candidates;
+  return pool.reduce((a, b) => (b.dist < a.dist ? b : a));
+}
+
 // ---------------------------------------------------------------------
 // Legacy per-city REST path (wbsearchentities + wbgetentities), used
 // only as a fallback for cities the SPARQL exact-label match misses.
@@ -199,7 +253,9 @@ async function fetchClaims(ids) {
       for (const [id, entity] of Object.entries(json.entities ?? {})) {
         const countryQid = entity.claims?.P17?.[0]?.mainsnak?.datavalue?.value?.id;
         const coord = entity.claims?.P625?.[0]?.mainsnak?.datavalue?.value;
-        out.set(id, { countryQid, lat: coord?.latitude, lon: coord?.longitude });
+        const popClaim = entity.claims?.P1082?.[0]?.mainsnak?.datavalue?.value?.amount;
+        const population = popClaim !== undefined ? Number(popClaim) : undefined;
+        out.set(id, { countryQid, lat: coord?.latitude, lon: coord?.longitude, population });
       }
     } catch (err) {
       console.error(`  claims chunk failed (${group.length} ids): ${err.message}`);
@@ -247,20 +303,21 @@ async function legacyMatchCities(cities, countryIsoByQid) {
 
   const matchedQidByCity = new Map();
   cities.forEach((city, i) => {
-    let best = null;
-    let bestDist = Infinity;
+    // Same disambiguation as the SPARQL path -- see pickBestCandidate's
+    // doc comment for the three real failures (stock exchange, micro-
+    // region, sub-district) that shaped this logic.
+    const candidates = [];
     for (const qid of searchResults[i]) {
       const claim = claimsById.get(qid);
       if (!claim || claim.lat === undefined) continue;
       const iso = claim.countryQid ? countryIsoByQid.get(claim.countryQid) : undefined;
       if (iso !== city.countryCode) continue;
       const dist = haversineKm(city.lat, city.lon, claim.lat, claim.lon);
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = qid;
-      }
+      if (dist <= MAX_DISTANCE_KM) candidates.push({ qid, dist, population: claim.population });
     }
-    if (best && bestDist <= MAX_DISTANCE_KM) matchedQidByCity.set(city.id, best);
+    if (candidates.length === 0) return;
+    const best = pickBestCandidate(city, candidates);
+    matchedQidByCity.set(city.id, best.qid);
   });
 
   const labelsByQid = await fetchLabels([...matchedQidByCity.values()]);
@@ -353,7 +410,7 @@ function buildBatchQuery(cities) {
       .map((lang) => `(SAMPLE(?l${i}_${langVar(lang)}) AS ?name${i}_${langVar(lang)})`)
       .join(" ");
     return `  {
-    SELECT ?place${i} ?iso${i} ?lat${i} ?lon${i} ${selects} WHERE {
+    SELECT ?place${i} ?iso${i} ?lat${i} ?lon${i} (MAX(?pop${i}raw) AS ?pop${i}) ${selects} WHERE {
       SERVICE wikibase:box {
         ?place${i} wdt:P625 ?loc${i} .
         bd:serviceParam wikibase:cornerWest "${b.west}"^^geo:wktLiteral .
@@ -366,6 +423,7 @@ function buildBatchQuery(cities) {
       ?place${i} p:P625/psv:P625 ?coordNode${i} .
       ?coordNode${i} wikibase:geoLatitude ?lat${i} .
       ?coordNode${i} wikibase:geoLongitude ?lon${i} .
+      OPTIONAL { ?place${i} wdt:P1082 ?pop${i}raw }
 ${optionals}
     }
     GROUP BY ?place${i} ?iso${i} ?lat${i} ?lon${i}
@@ -389,31 +447,26 @@ async function runBatch(cities) {
       const iso = row[`iso${i}`]?.value;
       const lat = Number(row[`lat${i}`]?.value);
       const lon = Number(row[`lon${i}`]?.value);
+      const popRaw = row[`pop${i}`]?.value;
+      const population = popRaw !== undefined ? Number(popRaw) : undefined;
       const labels = {};
       for (const [locale, lang] of Object.entries(LOCALE_TO_WIKIDATA_LANG)) {
         const val = row[`name${i}_${langVar(lang)}`]?.value;
         if (val) labels[locale] = val;
       }
-      perCityCandidates[i].push({ qid, iso, lat, lon, labels });
+      perCityCandidates[i].push({ qid, iso, lat, lon, population, labels });
     }
   }
   const results = new Map();
   cities.forEach((city, i) => {
-    const candidates = perCityCandidates[i].filter(
-      (c) => c.iso === city.countryCode && Number.isFinite(c.lat) && Number.isFinite(c.lon),
-    );
-    let best = null;
-    let bestDist = Infinity;
-    for (const c of candidates) {
-      const dist = haversineKm(city.lat, city.lon, c.lat, c.lon);
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = c;
-      }
-    }
-    if (best && bestDist <= MAX_DISTANCE_KM) {
-      results.set(city.id, { qid: best.qid, dist: bestDist, labels: best.labels });
-    }
+    const candidates = perCityCandidates[i]
+      .filter((c) => c.iso === city.countryCode && Number.isFinite(c.lat) && Number.isFinite(c.lon))
+      .map((c) => ({ ...c, dist: haversineKm(city.lat, city.lon, c.lat, c.lon) }))
+      .filter((c) => c.dist <= MAX_DISTANCE_KM);
+
+    if (candidates.length === 0) return;
+    const best = pickBestCandidate(city, candidates);
+    results.set(city.id, { qid: best.qid, dist: best.dist, labels: best.labels });
   });
   return results;
 }
@@ -525,9 +578,17 @@ const limitArg = argv.find((a) => a.startsWith("--limit="));
 const CITY_LIMIT = limitArg ? Number(limitArg.slice("--limit=".length)) : Infinity;
 const batchSizeArg = argv.find((a) => a.startsWith("--batch-size="));
 const BATCH_SIZE = batchSizeArg ? Number(batchSizeArg.slice("--batch-size=".length)) : 15;
+const onlyArg = argv.find((a) => a.startsWith("--only="));
+/** Dev/ops escape hatch: restrict either mode to a specific id list (comma
+ * separated), so a spot-check on a handful of high-priority cities doesn't
+ * have to pay for a full 102- or 375-city run. Not part of the normal
+ * resumable workflow -- just for manual verification runs. */
+const ONLY_IDS = onlyArg ? new Set(onlyArg.slice("--only=".length).split(",")) : null;
 
 async function verifyMain(allCities, existingCityNames) {
-  const coveredCities = allCities.filter((c) => existingCityNames[c.id]);
+  const coveredCities = (ONLY_IDS
+    ? allCities.filter((c) => ONLY_IDS.has(c.id))
+    : allCities.filter((c) => existingCityNames[c.id]));
   console.log(`Verifying ${coveredCities.length} existing entries against fresh Wikidata data...\n`);
 
   const matches = await sparqlMatchCities(coveredCities, BATCH_SIZE);
