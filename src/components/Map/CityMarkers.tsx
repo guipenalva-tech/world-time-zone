@@ -120,7 +120,9 @@ export default function CityMarkers({
               style={{ marginTop: labelOffset }}
             >
               <span>{getFlagEmoji(city.countryCode)}</span>
-              <span className="max-w-20 truncate font-medium">{cityName}</span>
+              <span className="max-w-20 truncate font-medium">
+                {cityName} <span className="opacity-70">({city.countryCode})</span>
+              </span>
               <span className="font-mono tabular-nums opacity-80">{localTime}</span>
             </span>
           </button>
