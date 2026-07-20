@@ -14,7 +14,7 @@
     "reorder": "{city}を並べ替え",
     "remove": "{city}を削除",
     "addTimeZone": "タイムゾーンを追加",
-    "brand": "World Time Zone"
+    "brand": "World Time Box"
   },
   "Actions": {
     "trigger": "操作",
@@ -65,7 +65,7 @@
     "placeholder": "広告枠"
   },
   "Header": {
-    "brand": "World Time Zone",
+    "brand": "World Time Box",
     "searchToggle": "検索",
     "menuToggle": "その他のオプション",
     "hourFormatLabel": "時刻形式",
@@ -150,14 +150,14 @@
     "sunDescription": "比較中の都市について、日の出、日の入り、薄明、ゴールデンアワー、月相を表示します。",
     "alertsTitle": "アラート — タイムゾーン通知",
     "alertsDescription": "ミーティング時刻やタイムゾーン変更のカスタムアラート — 近日公開予定です。",
-    "privacyTitle": "プライバシーポリシー — World Time Zone",
-    "privacyDescription": "World Time Zone におけるデータの取り扱い：ローカルストレージ、Cookie、Google AdSense、利用している外部 API について。",
-    "termsTitle": "利用規約 — World Time Zone",
-    "termsDescription": "World Time Zone の利用に適用される規約です。時刻・天気・為替・ニュース・フライト概算に関する免責事項を含みます。",
-    "aboutTitle": "このサイトについて — World Time Zone",
-    "aboutDescription": "World Time Zone とは何か、どなたに向けたサービスか、どのデータソースを利用しているかをご説明します。",
-    "contactTitle": "お問い合わせ — World Time Zone",
-    "contactDescription": "World Time Zone へのお問い合わせ方法です。"
+    "privacyTitle": "プライバシーポリシー — World Time Box",
+    "privacyDescription": "World Time Box におけるデータの取り扱い：ローカルストレージ、Cookie、Google AdSense、利用している外部 API について。",
+    "termsTitle": "利用規約 — World Time Box",
+    "termsDescription": "World Time Box の利用に適用される規約です。時刻・天気・為替・ニュース・フライト概算に関する免責事項を含みます。",
+    "aboutTitle": "このサイトについて — World Time Box",
+    "aboutDescription": "World Time Box とは何か、どなたに向けたサービスか、どのデータソースを利用しているかをご説明します。",
+    "contactTitle": "お問い合わせ — World Time Box",
+    "contactDescription": "World Time Box へのお問い合わせ方法です。"
   },
   "Chart": {
     "pageTitle": "チャート表示",
@@ -506,9 +506,9 @@
     "allCountries": "すべての国"
   },
   "Footer": {
-    "product": "World Time Zone",
+    "product": "World Time Box",
     "tagline": "世界各都市のタイムゾーン・天気・為替・ニュースを比較できます。",
-    "rights": "© {year} World Time Zone",
+    "rights": "© {year} World Time Box",
     "legalHeading": "各種規約",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
@@ -528,9 +528,9 @@
   },
   "Privacy": {
     "pageTitle": "プライバシーポリシー",
-    "pageSubtitle": "World Time Zone におけるデータの取り扱いを、わかりやすくご説明します。",
+    "pageSubtitle": "World Time Box におけるデータの取り扱いを、わかりやすくご説明します。",
     "effectiveDate": "最終更新：2026年7月",
-    "introP1": "World Time Zone（以下「当サイト」）は、タイムゾーンを比較するための無料ツールです。本ポリシーでは、当サイトが取得するデータの内容と目的、そしてお客様が選択できる事項についてご説明します。",
+    "introP1": "World Time Box（以下「当サイト」）は、タイムゾーンを比較するための無料ツールです。本ポリシーでは、当サイトが取得するデータの内容と目的、そしてお客様が選択できる事項についてご説明します。",
     "noAccountP1": "当サイトにはユーザーアカウントもサーバー側のデータベースもありません。氏名・メールアドレス・支払い情報を取得することはなく、当サイトが保存する情報からお客様個人を特定することもできません。",
     "localStorageHeading": "ブラウザに保存する内容",
     "localStorageP1": "当サイトは、お客様の設定を当社のサーバーではなくブラウザのローカルストレージに直接保存します。保存される内容は、比較中の都市、選択された基準日時、時刻表示形式とテーマの設定、日の出・日の入りカードの表示設定、カスタマイズしたナビゲーションの並び順、「アラート」ページで作成した都市アラームや営業時間アラート、および Cookie に関するお客様の選択です。",
@@ -563,11 +563,11 @@
   },
   "Terms": {
     "pageTitle": "利用規約",
-    "pageSubtitle": "World Time Zone のご利用に適用される規約です。",
+    "pageSubtitle": "World Time Box のご利用に適用される規約です。",
     "effectiveDate": "最終更新：2026年7月",
-    "introP1": "World Time Zone（以下「本サイト」）をご利用いただく場合、本規約に同意いただいたものとみなします。同意いただけない場合は、本サイトのご利用をお控えください。",
+    "introP1": "World Time Box（以下「本サイト」）をご利用いただく場合、本規約に同意いただいたものとみなします。同意いただけない場合は、本サイトのご利用をお控えください。",
     "serviceHeading": "本サービスについて",
-    "serviceP1": "World Time Zone は、お選びいただいた都市について、タイムゾーンおよび関連する旅行情報（天気・為替・ニュース・飛行時間の概算）を比較できる無料ツールです。現時点で有料プラン・アカウント・定期購読の提供はありません。",
+    "serviceP1": "World Time Box は、お選びいただいた都市について、タイムゾーンおよび関連する旅行情報（天気・為替・ニュース・飛行時間の概算）を比較できる無料ツールです。現時点で有料プラン・アカウント・定期購読の提供はありません。",
     "disclaimerHeading": "情報提供のみを目的とするもの — 保証はありません",
     "disclaimerP1": "本サイトに掲載されるすべての情報（タイムゾーンの時差、夏時間の切り替え、天気予報、為替レート、ニュース見出し、そしてとりわけフライトの料金・所要時間の概算）は、一般的な参考情報としてのみ提供されるものであり、その正確性・完全性・最新性を保証するものではありません。",
     "disclaimerFlights": "/flights ページに表示されるフライトの料金および所要時間は、距離と日付をもとに簡易な計算式で算出したものです。航空会社・旅行代理店・予約システムの実際の運賃や時刻表ではありません。これらの概算のみに基づいて旅行を予約したり、乗り継ぎを計画したり、時間に関わる判断を行ったりすることは絶対におやめください。必ず航空会社または公式の情報源に直接ご確認ください。",
@@ -586,9 +586,9 @@
     "contactP1": "本規約に関するご質問は、お問い合わせページに記載の宛先までお送りください。"
   },
   "About": {
-    "pageTitle": "World Time Zone について",
+    "pageTitle": "World Time Box について",
     "pageSubtitle": "タイムゾーンを比較し、世界規模の予定を立てるための、登録不要・無料のツールです。",
-    "introP1": "World Time Zone では、世界各都市の現地時刻を並べて比較し、タイムゾーンをまたいだ会議に適した時間帯を見つけ、さらに同じ都市の旅行関連情報（天気・通貨・現地ニュース・フライトの概算）を一か所でまとめてご確認いただけます。",
+    "introP1": "World Time Box では、世界各都市の現地時刻を並べて比較し、タイムゾーンをまたいだ会議に適した時間帯を見つけ、さらに同じ都市の旅行関連情報（天気・通貨・現地ニュース・フライトの概算）を一か所でまとめてご確認いただけます。",
     "whoHeading": "こんな方に",
     "whoP1": "タイムゾーンをまたいで会議を調整するリモートチームやフリーランスの方、海外に友人やご家族がいる方、そして本格的に調べる前に渡航先の時刻・天気・通貨をひととおり把握しておきたい旅行者の方に適しています。",
     "featuresHeading": "主な機能",
@@ -615,7 +615,7 @@
   "Contact": {
     "pageTitle": "お問い合わせ",
     "pageSubtitle": "ご連絡方法についてご案内します。",
-    "introP1": "World Time Zone には専任のサポート担当がまだおりません（個人で運営している小規模なツールです）が、下記の宛先にお送りいただいたメッセージは必ず拝見しています。",
+    "introP1": "World Time Box には専任のサポート担当がまだおりません（個人で運営している小規模なツールです）が、下記の宛先にお送りいただいたメッセージは必ず拝見しています。",
     "emailHeading": "メールアドレス",
     "emailAddress": "contact@worldtimezone.example",
     "useForHeading": "お問い合わせいただける内容",

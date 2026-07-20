@@ -14,7 +14,7 @@
     "reorder": "{city} neu anordnen",
     "remove": "{city} entfernen",
     "addTimeZone": "Zeitzone hinzufügen",
-    "brand": "World Time Zone"
+    "brand": "World Time Box"
   },
   "Actions": {
     "trigger": "Aktionen",
@@ -65,7 +65,7 @@
     "placeholder": "Anzeigenplatzhalter"
   },
   "Header": {
-    "brand": "World Time Zone",
+    "brand": "World Time Box",
     "searchToggle": "Suchen",
     "menuToggle": "Weitere Optionen",
     "hourFormatLabel": "Zeitformat",
@@ -150,14 +150,14 @@
     "sunDescription": "Sonnenauf- und -untergang, Dämmerung, goldene Stunde und Mondphase für deine verglichenen Städte.",
     "alertsTitle": "Benachrichtigungen — Zeitzonen-Hinweise",
     "alertsDescription": "Individuelle Benachrichtigungen für Meeting-Zeiten und Zeitzonenänderungen — demnächst verfügbar.",
-    "privacyTitle": "Datenschutzerklärung — World Time Zone",
-    "privacyDescription": "Wie World Time Zone mit Daten umgeht: lokale Speicherung, Cookies, Google AdSense und die genutzten externen APIs.",
-    "termsTitle": "Nutzungsbedingungen — World Time Zone",
-    "termsDescription": "Bedingungen für die Nutzung von World Time Zone, einschließlich Haftungsausschlüssen zu Uhrzeiten, Wetter, Wechselkursen, Nachrichten und Flugschätzungen.",
-    "aboutTitle": "Über uns — World Time Zone",
-    "aboutDescription": "Was World Time Zone ist, für wen es gedacht ist und auf welchen Datenquellen es beruht.",
-    "contactTitle": "Kontakt — World Time Zone",
-    "contactDescription": "So erreichen Sie World Time Zone."
+    "privacyTitle": "Datenschutzerklärung — World Time Box",
+    "privacyDescription": "Wie World Time Box mit Daten umgeht: lokale Speicherung, Cookies, Google AdSense und die genutzten externen APIs.",
+    "termsTitle": "Nutzungsbedingungen — World Time Box",
+    "termsDescription": "Bedingungen für die Nutzung von World Time Box, einschließlich Haftungsausschlüssen zu Uhrzeiten, Wetter, Wechselkursen, Nachrichten und Flugschätzungen.",
+    "aboutTitle": "Über uns — World Time Box",
+    "aboutDescription": "Was World Time Box ist, für wen es gedacht ist und auf welchen Datenquellen es beruht.",
+    "contactTitle": "Kontakt — World Time Box",
+    "contactDescription": "So erreichen Sie World Time Box."
   },
   "Chart": {
     "pageTitle": "Diagramm",
@@ -506,9 +506,9 @@
     "allCountries": "Alle Länder"
   },
   "Footer": {
-    "product": "World Time Zone",
+    "product": "World Time Box",
     "tagline": "Vergleichen Sie Zeitzonen, Wetter, Währungen und Nachrichten für Städte weltweit.",
-    "rights": "© {year} World Time Zone",
+    "rights": "© {year} World Time Box",
     "legalHeading": "Rechtliches",
     "privacy": "Datenschutzerklärung",
     "terms": "Nutzungsbedingungen",
@@ -528,9 +528,9 @@
   },
   "Privacy": {
     "pageTitle": "Datenschutzerklärung",
-    "pageSubtitle": "Wie World Time Zone mit Ihren Daten umgeht — verständlich erklärt.",
+    "pageSubtitle": "Wie World Time Box mit Ihren Daten umgeht — verständlich erklärt.",
     "effectiveDate": "Zuletzt aktualisiert: Juli 2026",
-    "introP1": "World Time Zone („wir\", „diese Website\") ist ein kostenloses Werkzeug zum Vergleich von Zeitzonen. Diese Erklärung beschreibt, welche Daten die Website erhebt, zu welchem Zweck und welche Wahlmöglichkeiten Sie haben.",
+    "introP1": "World Time Box („wir\", „diese Website\") ist ein kostenloses Werkzeug zum Vergleich von Zeitzonen. Diese Erklärung beschreibt, welche Daten die Website erhebt, zu welchem Zweck und welche Wahlmöglichkeiten Sie haben.",
     "noAccountP1": "Diese Website hat weder Benutzerkonten noch eine serverseitige Datenbank. Wir erheben keine Namen, E-Mail-Adressen oder Zahlungsdaten und können Sie anhand der von der Website gespeicherten Angaben nicht persönlich identifizieren.",
     "localStorageHeading": "Was wir in Ihrem Browser speichern",
     "localStorageP1": "Die Website speichert Ihre Einstellungen unmittelbar im lokalen Speicher Ihres Browsers, niemals auf unseren Servern: die von Ihnen verglichenen Städte, das gewählte Referenzdatum samt Uhrzeit, Zeitformat und Design, die Einstellungen der Sonnenauf- und -untergangskarten, Ihre individuelle Navigationsreihenfolge, alle auf der Seite „Benachrichtigungen\" angelegten Stadt-Wecker und Geschäftszeiten-Hinweise sowie Ihre Cookie-Entscheidung.",
@@ -563,11 +563,11 @@
   },
   "Terms": {
     "pageTitle": "Nutzungsbedingungen",
-    "pageSubtitle": "Die Bedingungen für die Nutzung von World Time Zone.",
+    "pageSubtitle": "Die Bedingungen für die Nutzung von World Time Box.",
     "effectiveDate": "Zuletzt aktualisiert: Juli 2026",
-    "introP1": "Mit der Nutzung von World Time Zone („die Website\") erklären Sie sich mit diesen Bedingungen einverstanden. Sind Sie damit nicht einverstanden, nutzen Sie die Website bitte nicht.",
+    "introP1": "Mit der Nutzung von World Time Box („die Website\") erklären Sie sich mit diesen Bedingungen einverstanden. Sind Sie damit nicht einverstanden, nutzen Sie die Website bitte nicht.",
     "serviceHeading": "Der Dienst",
-    "serviceP1": "World Time Zone ist ein kostenloses Werkzeug zum Vergleich von Zeitzonen und damit verbundenen Reiseinformationen — Wetter, Währungen, Nachrichten und Schätzungen zur Flugdauer — für die von Ihnen gewählten Städte. Derzeit gibt es weder kostenpflichtige Tarife noch Konten oder Abonnements.",
+    "serviceP1": "World Time Box ist ein kostenloses Werkzeug zum Vergleich von Zeitzonen und damit verbundenen Reiseinformationen — Wetter, Währungen, Nachrichten und Schätzungen zur Flugdauer — für die von Ihnen gewählten Städte. Derzeit gibt es weder kostenpflichtige Tarife noch Konten oder Abonnements.",
     "disclaimerHeading": "Nur zu Informationszwecken — keine Gewähr",
     "disclaimerP1": "Sämtliche Angaben auf dieser Website — Zeitzonenverschiebungen, Sommerzeitumstellungen, Wettervorhersagen, Wechselkurse, Nachrichtenmeldungen und insbesondere Schätzungen zu Flugpreisen und -dauern — dienen ausschließlich der allgemeinen Orientierung; für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen.",
     "disclaimerFlights": "Die auf der Seite /flights angezeigten Flugpreise und -dauern werden anhand von Entfernung und Datum mit einer einfachen Formel berechnet. Es handelt sich nicht um tatsächliche Tarife oder Flugpläne einer Fluggesellschaft, eines Reisebüros oder eines Buchungssystems. Buchen Sie niemals eine Reise, planen Sie keinen Anschlussflug und treffen Sie keine zeitkritische Entscheidung allein auf Grundlage dieser Schätzungen — bestätigen Sie stets direkt bei der Fluggesellschaft oder einer offiziellen Quelle.",
@@ -586,9 +586,9 @@
     "contactP1": "Fragen zu diesen Bedingungen richten Sie bitte an die auf unserer Kontaktseite genannte Adresse."
   },
   "About": {
-    "pageTitle": "Über World Time Zone",
+    "pageTitle": "Über World Time Box",
     "pageSubtitle": "Ein kostenloses Werkzeug ohne Anmeldung, um Zeitzonen zu vergleichen und weltweit zu planen.",
-    "introP1": "World Time Zone zeigt Ihnen die Ortszeit von Städten weltweit nebeneinander, hilft Ihnen, passende Zeitfenster für Besprechungen über Zeitzonen hinweg zu finden, und liefert den passenden Reisekontext — Wetter, Währung, lokale Nachrichten und grobe Flugschätzungen — für dieselben Städte, alles an einem Ort.",
+    "introP1": "World Time Box zeigt Ihnen die Ortszeit von Städten weltweit nebeneinander, hilft Ihnen, passende Zeitfenster für Besprechungen über Zeitzonen hinweg zu finden, und liefert den passenden Reisekontext — Wetter, Währung, lokale Nachrichten und grobe Flugschätzungen — für dieselben Städte, alles an einem Ort.",
     "whoHeading": "Für wen es gedacht ist",
     "whoP1": "Für verteilte Teams und Freiberufler, die Termine über Zeitzonen hinweg abstimmen, für alle mit Freunden oder Familie im Ausland und für Reisende, die sich vor der genaueren Planung einen schnellen Überblick über Uhrzeit, Wetter und Währung am Zielort verschaffen möchten.",
     "featuresHeading": "Was enthalten ist",
@@ -615,7 +615,7 @@
   "Contact": {
     "pageTitle": "Kontakt",
     "pageSubtitle": "So erreichen Sie uns.",
-    "introP1": "World Time Zone verfügt noch nicht über ein Support-Team — es ist ein kleines, unabhängig betriebenes Werkzeug —, aber wir lesen die Nachrichten, die an die untenstehende Adresse gehen.",
+    "introP1": "World Time Box verfügt noch nicht über ein Support-Team — es ist ein kleines, unabhängig betriebenes Werkzeug —, aber wir lesen die Nachrichten, die an die untenstehende Adresse gehen.",
     "emailHeading": "E-Mail",
     "emailAddress": "contact@worldtimezone.example",
     "useForHeading": "Wobei wir helfen können",

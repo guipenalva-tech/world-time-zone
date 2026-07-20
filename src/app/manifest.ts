@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "World Time Zone",
-    short_name: "World Time Zone",
+    name: "World Time Box",
+    short_name: "World Time Box",
     description:
       "Compare time zones around the world and find the best time to meet, wherever your team is.",
     start_url: "/",

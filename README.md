@@ -1,4 +1,4 @@
-# World Time Zone
+# World Time Box
 
 Free time zone converter and meeting planner.
 

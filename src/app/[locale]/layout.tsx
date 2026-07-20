@@ -96,7 +96,7 @@ export async function generateMetadata({
       title,
       description,
       url: `/${locale}`,
-      siteName: "World Time Zone",
+      siteName: "World Time Box",
       locale: ogLocale,
       alternateLocale: alternateLocales,
       type: "website",
@@ -134,7 +134,7 @@ export default async function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "World Time Zone",
+    name: "World Time Box",
     description: t("description"),
     url: `${siteUrl}/${locale}`,
     applicationCategory: "UtilityApplication",

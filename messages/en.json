@@ -14,7 +14,7 @@
     "reorder": "Reorder {city}",
     "remove": "Remove {city}",
     "addTimeZone": "Add time zone",
-    "brand": "World Time Zone"
+    "brand": "World Time Box"
   },
   "Actions": {
     "trigger": "Action",
@@ -65,7 +65,7 @@
     "placeholder": "Ad placeholder"
   },
   "Header": {
-    "brand": "World Time Zone",
+    "brand": "World Time Box",
     "searchToggle": "Search",
     "menuToggle": "More options",
     "hourFormatLabel": "Time format",

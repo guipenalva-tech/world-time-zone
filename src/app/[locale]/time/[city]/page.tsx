@@ -87,7 +87,7 @@ export async function generateMetadata({
       title,
       description,
       url: `/${locale}${path}`,
-      siteName: "World Time Zone",
+      siteName: "World Time Box",
       type: "website",
     },
     twitter: {

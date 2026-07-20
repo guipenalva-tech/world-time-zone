@@ -14,7 +14,7 @@
     "reorder": "重新排序 {city}",
     "remove": "移除 {city}",
     "addTimeZone": "新增時區",
-    "brand": "World Time Zone"
+    "brand": "World Time Box"
   },
   "Actions": {
     "trigger": "操作",
@@ -65,7 +65,7 @@
     "placeholder": "廣告版位"
   },
   "Header": {
-    "brand": "World Time Zone",
+    "brand": "World Time Box",
     "searchToggle": "搜尋",
     "menuToggle": "更多選項",
     "hourFormatLabel": "時間格式",
@@ -150,14 +150,14 @@
     "sunDescription": "你所比較城市的日出、日落、曙暮光、黃金時刻與月相資訊。",
     "alertsTitle": "提醒 — 時區通知",
     "alertsDescription": "會議時間與時區變更的自訂提醒 — 即將推出。",
-    "privacyTitle": "隱私權政策 — World Time Zone",
-    "privacyDescription": "World Time Zone 如何處理資料：本機儲存、Cookie、Google AdSense 以及所使用的外部 API。",
-    "termsTitle": "使用條款 — World Time Zone",
-    "termsDescription": "使用 World Time Zone 所適用的條款，包含時間、天氣、匯率、新聞及航班估算的免責聲明。",
-    "aboutTitle": "關於 — World Time Zone",
-    "aboutDescription": "World Time Zone 是什麼、適合哪些人使用，以及所倚賴的資料來源。",
-    "contactTitle": "聯絡我們 — World Time Zone",
-    "contactDescription": "如何與 World Time Zone 聯繫。"
+    "privacyTitle": "隱私權政策 — World Time Box",
+    "privacyDescription": "World Time Box 如何處理資料：本機儲存、Cookie、Google AdSense 以及所使用的外部 API。",
+    "termsTitle": "使用條款 — World Time Box",
+    "termsDescription": "使用 World Time Box 所適用的條款，包含時間、天氣、匯率、新聞及航班估算的免責聲明。",
+    "aboutTitle": "關於 — World Time Box",
+    "aboutDescription": "World Time Box 是什麼、適合哪些人使用，以及所倚賴的資料來源。",
+    "contactTitle": "聯絡我們 — World Time Box",
+    "contactDescription": "如何與 World Time Box 聯繫。"
   },
   "Chart": {
     "pageTitle": "圖表檢視",
@@ -506,9 +506,9 @@
     "allCountries": "所有國家"
   },
   "Footer": {
-    "product": "World Time Zone",
+    "product": "World Time Box",
     "tagline": "比較全球各城市的時區、天氣、匯率與新聞。",
-    "rights": "© {year} World Time Zone",
+    "rights": "© {year} World Time Box",
     "legalHeading": "法律資訊",
     "privacy": "隱私權政策",
     "terms": "使用條款",
@@ -528,9 +528,9 @@
   },
   "Privacy": {
     "pageTitle": "隱私權政策",
-    "pageSubtitle": "以淺白的說明介紹 World Time Zone 如何處理您的資料。",
+    "pageSubtitle": "以淺白的說明介紹 World Time Box 如何處理您的資料。",
     "effectiveDate": "最後更新：2026 年 7 月",
-    "introP1": "World Time Zone（「我們」、「本網站」）是一款免費的時區比較工具。本政策說明本網站蒐集哪些資料、用於何種目的，以及您可以做出哪些選擇。",
+    "introP1": "World Time Box（「我們」、「本網站」）是一款免費的時區比較工具。本政策說明本網站蒐集哪些資料、用於何種目的，以及您可以做出哪些選擇。",
     "noAccountP1": "本網站沒有使用者帳號，也沒有伺服器端資料庫。我們不會蒐集姓名、電子郵件位址或付款資訊，也無法透過本網站所儲存的任何內容識別您的個人身分。",
     "localStorageHeading": "我們在您瀏覽器中儲存的內容",
     "localStorageP1": "本網站會將您的偏好設定直接儲存在瀏覽器的本機儲存空間，絕不會存放於我們的伺服器，包括：您正在比較的城市、所選的參考日期與時間、時間格式與佈景主題設定、日出日落資訊卡的設定、您自訂的導覽順序、在「提醒」頁面建立的城市鬧鐘或營業時間提醒，以及您對 Cookie 的選擇。",
@@ -563,11 +563,11 @@
   },
   "Terms": {
     "pageTitle": "使用條款",
-    "pageSubtitle": "使用 World Time Zone 時所適用的條款。",
+    "pageSubtitle": "使用 World Time Box 時所適用的條款。",
     "effectiveDate": "最後更新：2026 年 7 月",
-    "introP1": "使用 World Time Zone（「本網站」）即表示您同意本條款。若您不同意，請勿使用本網站。",
+    "introP1": "使用 World Time Box（「本網站」）即表示您同意本條款。若您不同意，請勿使用本網站。",
     "serviceHeading": "服務內容",
-    "serviceP1": "World Time Zone 是一款免費工具，可針對您所選的城市比較時區及相關旅遊資訊，包括天氣、匯率、新聞與飛行時間估算。目前並未提供付費方案、帳號或訂閱服務。",
+    "serviceP1": "World Time Box 是一款免費工具，可針對您所選的城市比較時區及相關旅遊資訊，包括天氣、匯率、新聞與飛行時間估算。目前並未提供付費方案、帳號或訂閱服務。",
     "disclaimerHeading": "僅供參考 — 不作任何擔保",
     "disclaimerP1": "本網站所提供的一切資訊 — 時區差異、日光節約時間轉換、天氣預報、匯率、新聞標題，尤其是航班價格與時間估算 — 均僅供一般參考，我們不保證其正確、完整或即時。",
     "disclaimerFlights": "/flights 頁面所顯示的航班價格與飛行時間，是依據距離與日期以簡單公式計算而得。這些並非任何航空公司、旅行社或訂位系統的實際票價或時刻表。切勿僅依據這些估算訂購行程、安排轉機或做出任何具時效性的決定 — 請務必直接向航空公司或官方管道確認。",
@@ -586,9 +586,9 @@
     "contactP1": "如對本條款有任何疑問，可寄至我們「聯絡我們」頁面所列的地址。"
   },
   "About": {
-    "pageTitle": "關於 World Time Zone",
+    "pageTitle": "關於 World Time Box",
     "pageSubtitle": "一款免費、免註冊的工具，用於比較時區並進行全球規劃。",
-    "introP1": "World Time Zone 可協助您並列比較全球各城市的當地時間，找出跨時區的合適會議時段，並在同一處檢視這些城市的相關旅遊資訊 — 天氣、匯率、在地新聞以及概略的航班估算。",
+    "introP1": "World Time Box 可協助您並列比較全球各城市的當地時間，找出跨時區的合適會議時段，並在同一處檢視這些城市的相關旅遊資訊 — 天氣、匯率、在地新聞以及概略的航班估算。",
     "whoHeading": "適合哪些人",
     "whoP1": "適合需要跨時區安排會議的遠距團隊與自由工作者、在海外有親友的使用者，以及正在規劃行程、希望在深入研究前先快速掌握目的地時間、天氣與貨幣概況的旅行者。",
     "featuresHeading": "功能一覽",
@@ -615,7 +615,7 @@
   "Contact": {
     "pageTitle": "聯絡我們",
     "pageSubtitle": "與我們聯繫的方式。",
-    "introP1": "World Time Zone 目前還沒有專責的客服團隊 — 這是一個獨立經營的小型工具 — 但寄到下方地址的訊息我們都會閱讀。",
+    "introP1": "World Time Box 目前還沒有專責的客服團隊 — 這是一個獨立經營的小型工具 — 但寄到下方地址的訊息我們都會閱讀。",
     "emailHeading": "電子郵件",
     "emailAddress": "contact@worldtimezone.example",
     "useForHeading": "可以與我們聯繫的事項",
