@@ -783,5 +783,2900 @@
     "zh-CN": "柏林",
     "zh-TW": "柏林",
     "hi": "बर्लिन"
+  },
+  "casablanca": {
+    "hi": "कासाब्लांका",
+    "ru": "Касабланка",
+    "zh-CN": "卡萨布兰卡",
+    "zh-TW": "卡薩布蘭卡",
+    "ja": "カサブランカ"
+  },
+  "ibadan": {
+    "pt": "Ibadã",
+    "es": "Ibadán",
+    "hi": "इबादन",
+    "ru": "Ибадан",
+    "zh-CN": "伊巴丹",
+    "zh-TW": "伊巴丹",
+    "ja": "イバダン"
+  },
+  "kumasi": {
+    "hi": "कुमासी",
+    "ru": "Кумаси",
+    "zh-CN": "库马西",
+    "zh-TW": "庫馬西",
+    "ja": "クマシ"
+  },
+  "lucknow": {
+    "hi": "लखनऊ",
+    "ru": "Лакхнау",
+    "zh-CN": "勒克瑙",
+    "zh-TW": "勒克瑙",
+    "ja": "ラクナウ"
+  },
+  "durban": {
+    "hi": "डर्बन",
+    "ru": "Дурбан",
+    "zh-CN": "德班",
+    "ja": "ダーバン"
+  },
+  "mashhad": {
+    "fr": "Machhad",
+    "de": "Maschhad",
+    "hi": "मशहद",
+    "ru": "Мешхед",
+    "zh-CN": "马什哈德",
+    "zh-TW": "馬什哈德",
+    "ja": "マシュハド"
+  },
+  "busan": {
+    "fr": "Pusan",
+    "hi": "बुसान",
+    "ru": "Пусан",
+    "zh-CN": "釜山",
+    "zh-TW": "釜山廣域市",
+    "ja": "釜山広域市"
+  },
+  "santo-domingo": {
+    "pt": "São Domingos",
+    "fr": "Saint-Domingue",
+    "hi": "सेंटो डोमिंगो",
+    "ru": "Санто-Доминго",
+    "zh-CN": "圣多明各",
+    "zh-TW": "聖多明哥",
+    "ja": "サント・ドミンゴ"
+  },
+  "pyongyang": {
+    "es": "Pionyang",
+    "de": "Pjöngjang",
+    "hi": "प्योंगयांग",
+    "ru": "Пхеньян",
+    "zh-CN": "平壤",
+    "zh-TW": "平壤",
+    "ja": "平壌市"
+  },
+  "asuncion": {
+    "pt": "Assunção",
+    "fr": "Asuncion",
+    "hi": "असुन्सियोन",
+    "ru": "Асунсьон",
+    "zh-CN": "亚松森",
+    "zh-TW": "亞松森",
+    "ja": "アスンシオン"
+  },
+  "douala": {
+    "pt": "Duala",
+    "es": "Duala",
+    "hi": "डुआला",
+    "ru": "Дуала",
+    "zh-CN": "杜阿拉",
+    "zh-TW": "杜阿拉",
+    "ja": "ドゥアラ"
+  },
+  "antananarivo": {
+    "hi": "अन्टाननरीवो",
+    "ru": "Антананариву",
+    "zh-CN": "塔那那利佛",
+    "zh-TW": "安塔那那利佛",
+    "ja": "アンタナナリボ"
+  },
+  "kanpur": {
+    "hi": "कानपुर",
+    "ru": "Канпур",
+    "ja": "カーンプル"
+  },
+  "athens": {
+    "pt": "Atenas",
+    "es": "Atenas",
+    "fr": "Athènes",
+    "de": "Athen",
+    "hi": "एथेंस",
+    "it": "Atene",
+    "ru": "Афины",
+    "zh-CN": "雅典",
+    "zh-TW": "雅典",
+    "ja": "アテネ"
+  },
+  "dakar": {
+    "de": "Region Dakar",
+    "hi": "डकार",
+    "ru": "Дакар",
+    "ja": "ダカール州"
+  },
+  "kuwait-city": {
+    "pt": "Kuwait",
+    "es": "Ciudad de Kuwait",
+    "fr": "Koweït",
+    "de": "Kuweit-Stadt",
+    "hi": "कुवैत नगर",
+    "it": "Al Kuwait",
+    "ru": "Эль-Кувейт",
+    "zh-CN": "科威特城",
+    "zh-TW": "科威特城",
+    "ja": "クウェート市"
+  },
+  "guatemala-city": {
+    "pt": "Cidade da Guatemala",
+    "es": "Ciudad de Guatemala",
+    "fr": "Guatemala",
+    "de": "Guatemala-Stadt",
+    "hi": "ग्वाटेमाला नगर",
+    "it": "Città del Guatemala",
+    "ru": "Гватемала",
+    "zh-CN": "危地马拉城",
+    "zh-TW": "瓜地馬拉市",
+    "ja": "グアテマラシティ"
+  },
+  "incheon": {
+    "hi": "इंचियोन",
+    "ru": "Инчхон",
+    "zh-CN": "仁川",
+    "zh-TW": "仁川",
+    "ja": "仁川広域市"
+  },
+  "cebu-city": {
+    "pt": "Cidade de Cebu",
+    "es": "Cebú",
+    "fr": "Cebu",
+    "hi": "सेबु सिटी",
+    "it": "Cebu",
+    "ru": "Себу",
+    "zh-CN": "宿务市",
+    "ja": "セブ"
+  },
+  "caracas": {
+    "hi": "काराकास",
+    "ru": "Каракас",
+    "zh-TW": "加拉加斯",
+    "ja": "カラカス"
+  },
+  "lisbon": {
+    "pt": "Lisboa",
+    "es": "Lisboa",
+    "fr": "Lisbonne",
+    "de": "Lissabon",
+    "hi": "लिस्बन",
+    "it": "Lisbona",
+    "ru": "Лиссабон",
+    "zh-CN": "里斯本",
+    "zh-TW": "里斯本",
+    "ja": "リスボン"
+  },
+  "kyiv": {
+    "pt": "Kiev",
+    "es": "Kiev",
+    "fr": "Kiev",
+    "de": "Kiew",
+    "hi": "कीव",
+    "it": "Kiev",
+    "ru": "Киев",
+    "zh-CN": "基辅",
+    "zh-TW": "基輔",
+    "ja": "キーウ"
+  },
+  "nagpur": {
+    "hi": "नागपुर",
+    "ru": "Нагпур",
+    "zh-CN": "那格浦尔",
+    "zh-TW": "那格浦爾",
+    "ja": "ナーグプル"
+  },
+  "surabaya": {
+    "pt": "Surabaia",
+    "hi": "सुराबया",
+    "ru": "Сурабая",
+    "zh-CN": "泗水",
+    "ja": "スラバヤ"
+  },
+  "port-au-prince": {
+    "pt": "Porto Príncipe",
+    "es": "Puerto Príncipe",
+    "hi": "पोर्ट-ऑ-प्रिंस",
+    "ru": "Порт-о-Пренс",
+    "zh-TW": "太子港",
+    "ja": "ポルトープランス"
+  },
+  "kaohsiung": {
+    "hi": "काऊशुंग सिटी",
+    "ru": "Гаосюн",
+    "zh-CN": "高雄市",
+    "zh-TW": "高雄市",
+    "ja": "高雄市"
+  },
+  "taichung": {
+    "hi": "ताइचुंग",
+    "ru": "Тайчжун",
+    "zh-CN": "台中市",
+    "zh-TW": "臺中市",
+    "ja": "台中市"
+  },
+  "chicago": {
+    "hi": "शिकागो",
+    "ru": "Чикаго",
+    "zh-CN": "芝加哥",
+    "zh-TW": "芝加哥",
+    "ja": "シカゴ"
+  },
+  "guayaquil": {
+    "pt": "Guaiaquil",
+    "hi": "गावकील",
+    "ru": "Гуаякиль",
+    "zh-CN": "瓜亚基尔",
+    "ja": "グアヤキル"
+  },
+  "algiers": {
+    "pt": "Argel",
+    "es": "Argel",
+    "fr": "Alger",
+    "de": "Algier",
+    "hi": "अल्जीयर्स",
+    "it": "Algeri",
+    "ru": "Алжир",
+    "zh-CN": "阿尔及尔",
+    "zh-TW": "阿爾及爾",
+    "ja": "アルジェ"
+  },
+  "tunis": {
+    "pt": "Tunes",
+    "es": "Túnez",
+    "hi": "ट्यूनिस",
+    "it": "Tunisi",
+    "ru": "Тунис",
+    "zh-TW": "突尼斯市",
+    "ja": "チュニス"
+  },
+  "ouagadougou": {
+    "pt": "Uagadugu",
+    "es": "Uagadugú",
+    "hi": "वागाडूगू",
+    "ru": "Уагадугу",
+    "zh-CN": "瓦加杜古",
+    "zh-TW": "瓦加杜古",
+    "ja": "ワガドゥグー"
+  },
+  "vancouver": {
+    "hi": "वैंकूवर",
+    "ru": "Ванкувер",
+    "zh-CN": "温哥华",
+    "zh-TW": "溫哥華",
+    "ja": "バンクーバー"
+  },
+  "bamako": {
+    "hi": "बमाको",
+    "ru": "Бамако",
+    "zh-CN": "巴马科",
+    "zh-TW": "巴馬科",
+    "ja": "バマコ"
+  },
+  "mogadishu": {
+    "pt": "Mogadixo",
+    "es": "Mogadiscio",
+    "fr": "Mogadiscio",
+    "de": "Mogadischu",
+    "hi": "मोगादीशू",
+    "it": "Mogadiscio",
+    "ru": "Могадишо",
+    "zh-TW": "摩加迪休",
+    "ja": "モガディシュ"
+  },
+  "tashkent": {
+    "pt": "Tasquente",
+    "es": "Taskent",
+    "fr": "Tachkent",
+    "de": "Taschkent",
+    "hi": "ताशकन्द",
+    "ru": "Ташкент",
+    "zh-CN": "塔什干",
+    "zh-TW": "塔什干",
+    "ja": "タシュケント"
+  },
+  "brisbane": {
+    "hi": "ब्रिस्बेन",
+    "ru": "Брисбен",
+    "zh-CN": "布里斯班",
+    "zh-TW": "布里斯本",
+    "ja": "ブリスベン"
+  },
+  "lubumbashi": {
+    "hi": "लुबुम्बाशी",
+    "ru": "Лубумбаши",
+    "zh-CN": "卢本巴希",
+    "zh-TW": "盧本巴希",
+    "ja": "ルブンバシ"
+  },
+  "pretoria": {
+    "pt": "Pretória",
+    "hi": "प्रिटोरिया",
+    "ru": "Претория",
+    "zh-CN": "比勒陀利亚",
+    "ja": "プレトリア"
+  },
+  "accra": {
+    "pt": "Acra",
+    "es": "Acra",
+    "hi": "अक्रा",
+    "ru": "Аккра",
+    "zh-CN": "阿克拉",
+    "zh-TW": "阿克拉",
+    "ja": "アクラ"
+  },
+  "lusaka": {
+    "pt": "Lusaca",
+    "hi": "लुसाका",
+    "ru": "Лусака",
+    "zh-CN": "卢萨卡",
+    "zh-TW": "路沙卡",
+    "ja": "ルサカ"
+  },
+  "damascus": {
+    "pt": "Damasco",
+    "es": "Damasco",
+    "fr": "Damas",
+    "de": "Damaskus",
+    "hi": "दमिश्क़",
+    "it": "Damasco",
+    "ru": "Дамаск",
+    "zh-CN": "大马士革",
+    "zh-TW": "大馬士革",
+    "ja": "ダマスカス"
+  },
+  "bandung": {
+    "hi": "बानदुंग",
+    "ru": "Бандунг",
+    "zh-CN": "万隆",
+    "ja": "バンドン"
+  },
+  "brazzaville": {
+    "pt": "Brazavile",
+    "hi": "ब्राजाविल",
+    "ru": "Браззавиль",
+    "zh-CN": "布拉柴维尔",
+    "ja": "ブラザヴィル"
+  },
+  "doha": {
+    "hi": "दोहा",
+    "ru": "Доха",
+    "zh-CN": "多哈",
+    "zh-TW": "杜哈",
+    "ja": "ドーハ"
+  },
+  "beirut": {
+    "pt": "Beirute",
+    "fr": "Beyrouth",
+    "hi": "बेरूत",
+    "ru": "Бейрут",
+    "zh-CN": "贝鲁特",
+    "zh-TW": "貝魯特",
+    "ja": "ベイルート"
+  },
+  "daegu": {
+    "hi": "दाएगू",
+    "ru": "Тэгу",
+    "zh-CN": "大邱",
+    "zh-TW": "大邱廣域市",
+    "ja": "大邱広域市"
+  },
+  "medan": {
+    "hi": "मेदन",
+    "ru": "Медан",
+    "zh-CN": "棉兰",
+    "ja": "メダン"
+  },
+  "houston": {
+    "hi": "ह्युस्टन",
+    "ru": "Хьюстон",
+    "zh-CN": "休斯敦",
+    "zh-TW": "休士頓",
+    "ja": "ヒューストン"
+  },
+  "rawalpindi": {
+    "hi": "रावलपिंडी",
+    "ru": "Равалпинди",
+    "zh-CN": "拉瓦尔品第",
+    "zh-TW": "拉瓦爾品第",
+    "ja": "ラーワルピンディー"
+  },
+  "nagoya": {
+    "pt": "Nagoia",
+    "hi": "नागोया",
+    "ru": "Нагоя",
+    "zh-CN": "名古屋市",
+    "zh-TW": "名古屋市",
+    "ja": "名古屋市"
+  },
+  "phnom-penh": {
+    "es": "Nom Pen",
+    "hi": "नामपेन्ह",
+    "ru": "Пномпень",
+    "zh-CN": "金边",
+    "zh-TW": "金邊",
+    "ja": "プノンペン"
+  },
+  "baku": {
+    "es": "Bakú",
+    "fr": "Bakou",
+    "hi": "बाकू",
+    "ru": "Баку",
+    "zh-CN": "巴库",
+    "zh-TW": "巴庫",
+    "ja": "バクー"
+  },
+  "manaus": {
+    "es": "Manaos",
+    "hi": "मनौस",
+    "ru": "Манаус",
+    "ja": "マナウス"
+  },
+  "isfahan": {
+    "es": "Isfahán",
+    "fr": "Ispahan",
+    "hi": "इस्फ़हान",
+    "it": "Esfahan",
+    "ru": "Исфахан",
+    "zh-CN": "伊斯法罕",
+    "ja": "エスファハーン"
+  },
+  "indore": {
+    "hi": "इंदौर",
+    "ru": "Индаур",
+    "zh-CN": "印多尔",
+    "ja": "インドール"
+  },
+  "kochi": {
+    "pt": "Cochim",
+    "es": "Cochín",
+    "fr": "Cochin",
+    "hi": "कोच्चि",
+    "ru": "Кочин",
+    "zh-CN": "戈奇",
+    "zh-TW": "科契",
+    "ja": "コーチ"
+  },
+  "havana": {
+    "es": "La Habana",
+    "fr": "La Havane",
+    "de": "Havanna",
+    "hi": "हवाना",
+    "it": "L'Avana",
+    "ru": "Гавана",
+    "zh-CN": "哈瓦那",
+    "zh-TW": "哈瓦那",
+    "ja": "ハバナ"
+  },
+  "brussels": {
+    "pt": "Bruxelas",
+    "es": "Bruselas",
+    "fr": "Bruxelles",
+    "de": "Brüssel",
+    "hi": "ब्रसेल्स",
+    "it": "Bruxelles",
+    "ru": "Брюссель",
+    "zh-CN": "布鲁塞尔",
+    "zh-TW": "布魯塞爾",
+    "ja": "ブリュッセル市"
+  },
+  "aleppo": {
+    "pt": "Alepo",
+    "es": "Alepo",
+    "fr": "Alep",
+    "hi": "हलब",
+    "ru": "Алеппо",
+    "zh-CN": "阿勒颇",
+    "zh-TW": "阿勒坡",
+    "ja": "アレッポ"
+  },
+  "perth": {
+    "hi": "पर्थ",
+    "ru": "Перт",
+    "zh-CN": "珀斯",
+    "zh-TW": "伯斯",
+    "ja": "パース"
+  },
+  "quito": {
+    "hi": "क्वीटो",
+    "ru": "Кито",
+    "zh-CN": "基多",
+    "zh-TW": "基多",
+    "ja": "キト"
+  },
+  "minsk": {
+    "hi": "मिन्स्क",
+    "ru": "Минск",
+    "zh-CN": "明斯克",
+    "zh-TW": "明斯克",
+    "ja": "ミンスク"
+  },
+  "conakry": {
+    "pt": "Conacri",
+    "es": "Conakri",
+    "hi": "कोनाक्री",
+    "ru": "Конакри",
+    "zh-CN": "科纳克里",
+    "zh-TW": "柯那克里",
+    "ja": "コナクリ"
+  },
+  "mecca": {
+    "pt": "Meca",
+    "es": "La Meca",
+    "fr": "La Mecque",
+    "de": "Mekka",
+    "hi": "मक्का",
+    "it": "La Mecca",
+    "ru": "Мекка",
+    "zh-TW": "麥加",
+    "ja": "メッカ"
+  },
+  "multan": {
+    "hi": "मुल्तान",
+    "ru": "Мултан",
+    "zh-CN": "木尔坦",
+    "zh-TW": "木爾坦",
+    "ja": "ムルターン"
+  },
+  "peshawar": {
+    "de": "Peschawar",
+    "hi": "पेशावर",
+    "ru": "Пешавар",
+    "zh-CN": "白沙瓦",
+    "ja": "ペシャーワル"
+  },
+  "almaty": {
+    "es": "Alma Ata",
+    "hi": "अलमाती",
+    "ru": "Алма-Ата",
+    "zh-CN": "阿拉木图",
+    "zh-TW": "阿拉木圖",
+    "ja": "アルマトイ"
+  },
+  "sapporo": {
+    "hi": "साप्पोरो",
+    "ru": "Саппоро",
+    "zh-TW": "札幌市",
+    "ja": "札幌市"
+  },
+  "vienna": {
+    "pt": "Viena",
+    "es": "Viena",
+    "fr": "Vienne",
+    "de": "Wien",
+    "hi": "वियना",
+    "ru": "Вена",
+    "zh-CN": "维也纳",
+    "zh-TW": "維也納",
+    "ja": "ウィーン"
+  },
+  "hamburg": {
+    "pt": "Hamburgo",
+    "es": "Hamburgo",
+    "fr": "Hambourg",
+    "hi": "हैम्बर्ग",
+    "it": "Amburgo",
+    "ru": "Гамбург",
+    "zh-CN": "汉堡",
+    "zh-TW": "漢堡",
+    "ja": "ハンブルク"
+  },
+  "rabat": {
+    "hi": "रबात",
+    "ru": "Рабат",
+    "zh-TW": "拉巴特",
+    "ja": "ラバト"
+  },
+  "shiraz": {
+    "pt": "Xiraz",
+    "fr": "Chiraz",
+    "de": "Schiras",
+    "hi": "शीराज़",
+    "ru": "Шираз",
+    "zh-CN": "设拉子",
+    "ja": "シーラーズ"
+  },
+  "montreal": {
+    "fr": "Montréal",
+    "hi": "मॉन्ट्रियल",
+    "it": "Montréal",
+    "ru": "Монреаль",
+    "zh-CN": "蒙特利尔",
+    "zh-TW": "蒙特婁",
+    "ja": "モントリオール"
+  },
+  "tijuana": {
+    "hi": "तिख़्वाना",
+    "ru": "Тихуана",
+    "zh-CN": "蒂华纳",
+    "zh-TW": "提華納",
+    "ja": "ティフアナ"
+  },
+  "la-paz": {
+    "hi": "ला पास",
+    "ru": "Ла-Пас",
+    "zh-CN": "拉巴斯",
+    "zh-TW": "拉巴斯",
+    "ja": "ラパス"
+  },
+  "warsaw": {
+    "pt": "Varsóvia",
+    "es": "Varsovia",
+    "fr": "Varsovie",
+    "de": "Warschau",
+    "hi": "वारसॉ",
+    "it": "Varsavia",
+    "ru": "Варшава",
+    "zh-CN": "华沙",
+    "zh-TW": "華沙",
+    "ja": "ワルシャワ"
+  },
+  "bucharest": {
+    "pt": "Bucareste",
+    "es": "Bucarest",
+    "fr": "Bucarest",
+    "de": "Bukarest",
+    "hi": "बुख़ारेस्ट",
+    "it": "Bucarest",
+    "ru": "Бухарест",
+    "zh-CN": "布加勒斯特",
+    "zh-TW": "布加勒斯特",
+    "ja": "ブカレスト"
+  },
+  "sharjah": {
+    "pt": "Xarja",
+    "es": "Sarja",
+    "fr": "Charjah",
+    "de": "Schardscha",
+    "hi": "शारजाह",
+    "it": "Sharja",
+    "ru": "Шарджа",
+    "zh-CN": "沙迦",
+    "ja": "シャールジャ"
+  },
+  "johor-bahru": {
+    "hi": "जोहोर बाहरू",
+    "ru": "Джохор-Бару",
+    "zh-CN": "新山",
+    "zh-TW": "新山",
+    "ja": "ジョホールバル"
+  },
+  "davao": {
+    "pt": "Cidade Davau",
+    "es": "Dávao",
+    "de": "Davao City",
+    "hi": "दाबौ",
+    "ru": "Давао",
+    "zh-TW": "納卯市",
+    "ja": "ダバオ"
+  },
+  "budapest": {
+    "pt": "Budapeste",
+    "hi": "बुडापेस्ट",
+    "ru": "Будапешт",
+    "zh-CN": "布达佩斯",
+    "zh-TW": "布達佩斯",
+    "ja": "ブダペスト"
+  },
+  "montevideo": {
+    "pt": "Montevidéu",
+    "hi": "मोण्टेवीडियो",
+    "ru": "Монтевидео",
+    "zh-CN": "蒙得维的亚",
+    "zh-TW": "蒙特維多",
+    "ja": "モンテビデオ"
+  },
+  "kampala": {
+    "pt": "Campala",
+    "hi": "कम्पाला",
+    "ru": "Кампала",
+    "zh-CN": "坎帕拉",
+    "zh-TW": "坎帕拉",
+    "ja": "カンパラ"
+  },
+  "monrovia": {
+    "pt": "Monróvia",
+    "hi": "मोनरोविया",
+    "ru": "Монровия",
+    "zh-CN": "蒙罗维亚",
+    "zh-TW": "蒙羅維亞",
+    "ja": "モンロビア"
+  },
+  "muscat": {
+    "pt": "Mascate",
+    "es": "Mascate",
+    "fr": "Mascate",
+    "de": "Maskat",
+    "hi": "मस्कट",
+    "it": "Mascate",
+    "ru": "Маскат",
+    "zh-CN": "马斯喀特",
+    "zh-TW": "馬斯喀特",
+    "ja": "マスカット"
+  },
+  "palembang": {
+    "pt": "Palimbão",
+    "hi": "पालेमबांग",
+    "ru": "Палембанг",
+    "zh-CN": "巨港",
+    "ja": "パレンバン"
+  },
+  "semarang": {
+    "hi": "समारांग",
+    "ru": "Семаранг",
+    "zh-CN": "三宝垄",
+    "ja": "スマラン"
+  },
+  "auckland": {
+    "hi": "ऑक्लैण्ड",
+    "ru": "Окленд",
+    "zh-TW": "奧克蘭",
+    "ja": "オークランド"
+  },
+  "phoenix": {
+    "hi": "फ़िनक्स",
+    "ru": "Финикс",
+    "zh-CN": "菲尼克斯",
+    "zh-TW": "鳳凰城",
+    "ja": "フェニックス"
+  },
+  "cordoba": {
+    "pt": "Córdova",
+    "hi": "कोर्दोबा, अर्जेंटीना",
+    "ru": "Кордова",
+    "zh-CN": "科尔多瓦",
+    "ja": "コルドバ"
+  },
+  "stockholm": {
+    "pt": "Estocolmo",
+    "es": "Estocolmo",
+    "hi": "स्टॉकहोम",
+    "it": "Stoccolma",
+    "ru": "Стокгольм",
+    "zh-CN": "斯德哥尔摩",
+    "zh-TW": "斯德哥爾摩",
+    "ja": "ストックホルム"
+  },
+  "novosibirsk": {
+    "fr": "Novossibirsk",
+    "de": "Nowosibirsk",
+    "hi": "नोवोसीबर्स्क",
+    "ru": "Новосибирск",
+    "zh-CN": "新西伯利亚",
+    "zh-TW": "新西伯利亞",
+    "ja": "ノヴォシビルスク"
+  },
+  "harare": {
+    "hi": "हरारे",
+    "ru": "Хараре",
+    "zh-CN": "哈拉雷",
+    "zh-TW": "哈拉雷",
+    "ja": "ハラレ"
+  },
+  "n-djamena": {
+    "pt": "Jamena",
+    "es": "Yamena",
+    "fr": "N'Djaména",
+    "de": "N’Djamena",
+    "hi": "अन जमेना",
+    "it": "N’Djamena",
+    "ru": "Нджамена",
+    "zh-TW": "恩將納",
+    "ja": "ンジャメナ"
+  },
+  "fukuoka": {
+    "hi": "फुकुओका",
+    "ru": "Фукуока",
+    "zh-CN": "福冈市",
+    "zh-TW": "福岡市",
+    "ja": "福岡市"
+  },
+  "philadelphia": {
+    "pt": "Filadélfia",
+    "es": "Filadelfia",
+    "fr": "Philadelphie",
+    "hi": "फिलाडेल्फिया",
+    "it": "Filadelfia",
+    "ru": "Филадельфия",
+    "zh-CN": "费城",
+    "zh-TW": "費城",
+    "ja": "フィラデルフィア"
+  },
+  "san-antonio": {
+    "hi": "सैन एन्टोनियो",
+    "ru": "Сан-Антонио",
+    "zh-CN": "圣安东尼奥",
+    "zh-TW": "聖安東尼奧",
+    "ja": "サン・アントニオ"
+  },
+  "calgary": {
+    "hi": "कैलगरी",
+    "ru": "Калгари",
+    "zh-CN": "卡尔加里",
+    "zh-TW": "卡加利",
+    "ja": "カルガリー"
+  },
+  "edmonton": {
+    "hi": "एडमंटन",
+    "ru": "Эдмонтон",
+    "zh-CN": "埃德蒙顿",
+    "zh-TW": "愛德蒙頓",
+    "ja": "エドモントン"
+  },
+  "panama-city": {
+    "pt": "Cidade do Panamá",
+    "es": "Ciudad de Panamá",
+    "fr": "Panama",
+    "de": "Panama-Stadt",
+    "hi": "पनामा सिटी",
+    "it": "Panama",
+    "ru": "Панама",
+    "zh-CN": "巴拿马城",
+    "zh-TW": "巴拿馬城",
+    "ja": "パナマ市"
+  },
+  "yekaterinburg": {
+    "pt": "Ecaterimburgo",
+    "es": "Ekaterimburgo",
+    "fr": "Iekaterinbourg",
+    "de": "Jekaterinburg",
+    "hi": "येकातेरिनबर्ग",
+    "it": "Ekaterinburg",
+    "ru": "Екатеринбург",
+    "zh-CN": "叶卡捷琳堡",
+    "zh-TW": "葉卡捷琳堡",
+    "ja": "エカテリンブルク"
+  },
+  "munich": {
+    "pt": "Munique",
+    "es": "Múnich",
+    "de": "München",
+    "hi": "म्यूनिख",
+    "it": "Monaco di Baviera",
+    "ru": "Мюнхен",
+    "zh-CN": "慕尼黑",
+    "zh-TW": "慕尼黑",
+    "ja": "ミュンヘン"
+  },
+  "abu-dhabi": {
+    "fr": "Abou Dabi",
+    "hi": "अबू धाबी",
+    "ru": "Абу-Даби",
+    "zh-CN": "阿布扎比",
+    "zh-TW": "阿布達比",
+    "ja": "アブダビ"
+  },
+  "medina": {
+    "fr": "Médine",
+    "hi": "मदीना",
+    "ru": "Медина",
+    "zh-CN": "麦地那",
+    "zh-TW": "麥地那",
+    "ja": "マディーナ"
+  },
+  "khulna": {
+    "pt": "Culna",
+    "fr": "Khulnâ",
+    "hi": "खुलना",
+    "ru": "Кхулна",
+    "zh-CN": "库尔纳市",
+    "zh-TW": "庫爾納市",
+    "ja": "クルナ"
+  },
+  "kathmandu": {
+    "pt": "Catmandu",
+    "es": "Katmandú",
+    "fr": "Katmandou",
+    "hi": "काठमांडू",
+    "it": "Katmandu",
+    "ru": "Катманду",
+    "zh-CN": "加德满都",
+    "zh-TW": "加德滿都",
+    "ja": "カトマンズ"
+  },
+  "kobe": {
+    "pt": "Kōbe",
+    "es": "Kōbe",
+    "de": "Kōbe",
+    "hi": "कोबे",
+    "it": "Kōbe",
+    "ru": "Кобе",
+    "zh-CN": "神户市",
+    "zh-TW": "神戶市",
+    "ja": "神戸市"
+  },
+  "ulaanbaatar": {
+    "pt": "Ulã Bator",
+    "es": "Ulán Bator",
+    "fr": "Oulan-Bator",
+    "hi": "उलान बतोर",
+    "it": "Ulan Bator",
+    "ru": "Улан-Батор",
+    "zh-CN": "乌兰巴托",
+    "zh-TW": "烏蘭巴托",
+    "ja": "ウランバートル"
+  },
+  "makassar": {
+    "pt": "Macáçar",
+    "es": "Macasar",
+    "hi": "माकास्सार",
+    "ru": "Макасар",
+    "zh-CN": "望加锡",
+    "zh-TW": "望加錫",
+    "ja": "マカッサル"
+  },
+  "kyoto": {
+    "pt": "Quioto",
+    "es": "Kioto",
+    "de": "Kyōto",
+    "hi": "क्योतो",
+    "ru": "Киото",
+    "zh-CN": "京都市",
+    "zh-TW": "京都市",
+    "ja": "京都市"
+  },
+  "san-diego": {
+    "hi": "सैन डिएगो",
+    "ru": "Сан-Диего",
+    "zh-CN": "圣迭戈",
+    "zh-TW": "聖地牙哥",
+    "ja": "サン・ディエゴ"
+  },
+  "san-jose-cr": {
+    "pt": "San José",
+    "es": "San José",
+    "fr": "San José",
+    "de": "San José",
+    "hi": "सान होज़े",
+    "it": "San José",
+    "ru": "Сан-Хосе",
+    "zh-CN": "圣何塞",
+    "zh-TW": "聖荷西",
+    "ja": "サンホセ"
+  },
+  "tegucigalpa": {
+    "hi": "तेगुसिगाल्पा",
+    "ru": "Тегусигальпа",
+    "zh-CN": "特古西加尔巴",
+    "zh-TW": "德古斯加巴",
+    "ja": "テグシガルパ"
+  },
+  "belgrade": {
+    "pt": "Belgrado",
+    "es": "Belgrado",
+    "de": "Belgrad",
+    "hi": "बेलग्रेड",
+    "it": "Belgrado",
+    "ru": "Белград",
+    "zh-CN": "贝尔格莱德",
+    "zh-TW": "貝爾格勒",
+    "ja": "ベオグラード"
+  },
+  "milan": {
+    "pt": "Milão",
+    "es": "Milán",
+    "de": "Mailand",
+    "hi": "मिलानो",
+    "it": "Milano",
+    "ru": "Милан",
+    "zh-CN": "米兰",
+    "zh-TW": "米蘭",
+    "ja": "ミラノ"
+  },
+  "niamey": {
+    "hi": "नियामी",
+    "ru": "Ниамей",
+    "zh-CN": "尼亚美",
+    "zh-TW": "尼阿美",
+    "ja": "ニアメ"
+  },
+  "basra": {
+    "pt": "Baçorá",
+    "es": "Basora",
+    "fr": "Bassorah",
+    "hi": "बसरा",
+    "it": "Bassora",
+    "ru": "Басра",
+    "zh-CN": "巴士拉",
+    "ja": "バスラ"
+  },
+  "adelaide": {
+    "es": "Adelaida",
+    "fr": "Adélaïde",
+    "hi": "एडिलेड",
+    "ru": "Аделаида",
+    "zh-CN": "阿德莱德",
+    "zh-TW": "阿得雷德",
+    "ja": "アデレード"
+  },
+  "copenhagen": {
+    "pt": "Copenhaga",
+    "es": "Copenhague",
+    "fr": "Copenhague",
+    "de": "Kopenhagen",
+    "hi": "कोपनहेगन",
+    "it": "Copenaghen",
+    "ru": "Копенгаген",
+    "zh-CN": "哥本哈根",
+    "zh-TW": "哥本哈根",
+    "ja": "コペンハーゲン"
+  },
+  "dallas": {
+    "hi": "डैलस",
+    "ru": "Даллас",
+    "zh-CN": "达拉斯",
+    "zh-TW": "達拉斯",
+    "ja": "ダラス"
+  },
+  "helsinki": {
+    "pt": "Helsínquia",
+    "hi": "हेलसिंकी",
+    "ru": "Хельсинки",
+    "zh-CN": "赫尔辛基",
+    "zh-TW": "赫爾辛基",
+    "ja": "ヘルシンキ"
+  },
+  "prague": {
+    "pt": "Praga",
+    "es": "Praga",
+    "de": "Prag",
+    "hi": "प्राग",
+    "it": "Praga",
+    "ru": "Прага",
+    "zh-CN": "布拉格",
+    "zh-TW": "布拉格",
+    "ja": "プラハ"
+  },
+  "porto": {
+    "es": "Oporto",
+    "fr": "District de Porto",
+    "de": "Distrikt Porto",
+    "ru": "Порту",
+    "zh-CN": "波尔图区",
+    "zh-TW": "奧波多區",
+    "ja": "ポルト県"
+  },
+  "mombasa": {
+    "pt": "Mombaça",
+    "hi": "मोम्बासा",
+    "ru": "Момбаса",
+    "zh-CN": "蒙巴萨",
+    "zh-TW": "蒙巴薩",
+    "ja": "モンバサ"
+  },
+  "nouakchott": {
+    "es": "Nuakchot",
+    "hi": "नुआकशोत",
+    "ru": "Нуакшот",
+    "zh-TW": "諾克少",
+    "ja": "ヌアクショット"
+  },
+  "sofia": {
+    "pt": "Sófia",
+    "es": "Sofía",
+    "hi": "सोफिया",
+    "ru": "София",
+    "zh-CN": "索非亚",
+    "zh-TW": "索菲亞",
+    "ja": "ソフィア"
+  },
+  "kingston": {
+    "hi": "किंग्सटन",
+    "ru": "Кингстон",
+    "zh-CN": "金斯敦",
+    "zh-TW": "京士頓",
+    "ja": "キングストン"
+  },
+  "dublin": {
+    "es": "Dublín",
+    "hi": "डबलिन",
+    "it": "Dublino",
+    "ru": "Дублин",
+    "zh-TW": "都柏林",
+    "ja": "ダブリン"
+  },
+  "fez": {
+    "fr": "Fès",
+    "de": "Fès",
+    "hi": "फ़ास",
+    "it": "Fès",
+    "ru": "Фес",
+    "zh-CN": "非斯",
+    "ja": "フェズ"
+  },
+  "tripoli": {
+    "pt": "Trípoli",
+    "es": "Trípoli",
+    "de": "Tripolis",
+    "hi": "ताराबूलस",
+    "ru": "Триполи",
+    "zh-CN": "的黎波里",
+    "zh-TW": "的黎波里",
+    "ja": "トリポリ"
+  },
+  "freetown": {
+    "hi": "फ़्रीटाउन",
+    "ru": "Фритаун",
+    "zh-CN": "弗里敦",
+    "zh-TW": "自由城",
+    "ja": "フリータウン"
+  },
+  "amritsar": {
+    "hi": "अमृतसर",
+    "ru": "Амритсар",
+    "zh-CN": "阿姆利则",
+    "ja": "アムリトサル"
+  },
+  "chiang-mai": {
+    "hi": "चिआंग माई",
+    "ru": "Чиангмай",
+    "zh-CN": "清迈",
+    "ja": "テーサバーンナコーン・チエンマイ"
+  },
+  "da-nang": {
+    "es": "Đà Nẵng",
+    "fr": "Đà Nẵng",
+    "de": "Đà Nẵng",
+    "hi": "दा नांग",
+    "ru": "Да-Нанг",
+    "zh-TW": "峴港市",
+    "ja": "ダナン"
+  },
+  "can-tho": {
+    "es": "Cần Thơ",
+    "fr": "Cần Thơ",
+    "de": "Cần Thơ",
+    "hi": "कान थौ",
+    "it": "Cần Thơ",
+    "ru": "Кантхо",
+    "zh-CN": "芹苴市",
+    "zh-TW": "芹苴市",
+    "ja": "カントー"
+  },
+  "astana": {
+    "es": "Astaná",
+    "hi": "अस्ताना",
+    "ru": "Астана",
+    "zh-CN": "阿斯塔纳",
+    "zh-TW": "阿斯塔納",
+    "ja": "アスタナ"
+  },
+  "tbilisi": {
+    "pt": "Tiblíssi",
+    "es": "Tiflis",
+    "fr": "Tbilissi",
+    "de": "Tiflis",
+    "hi": "तिब्लिसी",
+    "ru": "Тбилиси",
+    "zh-CN": "第比利斯",
+    "zh-TW": "提比里斯",
+    "ja": "トビリシ"
+  },
+  "mendoza": {
+    "hi": "मेंदोसा",
+    "ru": "Мендоса",
+    "zh-CN": "门多萨",
+    "zh-TW": "門多薩",
+    "ja": "メンドーサ"
+  },
+  "birmingham-gb": {
+    "ru": "Бирмингем",
+    "ja": "バーミンガム"
+  },
+  "san-salvador": {
+    "hi": "सान-साल्वाडोर",
+    "ru": "Сан-Сальвадор",
+    "zh-CN": "圣萨尔瓦多",
+    "zh-TW": "聖薩爾瓦多",
+    "ja": "サンサルバドル"
+  },
+  "krasnoyarsk": {
+    "fr": "Krasnoïarsk",
+    "de": "Krasnojarsk",
+    "hi": "क्रास्नोयार्स्क",
+    "it": "Krasnojarsk",
+    "ru": "Красноярск",
+    "zh-CN": "克拉斯诺亚尔斯克",
+    "zh-TW": "克拉斯諾亞爾斯克",
+    "ja": "クラスノヤルスク"
+  },
+  "cologne": {
+    "pt": "Colónia",
+    "es": "Colonia",
+    "de": "Köln",
+    "hi": "कोलोन",
+    "it": "Colonia",
+    "ru": "Кёльн",
+    "zh-CN": "科隆",
+    "zh-TW": "科隆",
+    "ja": "ケルン"
+  },
+  "maputo": {
+    "hi": "मपूटो",
+    "ru": "Мапуту",
+    "zh-CN": "马普托",
+    "zh-TW": "馬布多",
+    "ja": "マプト"
+  },
+  "kigali": {
+    "pt": "Quigali",
+    "hi": "किगाली",
+    "ru": "Кигали",
+    "zh-CN": "基加利",
+    "ja": "キガリ"
+  },
+  "chandigarh": {
+    "hi": "चण्डीगढ़",
+    "ru": "Чандигарх",
+    "zh-CN": "昌迪加尔",
+    "zh-TW": "昌迪加爾",
+    "ja": "チャンディーガル"
+  },
+  "guwahati": {
+    "hi": "गुवाहाटी",
+    "ru": "Гувахати",
+    "zh-CN": "古瓦哈蒂",
+    "zh-TW": "古瓦哈提",
+    "ja": "グワーハーティー"
+  },
+  "islamabad": {
+    "hi": "इस्लामाबाद",
+    "ru": "Исламабад",
+    "zh-CN": "伊斯兰堡",
+    "zh-TW": "伊斯蘭瑪巴德",
+    "ja": "イスラマバード"
+  },
+  "shymkent": {
+    "fr": "Chimkent",
+    "de": "Schymkent",
+    "hi": "शिमकेंट",
+    "it": "Şımkent",
+    "ru": "Шымкент",
+    "ja": "シムケント"
+  },
+  "bishkek": {
+    "pt": "Bisqueque",
+    "es": "Biskek",
+    "fr": "Bichkek",
+    "de": "Bischkek",
+    "hi": "बिश्केक",
+    "it": "Biškek",
+    "ru": "Бишкек",
+    "zh-CN": "比什凯克",
+    "zh-TW": "比斯凱克",
+    "ja": "ビシュケク"
+  },
+  "ashgabat": {
+    "pt": "Asgabate",
+    "es": "Asjabad",
+    "fr": "Achgabat",
+    "de": "Aşgabat",
+    "hi": "अश्क़ाबाद",
+    "it": "Aşgabat",
+    "ru": "Ашхабад",
+    "zh-CN": "阿什哈巴德",
+    "zh-TW": "阿什哈巴特",
+    "ja": "アシガバート"
+  },
+  "yerevan": {
+    "pt": "Erevã",
+    "es": "Ereván",
+    "fr": "Erevan",
+    "de": "Jerewan",
+    "hi": "येरेवान",
+    "it": "Erevan",
+    "ru": "Ереван",
+    "zh-CN": "埃里温",
+    "zh-TW": "葉里溫",
+    "ja": "イェレヴァン"
+  },
+  "managua": {
+    "hi": "मनागुआ",
+    "ru": "Манагуа",
+    "zh-CN": "马那瓜",
+    "zh-TW": "馬納瓜",
+    "ja": "マナグア"
+  },
+  "san-jose": {
+    "pt": "São José",
+    "es": "San José",
+    "fr": "San José",
+    "de": "San José",
+    "hi": "सैन जोस, कैलिफोर्निया",
+    "ru": "Сан-Хосе",
+    "zh-CN": "圣何塞",
+    "zh-TW": "聖荷西",
+    "ja": "サンノゼ"
+  },
+  "ottawa": {
+    "hi": "ओटावा",
+    "ru": "Оттава",
+    "zh-CN": "渥太华",
+    "zh-TW": "渥太華",
+    "ja": "オタワ"
+  },
+  "oslo": {
+    "hi": "ओस्लो",
+    "ru": "Осло",
+    "zh-CN": "奥斯陆",
+    "zh-TW": "奧斯陸",
+    "ja": "オスロ"
+  },
+  "thessaloniki": {
+    "pt": "Salonica",
+    "es": "Salónica",
+    "fr": "Thessalonique",
+    "hi": "थेसालोनिकी",
+    "it": "Salonicco",
+    "ru": "Салоники",
+    "zh-CN": "塞萨洛尼基",
+    "zh-TW": "塞薩羅尼基",
+    "ja": "テッサロニキ"
+  },
+  "bujumbura": {
+    "es": "Buyumbura",
+    "fr": "Bujumbura-Mairie",
+    "hi": "बुजुम्बुरा",
+    "ru": "Бужумбура",
+    "ja": "ブジュンブラ"
+  },
+  "erbil": {
+    "pt": "Arbil",
+    "hi": "अरबिल",
+    "ru": "Эрбиль",
+    "zh-CN": "埃尔比勒",
+    "zh-TW": "阿爾貝拉",
+    "ja": "アルビール"
+  },
+  "naypyidaw": {
+    "es": "Naipyidó",
+    "hi": "नाएप्यीडॉ",
+    "ru": "Нейпьидо",
+    "zh-CN": "内比都",
+    "zh-TW": "奈比多",
+    "ja": "ネピドー"
+  },
+  "naples": {
+    "pt": "Nápoles",
+    "es": "Nápoles",
+    "de": "Neapel",
+    "hi": "नेपल्स",
+    "it": "Napoli",
+    "ru": "Неаполь",
+    "zh-CN": "那不勒斯",
+    "zh-TW": "拿坡里",
+    "ja": "ナポリ"
+  },
+  "austin": {
+    "hi": "ऑस्टिन",
+    "ru": "Остин",
+    "zh-CN": "奥斯汀",
+    "zh-TW": "奧斯汀",
+    "ja": "オースティン"
+  },
+  "asmara": {
+    "hi": "अस्मारा",
+    "ru": "Асмэра",
+    "zh-TW": "阿斯馬拉",
+    "ja": "アスマラ"
+  },
+  "jacksonville": {
+    "hi": "जैक्सनविल, फ्लोरिडा",
+    "ru": "Джэксонвилл",
+    "zh-CN": "杰克逊维尔",
+    "zh-TW": "傑克遜維爾",
+    "ja": "ジャクソンヴィル"
+  },
+  "sfax": {
+    "hi": "स्फ़ाक्स",
+    "ru": "Сфакс",
+    "zh-CN": "斯法克斯",
+    "ja": "スファックス"
+  },
+  "jerusalem": {
+    "pt": "Jerusalém",
+    "es": "Jerusalén",
+    "fr": "Jérusalem",
+    "hi": "यरुशलम",
+    "it": "Gerusalemme",
+    "ru": "Иерусалим",
+    "zh-CN": "耶路撒冷",
+    "zh-TW": "耶路撒冷",
+    "ja": "エルサレム"
+  },
+  "vientiane": {
+    "pt": "Vienciana",
+    "es": "Vientián",
+    "hi": "व्यिंचन",
+    "ru": "Вьентьян",
+    "zh-CN": "万象",
+    "zh-TW": "永珍",
+    "ja": "ヴィエンチャン"
+  },
+  "dushanbe": {
+    "pt": "Duchambe",
+    "es": "Dusambé",
+    "fr": "Douchanbé",
+    "de": "Duschanbe",
+    "hi": "दुशान्बे",
+    "it": "Dušanbe",
+    "ru": "Душанбе",
+    "zh-CN": "杜尚别",
+    "zh-TW": "杜尚貝",
+    "ja": "ドゥシャンベ"
+  },
+  "marrakech": {
+    "pt": "Marraquexe",
+    "de": "Marrakesch",
+    "hi": "मर्राकेश",
+    "ru": "Марракеш",
+    "zh-CN": "马拉喀什",
+    "zh-TW": "馬拉喀什",
+    "ja": "マラケシュ"
+  },
+  "columbus": {
+    "hi": "कोलम्बस",
+    "ru": "Колумбус",
+    "zh-CN": "哥伦布",
+    "zh-TW": "哥倫布",
+    "ja": "コロンバス"
+  },
+  "cancun": {
+    "pt": "Cancún",
+    "es": "Cancún",
+    "fr": "Cancún",
+    "de": "Cancún",
+    "hi": "कान्कुन",
+    "it": "Cancún",
+    "ru": "Канкун",
+    "zh-CN": "坎昆",
+    "ja": "カンクン"
+  },
+  "bangui": {
+    "hi": "बैंगुई",
+    "ru": "Банги",
+    "zh-TW": "班基",
+    "ja": "バンギ"
+  },
+  "denpasar": {
+    "pt": "Dempassar",
+    "hi": "देनपसार",
+    "ru": "Денпасар",
+    "zh-CN": "登巴萨",
+    "zh-TW": "丹帕沙",
+    "ja": "デンパサール"
+  },
+  "indianapolis": {
+    "pt": "Indianápolis",
+    "es": "Indianápolis",
+    "hi": "इंडियानापोलिस",
+    "ru": "Индианаполис",
+    "zh-TW": "印第安納波利斯",
+    "ja": "インディアナポリス"
+  },
+  "san-francisco": {
+    "pt": "São Francisco",
+    "hi": "सैन फ्रांसिस्को",
+    "ru": "Сан-Франциско",
+    "zh-CN": "旧金山",
+    "zh-TW": "舊金山",
+    "ja": "サンフランシスコ"
+  },
+  "charlotte": {
+    "hi": "शार्लोट",
+    "ru": "Шарлотт",
+    "zh-CN": "夏洛特",
+    "zh-TW": "夏洛特",
+    "ja": "シャーロット"
+  },
+  "marseille": {
+    "pt": "Marselha",
+    "es": "Marsella",
+    "hi": "मार्सेय",
+    "it": "Marsiglia",
+    "ru": "Марсель",
+    "zh-CN": "马赛",
+    "zh-TW": "馬賽",
+    "ja": "マルセイユ"
+  },
+  "turin": {
+    "pt": "Turim",
+    "es": "Turín",
+    "hi": "टोरीनो",
+    "it": "Torino",
+    "ru": "Турин",
+    "zh-CN": "都灵",
+    "zh-TW": "杜林",
+    "ja": "トリノ"
+  },
+  "libreville": {
+    "hi": "लिब्रेविले",
+    "ru": "Либревиль",
+    "zh-CN": "利伯维尔",
+    "ja": "リーブルヴィル"
+  },
+  "winnipeg": {
+    "hi": "विनीपैग",
+    "ru": "Виннипег",
+    "zh-CN": "温尼伯",
+    "zh-TW": "溫尼伯",
+    "ja": "ウィニペグ"
+  },
+  "quebec-city": {
+    "pt": "Quebec",
+    "es": "Quebec",
+    "fr": "Québec",
+    "de": "Québec",
+    "hi": "क्यूबेक नगर",
+    "it": "Québec",
+    "ru": "Квебек",
+    "ja": "ケベック市"
+  },
+  "leeds": {
+    "es": "Ciudad de Leeds",
+    "fr": "cité de Leeds",
+    "de": "City of Leeds",
+    "it": "City of Leeds",
+    "ru": "Сити-оф-Лидс",
+    "zh-CN": "利兹市",
+    "ja": "シティ・オブ・リーズ"
+  },
+  "zagreb": {
+    "hi": "ज़ाग्रेब",
+    "it": "Zagabria",
+    "ru": "Загреб",
+    "zh-CN": "萨格勒布",
+    "zh-TW": "札格雷布",
+    "ja": "ザグレブ"
+  },
+  "george-town-my": {
+    "hi": "जॉर्ज टाउन",
+    "ru": "Джорджтаун",
+    "ja": "ジョージタウン"
+  },
+  "hamilton": {
+    "hi": "हैमिल्टन",
+    "ru": "Гамильтон",
+    "zh-CN": "哈密尔顿",
+    "zh-TW": "哈密爾頓",
+    "ja": "ハミルトン"
+  },
+  "krakow": {
+    "pt": "Cracóvia",
+    "es": "Cracovia",
+    "fr": "Cracovie",
+    "de": "Krakau",
+    "hi": "क्राकुव",
+    "it": "Cracovia",
+    "ru": "Краков",
+    "zh-CN": "克拉科夫",
+    "zh-TW": "克拉科夫",
+    "ja": "クラクフ"
+  },
+  "seattle": {
+    "hi": "सीऐटल",
+    "ru": "Сиэтл",
+    "zh-CN": "西雅图",
+    "zh-TW": "西雅圖",
+    "ja": "シアトル"
+  },
+  "frankfurt": {
+    "pt": "Frankfurt am Main",
+    "es": "Fráncfort del Meno",
+    "fr": "Francfort-sur-le-Main",
+    "de": "Frankfurt am Main",
+    "hi": "फ़्रैंकफ़र्ट",
+    "it": "Francoforte sul Meno",
+    "ru": "Франкфурт-на-Майне",
+    "zh-CN": "美因河畔法兰克福",
+    "zh-TW": "美茵河畔法蘭克福",
+    "ja": "フランクフルト・アム・マイン"
+  },
+  "colombo": {
+    "hi": "कोलंबो",
+    "ru": "Коломбо",
+    "zh-CN": "科伦坡",
+    "zh-TW": "可倫坡",
+    "ja": "コロンボ"
+  },
+  "denver": {
+    "hi": "डॅनवर",
+    "ru": "Денвер",
+    "zh-CN": "丹佛",
+    "zh-TW": "丹佛",
+    "ja": "デンバー"
+  },
+  "washington": {
+    "pt": "Washington, D.C.",
+    "es": "Washington D. C.",
+    "de": "Washington, D.C.",
+    "hi": "वॉशिंगटन डी॰ सी॰",
+    "ru": "Вашингтон",
+    "zh-CN": "华盛顿哥伦比亚特区",
+    "zh-TW": "華盛頓哥倫比亞特區",
+    "ja": "ワシントンD.C."
+  },
+  "chisinau": {
+    "pt": "Chișinău",
+    "fr": "Municipalité de Chișinău",
+    "ru": "Кишинёв"
+  },
+  "gold-coast": {
+    "hi": "गोल्ड कोस्ट",
+    "ru": "Голд-Кост",
+    "zh-CN": "黄金海岸",
+    "zh-TW": "黃金海岸",
+    "ja": "ゴールドコースト"
+  },
+  "boston": {
+    "hi": "बोस्टन",
+    "ru": "Бостон",
+    "zh-CN": "波士顿",
+    "zh-TW": "波士頓",
+    "ja": "ボストン"
+  },
+  "nashville": {
+    "hi": "नैशविले",
+    "ru": "Нашвилл",
+    "zh-CN": "纳什维尔",
+    "zh-TW": "納許維爾",
+    "ja": "ナッシュヴィル"
+  },
+  "seville": {
+    "pt": "Sevilha",
+    "es": "Sevilla",
+    "fr": "Séville",
+    "de": "Sevilla",
+    "hi": "सेविला",
+    "it": "Siviglia",
+    "ru": "Севилья",
+    "zh-CN": "塞维利亚",
+    "zh-TW": "塞維亞",
+    "ja": "セビリア"
+  },
+  "el-paso": {
+    "hi": "अल पासो",
+    "ru": "Эль-Пасо",
+    "zh-CN": "埃尔帕索",
+    "zh-TW": "艾爾帕索",
+    "ja": "エル・パソ"
+  },
+  "oklahoma-city": {
+    "hi": "ओक्लाहामा सिटी",
+    "ru": "Оклахома-Сити",
+    "zh-CN": "俄克拉何马城",
+    "zh-TW": "奧克拉荷馬市",
+    "ja": "オクラホマシティ"
+  },
+  "portland": {
+    "hi": "पोर्टलैंड, ऑरेगॉन",
+    "ru": "Портленд",
+    "zh-CN": "波特兰",
+    "zh-TW": "波特蘭",
+    "ja": "ポートランド"
+  },
+  "benghazi": {
+    "pt": "Bengasi",
+    "es": "Bengasi",
+    "de": "Bengasi",
+    "hi": "बेनग़ाज़ी",
+    "it": "Bengasi",
+    "ru": "Бенгази",
+    "zh-CN": "班加西",
+    "ja": "ベンガジ"
+  },
+  "las-vegas": {
+    "hi": "लास वेगास",
+    "ru": "Лас-Вегас",
+    "zh-CN": "拉斯维加斯",
+    "zh-TW": "拉斯維加斯",
+    "ja": "ラスベガス"
+  },
+  "wroclaw": {
+    "pt": "Breslávia",
+    "es": "Breslavia",
+    "de": "Breslau",
+    "hi": "व्रोत्स्वाव",
+    "it": "Breslavia",
+    "ru": "Вроцлав",
+    "zh-CN": "弗罗茨瓦夫",
+    "zh-TW": "弗羅次瓦夫",
+    "ja": "ヴロツワフ"
+  },
+  "detroit": {
+    "fr": "Détroit",
+    "hi": "डेट्राइट",
+    "ru": "Детройт",
+    "zh-CN": "底特律",
+    "zh-TW": "底特律",
+    "ja": "デトロイト"
+  },
+  "memphis": {
+    "hi": "मेम्फिस",
+    "ru": "Мемфис",
+    "zh-CN": "孟菲斯",
+    "zh-TW": "曼非斯",
+    "ja": "メンフィス"
+  },
+  "glasgow": {
+    "hi": "ग्लासगो",
+    "ru": "Глазго",
+    "zh-CN": "格拉斯哥",
+    "zh-TW": "格拉斯哥",
+    "ja": "グラスゴー"
+  },
+  "riga": {
+    "hi": "रीगा",
+    "ru": "Рига",
+    "zh-CN": "里加",
+    "zh-TW": "里加",
+    "ja": "リガ"
+  },
+  "stuttgart": {
+    "pt": "Estugarda",
+    "hi": "श्टुटगार्ट",
+    "it": "Stoccarda",
+    "ru": "Штутгарт",
+    "zh-CN": "斯图加特",
+    "zh-TW": "司徒加特",
+    "ja": "シュトゥットガルト"
+  },
+  "manama": {
+    "hi": "मनामा",
+    "ru": "Манама",
+    "zh-CN": "麦纳麦",
+    "zh-TW": "麥納瑪",
+    "ja": "マナーマ"
+  },
+  "louisville": {
+    "hi": "लुईविल",
+    "ru": "Луисвилл",
+    "zh-CN": "路易斯维尔",
+    "zh-TW": "路易維爾",
+    "ja": "ルイヴィル"
+  },
+  "irkutsk": {
+    "fr": "Irkoutsk",
+    "hi": "इरकुत्स्क",
+    "ru": "Иркутск",
+    "zh-CN": "伊尔库茨克",
+    "zh-TW": "伊爾庫次克",
+    "ja": "イルクーツク"
+  },
+  "leipzig": {
+    "hi": "लाइपत्सिग",
+    "it": "Lipsia",
+    "ru": "Лейпциг",
+    "zh-CN": "莱比锡",
+    "zh-TW": "萊比錫",
+    "ja": "ライプツィヒ"
+  },
+  "djibouti-city": {
+    "pt": "Djibouti",
+    "es": "Ciudad de Yibuti",
+    "fr": "Djibouti",
+    "de": "Dschibuti",
+    "hi": "जिबूटी",
+    "it": "Gibuti",
+    "ru": "Джибути",
+    "zh-CN": "吉布提市",
+    "zh-TW": "吉布地",
+    "ja": "ジブチ市"
+  },
+  "gothenburg": {
+    "pt": "Gotemburgo",
+    "es": "Gotemburgo",
+    "fr": "Göteborg",
+    "de": "Göteborg",
+    "hi": "गोथनबर्ग",
+    "it": "Göteborg",
+    "ru": "Гётеборг",
+    "zh-CN": "哥德堡",
+    "zh-TW": "哥特堡",
+    "ja": "ヨーテボリ"
+  },
+  "vladivostok": {
+    "de": "Wladiwostok",
+    "hi": "व्लादिवोस्तोक",
+    "ru": "Владивосток",
+    "zh-CN": "海参崴",
+    "zh-TW": "海參崴",
+    "ja": "ウラジオストク"
+  },
+  "skopje": {
+    "es": "Skopie",
+    "hi": "स्कोपिये",
+    "ru": "Скопье",
+    "zh-CN": "斯科普里",
+    "zh-TW": "史高比耶",
+    "ja": "スコピエ"
+  },
+  "sylhet": {
+    "pt": "Silete",
+    "hi": "सिलेट नगर निगम",
+    "ru": "Силхет",
+    "zh-CN": "锡尔赫特",
+    "zh-TW": "錫爾赫特市",
+    "ja": "シレット"
+  },
+  "baltimore": {
+    "hi": "बाल्टीमोर",
+    "it": "Baltimora",
+    "ru": "Балтимор",
+    "zh-CN": "巴尔的摩",
+    "zh-TW": "巴爾的摩",
+    "ja": "ボルティモア"
+  },
+  "milwaukee": {
+    "hi": "मिल्वौकी",
+    "ru": "Милуоки",
+    "zh-CN": "密尔沃基",
+    "zh-TW": "密爾瓦基",
+    "ja": "ミルウォーキー"
+  },
+  "vilnius": {
+    "es": "Vilna",
+    "hi": "विल्नुस",
+    "ru": "Вильнюс",
+    "zh-CN": "维尔纽斯",
+    "zh-TW": "維爾紐斯",
+    "ja": "ヴィルニュス"
+  },
+  "albuquerque": {
+    "hi": "अल्बुकर्क",
+    "ru": "Альбукерке",
+    "zh-CN": "阿尔伯克基",
+    "zh-TW": "阿布奎基",
+    "ja": "アルバカーキ"
+  },
+  "manchester": {
+    "es": "Mánchester",
+    "hi": "मैन्चेस्टर",
+    "ru": "Манчестер",
+    "zh-CN": "曼彻斯特",
+    "zh-TW": "曼徹斯特",
+    "ja": "マンチェスター"
+  },
+  "sarajevo": {
+    "hi": "सारायेवो",
+    "ru": "Сараево",
+    "zh-CN": "萨拉热窝",
+    "zh-TW": "塞拉耶佛",
+    "ja": "サラエヴォ"
+  },
+  "kota-kinabalu": {
+    "hi": "कोता किनाबालू",
+    "ru": "Кота-Кинабалу",
+    "zh-CN": "哥打基纳巴卢",
+    "ja": "コタキナバル"
+  },
+  "samarkand": {
+    "pt": "Samarcanda",
+    "es": "Samarcanda",
+    "fr": "Samarcande",
+    "de": "Samarqand",
+    "hi": "समरक़न्द",
+    "it": "Samarcanda",
+    "ru": "Самарканд",
+    "zh-CN": "撒马尔罕",
+    "zh-TW": "撒馬爾罕",
+    "ja": "サマルカンド"
+  },
+  "tucson": {
+    "hi": "टूकसों",
+    "ru": "Тусон",
+    "zh-CN": "图森",
+    "ja": "トゥーソン"
+  },
+  "fresno": {
+    "hi": "फ़्रेस्नो",
+    "ru": "Фресно",
+    "ja": "フレズノー"
+  },
+  "port-of-spain": {
+    "es": "Puerto España",
+    "fr": "Port-d'Espagne",
+    "hi": "पोर्ट ऑफ स्पेन",
+    "ru": "Порт-оф-Спейн",
+    "ja": "ポートオブスペイン"
+  },
+  "edinburgh": {
+    "pt": "Edimburgo",
+    "es": "Edimburgo",
+    "fr": "Édimbourg",
+    "hi": "एडिनबरा",
+    "it": "Edimburgo",
+    "ru": "Эдинбург",
+    "zh-CN": "爱丁堡",
+    "zh-TW": "愛丁堡",
+    "ja": "エディンバラ"
+  },
+  "antwerp": {
+    "pt": "Antuérpia",
+    "es": "Amberes",
+    "fr": "Anvers",
+    "de": "Antwerpen",
+    "hi": "एंटवर्प",
+    "it": "Anversa",
+    "ru": "Антверпен",
+    "zh-CN": "安特卫普",
+    "zh-TW": "安特衛普",
+    "ja": "アントウェルペン"
+  },
+  "lyon": {
+    "hi": "ल्यों",
+    "it": "Lione",
+    "ru": "Лион",
+    "zh-CN": "里昂",
+    "zh-TW": "里昂",
+    "ja": "リヨン"
+  },
+  "sacramento": {
+    "hi": "सैक्रामेण्टो",
+    "ru": "Сакраменто",
+    "zh-CN": "萨克拉门托",
+    "zh-TW": "沙加緬度",
+    "ja": "サクラメント"
+  },
+  "atlanta": {
+    "hi": "अटलांटा",
+    "ru": "Атланта",
+    "zh-CN": "亚特兰大",
+    "zh-TW": "亞特蘭大",
+    "ja": "アトランタ"
+  },
+  "kansas-city": {
+    "hi": "कन्सास सिटी",
+    "ru": "Канзас-Сити",
+    "zh-CN": "堪萨斯城",
+    "ja": "カンザス・シティ"
+  },
+  "tirana": {
+    "hi": "तिराना",
+    "ru": "Тирана",
+    "zh-CN": "地拉那",
+    "ja": "ティラナ"
+  },
+  "tripoli-lb": {
+    "pt": "Trípoli",
+    "es": "Trípoli",
+    "hi": "त्रिपोली",
+    "ru": "Триполи",
+    "zh-CN": "的黎波里",
+    "zh-TW": "的黎波里",
+    "ja": "トリポリ"
+  },
+  "pokhara": {
+    "hi": "पोखरा",
+    "ru": "Покхара",
+    "ja": "ポカラ"
+  },
+  "omaha": {
+    "hi": "ओमाहा",
+    "ru": "Омаха",
+    "ja": "オマハ"
+  },
+  "kaliningrad": {
+    "pt": "Kaliningrado",
+    "es": "Kaliningrado",
+    "hi": "कैलिनिनग्राद",
+    "ru": "Калининград",
+    "zh-TW": "加里寧格勒",
+    "ja": "カリーニングラード"
+  },
+  "colorado-springs": {
+    "hi": "कोलोराडो स्प्रिंग्स",
+    "ru": "Колорадо-Спрингс",
+    "zh-CN": "科罗拉多斯普林斯",
+    "zh-TW": "科羅拉多泉",
+    "ja": "コロラドスプリングス"
+  },
+  "windhoek": {
+    "hi": "विंडहोक",
+    "ru": "Виндхук",
+    "zh-CN": "温得和克",
+    "ja": "ウィントフック"
+  },
+  "bratislava": {
+    "hi": "ब्रातिस्लावा",
+    "ru": "Братислава",
+    "zh-CN": "布拉迪斯拉发",
+    "zh-TW": "布拉提斯拉瓦",
+    "ja": "ブラチスラヴァ"
+  },
+  "miami": {
+    "hi": "मियामी",
+    "ru": "Майами",
+    "zh-CN": "迈阿密",
+    "zh-TW": "邁阿密",
+    "ja": "マイアミ"
+  },
+  "raleigh": {
+    "hi": "रैली",
+    "ru": "Роли",
+    "zh-CN": "罗利",
+    "ja": "ローリー"
+  },
+  "gdansk": {
+    "pt": "Gdansk",
+    "es": "Gdansk",
+    "de": "Danzig",
+    "hi": "डांस्क",
+    "it": "Danzica",
+    "ru": "Гданьск",
+    "zh-CN": "格但斯克",
+    "zh-TW": "格但斯克",
+    "ja": "グダニスク"
+  },
+  "tel-aviv": {
+    "de": "Tel Aviv-Jaffa",
+    "hi": "तेल अविव",
+    "ru": "Тель-Авив",
+    "zh-CN": "特拉维夫",
+    "zh-TW": "臺拉維夫",
+    "ja": "テルアビブ"
+  },
+  "canberra": {
+    "pt": "Camberra",
+    "hi": "कैनबरा",
+    "ru": "Канберра",
+    "zh-CN": "堪培拉",
+    "zh-TW": "坎培拉",
+    "ja": "キャンベラ"
+  },
+  "virginia-beach": {
+    "hi": "वर्जीनिया बीच",
+    "ru": "Верджиния-Бич",
+    "zh-CN": "弗吉尼亚海滩",
+    "zh-TW": "維吉尼亞海灘",
+    "ja": "ヴァージニア・ビーチ"
+  },
+  "iloilo-city": {
+    "pt": "Cidade de Iloilo",
+    "es": "Iloílo",
+    "fr": "Iloïlo",
+    "hi": "इलोइलो सिटी",
+    "it": "Iloilo",
+    "ru": "Илоило",
+    "zh-CN": "伊洛伊洛市",
+    "zh-TW": "伊洛伊洛市",
+    "ja": "イロイロ"
+  },
+  "halifax": {
+    "hi": "हालीफैक्स",
+    "ru": "Галифакс",
+    "zh-CN": "哈利法克斯",
+    "zh-TW": "哈里法克斯",
+    "ja": "ハリファックス"
+  },
+  "tallinn": {
+    "es": "Tallin",
+    "hi": "ताल्लिन",
+    "ru": "Таллин",
+    "zh-CN": "塔林",
+    "zh-TW": "塔林",
+    "ja": "タリン"
+  },
+  "minneapolis": {
+    "hi": "मिनियापोलिस",
+    "ru": "Миннеаполис",
+    "zh-CN": "明尼阿波利斯",
+    "zh-TW": "明尼亞波利斯",
+    "ja": "ミネアポリス"
+  },
+  "phuket": {
+    "hi": "फुकेत",
+    "it": "città di Phuket",
+    "ru": "Пхукет",
+    "ja": "テーサバーンナコーン・プーケット"
+  },
+  "tulsa": {
+    "hi": "तुलसा",
+    "ru": "Талса",
+    "zh-CN": "塔尔萨",
+    "zh-TW": "土爾沙",
+    "ja": "タルサ"
+  },
+  "tampa": {
+    "hi": "ताम्पा",
+    "ru": "Тампа",
+    "zh-CN": "坦帕",
+    "zh-TW": "坦帕",
+    "ja": "タンパ"
+  },
+  "wichita": {
+    "hi": "विचिटा",
+    "ru": "Уичито",
+    "zh-CN": "威奇托",
+    "zh-TW": "威奇托",
+    "ja": "ウィチタ"
+  },
+  "zanzibar-city": {
+    "pt": "Zanzibar",
+    "es": "Zanzíbar",
+    "fr": "Zanzibar",
+    "de": "Sansibar Stadt",
+    "hi": "ज़ंज़ीबार सिटी",
+    "it": "Zanzibar",
+    "ru": "Занзибар",
+    "ja": "ザンジバルシティ"
+  },
+  "jayapura": {
+    "hi": "जयपुरा",
+    "ru": "Джаяпура",
+    "ja": "ジャヤプラ"
+  },
+  "port-moresby": {
+    "es": "Puerto Moresby",
+    "hi": "पोर्ट मोरेस्बी",
+    "ru": "Порт-Морсби",
+    "zh-CN": "莫尔斯比港",
+    "zh-TW": "莫士比港",
+    "ja": "ポートモレスビー"
+  },
+  "new-orleans": {
+    "pt": "Nova Orleães",
+    "es": "Nueva Orleans",
+    "fr": "La Nouvelle-Orléans",
+    "hi": "न्यू ओर्लियंस",
+    "ru": "Новый Орлеан",
+    "zh-CN": "新奥尔良",
+    "zh-TW": "紐奧良",
+    "ja": "ニューオーリンズ"
+  },
+  "victoria": {
+    "pt": "Vitória",
+    "hi": "विक्टोरिया",
+    "ru": "Виктория",
+    "zh-CN": "维多利亚",
+    "zh-TW": "維多利亞",
+    "ja": "ビクトリア"
+  },
+  "christchurch": {
+    "hi": "क्राइस्टचर्च",
+    "ru": "Крайстчерч",
+    "ja": "クライストチャーチ"
+  },
+  "cleveland": {
+    "hi": "क्लीवलैंड",
+    "ru": "Кливленд",
+    "zh-CN": "克利夫兰",
+    "zh-TW": "克里夫蘭",
+    "ja": "クリーブランド"
+  },
+  "cardiff": {
+    "hi": "कार्डिफ़",
+    "ru": "Кардифф",
+    "zh-TW": "卡地夫",
+    "ja": "カーディフ"
+  },
+  "honolulu": {
+    "hi": "होनोलूलू",
+    "ru": "Гонолулу",
+    "zh-CN": "火奴鲁鲁",
+    "zh-TW": "檀香山",
+    "ja": "ホノルル"
+  },
+  "belfast": {
+    "hi": "बेलफ़ास्ट",
+    "ru": "Белфаст",
+    "zh-CN": "贝尔法斯特",
+    "zh-TW": "貝爾法斯特",
+    "ja": "ベルファスト"
+  },
+  "nice": {
+    "es": "Niza",
+    "de": "Nizza",
+    "hi": "नीस",
+    "it": "Nizza",
+    "ru": "Ницца",
+    "zh-CN": "尼斯",
+    "zh-TW": "尼斯",
+    "ja": "ニース"
+  },
+  "nicosia": {
+    "pt": "Nicósia",
+    "fr": "Nicosie",
+    "de": "Nikosia",
+    "hi": "निकोसिया",
+    "ru": "Никосия",
+    "zh-TW": "尼古西亞",
+    "ja": "ニコシア"
+  },
+  "cluj-napoca": {
+    "hi": "क्लयूज -नापोका",
+    "ru": "Клуж-Напока",
+    "zh-CN": "克卢日-纳波卡",
+    "zh-TW": "克盧日-納波卡",
+    "ja": "クルジュ＝ナポカ"
+  },
+  "pattaya": {
+    "hi": "पटाया",
+    "ru": "Паттайя",
+    "zh-CN": "芭堤雅",
+    "zh-TW": "芭達雅",
+    "ja": "パッタヤー"
+  },
+  "newcastle": {
+    "hi": "न्यूकैसल",
+    "ru": "Ньюкасл",
+    "zh-CN": "纽卡斯尔",
+    "ja": "ニューカッスル"
+  },
+  "cincinnati": {
+    "hi": "सिनसिनाटी",
+    "ru": "Цинциннати",
+    "zh-CN": "辛辛那提",
+    "zh-TW": "辛辛那提",
+    "ja": "シンシナティ"
+  },
+  "kaunas": {
+    "hi": "कौनास",
+    "ru": "Каунас",
+    "zh-CN": "考纳斯",
+    "zh-TW": "考納斯",
+    "ja": "カウナス"
+  },
+  "st-louis": {
+    "es": "San Luis",
+    "fr": "Saint-Louis",
+    "hi": "सेंट लुइस",
+    "it": "Saint Louis",
+    "ru": "Сент-Луис",
+    "zh-CN": "圣路易斯",
+    "ja": "セイント・ルイス"
+  },
+  "pittsburgh": {
+    "hi": "पिट्सबर्ग",
+    "ru": "Питтсбург",
+    "zh-CN": "匹兹堡",
+    "zh-TW": "匹茲堡",
+    "ja": "ピッツバーグ"
+  },
+  "malabo": {
+    "hi": "मलाबो",
+    "ru": "Малабо",
+    "zh-TW": "馬拉博",
+    "ja": "マラボ"
+  },
+  "anchorage": {
+    "hi": "एंकोरेज",
+    "ru": "Анкоридж",
+    "zh-TW": "安克拉治",
+    "ja": "アンカレッジ"
+  },
+  "orlando": {
+    "hi": "ऑरलैंडो",
+    "ru": "Орландо",
+    "zh-CN": "奥兰多",
+    "zh-TW": "奧蘭多",
+    "ja": "オーランド"
+  },
+  "ljubljana": {
+    "pt": "Liubliana",
+    "es": "Liubliana",
+    "hi": "लुब्लियाना",
+    "it": "Lubiana",
+    "ru": "Любляна",
+    "zh-CN": "卢布尔雅那",
+    "zh-TW": "盧比安納",
+    "ja": "リュブリャナ"
+  },
+  "bergen": {
+    "hi": "बेर्गेन",
+    "ru": "Берген",
+    "zh-CN": "卑尔根",
+    "ja": "ベルゲン"
+  },
+  "buffalo": {
+    "es": "Búfalo",
+    "hi": "बफ़ेलो",
+    "ru": "Буффало",
+    "zh-CN": "布法罗",
+    "zh-TW": "水牛城",
+    "ja": "バッファロー"
+  },
+  "nassau": {
+    "es": "Nasáu",
+    "hi": "नासाउ",
+    "ru": "Нассау",
+    "zh-CN": "拿骚",
+    "ja": "ナッソー"
+  },
+  "aarhus": {
+    "hi": "आरहूस",
+    "ru": "Орхус",
+    "zh-CN": "奥胡斯",
+    "ja": "オーフス"
+  },
+  "dili": {
+    "pt": "Díli",
+    "hi": "दिली",
+    "ru": "Дили",
+    "zh-CN": "帝力",
+    "zh-TW": "帝力",
+    "ja": "ディリ"
+  },
+  "reno": {
+    "hi": "रेनो",
+    "ru": "Рино",
+    "zh-CN": "雷諾",
+    "zh-TW": "雷諾",
+    "ja": "リノ"
+  },
+  "saskatoon": {
+    "hi": "सास्काटून",
+    "ru": "Саскатун",
+    "ja": "サスカトゥーン"
+  },
+  "gaborone": {
+    "hi": "गोबोर्नी",
+    "ru": "Габороне",
+    "zh-CN": "哈博罗内",
+    "zh-TW": "嘉柏隆里",
+    "ja": "ハボローネ"
+  },
+  "bata": {
+    "hi": "बाटा",
+    "ru": "Бата",
+    "zh-CN": "巴塔",
+    "zh-TW": "巴塔",
+    "ja": "バタ"
+  },
+  "male": {
+    "hi": "माले",
+    "it": "Male",
+    "ru": "Мале",
+    "zh-CN": "马累",
+    "zh-TW": "馬利",
+    "ja": "マレ"
+  },
+  "paramaribo": {
+    "hi": "पारामरिबो",
+    "ru": "Парамарибо",
+    "zh-TW": "巴拉馬利波",
+    "ja": "パラマリボ"
+  },
+  "hobart": {
+    "hi": "होबार्ट",
+    "ru": "Хобарт",
+    "zh-CN": "霍巴特",
+    "zh-TW": "荷巴特",
+    "ja": "ホバート"
+  },
+  "boise": {
+    "hi": "बोइस",
+    "ru": "Бойсе",
+    "zh-CN": "博伊西",
+    "ja": "ボイシ"
+  },
+  "richmond": {
+    "hi": "रिचमंड",
+    "ru": "Ричмонд",
+    "zh-CN": "里士满",
+    "ja": "リッチモンド"
+  },
+  "spokane": {
+    "hi": "स्पोकाने",
+    "ru": "Спокан",
+    "zh-CN": "斯波坎",
+    "zh-TW": "斯波坎",
+    "ja": "スポケーン"
+  },
+  "regina": {
+    "hi": "रेजिना",
+    "ru": "Реджайна",
+    "zh-CN": "里贾纳",
+    "zh-TW": "雷吉納",
+    "ja": "レジャイナ"
+  },
+  "baton-rouge": {
+    "hi": "बेटन रूज",
+    "ru": "Батон-Руж",
+    "zh-CN": "巴吞鲁日",
+    "zh-TW": "巴頓魯治",
+    "ja": "バトン・ルージュ"
+  },
+  "tacoma": {
+    "hi": "टैकोमा",
+    "ru": "Такома",
+    "zh-CN": "塔科马",
+    "zh-TW": "塔可瑪",
+    "ja": "タコマ"
+  },
+  "cork": {
+    "hi": "कॉर्क",
+    "ru": "Корк",
+    "zh-CN": "科克",
+    "zh-TW": "科克",
+    "ja": "コーク"
+  },
+  "rochester": {
+    "hi": "रोचेस्टर",
+    "ru": "Рочестер",
+    "zh-CN": "罗切斯特",
+    "zh-TW": "羅徹斯特",
+    "ja": "ロチェスター"
+  },
+  "st-john-s": {
+    "pt": "São João da Terra Nova",
+    "es": "San Juan de Terranova",
+    "fr": "Saint-Jean de Terre-Neuve",
+    "hi": "सेंट जॉन्स",
+    "ru": "Сент-Джонс",
+    "zh-TW": "聖約翰斯",
+    "ja": "セイント・ジョンズ"
+  },
+  "valletta": {
+    "pt": "Valeta",
+    "es": "La Valeta",
+    "fr": "La Valette",
+    "hi": "वैलेटा",
+    "it": "La Valletta",
+    "ru": "Валлетта",
+    "zh-CN": "瓦莱塔",
+    "zh-TW": "法勒他",
+    "ja": "バレッタ"
+  },
+  "wellington": {
+    "hi": "वेलिंग्टन",
+    "ru": "Веллингтон",
+    "zh-TW": "威靈頓",
+    "ja": "ウェリントン"
+  },
+  "salt-lake-city": {
+    "hi": "सॉल्ट लेक सिटी, यूटा",
+    "ru": "Солт-Лейк-Сити",
+    "zh-CN": "盐湖城",
+    "zh-TW": "鹽湖城",
+    "ja": "ソルトレイクシティ"
+  },
+  "little-rock": {
+    "hi": "लिटिल रॉक",
+    "ru": "Литл-Рок",
+    "zh-CN": "小石城",
+    "zh-TW": "小石城",
+    "ja": "リトル・ロック"
+  },
+  "birmingham": {
+    "hi": "बर्मिंघम",
+    "ru": "Бирмингем",
+    "ja": "バーミンガム"
+  },
+  "georgetown": {
+    "hi": "जॉर्जटाउन",
+    "ru": "Джорджтаун",
+    "zh-TW": "喬治城",
+    "ja": "ジョージタウン"
+  },
+  "geneva": {
+    "pt": "Genebra",
+    "es": "Ginebra",
+    "fr": "Genève",
+    "de": "Genf",
+    "hi": "जिनेवा",
+    "it": "Ginevra",
+    "ru": "Женева",
+    "zh-CN": "日内瓦",
+    "zh-TW": "日內瓦",
+    "ja": "ジュネーヴ"
+  },
+  "yuzhno-sakhalinsk": {
+    "pt": "Iujno-Sakhalinsk",
+    "es": "Yuzhno-Sajalinsk",
+    "fr": "Ioujno-Sakhalinsk",
+    "de": "Juschno-Sachalinsk",
+    "hi": "यूज़्नो-सखालिंस्क",
+    "it": "Južno-Sachalinsk",
+    "ru": "Южно-Сахалинск",
+    "zh-TW": "南薩哈林斯克",
+    "ja": "ユジノサハリンスク"
+  },
+  "providence": {
+    "hi": "प्रोविडेंस",
+    "ru": "Провиденс",
+    "zh-CN": "普罗维登斯",
+    "zh-TW": "普洛威頓斯",
+    "ja": "プロヴィデンス"
+  },
+  "podgorica": {
+    "hi": "पॉडगिरिट्सा",
+    "ru": "Подгорица",
+    "zh-CN": "波德戈里察",
+    "zh-TW": "波德里查",
+    "ja": "ポドゴリツァ"
+  },
+  "petropavlovsk-kamchatsky": {
+    "pt": "Petropavlovsk-Kamchatski",
+    "es": "Petropávlovsk-Kamchatski",
+    "fr": "Petropavlovsk-Kamtchatski",
+    "de": "Petropawlowsk-Kamtschatski",
+    "hi": "पेट्रोपावलोव्स्क कैमचैट्स्की",
+    "it": "Petropavlovsk-Kamčatskij",
+    "ru": "Петропавловск-Камчатский",
+    "zh-TW": "堪察加彼得羅巴甫洛夫斯克",
+    "ja": "ペトロパブロフスク・カムチャツキー"
+  },
+  "townsville": {
+    "hi": "टाउन्सविले",
+    "ru": "Таунсвилл",
+    "zh-CN": "汤斯维尔",
+    "zh-TW": "湯斯維爾",
+    "ja": "タウンズビル"
+  },
+  "hamilton-nz": {
+    "hi": "हैमिल्टन",
+    "ru": "Гамильтон",
+    "zh-TW": "漢密頓",
+    "ja": "ハミルトン"
+  },
+  "basel": {
+    "pt": "Basileia",
+    "es": "Basilea",
+    "fr": "Bâle",
+    "hi": "बाज़ल",
+    "it": "Basilea",
+    "ru": "Базель",
+    "zh-CN": "巴塞尔",
+    "zh-TW": "巴塞爾",
+    "ja": "バーゼル"
+  },
+  "suva": {
+    "hi": "सुवा",
+    "ru": "Сува",
+    "zh-CN": "苏瓦",
+    "zh-TW": "蘇瓦",
+    "ja": "スバ"
+  },
+  "praia": {
+    "hi": "प्राये",
+    "ru": "Прая",
+    "zh-CN": "普拉亚",
+    "zh-TW": "培亞",
+    "ja": "プライア"
+  },
+  "cairns": {
+    "hi": "केर्न्स",
+    "ru": "Кэрнс",
+    "zh-CN": "凯恩斯",
+    "zh-TW": "凱恩斯",
+    "ja": "ケアンズ"
+  },
+  "jackson": {
+    "hi": "जैक्सन",
+    "ru": "Джэксон",
+    "ja": "ジャクソン"
+  },
+  "willemstad": {
+    "hi": "विलेमस्टाद",
+    "ru": "Виллемстад",
+    "zh-CN": "威廉斯塔德",
+    "zh-TW": "威廉斯塔德",
+    "ja": "ウィレムスタッド"
+  },
+  "port-louis": {
+    "fr": "Port-Louis",
+    "hi": "पोर्ट लुई",
+    "ru": "Порт-Луи",
+    "zh-TW": "路易港",
+    "ja": "ポートルイス"
+  },
+  "aqaba": {
+    "es": "Áqaba",
+    "hi": "अकाबा",
+    "ru": "Акаба",
+    "zh-CN": "亚喀巴",
+    "zh-TW": "亞喀巴",
+    "ja": "アカバ"
+  },
+  "darwin": {
+    "hi": "डार्विन",
+    "ru": "Дарвин",
+    "zh-TW": "達爾文",
+    "ja": "ダーウィン (ノーザンテリトリー)"
+  },
+  "bern": {
+    "pt": "Berna",
+    "es": "Berna",
+    "fr": "Berne",
+    "hi": "बर्न",
+    "it": "Berna",
+    "ru": "Берн",
+    "zh-CN": "伯尔尼",
+    "zh-TW": "伯恩",
+    "ja": "ベルン"
+  },
+  "reykjavik": {
+    "pt": "Eleitorado de Reiquiavique Norte",
+    "es": "Reykjavíkurkjördæmi Norður",
+    "fr": "Reykjavíkurkjördæmi norður",
+    "de": "Reykjavíkurkjördæmi norður",
+    "it": "Reykjavíkurkjördæmi norður",
+    "ru": "Северный избирательный округ Рейкьявика",
+    "ja": "北レイキャヴィーク選挙区"
+  },
+  "luxembourg": {
+    "pt": "Luxemburgo",
+    "es": "Luxemburgo",
+    "de": "Luxemburg",
+    "hi": "लक्ज़मबर्ग नगर",
+    "it": "Lussemburgo",
+    "ru": "Люксембург",
+    "zh-TW": "盧森堡市",
+    "ja": "ルクセンブルク市"
+  },
+  "dunedin": {
+    "hi": "डुनेडिन",
+    "ru": "Данидин",
+    "zh-CN": "达尼丁",
+    "zh-TW": "但尼丁",
+    "ja": "ダニーデン"
+  },
+  "hartford": {
+    "hi": "हार्टफ़ोर्ड",
+    "ru": "Хартфорд",
+    "zh-CN": "哈特福德",
+    "zh-TW": "哈特福",
+    "ja": "ハートフォード"
+  },
+  "thimphu": {
+    "pt": "Thimbu",
+    "es": "Timbu",
+    "fr": "Thimphou",
+    "hi": "थिम्फू",
+    "ru": "Тхимпху",
+    "zh-CN": "廷布",
+    "zh-TW": "辛布",
+    "ja": "ティンプー"
+  },
+  "bridgetown": {
+    "hi": "ब्रिजटाउन",
+    "ru": "Бриджтаун",
+    "zh-CN": "布里奇顿",
+    "zh-TW": "橋鎮",
+    "ja": "ブリッジタウン"
+  },
+  "bandar-seri-begawan": {
+    "hi": "बंदर सेरी बेगावान",
+    "ru": "Бандар-Сери-Бегаван",
+    "zh-CN": "斯里巴加湾市",
+    "zh-TW": "斯里巴加萬港",
+    "ja": "バンダルスリブガワン"
+  },
+  "launceston": {
+    "hi": "लॉन्सेस्टन",
+    "ru": "Лонсестон",
+    "zh-CN": "朗塞斯顿",
+    "zh-TW": "朗瑟士敦",
+    "ja": "ローンセストン"
+  },
+  "honiara": {
+    "hi": "होनिअरा",
+    "ru": "Хониара",
+    "ja": "ホニアラ"
+  },
+  "sao-tome": {
+    "es": "Santo Tomé",
+    "hi": "सो टोमे",
+    "ru": "Сан-Томе",
+    "ja": "サントメ"
+  },
+  "ponta-delgada": {
+    "hi": "पोंटा डेलगाडा",
+    "ru": "Понта-Делгада",
+    "zh-CN": "蓬塔德尔加达",
+    "zh-TW": "蓬塔德爾加達",
+    "ja": "ポンタ・デルガダ"
+  },
+  "tarawa": {
+    "hi": "टारावा",
+    "ru": "Тарава",
+    "zh-TW": "塔拉瓦環礁",
+    "ja": "タラワ"
+  },
+  "port-vila": {
+    "pt": "Porto Vila",
+    "fr": "Port-Vila",
+    "hi": "पोर्ट विला",
+    "ru": "Порт-Вила",
+    "zh-TW": "維拉港",
+    "ja": "ポートビラ"
+  },
+  "st-george-s": {
+    "pt": "São Jorge",
+    "es": "Saint George",
+    "fr": "Saint-Georges",
+    "de": "St. George’s",
+    "hi": "सेंट जॉर्ज",
+    "it": "Saint George's",
+    "ru": "Сент-Джорджес",
+    "ja": "セントジョージズ"
+  },
+  "apia": {
+    "hi": "आपिया",
+    "ru": "Апиа",
+    "ja": "アピア"
+  },
+  "george-town": {
+    "hi": "जॉर्ज टाउन",
+    "ru": "Джорджтаун",
+    "zh-CN": "乔治敦",
+    "zh-TW": "喬治敦",
+    "ja": "ジョージタウン"
+  },
+  "juneau": {
+    "hi": "जूनो",
+    "ru": "Джуно",
+    "zh-CN": "朱諾",
+    "ja": "ジュノー"
+  },
+  "fairbanks": {
+    "hi": "फेयरबैंक्स",
+    "ru": "Фэрбанкс",
+    "ja": "フェアバンクス"
+  },
+  "oranjestad": {
+    "hi": "ओरान्यस्टाड",
+    "ru": "Ораньестад",
+    "zh-CN": "奥拉涅斯塔德",
+    "zh-TW": "奧臘涅斯塔德",
+    "ja": "オラニエスタッド"
+  },
+  "whitehorse": {
+    "hi": "व्हाइटहॉर्स",
+    "ru": "Уайтхорс",
+    "zh-CN": "怀特霍斯",
+    "ja": "ホワイトホース"
+  },
+  "majuro": {
+    "hi": "माजुरो",
+    "ru": "Маджуро",
+    "zh-CN": "马朱罗",
+    "ja": "マジュロ"
+  },
+  "alice-springs": {
+    "hi": "ऐलिस स्प्रिंग्स",
+    "ru": "Алис-Спрингс",
+    "zh-CN": "艾丽斯斯普林斯",
+    "ja": "アリススプリングス"
+  },
+  "nuku-alofa": {
+    "es": "Nukualofa",
+    "fr": "Nukuʻalofa",
+    "de": "Nukuʻalofa",
+    "hi": "नुकुअलोफ़ा",
+    "it": "Nukuʻalofa",
+    "ru": "Нукуалофа",
+    "zh-CN": "努库阿洛法",
+    "zh-TW": "努瓜婁發",
+    "ja": "ヌクアロファ"
+  },
+  "andorra-la-vella": {
+    "pt": "Andorra-a-Velha",
+    "es": "Andorra la Vieja",
+    "fr": "Andorre-la-Vieille",
+    "hi": "अण्डोरा ला वेला",
+    "ru": "Андорра-ла-Велья",
+    "zh-CN": "安道尔城",
+    "zh-TW": "老安道爾",
+    "ja": "アンドラ・ラ・ベリャ"
+  },
+  "castries": {
+    "hi": "कैस्ट्रीज",
+    "ru": "Кастри",
+    "zh-CN": "卡斯特里",
+    "zh-TW": "卡斯翠",
+    "ja": "カストリーズ"
+  },
+  "nuuk": {
+    "hi": "नुक",
+    "ru": "Нуук",
+    "zh-TW": "努克",
+    "ja": "ヌーク"
+  },
+  "road-town": {
+    "fr": "fort Road Town",
+    "de": "Road Town Fort"
+  },
+  "torshavn": {
+    "ru": "Торсхавн",
+    "ja": "トースハウン"
+  },
+  "avarua": {
+    "ru": "Аваруа",
+    "zh-CN": "阿瓦鲁阿",
+    "zh-TW": "阿瓦魯阿",
+    "ja": "アバルア"
+  },
+  "palikir": {
+    "pt": "Paliquir",
+    "hi": "पेलिकियर",
+    "ru": "Паликир",
+    "zh-CN": "帕利基尔",
+    "ja": "パリキール"
+  },
+  "kiritimati": {
+    "fr": "île Christmas",
+    "hi": "किरितिमाती",
+    "it": "isola Christmas",
+    "ru": "Остров Рождества",
+    "zh-CN": "圣诞岛",
+    "zh-TW": "聖誕島",
+    "ja": "キリスィマスィ島"
+  },
+  "funafuti": {
+    "hi": "फुनाफुति",
+    "ru": "Фунафути",
+    "ja": "フナフティ島"
+  },
+  "fernando-de-noronha": {
+    "es": "Fernando de Noroña",
+    "hi": "फर्नांडो डि नोरोन्हा",
+    "ru": "Фернанду-ди-Норонья",
+    "zh-CN": "费尔南多·迪诺罗尼亚群岛",
+    "zh-TW": "費爾南多·迪諾羅尼亞群島",
+    "ja": "フェルナンド・デ・ノローニャ"
+  },
+  "yaren": {
+    "hi": "यारेन जिला",
+    "ru": "Ярен",
+    "ja": "ヤレン地区"
+  },
+  "chatham-islands": {
+    "pt": "Ilhas Chatham",
+    "es": "Islas Chatham",
+    "fr": "îles Chatham",
+    "de": "Chathaminseln",
+    "hi": "चाथम द्वीपसमूह",
+    "it": "Isole Chatham",
+    "ru": "Чатем",
+    "zh-CN": "查塔姆群岛",
+    "zh-TW": "查塔姆群島",
+    "ja": "チャタム諸島"
+  },
+  "alofi": {
+    "ru": "Алофи",
+    "ja": "アロフィ"
+  },
+  "lord-howe-island": {
+    "pt": "Ilha de Lord Howe",
+    "es": "Isla de Lord Howe",
+    "fr": "île Lord Howe",
+    "de": "Lord-Howe-Insel",
+    "it": "isola di Lord Howe",
+    "ru": "Лорд-Хау",
+    "zh-CN": "豪勋爵岛",
+    "zh-TW": "豪勳爵島",
+    "ja": "ロード・ハウ島"
+  },
+  "ngerulmud": {
+    "hi": "ञुरूलमुड",
+    "ru": "Нгерулмуд",
+    "zh-CN": "恩吉鲁穆德",
+    "zh-TW": "恩吉魯穆德",
+    "ja": "ンゲルルムッド"
+  },
+  "eucla": {
+    "ja": "ユークラ"
+  },
+  "adak": {
+    "hi": "अडैक",
+    "ru": "Адак",
+    "ja": "アダック"
   }
 }
