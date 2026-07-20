@@ -35,7 +35,7 @@ export default function JumpNav({ items, ariaLabel }: JumpNavProps) {
   }
 
   return (
-    <nav aria-label={ariaLabel} className="px-4 sm:px-6">
+    <nav aria-label={ariaLabel} className="sticky top-[57px] z-20 border-b border-border bg-background/95 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:px-6">
       <ul className="flex flex-wrap gap-1.5">
         {items.map((item) => (
           <li key={item.id}>
