@@ -19,8 +19,9 @@ interface SectionHeaderProps {
  * small flag per compared city (tooltip = city name) so it's obvious at a
  * glance which cities the section below applies to. Also the scroll target
  * for the jump nav and any #hash link — `scroll-mt` offsets it below the
- * sticky header (top bar + NavBar row) so the heading isn't hidden after a
- * jump.
+ * sticky chrome (header + NavBar row, published as `--header-height` by
+ * Header.tsx, plus the sticky JumpNav row) so the heading isn't hidden
+ * after a jump.
  */
 export default function SectionHeader({ id, icon, title, cities }: SectionHeaderProps) {
   const locale = useLocale();
@@ -28,7 +29,8 @@ export default function SectionHeader({ id, icon, title, cities }: SectionHeader
   return (
     <div
       id={id}
-      className="flex scroll-mt-28 flex-wrap items-center gap-2 border-t border-border/60 px-4 pt-8 sm:px-6"
+      style={{ scrollMarginTop: "calc(var(--header-height, 57px) + 4rem)" }}
+      className="flex flex-wrap items-center gap-2 border-t border-border/60 px-4 pt-8 sm:px-6"
     >
       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
         {icon}

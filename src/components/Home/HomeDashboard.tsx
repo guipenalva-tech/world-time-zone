@@ -87,11 +87,16 @@ export default function HomeDashboard() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <div className="pt-3">
-        <JumpNav items={jumpItems} ariaLabel={t("jumpNavLabel")} />
-      </div>
+      {/* Deliberately NOT wrapped in a spacing div: `position: sticky` is
+          clipped to its parent's box, so a wrapper sized to the nav itself
+          would let it scroll away immediately. As a direct child of the
+          full-height dashboard column it stays pinned past every section. */}
+      <JumpNav items={jumpItems} ariaLabel={t("jumpNavLabel")} />
 
-      <div id="comparator" className="scroll-mt-28">
+      <div
+        id="comparator"
+        style={{ scrollMarginTop: "calc(var(--header-height, 57px) + 4rem)" }}
+      >
         <Comparator />
       </div>
 

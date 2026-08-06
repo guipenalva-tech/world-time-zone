@@ -28,7 +28,30 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Publish this header's rendered height as `--header-height` so other
+  // sticky bars (JumpNav on the home dashboard) can pin flush beneath it
+  // without hard-coding a pixel value. The height genuinely varies — the
+  // brand row wraps differently at 375px than at 1280px, and NavBar's own
+  // measure-and-collapse logic changes its row height — so a literal
+  // `top-[57px]` silently pinned JumpNav *behind* this header, which is
+  // z-30 to its z-20.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const publish = () => {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${Math.round(el.getBoundingClientRect().height)}px`,
+      );
+    };
+    publish();
+    const observer = new ResizeObserver(publish);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -59,7 +82,10 @@ export default function Header() {
   const existingIds = cities.map((c) => c.city.id);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+    >
       <div className="flex items-center gap-3 px-4 py-3 sm:px-6">
         <Link
           href="/"

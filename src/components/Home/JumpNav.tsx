@@ -35,10 +35,22 @@ export default function JumpNav({ items, ariaLabel }: JumpNavProps) {
   }
 
   return (
-    <nav aria-label={ariaLabel} className="sticky top-[57px] z-20 border-b border-border bg-background/95 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:px-6">
-      <ul className="flex flex-wrap gap-1.5">
+    <nav
+      aria-label={ariaLabel}
+      // Pins directly beneath the sticky Header, whose rendered height it
+      // publishes as `--header-height` (see Header.tsx). The fallback
+      // covers the first paint before that effect runs.
+      style={{ top: "var(--header-height, 57px)" }}
+      className="sticky z-20 border-b border-border bg-background/95 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:px-6"
+    >
+      {/* One scrollable row rather than a wrapping block: the chips fit on
+          a single line on desktop either way, but at 375px wrapping pushed
+          this to four rows — which, now that the bar is frozen, would keep
+          ~a third of the viewport permanently covered. Sideways swipe
+          costs nothing on desktop and keeps the bar 47px tall everywhere. */}
+      <ul className="flex gap-1.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {items.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="shrink-0">
             <a
               href={`#${item.id}`}
               onClick={(e) => handleClick(e, item.id)}
