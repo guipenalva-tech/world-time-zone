@@ -132,7 +132,7 @@ export default function Breadcrumb({ locale }: BreadcrumbProps) {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ol className="mx-auto flex max-w-6xl items-center gap-1.5 px-4 py-2 text-xs text-foreground/50 sm:px-6">
+      <ol className="flex items-center gap-1.5 px-4 py-2 text-xs text-foreground/50 sm:px-6">
         <li>
           <Link href="/" className="transition-colors hover:text-foreground">
             {t("home")}
