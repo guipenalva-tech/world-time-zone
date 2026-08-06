@@ -41,7 +41,7 @@
   "AddCity": {
     "dialogLabel": "都市を追加",
     "heading": "都市を追加",
-    "searchPlaceholder": "都市を追加…"
+    "searchPlaceholder": "都市またはタイムゾーン（GMT、EST、UTC+2）を追加…"
   },
   "NotFound": {
     "title": "404 — ページが見つかりません",

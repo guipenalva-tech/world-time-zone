@@ -41,7 +41,7 @@
   "AddCity": {
     "dialogLabel": "添加城市",
     "heading": "添加城市",
-    "searchPlaceholder": "添加城市…"
+    "searchPlaceholder": "添加城市或时区（GMT、EST、UTC+2）…"
   },
   "NotFound": {
     "title": "404 — 页面未找到",

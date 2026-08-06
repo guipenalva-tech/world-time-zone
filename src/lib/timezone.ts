@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import type { ZoneInfo } from "@/types/timezone";
 import type { HourSlot } from "@/types/timezone";
+import { ZONE_ABBREVIATIONS } from "@/lib/zoneAbbreviations";
 
 /**
  * Maps an app locale (path segment, e.g. "pt") to the BCP-47 tag Luxon
@@ -98,16 +99,74 @@ export function formatOffset(tz: string, at?: DateTime): string {
 }
 
 /**
+ * True for Luxon's fallback-style abbreviations ("GMT+9", "UTC+5:30") —
+ * i.e. CLDR had no real name for this zone, so Luxon just re-stated the
+ * offset. Redundant with `offsetFormatted`, and the signal we use to
+ * know when to consult the curated {@link ZONE_ABBREVIATIONS} dataset
+ * instead (see zoneAbbreviations.ts for why CLDR can't name most
+ * non-US zones in this runtime).
+ */
+function isGenericOffsetAbbreviation(abbreviation: string): boolean {
+  return /^(gmt|utc)[+-]/i.test(abbreviation);
+}
+
+/**
+ * Reverse index built once from {@link ZONE_ABBREVIATIONS}: IANA zone id
+ * -> the standard-time code and/or DST code that apply to it. Built
+ * eagerly at module load (unlike the per-day cache in cities.ts) because
+ * it's derived purely from the static curated dataset, not from
+ * `DateTime.now()` — nothing here is date-dependent, so there's no
+ * SSR-safety concern.
+ */
+const ZONE_TO_CURATED_CODES = (() => {
+  const index = new Map<string, { std?: string; dst?: string }>();
+  for (const [code, entry] of Object.entries(ZONE_ABBREVIATIONS)) {
+    for (const zone of entry.zones) {
+      const existing = index.get(zone) ?? {};
+      if (entry.isDst) existing.dst = code;
+      else existing.std = code;
+      index.set(zone, existing);
+    }
+  }
+  return index;
+})();
+
+/**
+ * Curated code for `tz` matching `isDst`, or null if none exists. Used to
+ * patch Luxon's abbreviation when it's a generic offset restatement (see
+ * {@link isGenericOffsetAbbreviation}) — e.g. Asia/Tokyo -> "JST",
+ * Europe/London -> "BST" only while it's actually in DST.
+ */
+function findCuratedAbbreviation(tz: string, isDst: boolean): string | null {
+  const codes = ZONE_TO_CURATED_CODES.get(tz);
+  if (!codes) return null;
+  return (isDst ? codes.dst : codes.std) ?? null;
+}
+
+/**
  * Get the current offset, abbreviation (e.g. "BRT", "EST"), and DST status
- * for a timezone at a given instant (defaults to now).
+ * for a timezone at a given instant (defaults to now). When Luxon's own
+ * abbreviation is just a restated offset (see
+ * {@link isGenericOffsetAbbreviation}), prefers the curated
+ * {@link ZONE_ABBREVIATIONS} code for the zone's current DST state, if
+ * one exists — this is the single seam all zone-abbreviation display in
+ * the app (comparator rows, location cards, city facts, and the city
+ * search dropdown) flows through, so the fix applies everywhere at once
+ * rather than only in the search UI.
  */
 export function getZoneInfo(tz: string, at?: DateTime): ZoneInfo {
   const dt = (at ?? DateTime.now()).setZone(tz);
+  const offsetMinutes = dt.offset;
+  const isDST = dt.isInDST;
+  const luxonAbbreviation = dt.offsetNameShort ?? formatOffsetMinutes(offsetMinutes);
+  const abbreviation = isGenericOffsetAbbreviation(luxonAbbreviation)
+    ? (findCuratedAbbreviation(tz, isDST) ?? luxonAbbreviation)
+    : luxonAbbreviation;
   return {
-    abbreviation: dt.offsetNameShort ?? formatOffsetMinutes(dt.offset),
-    offsetFormatted: formatOffsetMinutes(dt.offset),
-    offsetMinutes: dt.offset,
-    isDST: dt.isInDST,
+    abbreviation,
+    offsetFormatted: formatOffsetMinutes(offsetMinutes),
+    offsetMinutes,
+    isDST,
   };
 }
 

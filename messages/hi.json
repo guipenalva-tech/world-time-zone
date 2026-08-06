@@ -41,7 +41,7 @@
   "AddCity": {
     "dialogLabel": "एक शहर जोड़ें",
     "heading": "एक शहर जोड़ें",
-    "searchPlaceholder": "शहर जोड़ें..."
+    "searchPlaceholder": "शहर या समय क्षेत्र जोड़ें (GMT, EST, UTC+2)…"
   },
   "NotFound": {
     "title": "404 — पृष्ठ नहीं मिला",

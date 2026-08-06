@@ -41,7 +41,7 @@
   "AddCity": {
     "dialogLabel": "Добавить город",
     "heading": "Добавить город",
-    "searchPlaceholder": "Добавить город..."
+    "searchPlaceholder": "Добавить город или часовой пояс (GMT, EST, UTC+2)…"
   },
   "NotFound": {
     "title": "404 — Страница не найдена",

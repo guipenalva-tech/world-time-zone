@@ -2,10 +2,26 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { searchCities } from "@/lib/cities";
+import { searchCitiesByNameOrTimeZone } from "@/lib/cities";
 import { getFlagEmoji } from "@/lib/flags";
 import { getLocalizedCityName, getLocalizedCountryName } from "@/lib/i18nNames";
+import { getZoneInfo } from "@/lib/timezone";
 import type { City } from "@/types/city";
+
+/** Luxon returns e.g. "GMT+5:30" as `offsetNameShort` for zones without a
+ * real abbreviation — indistinguishable in meaning from the offset we
+ * already show, so we detect and drop it rather than showing it twice. */
+function isOffsetLikeAbbreviation(abbreviation: string): boolean {
+  return /^(gmt|utc)[+-]/i.test(abbreviation);
+}
+
+/** "UTC+1 · BST" for a result row, omitting the abbreviation half when
+ * it's redundant with the offset (see isOffsetLikeAbbreviation above). */
+function formatZoneLabel(city: City): string {
+  const { offsetFormatted, abbreviation } = getZoneInfo(city.timezone);
+  if (isOffsetLikeAbbreviation(abbreviation)) return offsetFormatted;
+  return `${offsetFormatted} · ${abbreviation}`;
+}
 
 interface CitySearchProps {
   onSelect: (city: City) => void;
@@ -41,7 +57,7 @@ export default function CitySearch({
     }
 
     const timer = setTimeout(() => {
-      const matches = searchCities(trimmed, 8 + excludeIds.length).filter(
+      const matches = searchCitiesByNameOrTimeZone(trimmed, 8 + excludeIds.length).filter(
         (c) => !excludeIds.includes(c.id),
       );
       setResults(matches.slice(0, 8));
@@ -136,8 +152,13 @@ export default function CitySearch({
                   </span>
                   {getLocalizedCityName(city, locale)}
                 </span>
-                <span className="shrink-0 text-xs text-foreground/50">
-                  {getLocalizedCountryName(city.countryCode, locale, city.country)}
+                <span className="flex min-w-0 max-w-[45%] shrink-0 flex-col items-end">
+                  <span className="w-full truncate text-xs text-foreground/50">
+                    {getLocalizedCountryName(city.countryCode, locale, city.country)}
+                  </span>
+                  <span className="w-full truncate text-[11px] text-foreground/40">
+                    {formatZoneLabel(city)}
+                  </span>
                 </span>
               </button>
             </li>

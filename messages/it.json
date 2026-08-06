@@ -41,7 +41,7 @@
   "AddCity": {
     "dialogLabel": "Aggiungi una città",
     "heading": "Aggiungi una città",
-    "searchPlaceholder": "Aggiungi una città..."
+    "searchPlaceholder": "Aggiungi una città o un fuso orario (GMT, EST, UTC+2)…"
   },
   "NotFound": {
     "title": "404 — Pagina non trovata",
